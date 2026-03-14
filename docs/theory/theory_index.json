@@ -1,0 +1,3141 @@
+{
+  "modules": [
+    {
+      "id": "01",
+      "filename": "docs/theory/01_embedded_liberalism_economic_vulnerability.md",
+      "title": "Embedded Liberalism & Economic Vulnerability",
+      "h1": "Embedded Liberalism & Economic Vulnerability",
+      "key_concepts": [
+        "embedded liberalism",
+        "compensation hypothesis",
+        "globalization losers",
+        "unbundling of production",
+        "individual uncertainty",
+        "crisis of embedded liberalism",
+        "trade openness",
+        "welfare compensation"
+      ],
+      "key_authors": [
+        "Ruggie (1982)",
+        "Milner (2021)",
+        "Colantone & Stanig (2018)",
+        "Baldwin (2016)",
+        "Gidron & Hall (2017)",
+        "Scheve & Slaughter (2007)"
+      ],
+      "mechanisms": [
+        {
+          "name": "Embedded Liberalism Bargain",
+          "description": "Trade openness → welfare compensation → political stability"
+        },
+        {
+          "name": "Crisis of Compensation",
+          "description": "Inability to provide effective compensation → isolationism and neonationalism"
+        },
+        {
+          "name": "Unbundling Effect",
+          "description": "Global value chains → individualized, unpredictable impacts → heightened insecurity"
+        },
+        {
+          "name": "Regional Spillover",
+          "description": "EGF assistance → regional economic stabilization → reduced populist appeal"
+        },
+        {
+          "name": "Signaling Government Responsibility",
+          "description": "Visible compensation → admission of costs → depoliticization of globalization"
+        }
+      ],
+      "core_argument": "The historically embedded liberal bargain between trade openness and welfare protection has become strained by the inability of governments to effectively compensate globalization losers, creating a crisis of legitimacy as individual uncertainty increases and regional inequality persists.",
+      "see_also": [
+        "03",
+        "04",
+        "05",
+        "11"
+      ]
+    },
+    {
+      "id": "02",
+      "filename": "docs/theory/02_automation_technological_change.md",
+      "title": "Automation & Technological Change",
+      "h1": "Automation & Technological Change",
+      "key_concepts": [
+        "routine task intensity",
+        "codifiability",
+        "automation vulnerability",
+        "RBTC theory",
+        "status decline",
+        "anticipated vs. experienced hardship",
+        "mid-skilled work",
+        "occupational downgrading"
+      ],
+      "key_authors": [
+        "Pitts & Winter (2024)",
+        "Kurer (2020)",
+        "Gingrich (2019)",
+        "Im & Komp-Leukkunen (2021)",
+        "Gallego & Kurer (2022)",
+        "Acemoglu & Autor (2011)"
+      ],
+      "mechanisms": [
+        {
+          "name": "Routine Task Intensity (RTI) Effect",
+          "description": "Task routineness/codifiability → automation susceptibility → political realignment"
+        },
+        {
+          "name": "Anticipated vs. Experienced Hardship",
+          "description": "Threat of job loss (not actual loss) → strongest radical-right support"
+        },
+        {
+          "name": "Status Decline Through Demand Shift",
+          "description": "Declining demand for routine work → status decline → social conservative politics"
+        },
+        {
+          "name": "Occupational Downgrading Risk",
+          "description": "Limited career mobility + declining demand → fear of economic decline"
+        }
+      ],
+      "core_argument": "Automation vulnerability is determined by task routineness rather than skill levels, creating anticipated status decline (not immediate job loss) that drives support for right-wing populism among routine workers who remain employed.",
+      "see_also": [
+        "04",
+        "08",
+        "09",
+        "12"
+      ]
+    },
+    {
+      "id": "03",
+      "filename": "docs/theory/03_globalization_trade_spatial.md",
+      "title": "Globalization, Trade Exposure & Spatial Dimensions",
+      "h1": "Globalization, Trade Exposure & Spatial Dimensions",
+      "key_concepts": [
+        "China shock",
+        "trade exposure",
+        "regional inequality",
+        "place-based decline",
+        "housing markets",
+        "political geography",
+        "community spillover effects",
+        "spatial segregation"
+      ],
+      "key_authors": [
+        "Colantone & Stanig (2018)",
+        "Broz et al. (2019)",
+        "Adler & Ansell (2022)",
+        "Nonnemacher & Fitzgerald (2025)",
+        "Mijs (2021)",
+        "Dijkstra et al. (2019)"
+      ],
+      "mechanisms": [
+        {
+          "name": "China Shock Effect",
+          "description": "Import competition → employment decline → persistent regional recession"
+        },
+        {
+          "name": "Community Spillover",
+          "description": "Individual economic outcomes linked by local economic conditions → collective political responses"
+        },
+        {
+          "name": "Housing Market Lock-In",
+          "description": "House prices → economic optimism/pessimism → political preferences → cultural ecosystems"
+        },
+        {
+          "name": "Geographic Political Clustering",
+          "description": "Regional decline → concentrated anti-system voting → place-based political realignment"
+        },
+        {
+          "name": "Spatial Segregation Effect",
+          "description": "Inequality → spatial distance → invisible poverty → meritocratic belief maintenance"
+        }
+      ],
+      "core_argument": "Trade shocks create geographically concentrated, persistent regional decline that drives anti-system voting more strongly than individual-level economic factors, with housing markets structuring political geography through local optimism/pessimism cycles.",
+      "see_also": [
+        "01",
+        "04",
+        "09",
+        "11"
+      ]
+    },
+    {
+      "id": "04",
+      "filename": "docs/theory/04_precarity_skill_specificity.md",
+      "title": "Precarity, Skill Specificity & Occupational Risk",
+      "h1": "Precarity, Skill Specificity & Occupational Risk",
+      "key_concepts": [
+        "occupational unemployment risk",
+        "skill transferability",
+        "skill specificity",
+        "precarity dimensions",
+        "financial insecurity",
+        "work-related precarity",
+        "anxious meritocrats",
+        "middle-class vulnerability"
+      ],
+      "key_authors": [
+        "Bergman (2022)",
+        "Zhrnov (2024)",
+        "Gingrich (2019)",
+        "Kurer (2020)",
+        "Baldwin (2016)",
+        "Derndorfer (2025)"
+      ],
+      "mechanisms": [
+        {
+          "name": "Skill Specificity Continuum",
+          "description": "Specific skills → higher unemployment risk → greater vulnerability"
+        },
+        {
+          "name": "Age-Differentiated Risk",
+          "description": "Older workers: early retirement critical; younger workers: job opportunities critical"
+        },
+        {
+          "name": "Multidimensional Precarity",
+          "description": "Work conditions + tenure security + financial stability → combined populist effect"
+        },
+        {
+          "name": "Anxious Meritocrat Effect",
+          "description": "Meritocratic beliefs + economic anxiety → protectionist appeals"
+        },
+        {
+          "name": "Downward Mobility Fear",
+          "description": "Loss aversion → threat of falling in social ladder → political mobilization"
+        }
+      ],
+      "core_argument": "Economic vulnerability varies continuously along skill specificity and occupational risk, with precarity showing distinct dimensions (work, tenure, financial) that affect political attitudes differently, and age cohorts requiring differentiated policy responses.",
+      "see_also": [
+        "02",
+        "03",
+        "08",
+        "06"
+      ]
+    },
+    {
+      "id": "05",
+      "filename": "docs/theory/05_policy_feedback_welfare_institutions.md",
+      "title": "Policy Feedback Effects & Welfare Institutions",
+      "h1": "Policy Feedback Effects & Welfare Institutions",
+      "key_concepts": [
+        "policy feedback effects",
+        "self-reinforcing vs. self-undermining",
+        "resource effects",
+        "interpretive effects",
+        "institutional effects",
+        "downward spirals",
+        "upward spirals",
+        "institutional buffering"
+      ],
+      "key_authors": [
+        "Pitts & Winter (2024)",
+        "Pierson (1994, 2001)",
+        "Mettler (2002)",
+        "Wagner (2022, 2023)",
+        "Bergman (2023)",
+        "Haugsgjerd & Kumlin (2020)",
+        "Foster & Frieden",
+        "Fetzer (2019)",
+        "Vlandas & Halikiopoulou (2022)"
+      ],
+      "mechanisms": [
+        {
+          "name": "Positive Inclusion Effects",
+          "description": "Policies → inclusive experiences → broader political participation"
+        },
+        {
+          "name": "Downward Spiral of Solidarity",
+          "description": "Welfare cuts + conditionality → exclusion fears → harsh judgment of 'undeserving'"
+        },
+        {
+          "name": "Upward Spiral of Solidarity",
+          "description": "Social investment → inclusion → inclusive attitudes → universalistic solidarity"
+        },
+        {
+          "name": "Self-Undermining Feedback",
+          "description": "Intervention favoring out-groups → populist backlash → shift to radical right"
+        },
+        {
+          "name": "Trust-Performance Loop",
+          "description": "Poor performance → trust loss → worse evaluations → recursive decline"
+        }
+      ],
+      "core_argument": "Welfare policies shape political attitudes through self-reinforcing or self-undermining feedback loops; policies create experiences that teach norms about deservingness, with enabling programs fostering upward spirals of solidarity while conditionality creates downward spirals.",
+      "see_also": [
+        "06",
+        "07",
+        "11"
+      ]
+    },
+    {
+      "id": "06",
+      "filename": "docs/theory/06_almps_active_labour_market_policy.md",
+      "title": "Active Labor Market Policies (ALMPs)",
+      "h1": "Active Labor Market Policies (ALMPs)",
+      "key_concepts": [
+        "ALMP types",
+        "upskilling",
+        "employment assistance",
+        "occupational maintenance",
+        "incentive reinforcement",
+        "implementation quality",
+        "enabling vs. punitive ALMPs",
+        "dignity in implementation"
+      ],
+      "key_authors": [
+        "Bonoli (2013)",
+        "Malo (2020)",
+        "Nicaise (2021)",
+        "Heins (2023)",
+        "Gingrich (2019)"
+      ],
+      "mechanisms": [
+        {
+          "name": "ALMP Typology Effect",
+          "description": "Human capital investment + pro-market orientation → four distinct policy types"
+        },
+        {
+          "name": "Implementation Quality",
+          "description": "Funding stability + administrative capacity + tripartite dialogue → effectiveness"
+        },
+        {
+          "name": "Enabling vs. Punitive",
+          "description": "Enabling ALMPs → wellbeing gains; Punitive ALMPs → stigma and self-blame"
+        },
+        {
+          "name": "Historical ALMP Shift",
+          "description": "Post-war upskilling → 1970s-90s alternatives → 1990s+ weak investment focus"
+        },
+        {
+          "name": "Employment Quality Effect",
+          "description": "Wage subsidies/self-employment → wellbeing enhancement; Training → modest gains"
+        }
+      ],
+      "core_argument": "ALMP effectiveness depends on type and implementation quality, with enabling programs emphasizing human capital development producing wellbeing gains while punitive programs create stigma; implementation dignity and choice are crucial.",
+      "see_also": [
+        "05",
+        "07",
+        "11",
+        "14"
+      ]
+    },
+    {
+      "id": "07",
+      "filename": "docs/theory/07_welfare_design_trust_legitimacy.md",
+      "title": "Welfare Design, Trust & Legitimacy",
+      "h1": "Welfare Design, Trust & Legitimacy",
+      "key_concepts": [
+        "procedural fairness",
+        "visibility and salience",
+        "deservingness criteria",
+        "CARIN framework",
+        "welfare chauvinism",
+        "moral communication",
+        "institutional trust",
+        "legitimacy"
+      ],
+      "key_authors": [
+        "De Blok & Kumlin (2022)",
+        "Van Oorschot & Laenen (2023)",
+        "Bergman (2023)",
+        "Busemeyer et al. (2023)",
+        "Guery et al. (2023)"
+      ],
+      "mechanisms": [
+        {
+          "name": "Procedural Fairness for Losers",
+          "description": "Fair procedures matter more for dissatisfied citizens than for satisfied"
+        },
+        {
+          "name": "Visibility-Priming Effect",
+          "description": "Visible welfare policies → populist prime → increased opposition"
+        },
+        {
+          "name": "CARIN Deservingness",
+          "description": "Control + Attitude + Reciprocity + Identity + Need → deservingness judgment"
+        },
+        {
+          "name": "Welfare Chauvinism",
+          "description": "In-group preference + reciprocity criterion → citizen-only benefit access"
+        },
+        {
+          "name": "Moral Communication",
+          "description": "Respectful processes → human worth; Punitive processes → moral judgment of unworthiness"
+        }
+      ],
+      "core_argument": "Welfare legitimacy depends on procedural fairness (especially for dissatisfied citizens), alignment with deservingness criteria, and moral messages conveyed through implementation; design communicates social worth independent of benefit levels.",
+      "see_also": [
+        "05",
+        "06",
+        "10",
+        "11"
+      ]
+    },
+    {
+      "id": "08",
+      "filename": "docs/theory/08_status_recognition_theory.md",
+      "title": "Status, Recognition & Relative Position",
+      "h1": "Status, Recognition & Relative Position",
+      "key_concepts": [
+        "status anxiety",
+        "relative position",
+        "recognition over redistribution",
+        "economic status as zero-sum",
+        "status discordance",
+        "nostalgic deprivation",
+        "positional income change",
+        "status loss"
+      ],
+      "key_authors": [
+        "Kurer (2020)",
+        "Ciccolini (2025)",
+        "Gidron & Hall (2017, 2018)",
+        "Kurer & van Staalduinen (2022)",
+        "Gest et al. (2017)"
+      ],
+      "mechanisms": [
+        {
+          "name": "Status as Zero-Sum Game",
+          "description": "Relative position matters; gains for some = losses for others"
+        },
+        {
+          "name": "Recognition Over Redistribution",
+          "description": "Status-anxious voters demand recognition/dignity rather than material compensation"
+        },
+        {
+          "name": "Status Discordance Effect",
+          "description": "Gap between expected/actual status → political dissatisfaction → radical voting"
+        },
+        {
+          "name": "Status vs. Material Distinction",
+          "description": "Status loss drives PRR support independent of material circumstances"
+        },
+        {
+          "name": "Gender Differences",
+          "description": "Status effects much weaker for women due to emancipatory experiences"
+        },
+        {
+          "name": "Nostalgic Deprivation",
+          "description": "Perceived status loss vs. past → radical right support"
+        }
+      ],
+      "core_argument": "Economic status as relative position drives political behavior independently of material hardship; status-anxious voters demand recognition and dignity rather than redistribution, seeking to restore idealized past status.",
+      "see_also": [
+        "09",
+        "10",
+        "12",
+        "13"
+      ]
+    },
+    {
+      "id": "09",
+      "filename": "docs/theory/09_ontological_security_psychology.md",
+      "title": "Ontological Security, Existential Anxiety & Psychology",
+      "h1": "Ontological Security, Existential Anxiety & Psychology",
+      "key_concepts": [
+        "ontological security",
+        "existential anxiety",
+        "identity stability",
+        "being and becoming",
+        "globalization as threat",
+        "fantasy narratives",
+        "life dissatisfaction",
+        "loneliness and political vulnerability"
+      ],
+      "key_authors": [
+        "Browning (2018)",
+        "Metten & Bayerlein (2023)",
+        "Lindholm & Rapeli (2023)",
+        "Rhodes-Purdy et al. (2021)",
+        "Auer & Freitag (2023)",
+        "Langenkamp & Bienstman (2022)"
+      ],
+      "mechanisms": [
+        {
+          "name": "Ontological Insecurity Threat",
+          "description": "Rapid change → inability to maintain stable identity → existential anxiety"
+        },
+        {
+          "name": "Anxiety as Political Mobilizer",
+          "description": "Existential anxiety independent of attitudes → populist vulnerability"
+        },
+        {
+          "name": "Globalization Securitization",
+          "description": "Populists frame globalization as existential threat → mobilize anxiety"
+        },
+        {
+          "name": "Fantasy Fulfillment",
+          "description": "Impossible promises → emotional mobilization → blame redirection when unmet"
+        },
+        {
+          "name": "Anger as Political Emotion",
+          "description": "Anger → approach behavior + punishment of blamed groups"
+        },
+        {
+          "name": "Life Dissatisfaction Effect",
+          "description": "General life dissatisfaction → populist attitudes (stronger than economic concerns)"
+        },
+        {
+          "name": "Loneliness Vulnerability",
+          "description": "Loneliness → desire for community → populist mobilization"
+        }
+      ],
+      "core_argument": "Rapid economic and social change threatens ontological security—the stable sense of self—creating existential anxiety that populist fantasies exploit by offering impossible promises of restoration and clarity.",
+      "see_also": [
+        "08",
+        "11",
+        "12",
+        "15"
+      ]
+    },
+    {
+      "id": "10",
+      "filename": "docs/theory/10_moral_economy_deservingness.md",
+      "title": "Moral Economy, Deservingness & Welfare Chauvinism",
+      "h1": "Moral Economy, Deservingness & Welfare Chauvinism",
+      "key_concepts": [
+        "CARIN criteria",
+        "producerism",
+        "moral economy",
+        "fairness and reciprocity",
+        "welfare chauvinism",
+        "othering",
+        "last-place aversion",
+        "kicking down"
+      ],
+      "key_authors": [
+        "Van Oorschot & Laenen (2023)",
+        "Guery et al. (2023)",
+        "Patrick (2016)",
+        "Busemeyer et al. (2023)",
+        "Wagner (2022)",
+        "Van Hootegem (2023)",
+        "Enke et al. (2023)",
+        "Enke (2020)",
+        "Häusermann et al. (2023)"
+      ],
+      "mechanisms": [
+        {
+          "name": "CARIN Deservingness Framework",
+          "description": "Control + Attitude + Reciprocity + Identity + Need → welfare deservingness judgment"
+        },
+        {
+          "name": "Producerism Moral Divide",
+          "description": "Productive workers vs. parasitic strata above/below → welfare attitude formation"
+        },
+        {
+          "name": "Welfare Chauvinism",
+          "description": "Status anxiety + reciprocity criterion → in-group welfare preference"
+        },
+        {
+          "name": "Defensive Othering",
+          "description": "Welfare stigma → beneficiaries distance from 'less deserving' → reinforces negative narrative"
+        },
+        {
+          "name": "Last-Place Aversion",
+          "description": "Avoidance of bottom status → support for hierarchies toward lower groups"
+        },
+        {
+          "name": "Kicking Down Mechanism",
+          "description": "Exclusion experience → justify own deservingness by blaming lower groups"
+        }
+      ],
+      "core_argument": "Moral frameworks (particularly producerism) and deservingness criteria shape welfare attitudes through moral boundary-drawing; status anxiety drives 'othering' where vulnerable populations distance themselves from even lower-status groups.",
+      "see_also": [
+        "07",
+        "08",
+        "12",
+        "13"
+      ]
+    },
+    {
+      "id": "11",
+      "filename": "docs/theory/11_social_investment_paradigm.md",
+      "title": "Social Investment Paradigm",
+      "h1": "Social Investment Paradigm",
+      "key_concepts": [
+        "capabilities approach",
+        "human capital development",
+        "proactive policy",
+        "predistribution",
+        "social investment",
+        "dignity and agency",
+        "quality employment",
+        "upward spirals of solidarity"
+      ],
+      "key_authors": [
+        "Nicaise (2021)",
+        "Sen (capability approach)",
+        "Hemerijck et al. (2023)",
+        "Malo (2020)",
+        "Busemeyer & Garritzmann (2017)",
+        "Kuziemko et al. (2023)"
+      ],
+      "mechanisms": [
+        {
+          "name": "Capabilities Enhancement",
+          "description": "Freedom + agency expansion → addresses both material needs and status concerns"
+        },
+        {
+          "name": "Proactive vs. Reactive",
+          "description": "Prevention of problems preferred over compensation for realized losses"
+        },
+        {
+          "name": "Skill Investment Preference",
+          "description": "Voters prefer skill investment as insurance vs. post-hoc compensation"
+        },
+        {
+          "name": "Predistribution Preference",
+          "description": "Less-educated prefer jobs/wages; more-educated prefer redistribution"
+        },
+        {
+          "name": "Enabling ALMP Effects",
+          "description": "Human capital development → wellbeing gains → inclusive solidarity"
+        },
+        {
+          "name": "Dignity in Implementation",
+          "description": "Respectful, autonomous programs → positive identity effects independent of benefits"
+        },
+        {
+          "name": "Upward Spiral Creation",
+          "description": "Social investment → inclusion → inclusive attitudes toward others"
+        }
+      ],
+      "core_argument": "Social investment combining human capital development, capabilities enhancement, and dignity-affirming implementation can simultaneously address material needs, status concerns, and political legitimacy by creating upward spirals of inclusive solidarity.",
+      "see_also": [
+        "05",
+        "06",
+        "07",
+        "13"
+      ]
+    },
+    {
+      "id": "12",
+      "filename": "docs/theory/12_populism_welfare_chauvinism.md",
+      "title": "Populism, Welfare Chauvinism & Right-Wing Mobilization",
+      "h1": "Populism, Welfare Chauvinism & Right-Wing Mobilization",
+      "key_concepts": [
+        "right-wing populism",
+        "status remedies",
+        "nostalgic restoration",
+        "fantasy narratives",
+        "securitization",
+        "in-group/out-group",
+        "group-based grievances",
+        "identity switching"
+      ],
+      "key_authors": [
+        "Kurer (2020)",
+        "Kurer & Palier (2019)",
+        "Browning (2018)",
+        "Metten & Bayerlein (2023)",
+        "Hameleers et al. (2019)",
+        "Bonomi et al. (2021)"
+      ],
+      "mechanisms": [
+        {
+          "name": "Status Remedy Appeal",
+          "description": "Populists offer restoration of idealized past status rather than material relief"
+        },
+        {
+          "name": "Fantasy Mobilization",
+          "description": "Impossible promises → emotional arousal → channeling desire for control"
+        },
+        {
+          "name": "Securitization of Globalization",
+          "description": "Framing globalization as existential threat → justifying radical action"
+        },
+        {
+          "name": "In-Group/Out-Group Construction",
+          "description": "Blameless ordinary people vs. culpable elites/threatening others"
+        },
+        {
+          "name": "Group-Based Grievance Amplification",
+          "description": "Individual losses → political when experienced as group loss"
+        },
+        {
+          "name": "Sociotropic Status Decline",
+          "description": "Community decline → individual status fears even without personal loss"
+        },
+        {
+          "name": "Relative Outgroup Gains Resentment",
+          "description": "Perceptions of outgroup gains → ingroup resentment → radical voting"
+        },
+        {
+          "name": "Identity Switching",
+          "description": "Economic shock + cultural contestation → class → cultural identity switch"
+        },
+        {
+          "name": "Misattribution Effect",
+          "description": "Automation → blamed on immigration/trade (cognitively available scapegoats)"
+        }
+      ],
+      "core_argument": "Populist parties mobilize status-anxious and existentially insecure voters through fantasies of restoration and scapegoating, exploiting misattribution of structural problems to visible outgroups while offering impossible promises that deepen alienation when unfulfilled.",
+      "see_also": [
+        "08",
+        "09",
+        "10",
+        "13"
+      ]
+    },
+    {
+      "id": "13",
+      "filename": "docs/theory/13_dual_pathway_synthesis.md",
+      "title": "Dual Pathway Synthesis & The Trilemma",
+      "h1": "Dual Pathway Synthesis & The Trilemma",
+      "key_concepts": [
+        "four-pathway model",
+        "material pathway",
+        "status pathway",
+        "temporal pathway",
+        "institutional pathway",
+        "welfare-status-democracy trilemma",
+        "material adequacy",
+        "status recognition",
+        "political sustainability"
+      ],
+      "key_authors": [
+        "Kurer (2020)",
+        "Im & Komp-Leukkunen (2021)",
+        "Wagner (2023)",
+        "Zhrnov (2024)",
+        "Vlandas & Halikiopoulou (2022)",
+        "Gidron & Hall (2018)"
+      ],
+      "mechanisms": [
+        {
+          "name": "Material Pathway",
+          "description": "Economic hardship → demand for redistributive policies"
+        },
+        {
+          "name": "Status Pathway",
+          "description": "Status threats → demand for status-affirming policies"
+        },
+        {
+          "name": "Temporal Pathway",
+          "description": "Anticipated hardship (fear) vs. experienced hardship → different responses"
+        },
+        {
+          "name": "Institutional Pathway",
+          "description": "Welfare design → deservingness perceptions → solidarity norms → political attitudes"
+        },
+        {
+          "name": "Competing Policy Demands",
+          "description": "Material vs. status pathways → different (sometimes conflicting) demands"
+        },
+        {
+          "name": "Welfare-Status-Democracy Trilemma",
+          "description": "Material adequacy + Status recognition + Political sustainability → no traditional solution"
+        },
+        {
+          "name": "Breaking Recursive Cycles",
+          "description": "Policy design aligning with beliefs/experiences → reduced polarization"
+        },
+        {
+          "name": "Social Investment Solution",
+          "description": "SI addresses all three trilemma dimensions simultaneously"
+        }
+      ],
+      "core_argument": "Economic vulnerability operates through four interconnected pathways (material, status, temporal, institutional) that create a trilemma: traditional policies cannot simultaneously satisfy material needs, status concerns, and political legitimacy; social investment offers potential resolution.",
+      "see_also": [
+        "02",
+        "08",
+        "05",
+        "11"
+      ]
+    },
+    {
+      "id": "15",
+      "filename": "docs/theory/15_cognitive_frames_belief_systems.md",
+      "title": "Cognitive Frames, Belief Systems & Political Realignment",
+      "h1": "Cognitive Frames, Belief Systems & Political Realignment",
+      "key_concepts": [
+        "misattribution theory",
+        "identity switching",
+        "social insulation",
+        "meritocratic belief",
+        "anxious meritocrats",
+        "universalism vs. particularism",
+        "affective polarization",
+        "representation gaps",
+        "cognitive availability",
+        "cultural reading of economic phenomena"
+      ],
+      "key_authors": [
+        "Gallego & Kurer (2022)",
+        "Wu (2022)",
+        "Bonomi et al. (2021)",
+        "Mijs (2021)",
+        "Ballard-Rosa et al. (2024)",
+        "Enke et al. (2023)",
+        "Häusermann et al. (2023)",
+        "Campos & Federico (2025)",
+        "Ares & Häusermann (2023)",
+        "Ciccolini (2024, 2025)",
+        "Baccini (2024)",
+        "Huber (2023)"
+      ],
+      "mechanisms": [
+        {
+          "name": "Misattribution Mechanism",
+          "description": "Automation anxiety → blamed on immigration/trade via cognitive availability, political entrepreneurship, and psychological gratification"
+        },
+        {
+          "name": "Identity Switching",
+          "description": "Economic shock + cultural contestation → switch from class to cultural identity → reduced redistribution demand, increased cultural politics"
+        },
+        {
+          "name": "Social Insulation Loop",
+          "description": "Inequality → spatial segregation → limited cross-class exposure → meritocratic beliefs → inequality legitimation → more inequality"
+        },
+        {
+          "name": "Anxious Meritocrat Effect",
+          "description": "Meritocratic beliefs + economic anxiety → trade framed as 'unfair' rule-breaking → protectionist support"
+        },
+        {
+          "name": "Universalism-Particularism Cleavage",
+          "description": "Moral orientation (equal treatment vs. in-group loyalty) → organizes inequality attitudes and welfare preferences across ideological spectrum"
+        },
+        {
+          "name": "Affective Polarization",
+          "description": "Partisan identity moralization → out-party aversion → democratic attitude erosion (via othering and moralization dimensions)"
+        },
+        {
+          "name": "Representation Gap Effect",
+          "description": "Policy discontent + issue salience → populist attitudes; class gradient strongest for pensions and unemployment"
+        },
+        {
+          "name": "Policy-as-Signal",
+          "description": "Fiscal cutbacks signal government priority incompatibility → vulnerable voter accountability withdrawal"
+        }
+      ],
+      "core_argument": "Political responses to economic vulnerability are cognitively mediated by misattribution (blaming automation on immigration), identity switching (class to cultural identity), and moral belief systems (meritocracy, universalism/particularism), while spatial segregation legitimizes inequality by limiting its visibility; representation gaps trigger populist attitudes when salient policies are seen as unaddressed.",
+      "see_also": [
+        "02",
+        "04",
+        "08",
+        "10",
+        "12",
+        "13"
+      ]
+    },
+    {
+      "id": "14",
+      "filename": "docs/theory/14_mechanisms_catalog.md",
+      "title": "Mechanisms Catalog",
+      "h1": "Mechanisms Catalog",
+      "key_concepts": [
+        "causal mechanisms",
+        "economic vulnerability",
+        "policy feedback",
+        "status mechanisms",
+        "identity mechanisms",
+        "psychological mechanisms",
+        "representation mechanisms",
+        "policy remedy mechanisms"
+      ],
+      "key_authors": [
+        "Multiple (see individual mechanism citations)"
+      ],
+      "mechanisms": [
+        {
+          "name": "Economic Grievance Activation",
+          "description": "Economic hardship → trigger for political responses"
+        },
+        {
+          "name": "Policy Feedback (Self-Reinforcing)",
+          "description": "Policies create supportive constituencies"
+        },
+        {
+          "name": "Policy Feedback (Self-Undermining)",
+          "description": "Policies generate opposition to themselves"
+        },
+        {
+          "name": "Status as Zero-Sum",
+          "description": "Relative gains/losses drive political behavior"
+        },
+        {
+          "name": "Identity Switching",
+          "description": "Class → cultural identity under economic shock + cultural contestation"
+        },
+        {
+          "name": "Ontological Insecurity",
+          "description": "Rapid change threatens stable identity → anxiety"
+        },
+        {
+          "name": "Procedural Fairness",
+          "description": "Fair processes matter more for dissatisfied citizens"
+        },
+        {
+          "name": "ALMP Type Effects",
+          "description": "Enabling ALMPs → wellbeing gains; Punitive → stigma"
+        }
+      ],
+      "core_argument": "Comprehensive catalog of causal mechanisms linking economic vulnerability, welfare institutions, and political behavior, organized by category for systematic analysis.",
+      "see_also": [
+        "All modules"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "date_created": "2026-03-13",
+    "total_modules": 15,
+    "source_files": [
+      "/sessions/youthful-funny-archimedes/mnt/notes/theory/theory_knowledge_base.md",
+      "/sessions/youthful-funny-archimedes/mnt/notes/theory/Theory Landscape .md",
+      "/sessions/youthful-funny-archimedes/mnt/notes/theory/All Mechanisms 1fb7844a449d809281cbf590a1006b36.md"
+    ],
+    "module_structure": {
+      "I. Vulnerability Foundations": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "II. Institutions & Mechanisms": [
+        "05",
+        "06",
+        "07"
+      ],
+      "III. Psychological & Social": [
+        "08",
+        "09",
+        "10"
+      ],
+      "IV. Solutions & Synthesis": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "V. Cognitive & Political Frames": [
+        "15"
+      ]
+    },
+    "key_theoretical_frameworks": [
+      "Embedded Liberalism (Ruggie, 1982)",
+      "Policy Feedback Effects (Pierson, 1994, 2001; Mettler, 2002)",
+      "Dual Pathway Model (Kurer, 2020)",
+      "CARIN Deservingness Framework (Van Oorschot, 2000)",
+      "Capabilities Approach (Sen, 1999)",
+      "Ontological Security (Browning, 2018)",
+      "Identity Switching (Bonomi et al., 2021)",
+      "Social Investment Paradigm (Nicaise, 2021; Hemerijck et al., 2023)"
+    ],
+    "total_literature_notes": 97,
+    "literature_added": "2026-03-14",
+    "literature_sections": {
+      "": 62,
+      "Declining Middl": 1,
+      "Populism & Political Behavior": 8,
+      "Populism": 1,
+      "Welfare & Deservingness": 2,
+      "Declining Middle & Subjective Prospects": 2,
+      "Welfare & Des": 1,
+      "Trade Adjustment": 2,
+      "Geography & Objective Prospects": 4,
+      "Policy Response": 4,
+      "Morals & Legitimacy & Values": 1,
+      "Welfare & Populism": 5,
+      "Insecurity": 1,
+      "Kicking Down & Othering": 2,
+      "Welfare &": 1
+    },
+    "literature_module_coverage": {
+      "07": 23,
+      "12": 67,
+      "06": 14,
+      "10": 12,
+      "14": 37,
+      "11": 13,
+      "01": 9,
+      "02": 27,
+      "08": 21,
+      "03": 13,
+      "05": 7,
+      "15": 6,
+      "09": 1,
+      "04": 2,
+      "13": 3
+    }
+  },
+  "usage_guide": {
+    "for_material_vulnerability": "Start with 01, 02, 03, 04 (Vulnerability modules)",
+    "for_institutional_design": "Use 05, 06, 07 (Policy Feedback, ALMPs, Welfare Design)",
+    "for_status_concerns": "Use 08, 10, 12 (Status, Moral Economy, Populism)",
+    "for_psychological_dimensions": "Use 09, 12 (Ontological Security, Populism)",
+    "for_comprehensive_understanding": "Read 13 (Dual Pathway Synthesis) then refer to specific modules",
+    "for_mechanism_analysis": "Use 14 (Mechanisms Catalog) for systematic breakdown"
+  },
+  "literature": [
+    {
+      "slug": "2021_van_hootegem_koen_abts_and_bart_meuleman",
+      "title": "(2021) Van Hootegem, Koen Abts, and Bart Meuleman   \"The welfare state criticism of the losers of modernization\" ) This finding challenges assumptions that economic insecurity directly drives politica",
+      "authors": "See file",
+      "year": "2021",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "12"
+      ],
+      "key_concepts": [
+        "Economic criticism",
+        "Moral criticism",
+        "Social criticism",
+        "Economic status insecurity",
+        "Group relative deprivation",
+        "Social distrust"
+      ],
+      "file": "docs/literature/2021_van_hootegem_koen_abts_and_bart_meuleman.md"
+    },
+    {
+      "slug": "2024_van_hootegem_rossetti_abts_and_meuleman",
+      "title": "(2024) Van Hootegem, Rossetti, Abts, and Meuleman \"The Ideological Roots of the Activation Paradigm: How Justice Preferences and Unemployment Attributions Shape Public Support for Demanding Activation",
+      "authors": "See file",
+      "year": "2024",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "06",
+        "07",
+        "10",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Enabling ALMPs",
+        "Demanding ALMPs",
+        "Equality",
+        "Equity",
+        "Self-interest theory",
+        "Political ideology"
+      ],
+      "file": "docs/literature/2024_van_hootegem_rossetti_abts_and_meuleman.md"
+    },
+    {
+      "slug": "2025_van_hootegem_comprehensive_analysis_of_two",
+      "title": "(2025) Van Hootegem Comprehensive Analysis of \"Two faces of activation attitudes: Explaining citizens' diverging views on demanding versus enabling activation policies\" \"That certain social strata sho",
+      "authors": "See file",
+      "year": "2025",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "06",
+        "07",
+        "10",
+        "11",
+        "12"
+      ],
+      "key_concepts": [
+        "Enabling activation",
+        "Demanding activation",
+        "Self-interest theory",
+        "Ideological dispositions",
+        "Left-right political orientation",
+        "Social justice principles"
+      ],
+      "file": "docs/literature/2025_van_hootegem_comprehensive_analysis_of_two.md"
+    },
+    {
+      "slug": "busemeyer_garritzmann_2019_compensation_or_so",
+      "title": "(Busemeyer & Garritzmann, 2019) \"Compensation or Social Investment? Revisiting the Link between Globalisation and Popular Demand for the Welfare State\"The central thesis is that globalization increase",
+      "authors": "Busemeyer & Garritzmann",
+      "year": "2019",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "01",
+        "06",
+        "11"
+      ],
+      "key_concepts": [
+        "Detailed Explanation:",
+        "Direct Quotes:",
+        "Education spending",
+        "Unemployment benefits",
+        "Primary Theories Used",
+        "1. The Compensation Thesis"
+      ],
+      "file": "docs/literature/busemeyer_garritzmann_2019_compensation_or_so.md"
+    },
+    {
+      "slug": "gingrich_2019did_state_responses_to_automation",
+      "title": "(Gingrich, 2019)Did State Responses to Automation Matter for Voters? challenges conventional wisdom about compensation policies. Rather than simply examining if such policies maintain electoral suppor",
+      "authors": "Gingrich",
+      "year": "2019",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "01",
+        "02",
+        "08",
+        "12"
+      ],
+      "key_concepts": [
+        "Early Retirement Benefits",
+        "Public Service Expansion",
+        "Labor Market Regulation",
+        "Anglo-Saxon approach",
+        "Continental European approach",
+        "Nordic approach"
+      ],
+      "file": "docs/literature/gingrich_2019did_state_responses_to_automation.md"
+    },
+    {
+      "slug": "kurer_van_staalduinen_2022_disappointed_expec",
+      "title": "(Kurer & van Staalduinen, 2022) Disappointed Expectations: Downward Mobility and Electoral Change\"\"We propose that the discrepancies resulting from declining occupational mobility affect political beh",
+      "authors": "Kurer & van Staalduinen",
+      "year": "2022",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "08"
+      ],
+      "key_concepts": [
+        "Data Source",
+        "Sample",
+        "Predictive Methodology",
+        "Status Measurement",
+        "Calculation of Status Discordance",
+        "Variables included in model"
+      ],
+      "file": "docs/literature/kurer_van_staalduinen_2022_disappointed_expec.md"
+    },
+    {
+      "slug": "kurer_2020_the_declining_middle_occupational_ch",
+      "title": "(Kurer, 2020) The Declining Middle: Occupational Change, Social Status, and the Populist Right (Kurer, 2020) Kurer argues that it is not actual economic hardship but rather perceived relative decline ",
+      "authors": "Kurer",
+      "year": "2020",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "08",
+        "12"
+      ],
+      "key_concepts": [
+        "Survivors",
+        "Upgraders",
+        "Downgraders",
+        "Dropouts",
+        "Economic disadvantage",
+        "Social hierarchy shifts"
+      ],
+      "file": "docs/literature/kurer_2020_the_declining_middle_occupational_ch.md"
+    },
+    {
+      "slug": "rickard_2023_electoral_consequences_of_compensa",
+      "title": "(Rickard, 2023) Electoral Consequences of Compensation for Globalization This paper examines how targeted compensation for workers displaced by globalization affects voting behavior, specifically supp",
+      "authors": "Rickard",
+      "year": "2023",
+      "section": "Declining Middl",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "01",
+        "03",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Dependent Variable",
+        "Independent Variable (Treatment)",
+        "Control Variables",
+        "Sample Selection",
+        "Causal Identification",
+        "Multi-level Analysis"
+      ],
+      "file": "docs/literature/rickard_2023_electoral_consequences_of_compensa.md"
+    },
+    {
+      "slug": "2016_patrick_living_with_and_responding_to_the",
+      "title": "2016 - Patrick \"Living with and responding to the 'scrounger' narrative in the UK\" how out-of-work benefit claimants in the UK experience and respond to the stigmatizing \"scrounger\" narrative that por",
+      "authors": "See file",
+      "year": "2016",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "10",
+        "12"
+      ],
+      "key_concepts": [
+        "Explanation and Application:",
+        "Historical Context and Scholarly Landscape:",
+        "Relevance to Your Research:",
+        "Relevance",
+        "Welfare system design matters",
+        "Administrative processes affect political responses"
+      ],
+      "file": "docs/literature/2016_patrick_living_with_and_responding_to_the.md"
+    },
+    {
+      "slug": "2019_hameleers_reinemann_schmuck_and_fawzi_pa",
+      "title": "2019 - Hameleers, Reinemann, Schmuck, and Fawzi pA Comprehensive Analysis of \"The Persuasiveness of Populist Communication\"Integrating social identity theory, blame attribution, and stereotyping, the ",
+      "authors": "Hameleers",
+      "year": "2019",
+      "section": "Populism & Political Behavior",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Perceptions of relative deprivation",
+        "In-group attachment",
+        "Economic crisis situation",
+        "Salience of immigration issues",
+        "Familiarity with populist discourse",
+        "Trust levels in institutions"
+      ],
+      "file": "docs/literature/2019_hameleers_reinemann_schmuck_and_fawzi_pa.md"
+    },
+    {
+      "slug": "202_de_ruyter_beyond_remain_vs_leave_understandi",
+      "title": "202 De Ruyter - Beyond remain vs. leave: understanding changing voter perceptions and attitudes towards Populism – evidence from Scotland and the West Midlands\" This paper explores the link between po",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "03"
+      ],
+      "key_concepts": [
+        "Detailed Explanation:",
+        "Direct Quotes:",
+        "Interpretation of Findings:",
+        "Governance arrangements matter for populism:",
+        "Shared perceptions across political divides:",
+        "Appetite for meaningful devolution in England:"
+      ],
+      "file": "docs/literature/202_de_ruyter_beyond_remain_vs_leave_understandi.md"
+    },
+    {
+      "slug": "2022_wagner_kicking_down_on_the_ladder_of_dese",
+      "title": "2022 - Wagner - Kicking down on the ladder of deservingness: has welfare reform led to welfare chauvinism?\" by r. The paper examines how welfare reforms since the 1990s, which have increasingly emphas",
+      "authors": "Wagner",
+      "year": "2022",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "05",
+        "07",
+        "08",
+        "10",
+        "11",
+        "12"
+      ],
+      "key_concepts": [
+        "social investment approaches",
+        "welfare cuts",
+        "social investment policies",
+        "kicking down",
+        "exclusion experiences",
+        "deservingness norms"
+      ],
+      "file": "docs/literature/2022_wagner_kicking_down_on_the_ladder_of_dese.md"
+    },
+    {
+      "slug": "2022_zhang_no_rage_against_the_machines_threat",
+      "title": "2022 - Zhang , \"No Rage Against the Machines: Threat of Automation Does Not Change Policy Preferences\" workers oppose free trade and immigration more than automation, when it is automation that poses ",
+      "authors": "Zhang",
+      "year": "2022",
+      "section": "Populism",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "12"
+      ],
+      "key_concepts": [
+        "Workers may misattribute economic threats:",
+        "Relevance to your research",
+        "Theoretical Framework Analysis",
+        "Primary Theory 4: Information-Based Theory of Opinion Change"
+      ],
+      "file": "docs/literature/2022_zhang_no_rage_against_the_machines_threat.md"
+    },
+    {
+      "slug": "2022_deblok_losers_consent_in_changing_welfare",
+      "title": "2022 Deblok - \"Losers' Consent in Changing Welfare States\" citizens' experiences with \"street-level bureaucracy\" shape their broader trust in political institutions. It suggests that attention to fair",
+      "authors": "See file",
+      "year": "2022",
+      "section": "Welfare & Deservingness",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "11",
+        "14"
+      ],
+      "key_concepts": [
+        "Dependent Variable:",
+        "Independent Variables:",
+        "Control Variables:",
+        "Introduction and Problem Context",
+        "Procedural Fairness Theory",
+        "Mechanisms Linking Procedural Fairness to Political Trust"
+      ],
+      "file": "docs/literature/2022_deblok_losers_consent_in_changing_welfare.md"
+    },
+    {
+      "slug": "2022_article_by_matthias_enggist_and_michael_pingg",
+      "title": "2022 article by Matthias Enggist and Michael Pinggera f \"Radical Right Parties and Their Welfare State Stances – Not So Blurry After All?\"This finding has important implications for party competition,",
+      "authors": "See file",
+      "year": "2022",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "06",
+        "12",
+        "15"
+      ],
+      "key_concepts": [
+        "Party manifesto data",
+        "Survey data on voter perceptions",
+        "For party competition",
+        "For understanding voting behavior",
+        "For welfare policy-making",
+        "For understanding political dimensions of conflict"
+      ],
+      "file": "docs/literature/2022_article_by_matthias_enggist_and_michael_pingg.md"
+    },
+    {
+      "slug": "2022_social_dominance_green_hellwig_and_fieldho",
+      "title": "2022- SOCIAL DOMINANCE Green, Hellwig, and Fieldhouse  - \"Who Gets What: The Economy, Relative Gains and Brexit\" e authors argue that economic concerns significantly contribute to support for populism",
+      "authors": "SOCIAL DOMINANCE Green",
+      "year": "2022",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "08",
+        "10",
+        "12"
+      ],
+      "key_concepts": [
+        "Detailed Explanation",
+        "Direct Quotes",
+        "Operationalization and Application",
+        "Relevance to My Thesis",
+        "Detailed Description",
+        "Reproducibility and Adaptability"
+      ],
+      "file": "docs/literature/2022_social_dominance_green_hellwig_and_fieldho.md"
+    },
+    {
+      "slug": "2023_huber_explaining_populist_attitudes_the_i",
+      "title": "2023 (Huber) - Explaining Populist Attitudes: The Impact of Policy Discontent and Representation The authors argue that populist attitudes are not inherently tied to specific ideological positions but",
+      "authors": "See file",
+      "year": "2023",
+      "section": "Populism & Political Behavior",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "12"
+      ],
+      "key_concepts": [
+        "Detailed explanation:",
+        "Connection to your research:",
+        "Theoretical Framework Analysis",
+        "Primary Theory 3: Grievance-Based Populism Model"
+      ],
+      "file": "docs/literature/2023_huber_explaining_populist_attitudes_the_i.md"
+    },
+    {
+      "slug": "2023_häusermann_kurer_and_zollinger_aspiratio",
+      "title": "2023 - Häusermann, Kurer, and Zollinger, Aspiration Versus Apprehension: Economic Opportunities and Electoral Preference prospective evaluations of long-term economic opportunities—rather than current",
+      "authors": "Häusermann",
+      "year": "2023",
+      "section": "Declining Middle & Subjective Prospects",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "06",
+        "08",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Introduction",
+        "Opportunity Perceptions and Electoral Choice",
+        "Theoretical expectations",
+        "Figure 1.",
+        "prospective evaluations",
+        "aspirational voters"
+      ],
+      "file": "docs/literature/2023_häusermann_kurer_and_zollinger_aspiratio.md"
+    },
+    {
+      "slug": "2023_im_with_status_decline_in_sight_voters_tur",
+      "title": "2023 - Im. \"With status decline in sight, voters turn radical right\" Th the authors find that the expectation of status decline—rather than the experience of it—consistently predicts support for the r",
+      "authors": "Im With status decline in sight",
+      "year": "2023",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "08",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Targeting (lower) middle-class anxieties",
+        "Broadening social safety nets",
+        "Symbolic inclusion",
+        "Cross-national implications",
+        "2018 Survey (n=4,076):",
+        "2020 Survey (n=2,106):"
+      ],
+      "file": "docs/literature/2023_im_with_status_decline_in_sight_voters_tur.md"
+    },
+    {
+      "slug": "2023_kuziemko_compensate_the_losers_economic_pol",
+      "title": "2023 - Kuziemko  \"Compensate the Losers?\" Economic Policy and Partisan Realignment in the US (2023) analyze the differential policy preferences of less- versus more-educated Americans, finding that le",
+      "authors": "See file",
+      "year": "2023",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "11"
+      ],
+      "key_concepts": [
+        "Status and respect",
+        "Dignity of work",
+        "Trust in government",
+        "Motivation and Introduction",
+        "Social Psychological Mechanisms"
+      ],
+      "file": "docs/literature/2023_kuziemko_compensate_the_losers_economic_pol.md"
+    },
+    {
+      "slug": "2023_metten_and_bayerlein_existential_anxieties",
+      "title": "2023 - Metten and Bayerlein Existential anxieties and right-wing populism in Europe—why people unconcerned by globalisation vote against it Metten and Bayerlein argue that \"existential anxieties\" (the",
+      "authors": "See file",
+      "year": "2023",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "09",
+        "12"
+      ],
+      "key_concepts": [
+        "Detailed explanation:",
+        "Direct quotes:",
+        "Important associated literature:",
+        "How the authors apply the theory:",
+        "Relevance to your research:",
+        "Theoretical Framework Analysis"
+      ],
+      "file": "docs/literature/2023_metten_and_bayerlein_existential_anxieties.md"
+    },
+    {
+      "slug": "2023_monika_bauhr_and_nicholas_charron_its_the",
+      "title": "2023 - Monika Bauhr and Nicholas Charron \"It's the quality of government stupid\": Comprehensive Analysis of Welfare Insecurity and Far-Right Support in Frances, the authors provide compelling evidence",
+      "authors": "See file",
+      "year": "2023",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Welfare insecurity",
+        "Elite mistrust",
+        "Party agency",
+        "European Quality of Government Index (EQI)",
+        "Official French election results",
+        "Socioeconomic controls"
+      ],
+      "file": "docs/literature/2023_monika_bauhr_and_nicholas_charron_its_the.md"
+    },
+    {
+      "slug": "2023_paper_by_häusermann_et_al_economic_foundation",
+      "title": "2023 paper by Häusermann et al. \"Economic foundations of sociocultural politics: How new left and radical right voters think about inequality\" \"In contrast to what simple 'winner/loser' dichotomies su",
+      "authors": "See file",
+      "year": "2023",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "08",
+        "12",
+        "15"
+      ],
+      "key_concepts": [
+        "Explanation:",
+        "Direct quotes:",
+        "Application:",
+        "Historical context:",
+        "Relevance to your research:",
+        "Beyond economic self-interest:"
+      ],
+      "file": "docs/literature/2023_paper_by_häusermann_et_al_economic_foundation.md"
+    },
+    {
+      "slug": "2024_comprehensive_analysis_of_producerist_popul",
+      "title": "2024 - Comprehensive Analysis of \"Producerist Populist Attitudes and Electoral Support for Populism in the USA and Western Europe\" \"In producerism, wealth and social justice are not solely material en",
+      "authors": "See file",
+      "year": "2024",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "10",
+        "12"
+      ],
+      "key_concepts": [
+        "Theoretical Framework: Understanding Producerism and Populism",
+        "Core Definition of Producerism",
+        "Ideological Flexibility of Producerism",
+        "American Exceptionalism vs. Western Convergence",
+        "Theoretical Implications and Conclusions",
+        "Bridging Economic and Cultural Dimensions of Populism"
+      ],
+      "file": "docs/literature/2024_comprehensive_analysis_of_producerist_popul.md"
+    },
+    {
+      "slug": "2024_garritzmann_häusermann_pinggera_2024",
+      "title": "2024 - Garritzmann, Häusermann, & Pinggera (2024): Under What Conditions Do Citizens Support Future-Oriented Welfare Reforms? Public Opinion and Second Dimension Welfare Politics public support for we",
+      "authors": "Garritzmann",
+      "year": "2024",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "05",
+        "12",
+        "14",
+        "15"
+      ],
+      "key_concepts": [
+        "Second dimension ideology trumps self-interest",
+        "Policy design matters less than expected",
+        "Differential policy preferences by value orientation",
+        "Pensions vs. education reveal deeper divides",
+        "Cross-national implications for reform capacity",
+        "Limited scope for strategic policy design"
+      ],
+      "file": "docs/literature/2024_garritzmann_häusermann_pinggera_2024.md"
+    },
+    {
+      "slug": "2024_simon_bornschier_lukas_haffert_silja_häus",
+      "title": "2024 -  Simon Bornschier, Lukas Haffert, Silja Häusermann, Marco Steenbergen, and Delia Zollinger (Cleavage Formation in the Twenty-First Century: How Social Identities Shape Voting Behavior in Contex",
+      "authors": "Simon Bornschier",
+      "year": "2024",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12",
+        "15"
+      ],
+      "key_concepts": [
+        "Authors:",
+        "New Cleavage Emergence",
+        "Identity Mediation",
+        "Constrained Volatility",
+        "Knowledge Economy Foundations",
+        "Cross-National Consistency"
+      ],
+      "file": "docs/literature/2024_simon_bornschier_lukas_haffert_silja_häus.md"
+    },
+    {
+      "slug": "2024_categorizing_discourses_of_welfare_chauvinism",
+      "title": "2024 \"Categorizing Discourses of Welfare Chauvinism\" This paper by Leruth, Taylor-Gooby, and Györy introduces a categorization framework for welfare chauvinism - defined as \"the exclusion of non-citiz",
+      "authors": "See file",
+      "year": "2024",
+      "section": "Welfare & Des",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12"
+      ],
+      "key_concepts": [
+        "Definition",
+        "Example",
+        "Justification",
+        "Basis",
+        "Targeting",
+        "Historical context"
+      ],
+      "file": "docs/literature/2024_categorizing_discourses_of_welfare_chauvinism.md"
+    },
+    {
+      "slug": "2024_trade_as_villain_belief_in_the_american_drea",
+      "title": "2024-  Trade as Villain: Belief in the American Dream and Declining Support for Globalization\" by Cameron Ballard-Rosa, Judith L. Goldstein, and Nita Rudra.argue that individuals who strongly believe ",
+      "authors": "See file",
+      "year": "2024",
+      "section": "Trade Adjustment",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "07",
+        "12"
+      ],
+      "key_concepts": [
+        "3. Literature Review and Theoretical Framework",
+        "3.1 Material Interests and Trade Preferences",
+        "3.2 Sociotropic Effects",
+        "3.3 Identity and Ethnocentrism",
+        "3.4 Theoretical Gap: Elite Framing and Individual Values",
+        "3.5 Meritocratic Beliefs and Response to Messaging"
+      ],
+      "file": "docs/literature/2024_trade_as_villain_belief_in_the_american_drea.md"
+    },
+    {
+      "slug": "2025_a_new_measure_of_affective_polarization_by",
+      "title": "2025 - \"A New Measure of Affective Polarization\" by Campos and Federico, othering (perceiving fundamental differences between partisan groups), aversion (disliking and avoiding out-party members), and",
+      "authors": "See file",
+      "year": "2025",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12"
+      ],
+      "key_concepts": [
+        "Explanation:",
+        "Direct quotes:",
+        "Application in the paper:",
+        "Historical context and key scholars:",
+        "Othering and Far-Right Appeal:",
+        "Aversion and Support for Extreme Policies:"
+      ],
+      "file": "docs/literature/2025_a_new_measure_of_affective_polarization_by.md"
+    },
+    {
+      "slug": "2025_nonnemacher_and_fitxgerald_rejecting_the_ra",
+      "title": "2025 - Nonnemacher and Fitxgerald \"Rejecting the Radical Right: Local Inequality and Party Support\" \"Emerging scholarship shows that voters are grounded in their immediate localities, and localized po",
+      "authors": "See file",
+      "year": "2025",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Status threat perspective",
+        "Issue ownership perspective",
+        "Relative deprivation",
+        "Positional deprivation",
+        "Economic nationalism and welfare chauvinism",
+        "Status threat among the affluent"
+      ],
+      "file": "docs/literature/2025_nonnemacher_and_fitxgerald_rejecting_the_ra.md"
+    },
+    {
+      "slug": "2025_pelc_on_paying_workers_to_stop_working_publ",
+      "title": "2025  - Pelc  \"On Paying Workers to Stop Working: Public Attitudes toward 'Wage Buyouts'\"  The finding that right-wing voters primarily resist government-led labor transitions rather than non-work its",
+      "authors": "See file",
+      "year": "2025",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "12"
+      ],
+      "key_concepts": [
+        "Study 1",
+        "Study 2",
+        "Study 3",
+        "Political ideology/partisanship",
+        "Education",
+        "Income"
+      ],
+      "file": "docs/literature/2025_pelc_on_paying_workers_to_stop_working_publ.md"
+    },
+    {
+      "slug": "2025_wagner_stuart_heroes_and_villains_motivate",
+      "title": "2025 Wagner -  Stuart, \"Heroes and Villains: Motivated Projection of Political Identities\" 2025)  develop and test the concept of \"motivated political projection\" - the tendency to project one's own p",
+      "authors": "See file",
+      "year": "2025",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12"
+      ],
+      "key_concepts": [
+        "Counter-projection is stronger than projection",
+        "Theoretical Framework Analysis",
+        "Social Projection Theory",
+        "Social Identity Theory",
+        "Moral Foundations and Dualistic Thinking in Politics",
+        "Negative Partisanship and Out-group Animosity"
+      ],
+      "file": "docs/literature/2025_wagner_stuart_heroes_and_villains_motivate.md"
+    },
+    {
+      "slug": "2025_paper_by_sophia_stutzmann_asymmetric_backlash",
+      "title": "2025 paper by Sophia Stutzmann \"Asymmetric Backlash against Structural Economic Change: The Electoral Consequences of the Coal Phase-out in Germany\" \"All in all, this section has shown that, on the on",
+      "authors": "See file",
+      "year": "2025",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "03",
+        "08",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Hypothesis 1",
+        "Hypothesis 2",
+        "Hypothesis 3",
+        "Introduction and Overview",
+        "Literature Review and Theoretical Positioning",
+        "Theoretical Expectations and Mechanisms"
+      ],
+      "file": "docs/literature/2025_paper_by_sophia_stutzmann_asymmetric_backlash.md"
+    },
+    {
+      "slug": "2025_paper_by_van_hootegem_formative_personal_expe",
+      "title": "2025 paper by Van Hootegem Formative Personal Experiences: How Benefit Recipiency and Income Changes Shape Perceptions of System Abuse”  By demonstrating that becoming a welfare recipient reduces perc",
+      "authors": "See file",
+      "year": "2025",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Introduction",
+        "2016b",
+        "2006a",
+        "Theoretical framework",
+        "2016a, 2016b",
+        "2006b"
+      ],
+      "file": "docs/literature/2025_paper_by_van_hootegem_formative_personal_expe.md"
+    },
+    {
+      "slug": "2025_bayerlein_kölzer_and_metten_of_industrial",
+      "title": "2025, Bayerlein, Kölzer, and Metten  of \"Industrial Employment and Populism in Germany\" \"On the other hand, surviving manufacturing workers are often concerned with subjective decline, status anxietie",
+      "authors": "See file",
+      "year": "2025",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "01",
+        "02",
+        "03",
+        "08",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Actual decline",
+        "Looming decline",
+        "Hypothesis 1",
+        "Hypothesis 2",
+        "Actual industrial decline",
+        "Historical industrial employment share"
+      ],
+      "file": "docs/literature/2025_bayerlein_kölzer_and_metten_of_industrial.md"
+    },
+    {
+      "slug": "abts_k_rogenhofer_j_m_2024_three_pronged_r",
+      "title": "Abts, K., & Rogenhofer, J. M. (2024) Three-Pronged Resentment: How Status Insecurity, Relative Deprivation, and Powerlessness Mediate Between Social Positions and Populist Attitudes they embrace popul",
+      "authors": "See file",
+      "year": "2024",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "08",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "1. Resentment as Mediating Mechanism",
+        "2. Group-Level vs. Individual-Level Grievances",
+        "5. Emotional Underpinnings Beyond Fear",
+        "The \"Losers of Globalization\" Literature",
+        "Resentment and Ressentiment Theory",
+        "Political Psychology and Affective Intelligence Theory"
+      ],
+      "file": "docs/literature/abts_k_rogenhofer_j_m_2024_three_pronged_r.md"
+    },
+    {
+      "slug": "angry_politics_populism_and_the_erosion_of_politic",
+      "title": "Angry Politics: Populism and the Erosion of Political Support during Hard Times\"  Auer and Freitag (2023) show that when citizens blame political systems for economic threats, anger erodes political s",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12"
+      ],
+      "key_concepts": [
+        "Effects can be substantial",
+        "Theoretical Framework Analysis",
+        "1. Emotional Responses to Threats and Political Behavior",
+        "Application in the paper:",
+        "Relevance to your research:",
+        "2. Noxiousness of Threats"
+      ],
+      "file": "docs/literature/angry_politics_populism_and_the_erosion_of_politic.md"
+    },
+    {
+      "slug": "armaly_miles_t_and_adam_m_enders_2025_the_dispa",
+      "title": "Armaly, Miles T., and Adam M. Enders. 2025. \"The Disparate Correlates of Populist Support in the United States.\" Political Research Quarterly 78(1): 120–134. \"populist support is more connected to psy",
+      "authors": "See file",
+      "year": "2025",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Multiple Pathways to Populism",
+        "Psychological Over Socioeconomic Predictors",
+        "Identity-Based Exclusionary Populism",
+        "System-Based Victimhood Populism",
+        "Non-Universal Correlates",
+        "Introduction and Motivation Analysis"
+      ],
+      "file": "docs/literature/armaly_miles_t_and_adam_m_enders_2025_the_dispa.md"
+    },
+    {
+      "slug": "automation_risk_social_policy_preferences_and_po",
+      "title": "\"Automation Risk, Social Policy Preferences, and Political Participation\" by Thomas Kurer and Silja Häusermann (2022) The absence of support for social investment among automation-threatened workers s",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "11",
+        "14"
+      ],
+      "key_concepts": [
+        "Key research question(s) or objectives:",
+        "Theoretical foundation and disciplinary approach:",
+        "Central thesis and arguments:",
+        "Primary theoretical frameworks:",
+        "Key concepts and definitions:",
+        "Automation risk"
+      ],
+      "file": "docs/literature/automation_risk_social_policy_preferences_and_po.md"
+    },
+    {
+      "slug": "baccini_2024_austerity_economic_vulnerability",
+      "title": "Baccini 2024 - \"Austerity, Economic Vulnerability, and Populism\" presents evidence that austerity measures disproportionately drive economically vulnerable voters toward populist parties.",
+      "authors": "Austerity",
+      "year": "2024",
+      "section": "Geography & Objective Prospects",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "03",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Multi-level analysis",
+        "Attention to identification challenges",
+        "Breadth of coverage",
+        "Causal identification",
+        "Mechanisms",
+        "Supply-side dynamics"
+      ],
+      "file": "docs/literature/baccini_2024_austerity_economic_vulnerability.md"
+    },
+    {
+      "slug": "ballard_rosa_malik_rickard_scheve_2022_econo",
+      "title": "Ballard-Rosa, Malik, Rickard & Scheve 2022 - Economic Decline, Social Identity, and Authoritarian Values in the United States",
+      "authors": "See file",
+      "year": "2022",
+      "section": "Populism & Political Behavior",
+      "source": "Paper",
+      "favourite": true,
+      "theory_modules": [
+        "14"
+      ],
+      "key_concepts": [
+        "social identity of historically dominant groups",
+        "authoritarian values",
+        "Institutional Mediation",
+        "Status and Identity",
+        "Universality vs. Targeting",
+        "Key Theoretical Framework"
+      ],
+      "file": "docs/literature/ballard_rosa_malik_rickard_scheve_2022_econo.md"
+    },
+    {
+      "slug": "bell_primary_theories_used",
+      "title": "Bell: Primary Theories Used",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "Welfare & Deservingness",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [],
+      "key_concepts": [
+        "Detailed Explanation",
+        "Direct Quotes",
+        "Operationalization and Application",
+        "Relevance to My Research",
+        "Bell: Primary Theories Used",
+        "Intergroup Threat Theory"
+      ],
+      "file": "docs/literature/bell_primary_theories_used.md"
+    },
+    {
+      "slug": "brian_burgoon_and_wouter_schakel_2022_embedded_li",
+      "title": "Brian Burgoon and Wouter Schakel (2022\"Embedded Liberalism or Embedded Nationalism? How Welfare States Affect Anti-Globalisation Nationalism in Party Platforms\" shows that the presence of generous wel",
+      "authors": "See file",
+      "year": "2022",
+      "section": "Geography & Objective Prospects",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "01",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Anti-globalization (broad)",
+        "Anti-globalization (narrow)",
+        "Anti-EU",
+        "Anti-immigration",
+        "Social security transfers",
+        "Total social expenditures"
+      ],
+      "file": "docs/literature/brian_burgoon_and_wouter_schakel_2022_embedded_li.md"
+    },
+    {
+      "slug": "broz_2021_populism_in_place_the_economic_geograp",
+      "title": "Broz (2021) \"Populism in Place: The Economic Geography of the Globalization Backlash\" by J. Lawrence Broz, Jeffry Frieden, and Stephen Weymoutho n by identifying the community as the appropriate unit ",
+      "authors": "See file",
+      "year": "2021",
+      "section": "Geography & Objective Prospects",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "01",
+        "02",
+        "03",
+        "06"
+      ],
+      "key_concepts": [
+        "communities",
+        "**The Supply Side: Compensation Mechanisms and Political Institutions**",
+        "Active Labor-Market Policies",
+        "1. Introduction and Central Thesis",
+        "3. The Community as the Unit of Analysis",
+        "3.1 Economic Spillovers Within Communities"
+      ],
+      "file": "docs/literature/broz_2021_populism_in_place_the_economic_geograp.md"
+    },
+    {
+      "slug": "burgoon_van_noort_rooduijn_and_underhill_2019",
+      "title": "Burgoon, van Noort, Rooduijn and Underhill (2019) Populism and Prosperity: Positional Deprivation and Support for Radical Right and Radical Left Parties (2019) - Burgoon, van Noort, Rooduijn and Under",
+      "authors": "See file",
+      "year": "2019",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "01",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Temporal component",
+        "Comparative component",
+        "Luxembourg Income Study (LIS) data",
+        "Mean positional deprivation",
+        "Fifth-decile positional deprivation",
+        "Tenth-decile positional deprivation"
+      ],
+      "file": "docs/literature/burgoon_van_noort_rooduijn_and_underhill_2019.md"
+    },
+    {
+      "slug": "busemeyer_tobe_2023_dealing_with_technological",
+      "title": "Busemeyer & Tobe 2023 - Dealing with Technological Change: Social Policy Preferences and Institutional Context",
+      "authors": "See file",
+      "year": "2023",
+      "section": "Policy Response",
+      "source": "Paper",
+      "favourite": true,
+      "theory_modules": [
+        "02",
+        "05",
+        "11"
+      ],
+      "key_concepts": [
+        "compensatory policies over social investment policies",
+        "converge",
+        "preferences converge",
+        "RBTC Theory",
+        "Policy Feedback Theory",
+        "Social Investment Theory"
+      ],
+      "file": "docs/literature/busemeyer_tobe_2023_dealing_with_technological.md"
+    },
+    {
+      "slug": "busemeyer_m_r_rathgeb_p_sahm_a_h_j_2021",
+      "title": "Busemeyer, M. R., Rathgeb, P., & Sahm, A. H. J. (2021). Authoritarian values and the welfare state: the social policy preferences of radical right voters. West European Politics, 45(1), 77–101.  \"On t",
+      "authors": "See file",
+      "year": "2021",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "06",
+        "11",
+        "12"
+      ],
+      "key_concepts": [
+        "1. Deservingness Perceptions",
+        "2. Social Status Concerns",
+        "3. Value Conflict with Social Investment",
+        "The Three Dimensions of Welfare State Policies",
+        "The Particularistic-Authoritarian Welfare State Model",
+        "Theory 2: Deservingness Theory"
+      ],
+      "file": "docs/literature/busemeyer_m_r_rathgeb_p_sahm_a_h_j_2021.md"
+    },
+    {
+      "slug": "drinking_alone_local_socio_cultural_degradation_an",
+      "title": "\"Drinking Alone: Local Socio-Cultural Degradation and Radical Right Support\"\" This paper advances the theory that the degradation of local socio-cultural hubs is linked to radical right support by con",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "Geography & Objective Prospects",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "03",
+        "08",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Explanation:",
+        "Historical context and theoretical landscape:",
+        "Social Infrastructure as Policy Area",
+        "Material-Cultural Interaction",
+        "Explicit Policy Implications",
+        "Social Isolation"
+      ],
+      "file": "docs/literature/drinking_alone_local_socio_cultural_degradation_an.md"
+    },
+    {
+      "slug": "enke_et_al_2023_universalism_and_political_repre",
+      "title": "Enke et al. 2023 - Universalism and Political Representation",
+      "authors": "See file",
+      "year": "2023",
+      "section": "Morals & Legitimacy & Values",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "15"
+      ],
+      "key_concepts": [
+        "Universalist",
+        "Particularist"
+      ],
+      "file": "docs/literature/enke_et_al_2023_universalism_and_political_repre.md"
+    },
+    {
+      "slug": "ennser_jedenastik_köppl_turyna_2019_cushion_or",
+      "title": "Ennser-Jedenastik & Köppl-Turyna 2019 - Cushion or Catalyst? How Welfare State Generosity Moderates the Impact of Economic Vulnerability on Populist Radical Right Support",
+      "authors": "See file",
+      "year": "2019",
+      "section": "Welfare & Populism",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "03",
+        "12"
+      ],
+      "key_concepts": [
+        "The Inoculation Hypothesis",
+        "The Welfare Chauvinism Hypothesis",
+        "Economic Vulnerability",
+        "Welfare State Generosity",
+        "positive",
+        "reduces"
+      ],
+      "file": "docs/literature/ennser_jedenastik_köppl_turyna_2019_cushion_or.md"
+    },
+    {
+      "slug": "february_2024_danieli_noam_gidron_decomposing",
+      "title": "February 2024 - Danieli, Noam Gidron, Decomposing the Rise of the Populist Radical Right PRRP success, suggesting it stems not from a rightward shift in public opinion but from the \"activation\" of a p",
+      "authors": "Danieli",
+      "year": "2024",
+      "section": "Populism & Political Behavior",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Party positions don't explain PRRP success",
+        "Detailed explanation",
+        "Direct quotes",
+        "Important associated literature",
+        "How the authors apply the theory",
+        "Connection to your research"
+      ],
+      "file": "docs/literature/february_2024_danieli_noam_gidron_decomposing.md"
+    },
+    {
+      "slug": "ferwerda_gest_reny_2024_nostalgic_deprivation",
+      "title": "Ferwerda, Gest & Reny (2024)  Nostalgic Deprivation and Populism: Evidence from 19 European Countries",
+      "authors": "See file",
+      "year": "2024",
+      "section": "Populism & Political Behavior",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "03",
+        "08",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Unified Theory of Populist Support",
+        "Multidimensional Nature of Deprivation",
+        "Subjective vs. Objective Conditions",
+        "Cross-Ideological Appeal",
+        "Geographic Generalizability",
+        "Incumbency Effects"
+      ],
+      "file": "docs/literature/ferwerda_gest_reny_2024_nostalgic_deprivation.md"
+    },
+    {
+      "slug": "gomez_2024_job_security_and_vote_for_radical_par",
+      "title": "Gomez (2024) Job security and vote for radical parties: A four-country study",
+      "authors": "See file",
+      "year": "2024",
+      "section": "Insecurity",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "04",
+        "12"
+      ],
+      "key_concepts": [
+        "1. Job insecurity and vote: an analytical framework",
+        "1.1. Job insecurity and support for radical parties",
+        "1.2. Objective or perceived job instability?"
+      ],
+      "file": "docs/literature/gomez_2024_job_security_and_vote_for_radical_par.md"
+    },
+    {
+      "slug": "gugushvili_2025_downward_class_mobility_and_far",
+      "title": "Gugushvili (2025) Downward Class Mobility and Far-Right Party Support in Western Europe how that individuals from salariat origins and working-class destination are more likely to vote for the far-rig",
+      "authors": "See file",
+      "year": "2025",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "The multi-mechanism framework",
+        "The moderation analysis",
+        "Introduction",
+        "Class and Far-Right Party Support",
+        "Fig. 1",
+        "Full size image"
+      ],
+      "file": "docs/literature/gugushvili_2025_downward_class_mobility_and_far.md"
+    },
+    {
+      "slug": "halikiopoulou_vlandas_2016_risks_costs_and_la",
+      "title": "Halikiopoulou & Vlandas 2016 - Risks, Costs and Labour Markets: Explaining Cross-National Patterns of Far Right Party Success in European Parliament Elections",
+      "authors": "Risks",
+      "year": "2016",
+      "section": "Welfare & Populism",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12"
+      ],
+      "key_concepts": [
+        "Cost channel",
+        "Risk channel",
+        "no statistically significant effect",
+        "strongly negative and statistically significant",
+        "no statistically significant",
+        "Reconceptualizing economic impacts"
+      ],
+      "file": "docs/literature/halikiopoulou_vlandas_2016_risks_costs_and_la.md"
+    },
+    {
+      "slug": "haugsgjerd_kumlin_2022_downbound_spiral_econom",
+      "title": "Haugsgjerd & Kumlin 2022 - Downbound Spiral? Economic Grievances, Perceived Social Protection, and Political Distrust",
+      "authors": "See file",
+      "year": "2022",
+      "section": "Policy Response",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [],
+      "key_concepts": [
+        "Explanation:",
+        "Key Quote:",
+        "Operationalization:",
+        "Key Quotes:",
+        "Reciprocal Causal Process:",
+        "Broader Performance Measures:"
+      ],
+      "file": "docs/literature/haugsgjerd_kumlin_2022_downbound_spiral_econom.md"
+    },
+    {
+      "slug": "heins_2023_labour_market_policies_as_a_social_de",
+      "title": "Heins (2023)  \"Labour Market Policies as a Social Determinant of Wellbeing\" \"The findings from research on the wellbeing effects of ALMP indicate that enabling and skill-enhancing programmes leading t",
+      "authors": "See file",
+      "year": "2023",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "06",
+        "14"
+      ],
+      "key_concepts": [
+        "Jahoda's Latent Deprivation Model",
+        "Fryer's Agency Restriction Model",
+        "Ezzy's Concept of Status Passage",
+        "Material pathway",
+        "Psychosocial pathway",
+        "\"Enabling\" interventions"
+      ],
+      "file": "docs/literature/heins_2023_labour_market_policies_as_a_social_de.md"
+    },
+    {
+      "slug": "horn_kevins_van_kersbergen_2020_the_politics",
+      "title": "Horn, Kevins & van Kersbergen (2020) \"The Politics of Punitive and Enabling Workfare: Evidence from a New Dataset on the Workfare Balance in 16 Countries, 1980–2015\"",
+      "authors": "See file",
+      "year": "2020",
+      "section": "Kicking Down & Othering",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "06",
+        "10",
+        "11",
+        "12"
+      ],
+      "key_concepts": [
+        "Significance for your research:",
+        "Critical assessment by the authors:",
+        "Relevance to your research:",
+        "Unit of Analysis:",
+        "Dependent Variables:",
+        "Key Independent Variables:"
+      ],
+      "file": "docs/literature/horn_kevins_van_kersbergen_2020_the_politics.md"
+    },
+    {
+      "slug": "hyman_2018_research_paper_analysis_can_displaced",
+      "title": "Hyman 2018 - Research Paper Analysis: Can Displaced Labor Be Retrained? Evidence from Quasi-Random Assignment to Trade Adjustment Assistance  The study finds that TAA generates substantial short-term ",
+      "authors": "See file",
+      "year": "2018",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "03",
+        "06",
+        "11",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "while noting this represents",
+        "while simultaneously",
+        "The author notes that",
+        "This literature, building on",
+        "where",
+        "The author provides evidence that"
+      ],
+      "file": "docs/literature/hyman_2018_research_paper_analysis_can_displaced.md"
+    },
+    {
+      "slug": "häusermann_2023_tsocial_policy_representation_clas",
+      "title": "Häusermann 2023 TSOCIAL POLICY REPRESENTATION Class and Social Policy Representation Authors: he chapter examines class-based differences in how citizens perceive their social policy preferences to be",
+      "authors": "See file",
+      "year": "2023",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "11",
+        "12"
+      ],
+      "key_concepts": [
+        "Subjective Representation",
+        "Social Policy Priorities",
+        "Three Welfare Policy Dimensions",
+        "Social Consumption Policies",
+        "Social Investment Policies",
+        "Welfare Chauvinism"
+      ],
+      "file": "docs/literature/häusermann_2023_tsocial_policy_representation_clas.md"
+    },
+    {
+      "slug": "implentation_and_types_finding_proactive_features",
+      "title": "IMPLENTATION AND TYPES \"Finding proactive features in labour market policies: A reflection based on the evidence\" by Miguel Á. Malo, This research paper explores how labour market policies can become ",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "06"
+      ],
+      "key_concepts": [
+        "Central thesis and arguments",
+        "Proactive labour market policy",
+        "Active Labour Market Policies (ALMPs)",
+        "Passive Labour Market Policies",
+        "Activation strategies",
+        "Social protection floors"
+      ],
+      "file": "docs/literature/implentation_and_types_finding_proactive_features.md"
+    },
+    {
+      "slug": "im_komp_leukkunen_2021_automation_and_public_s",
+      "title": "Im & Komp-Leukkunen 2021 - Automation and Public Support for Workfare",
+      "authors": "See file",
+      "year": "2021",
+      "section": "Kicking Down & Othering",
+      "source": "Paper",
+      "favourite": true,
+      "theory_modules": [
+        "02",
+        "08",
+        "10"
+      ],
+      "key_concepts": [
+        "workfare",
+        "status politics",
+        "'last place aversion'",
+        "Hypothesis",
+        "Status Threat vs. Economic Threat",
+        "The Answer: Status Threat Dominates"
+      ],
+      "file": "docs/literature/im_komp_leukkunen_2021_automation_and_public_s.md"
+    },
+    {
+      "slug": "jeffrey_2020_automation_and_the_future_of_work_h",
+      "title": "Jeffrey 2020 - Automation and the Future of Work: How Rhetoric Shapes the Response in Policy Preferences",
+      "authors": "See file",
+      "year": "2020",
+      "section": "Policy Response",
+      "source": "Paper",
+      "favourite": true,
+      "theory_modules": [
+        "02"
+      ],
+      "key_concepts": [
+        "unfair",
+        "most sensitivity",
+        "greater resistance to redistribution",
+        "in general",
+        "specific",
+        "Job Protection vs. Income Support"
+      ],
+      "file": "docs/literature/jeffrey_2020_automation_and_the_future_of_work_h.md"
+    },
+    {
+      "slug": "judith_derndorfers_2025_paper_the_anxious_middle",
+      "title": "Judith Derndorfer's 2025 paper \"The Anxious Middle Class: Risk of Downward Mobility and Support for Radical Right Parties Across Western Europe t economic insecurity varies systematically by occupatio",
+      "authors": "See file",
+      "year": "2025",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "12"
+      ],
+      "key_concepts": [
+        "Welfare state policies",
+        "Wealth effects",
+        "Subjective experiences",
+        "Cultural backlash thesis",
+        "Economic insecurity thesis",
+        "Middle class studies"
+      ],
+      "file": "docs/literature/judith_derndorfers_2025_paper_the_anxious_middle.md"
+    },
+    {
+      "slug": "kim_2021_the_politics_of_trade_adjustment_versus",
+      "title": "Kim 2021 - The Politics of Trade Adjustment Versus Trade Protection: Political Attribution and Policy Effects  the two policy options have distinct political effects: in particular, successful TAA pet",
+      "authors": "See file",
+      "year": "2021",
+      "section": "Trade Adjustment",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "01",
+        "03",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Embedded liberalism hypothesis validated at micro-level",
+        "Policy sequence and time inconsistency challenge",
+        "Theoretical Framework Analysis",
+        "Primary Theory 1: Embedded Liberalism",
+        "Application in the Paper",
+        "Relevance to Your Research"
+      ],
+      "file": "docs/literature/kim_2021_the_politics_of_trade_adjustment_versus.md"
+    },
+    {
+      "slug": "kurer_and_bruno_palier_e2019_shrinking_and_shout",
+      "title": "Kurer and Bruno Palier e2019 - Shrinking and Shouting: The Political Revolt of the Declining Middle in Times of Employment Polarization”\"We believe that this appeal to personal dignity is key to winni",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "08",
+        "12"
+      ],
+      "key_concepts": [
+        "The right wins",
+        "Beyond Material Benefits",
+        "Measuring Status Concerns",
+        "Welfare Policy Design",
+        "Timing and Prevention",
+        "Specific Pattern of Disadvantage"
+      ],
+      "file": "docs/literature/kurer_and_bruno_palier_e2019_shrinking_and_shout.md"
+    },
+    {
+      "slug": "kurer_and_hausermen_2019_economic_grievances_and_p",
+      "title": "Kurer and Hausermen 2019 Economic grievances and political protest \" by Thomas Kure - different types of grievance While structural economic disadvantage (i.e., the level of grievances) unambiguously ",
+      "authors": "See file",
+      "year": "2019",
+      "section": "Declining Middle & Subjective Prospects",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "05",
+        "14"
+      ],
+      "key_concepts": [
+        "Relative status",
+        "Deprivation",
+        "Organizational capacity mechanism",
+        "Individual signaling mechanism",
+        "European Social Survey (ESS)",
+        "Original protest event data"
+      ],
+      "file": "docs/literature/kurer_and_hausermen_2019_economic_grievances_and_p.md"
+    },
+    {
+      "slug": "kurer_associates_threat_and_anxiety_about_status_w",
+      "title": "Kurer associates threat and anxiety about status with ‘the develop‑ ment of socially conservative or even authoritarian character traits’, and threats to the ‘perceived value’ of some forms of work an",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [],
+      "key_concepts": [],
+      "file": "docs/literature/kurer_associates_threat_and_anxiety_about_status_w.md"
+    },
+    {
+      "slug": "laenen_2018_do_institutions_matter_the_interpl",
+      "title": "Laenen (2018) - Do institutions matter? The interplay between income benefit design, popular perceptions, and the social legitimacy of targeted welfare Laenen's study addresses two key gaps in welfare",
+      "authors": "See file",
+      "year": "2018",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Detailed Explanation",
+        "Direct Quotes",
+        "Operationalization and Application",
+        "Relevance to My Research",
+        "Deservingness emphasis negatively affects welfare support",
+        "Primary Theories Used"
+      ],
+      "file": "docs/literature/laenen_2018_do_institutions_matter_the_interpl.md"
+    },
+    {
+      "slug": "laenen_et_al_2019_why_deservingness_theory_nee",
+      "title": "Laenen et al. (2019) - Why deservingness theory needs qualitative research: Comparing focus group discussions on social welfare in three welfare regimes These interpretations directly inform my resear",
+      "authors": "See file",
+      "year": "2019",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "12"
+      ],
+      "key_concepts": [
+        "Detailed Explanation",
+        "Direct Quotes",
+        "Operationalization and Application",
+        "Relevance to My Research",
+        "Institutional socialization shapes welfare attitudes",
+        "Primary Theories Used"
+      ],
+      "file": "docs/literature/laenen_et_al_2019_why_deservingness_theory_nee.md"
+    },
+    {
+      "slug": "left_behind_and_united_by_populism_populisms_mult",
+      "title": "Left Behind and United by Populism? Populism's Multiple Roots in Feelings of Lacking Societal Recognition” Steiner, Schimpf, and Wuttke (2023) examines a critical question in contemporary politics: wh",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Politicization of feelings of lacking recognition",
+        "Cross-national comparison",
+        "Operationalization refinement",
+        "Connection to voting behavior",
+        "Causality",
+        "Reconciling competing explanations"
+      ],
+      "file": "docs/literature/left_behind_and_united_by_populism_populisms_mult.md"
+    },
+    {
+      "slug": "matthew_e_bergman_2022_labour_market_policies_an",
+      "title": "Matthew E. Bergman (2022)  Labour Market Policies and Support for Populist Radical Right Parties: The Role of Nostalgic Producerism, Occupational Risk, and Feedback Effects",
+      "authors": "See file",
+      "year": "2022",
+      "section": "Populism & Political Behavior",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ],
+      "key_concepts": [
+        "Theoretical Foundation:",
+        "Key Scholars and Works:",
+        "Empirical Evidence:",
+        "Limitations and Debates:",
+        "Authors' Engagement:",
+        "Integration of Theoretical Perspectives:"
+      ],
+      "file": "docs/literature/matthew_e_bergman_2022_labour_market_policies_an.md"
+    },
+    {
+      "slug": "mcarthurs_phd_thesis_on_stigmatization_economic",
+      "title": "McArthur's PhD Thesis on Stigmatization, Economic Context, and Welfare Attitudes  (1) why higher education correlates with more sympathetic attitudes toward welfare recipients, finding that authoritar",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "08",
+        "10",
+        "14"
+      ],
+      "key_concepts": [
+        "Explanation:",
+        "Key quotes:",
+        "Application to welfare attitudes:",
+        "Innovation:",
+        "Historical context:",
+        "Theoretical innovation:"
+      ],
+      "file": "docs/literature/mcarthurs_phd_thesis_on_stigmatization_economic.md"
+    },
+    {
+      "slug": "milner_2021_voting_for_populism_in_europe_global",
+      "title": "Milner - 2021 Voting for Populism in Europe: Globalization, Technological Change, and the Extreme Right:   Importantly, the paper finds that social welfare compensation does not appear to mitigate the",
+      "authors": "See file",
+      "year": "2021",
+      "section": "Populism & Political Behavior",
+      "source": "Paper",
+      "favourite": true,
+      "theory_modules": [
+        "01",
+        "02",
+        "03",
+        "13",
+        "14"
+      ],
+      "key_concepts": [
+        "Detailed Explanation:",
+        "Direct Quotes:",
+        "Operationalization and Application:",
+        "Relevance to Your Thesis:",
+        "Detailed Description:",
+        "Summary of Key Findings:"
+      ],
+      "file": "docs/literature/milner_2021_voting_for_populism_in_europe_global.md"
+    },
+    {
+      "slug": "pitts_and_m_winter_2024_politics_and_the_future",
+      "title": "Pitts and M. Winter (2024)  Politics and the Future of Work: Routine Work, Automation Risk and Redistributive Preferences in the Age of Populism Authors:  The critical insight is that populist politic",
+      "authors": "See file",
+      "year": "2024",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "07",
+        "08",
+        "12"
+      ],
+      "key_concepts": [
+        "Detailed Explanation:",
+        "Direct Quotes:",
+        "Operationalization and Application:",
+        "Relevance to My Thesis:",
+        "Routine workers and voting patterns",
+        "Status anxiety versus material hardship"
+      ],
+      "file": "docs/literature/pitts_and_m_winter_2024_politics_and_the_future.md"
+    },
+    {
+      "slug": "rathgeb_busemeyer_2021_how_to_study_the_populi",
+      "title": "Rathgeb & Busemeyer 2021 - How to Study the Populist Radical Right and the Welfare State?",
+      "authors": "See file",
+      "year": "2021",
+      "section": "Welfare & Populism",
+      "source": "Paper",
+      "favourite": true,
+      "theory_modules": [
+        "06",
+        "12"
+      ],
+      "key_concepts": [
+        "\"particularistic-authoritarian welfare state\"",
+        "Moderate support",
+        "Strong support",
+        "Little support",
+        "Social consumption/transfers",
+        "Social investment"
+      ],
+      "file": "docs/literature/rathgeb_busemeyer_2021_how_to_study_the_populi.md"
+    },
+    {
+      "slug": "research_notes_partisan_divides_on_welfare_chauvin",
+      "title": "Research Notes: Partisan Divides on Welfare Chauvinism and Welfare Populism This research by Enggist and Häusermann examines whether welfare chauvinism and welfare populism—characteristic features of ",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12"
+      ],
+      "key_concepts": [
+        "Left electorates",
+        "Radical right voters",
+        "Mainstream right voters",
+        "Welfare Protection",
+        "Welfare Exclusion",
+        "Conservative/liberal voters"
+      ],
+      "file": "docs/literature/research_notes_partisan_divides_on_welfare_chauvin.md"
+    },
+    {
+      "slug": "rhodes_purdy_2021_populist_psychology_economics",
+      "title": "Rhodes-Purdy 2021 - Populist Psychology: Economics, Culture, and Emotions\" We would also be remiss if we did not briefly discuss the implications these findings have for the relationship between popul",
+      "authors": "Populist Psychology Economics",
+      "year": "2021",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12"
+      ],
+      "key_concepts": [
+        "Resolving the Economics vs. Culture Paradox",
+        "Anger as a Key Driver",
+        "Cultural Discontent as a Mechanism",
+        "Theoretical Framework Analysis",
+        "1. Affective Political Economy Theory",
+        "Relevance to Your Research"
+      ],
+      "file": "docs/literature/rhodes_purdy_2021_populist_psychology_economics.md"
+    },
+    {
+      "slug": "vlandas_halikiopoulou_2019_does_unemployment_m",
+      "title": "Vlandas & Halikiopoulou 2019 - Does Unemployment Matter? Economic Insecurity, Labour Market Policies and the Far-Right Vote in Europe",
+      "authors": "See file",
+      "year": "2019",
+      "section": "Welfare & Populism",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12"
+      ],
+      "key_concepts": [
+        "Outsiders",
+        "Insiders",
+        "Unemployment Benefits",
+        "Employment Protection Legislation (EPL)",
+        "Employment Protection Legislation",
+        "Beyond demand and supply framework"
+      ],
+      "file": "docs/literature/vlandas_halikiopoulou_2019_does_unemployment_m.md"
+    },
+    {
+      "slug": "vlandas_halikiopoulou_2022_welfare_state_polic",
+      "title": "Vlandas & Halikiopoulou 2022 - Welfare State Policies and Far Right Party Support: Moderating 'Insecurity Effects' Among Different Social Groups",
+      "authors": "See file",
+      "year": "2022",
+      "section": "Welfare & Populism",
+      "source": "Paper",
+      "favourite": true,
+      "theory_modules": [
+        "02",
+        "12"
+      ],
+      "key_concepts": [
+        "Compensatory policies",
+        "Protective policies",
+        "Broadening the conceptualisation of insecurity",
+        "The policy level as critical",
+        "The Missing Intermediate Level — Policy",
+        "How Social Policies Moderate the Insecurity Effect"
+      ],
+      "file": "docs/literature/vlandas_halikiopoulou_2022_welfare_state_polic.md"
+    },
+    {
+      "slug": "wagner_2024_affective_polarization_in_europe",
+      "title": "Wagner (2024) Affective Polarization in Europe\"",
+      "authors": "See file",
+      "year": "2024",
+      "section": "Populism & Political Behavior",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "12"
+      ],
+      "key_concepts": [
+        "Detailed explanation:",
+        "Direct quotes:",
+        "Associated literature:",
+        "Application to research:",
+        "Wagner (2024) Affective Polarization in Europe\"",
+        "Theoretical Framework Analysis"
+      ],
+      "file": "docs/literature/wagner_2024_affective_polarization_in_europe.md"
+    },
+    {
+      "slug": "who_should_get_what_and_why_insights_from_welfare",
+      "title": "\"Who Should Get What and Why? Insights from Welfare Deservingness Theory\"he framework centers on the CARIN criteria (Control, Attitude, Reciprocity, Identity, and Need) that people use to evaluate wel",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "12"
+      ],
+      "key_concepts": [
+        "Explanation",
+        "Key quotes",
+        "Historical context",
+        "Application",
+        "Theoretical innovation",
+        "Theoretical debate"
+      ],
+      "file": "docs/literature/who_should_get_what_and_why_insights_from_welfare.md"
+    },
+    {
+      "slug": "wu_2022_f_misattributed_blame_attitudes_toward_g",
+      "title": "Wu (2022) f \"Misattributed Blame? Attitudes toward globalization in the age of automation\" argues, e argues that \"grievances against globalization have economic origins, but economic losers often misa",
+      "authors": "See file",
+      "year": "2022",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02"
+      ],
+      "key_concepts": [
+        "Political consequences of misplaced blame",
+        "Suboptimal policy responses",
+        "Inadequate preparation for future challenges",
+        "Introduction and Theoretical Contribution",
+        "Context and Structural Economic Changes",
+        "Theoretical Mechanisms of Blame Misattribution"
+      ],
+      "file": "docs/literature/wu_2022_f_misattributed_blame_attitudes_toward_g.md"
+    },
+    {
+      "slug": "yeandle_green_and_le_corre_2024_economic_hardsh",
+      "title": "Yeandle, Green, and Le Corre (2024 \"Economic Hardship and Support for Redistribution: Synthesising Five Themes in the Literature\"  \"People may even resist spending that they could also benefit from, i",
+      "authors": "See file",
+      "year": "2024",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "10",
+        "12"
+      ],
+      "key_concepts": [
+        "Relevance to your research",
+        "Beyond Economic Self-Interest",
+        "Risk Perception as a Key Mechanism",
+        "Policy Design and Accessibility",
+        "Formative Experiences",
+        "In-Group/Out-Group Dynamics"
+      ],
+      "file": "docs/literature/yeandle_green_and_le_corre_2024_economic_hardsh.md"
+    },
+    {
+      "slug": "zollinger_delia_and_silja_häusermann_2024_social",
+      "title": "Zollinger, Delia and Silja Häusermann. 2024. \"Social status, recognition entitlement, or relative deprivation? Social hierarchies and the far right vote.\" December 2024. \"A sense of relative deprivati",
+      "authors": "See file",
+      "year": "2024",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "07",
+        "08",
+        "12",
+        "14"
+      ],
+      "key_concepts": [
+        "Particularistic identities fuel relative deprivation",
+        "Progressive appeals face fundamental constraints",
+        "Introduction and Motivation Analysis",
+        "Research Problem and Significance",
+        "Theoretical Positioning and Innovation",
+        "Literature Review and Theoretical Framework Analysis"
+      ],
+      "file": "docs/literature/zollinger_delia_and_silja_häusermann_2024_social.md"
+    },
+    {
+      "slug": "ballard_rosa_et_al_isq_2022_economic_decline",
+      "title": "⭐(Ballard-Rosa et al., ISQ, 2022; Economic Decline, Social Identity, and Authoritarian Values in the United States (individuals who are both economically insecure and identify with a particular group ",
+      "authors": "See file",
+      "year": "2022",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "03",
+        "14"
+      ],
+      "key_concepts": [
+        "Identity:",
+        "Key Theoretical Framework:",
+        "1) Social Identity and Economic Decline:",
+        "2. Institutional-Identity Mechanism:",
+        "Relevance to Your Essay:",
+        "Conceptual Integration for Your Essay:"
+      ],
+      "file": "docs/literature/ballard_rosa_et_al_isq_2022_economic_decline.md"
+    },
+    {
+      "slug": "hedegaard_2014_the_policy_design_effect_hedega",
+      "title": "⭐(Hedegaard, 2014) The Policy Design Effect Hedegaard argues that welfare policy designs (universal, contribution-based, or selective) affect public support through proximity mechanisms at the micro-l",
+      "authors": "Hedegaard",
+      "year": "2014",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "12"
+      ],
+      "key_concepts": [
+        "Detailed Explanation",
+        "Direct Quotes",
+        "Operationalization and Application",
+        "Relevance to My Thesis",
+        "Detailed Description",
+        "Reproducibility and Adaptability"
+      ],
+      "file": "docs/literature/hedegaard_2014_the_policy_design_effect_hedega.md"
+    },
+    {
+      "slug": "giuseppe_ciccolini_2025_who_is_left_behind_ec",
+      "title": "⭐Giuseppe Ciccolini (2025)  - Who Is Left Behind? Economic Status Loss and Populist Radical Right Voting\" by The paper argues that economic status loss (relative positioning within society's economic ",
+      "authors": "See file",
+      "year": "2025",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "07",
+        "08",
+        "11",
+        "12"
+      ],
+      "key_concepts": [
+        "Chat controls",
+        "Statistical evidence from regression analyses",
+        "Descriptive income trends",
+        "Predicted probabilities",
+        "Competitor effects",
+        "Heterogeneity analyses"
+      ],
+      "file": "docs/literature/giuseppe_ciccolini_2025_who_is_left_behind_ec.md"
+    },
+    {
+      "slug": "larsen_2008_the_institutional_logic_of_welfare",
+      "title": "⭐Larsen (2008): The Institutional Logic of Welfare Attitudesf welfare regimes influence public attitudes toward welfare policy by shaping how citizens perceive the poor and unemployed, specifically wh",
+      "authors": "See file",
+      "year": "2008",
+      "section": "Welfare &",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "05",
+        "13"
+      ],
+      "key_concepts": [
+        "Detailed Explanation",
+        "Control",
+        "Identity",
+        "Attitude",
+        "Reciprocity",
+        "Direct Quotes"
+      ],
+      "file": "docs/literature/larsen_2008_the_institutional_logic_of_welfare.md"
+    },
+    {
+      "slug": "larsen_2017_welfare_retrenchments_and_governmen",
+      "title": "⭐Larsen 2017 - Welfare Retrenchments and Government Support: Evidence from a Natural Experiment: The paper investigates how welfare retrenchment policies affect government support, with a special focu",
+      "authors": "See file",
+      "year": "2017",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "05",
+        "14"
+      ],
+      "key_concepts": [
+        "Detailed Explanation:",
+        "Direct Quotes:",
+        "Operationalization and Application:",
+        "Relevance to My Thesis:",
+        "Detailed Description:",
+        "Reproducibility and Adaptability:"
+      ],
+      "file": "docs/literature/larsen_2017_welfare_retrenchments_and_governmen.md"
+    },
+    {
+      "slug": "nordic_welfare_chauvinism_bell_et_al_2022_the",
+      "title": "⭐Nordic Welfare Chauvinism (Bell et al., 2022) The paper examines welfare chauvinistic attitudes in Sweden, Norway, and Finland, arguing that while strict exclusionary welfare chauvinism (completely d",
+      "authors": "Bell et al",
+      "year": "2022",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "10",
+        "12",
+        "14",
+        "15"
+      ],
+      "key_concepts": [
+        "Detailed Explanation",
+        "Direct Quotes",
+        "Operationalization and Application",
+        "Relevance to My Research",
+        "Primary Theories Used",
+        "Intergroup Threat Theory"
+      ],
+      "file": "docs/literature/nordic_welfare_chauvinism_bell_et_al_2022_the.md"
+    },
+    {
+      "slug": "popular_preferences_for_a_fully_means_tested_welf",
+      "title": "⭐Popular preferences for a fully means-tested welfare provision model: social and cross-national divides in Europe by Gugushvili and van Oorschot investigates public opinion regarding a hypothetical p",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07"
+      ],
+      "key_concepts": [
+        "Detailed Explanation",
+        "Direct Quotes",
+        "Operationalization",
+        "Relevance to My Research",
+        "Theoretical Framework Refinement",
+        "Methodological Approach"
+      ],
+      "file": "docs/literature/popular_preferences_for_a_fully_means_tested_welf.md"
+    },
+    {
+      "slug": "van_hootegem_2023_weakly_institutionalized_heavi",
+      "title": "⭐Van Hootegem 2023: Weakly institutionalized, heavily contested: Does support for contemporary welfare reforms rely on norms of distributive justice? suggests that newer welfare reforms or those under",
+      "authors": "See file",
+      "year": "2023",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "14"
+      ],
+      "key_concepts": [
+        "Detailed Explanation:",
+        "Direct Quotes:",
+        "Operationalization and Application:",
+        "Relevance to My Thesis:",
+        "Detailed Description:",
+        "Reproducibility and Adaptability:"
+      ],
+      "file": "docs/literature/van_hootegem_2023_weakly_institutionalized_heavi.md"
+    },
+    {
+      "slug": "van_oorschot_roosma_2015_the_social_legitim",
+      "title": "⭐Van Oorschot & Roosma (2015) - \"The Social Legitimacy of Differently Targeted Benefits\" Welfare institutions shape political responses to economic insecurity through both material effects and symboli",
+      "authors": "See file",
+      "year": "2015",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "07",
+        "10",
+        "13"
+      ],
+      "key_concepts": [
+        "Institutional approach",
+        "Public images approach",
+        "Deservingness approach",
+        "Detailed Explanation",
+        "Direct Quotes",
+        "Operationalization"
+      ],
+      "file": "docs/literature/van_oorschot_roosma_2015_the_social_legitim.md"
+    },
+    {
+      "slug": "zhrnov_2024_precarity_and_populism_explaining_p",
+      "title": "⭐Zhrnov (2024) Precarity and populism: explaining populist outlook and populist voting in Europe through subjective financial and work-related insecurity\" The paper explores the relationship between p",
+      "authors": "See file",
+      "year": "2024",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [],
+      "key_concepts": [
+        "Multidimensional Precarity and Populism",
+        "Symbolic vs. Instrumental Links",
+        "Cross-National Variations",
+        "Importance of Financial Insecurity",
+        "Beyond Labor Market Dualism",
+        "Primary Theories Used"
+      ],
+      "file": "docs/literature/zhrnov_2024_precarity_and_populism_explaining_p.md"
+    },
+    {
+      "slug": "cena_2022_economic_inequality_and_the_rise_of_fa",
+      "title": "💸Cena 2022- Economic inequality and the rise of far-right populism: A social psychological analysis In this study, we focus on right-wing populism because it is considered the most dangerous to existi",
+      "authors": "See file",
+      "year": "2022",
+      "section": "",
+      "source": "",
+      "favourite": false,
+      "theory_modules": [
+        "12"
+      ],
+      "key_concepts": [
+        "Detailed explanation",
+        "Welfare Institutions",
+        "Status Anxiety",
+        "Populist Mobilization",
+        "Recursive Nature of Inequality and Populism",
+        "Inequality Affects Both Rich and Poor"
+      ],
+      "file": "docs/literature/cena_2022_economic_inequality_and_the_rise_of_fa.md"
+    },
+    {
+      "slug": "social_investment_as_a_conceptual_framework_for",
+      "title": "😱\"Social investment as a conceptual framework for analysing well-being returns and reforms in 21st century welfare states\" by Anton Hemerijck, Stefano Ronchi, and Ilze Plavgo (2023)",
+      "authors": "See file",
+      "year": "unknown",
+      "section": "Policy Response",
+      "source": "Paper",
+      "favourite": false,
+      "theory_modules": [
+        "02",
+        "06",
+        "08",
+        "11",
+        "14"
+      ],
+      "key_concepts": [
+        "Stock",
+        "Buffer",
+        "1. Introduction",
+        "4. Methodological pluralism: layering causal adequacy",
+        "4.1 Establishing macro regularities",
+        "4.3 From quantity to quality returns"
+      ],
+      "file": "docs/literature/social_investment_as_a_conceptual_framework_for.md"
+    }
+  ]
+}

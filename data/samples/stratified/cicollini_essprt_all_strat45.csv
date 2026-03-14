@@ -1,0 +1,46 @@
+ess_cntry,essround,ess_variable,ess_party,ess_party_id,ess_id,first_ess_id,partyfacts_id,country,name_short,name,name_english,technical
+FI,1,prtclfi,The Centre Party,4,FI-1-4-c,FI-1-4-c,901,FIN,KESK,Maalaisliitto / Keskusta,Agrarian Union / Centre Party,
+HU,1,prtclhu,FFD-Free Democrats,8,HU-1-8-c,HU-1-8-c,910,HUN,SzDSz,Szabad Demokraták Szövetsége,Alliance of Free Democrats,
+SI,1,prtclsi,Slovene National Party (SNS),4,SI-1-4-c,SI-1-4-c,96,SVN,SNS,Slovenska nacionalna stranka,Slovenian National Party,
+CH,1,prtvtch,Others,16,CH-1-16-v,CH-1-16-v,1964,CHE,etc,other,other,7
+IL,1,prtclil,Am ehad,7,IL-1-7-c,IL-1-7-c,640,ISR,AE,Am Ehad,One Nation,
+ES,2,prtvtaes,Blank vote,75,ES-2-75-v,ES-2-75-v,3083,ESP,tech,technical,technical,12
+FR,2,prtvtfr,PC (Parti communiste),9,FR-2-9-v,FR-1-9-v,1251,FRA,PCF,Parti communiste française,French Communist Party,
+PT,2,prtvtpt,P.H. - Partido Humanista,4,PT-2-4-v,PT-2-4-v,8269,PRT,PH,Partido Humanista,Humanist Party,
+PT,2,prtvtpt,PPM - Partido Popular Monárquico,9,PT-2-9-v,PT-2-9-v,1480,PRT,PPM,Partido Popular Monárquico,Popular Monarchist Party,
+ES,2,prtvtaes,Eusko Alkartasuna (EA),8,ES-2-8-v,ES-1-8-v,1324,ESP,EA,Eusko Alkartasuna,Basque Solidarity,
+DE,3,prtclbde,The Left Party.Party of Democratic Socialism (Linkspartei.PDS),5,DE-3-5-c,DE-1-5-c,86,DEU,PDS,Partei des Demokratischen Sozialismus,Party for Democratic Socialism,
+DE,3,prtvbde2,Liberal Democratic Party (FDP),4,DE-3-4-v,DE-1-4-v,573,DEU,FDP,Freie Demokratische Partei,Free Democratic Party,
+DK,3,prtvtadk,Kristendemokraterne,7,DK-3-7-v,DK-1-7-v,53,DNK,KrF/KD,Kristeligt Folkeparti / Kristendemokraterne,Christian People's Party / Christian Democrats,
+FR,3,prtvtafr,PC (Parti communiste),9,FR-3-9-v,FR-1-9-v,1251,FRA,PCF,Parti communiste française,French Communist Party,
+CH,3,prtvtach,Christian-democrats,2,CH-3-2-v,CH-1-2-v,1808,CHE,KK/CVP,Katholische Konservative / Christlichdemokratische Volkspartei,Catholic Conservative / Christian Democratic Peoples Party,
+BG,4,prtclabg,Evroroma,14,BG-4-14-c,BG-3-10-c,2055,BGR,ER,Evroroma,Euroroma,
+TR,4,prtclatr,Ozgurluk Dayanisma Partisi (ODP),11,TR-4-11-c,TR-4-11-c,2958,TUR,1-perc,1 percent,1 percent,11
+CH,4,prtvtbch,Liberal party,5,CH-4-5-v,CH-1-5-v,444,CHE,LPS,Liberale Partei der Schweiz,Liberal Party of Switzerland,
+HR,4,prtclhr,Hrvatska narodna stranka - Liberalni demokrati (HNS),3,HR-4-3-c,HR-4-3-c,799,HRV,HNS,Hrvatska narodna stranka – Liberalni Demokrati,Croatian People's Party – Liberal Democrats,
+CZ,4,prtclacz,CSSD,2,CZ-4-2-c,CZ-1-1-c,177,CZE,CSSD,Česká strana sociálně demokratická,Czech Social Democratic Party,
+SK,5,prtclbsk,Other,7,SK-5-7-c,SK-2-8-c,1855,SVK,etc,other,other,7
+HR,5,prtvthr,Socijaldemokratska partija Hrvatske (SDP),2,HR-5-2-v,HR-4-2-v,1475,HRV,SDP,Socijaldemokratska partija Hrvatske,Social Democratic Party of Croatia,
+BG,5,prtvtbbg,Nezavisim kandidat,17,BG-5-17-v,BG-5-17-v,2633,BGR,indep,independent,independent,8
+HU,5,prtvtchu,Other party,86,HU-5-86-v,HU-3-8-v,1843,HUN,etc,other,other,7
+CY,5,prtclcy,Other,8,CY-5-8-c,CY-5-8-c,1837,CYP,etc,other,other,7
+CY,6,prtvtacy,Democratic Party (DIKO),2,CY-6-2-v,CY-3-2-v,635,CYP,DIKO,Dimokratikó Kómma,Democratic Party,
+FI,6,prtvtcfi,True Finns,4,FI-6-4-v,FI-1-5-v,1689,FIN,SP/P,Suomen Puolue / Perussuomalaiset,Finns Party / True Finns,
+HU,6,prtcldhu,MSZP (Magyar Szocialista Párt),14,HU-6-14-c,HU-1-6-c,1408,HUN,MSZP,Magyar Szocialista Párt,Hungarian Socialist Party,
+ES,6,prtclces,Partido Popular (PP),1,ES-6-1-c,ES-1-1-c,441,ESP,AP/PP,Alianza-Partido Popular / Partido Popular,People's Alliance-Party / People's Party,
+RU,6,prtvtcru,United Russia (ER),1,RU-6-1-v,RU-3-1-v,2256,RUS,YR,Yedinaya Rossiya,United Russia,
+EE,7,prtvteee,Eesti Reformierakond,1,EE-7-1-v,EE-2-3-v,821,EST,ER,Eesti Reformierakond,Estonian Reform Party,
+NL,7,prtvtfnl,Green Left,8,NL-7-8-v,NL-1-6-v,1537,NLD,GL,GroenLinks,GreenLeft,
+CH,7,prtclech,Christian Democrats,4,CH-7-4-c,CH-1-2-c,1808,CHE,KK/CVP,Katholische Konservative / Christlichdemokratische Volkspartei,Catholic Conservative / Christian Democratic Peoples Party,
+FR,7,prtvtcfr,LO (Lutte Ouvrière),5,FR-7-5-v,FR-1-5-v,617,FRA,LO,Lutte ouvrière,Workers' Struggle,
+CH,7,prtvtech,Socialist Party,2,CH-7-2-v,CH-1-3-v,29,CHE,SP,Sozialdemokratische Partei der Schweiz,Social Democratic Party of Switzerland,
+DE,8,prtvede1,Die Linke,3,DE-8-3-v,DE-5-5-v,1545,DEU,Linke,Die Linke,The Left,
+NO,8,prtvtbno,Progress Party (FRP),8,NO-8-8-v,NO-1-8-v,101,NOR,FrP,Fremskrittspartiet,Progress Party,
+EE,8,prtvtfee,Eesti Keskerakond,2,EE-8-2-v,EE-2-2-v,533,EST,EK,Eesti Keskerakond,Estonian Centre Party,
+CH,8,prtvtfch,Swiss Labour Party,11,CH-8-11-v,CH-1-9-v,669,CHE,PdA,Partei der Arbeit der Schweiz,Swiss Party of Labour,
+LT,8,prtvblt1,Lithuanian Greens Party (LZP),12,LT-8-12-v,LT-7-25-v,1407,LTU,LZP,Lietuvos žalioji partija,Lithuanian Green Party,
+SE,9,prtvtcse,Annat parti,10,,,1887,SWE,etc,other,other,7
+HR,9,prtvtahr,,2,,,1475,,,,,
+CH,9,prtclgch,Green Liberal Party,6,CH-9-6-c,CH-4-9-c,1759,CHE,GPL,Grünliberale Partei der Schweiz,Green Liberal Party,
+CH,9,prtclgch,Evangelical People's Party,8,CH-9-8-c,CH-1-7-c,1123,CHE,EVP,Evangelische Volkspartei der Schweiz,Protestant Peoples Party,
+ES,9,prtvtees,Partido Popular - PP,1,,,441,ESP,AP/PP,Alianza-Partido Popular / Partido Popular,People's Alliance-Party / People's Party,

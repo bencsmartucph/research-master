@@ -1,0 +1,4 @@
+data/raw/
+*.dta
+__pycache__/
+.DS_Store

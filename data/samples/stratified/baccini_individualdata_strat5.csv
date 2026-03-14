@@ -1,0 +1,6 @@
+cntry,essround,idno,id_country_wave,post2010,pspwght,populism_score,share_populist_parties_gps,share_populist_parties_pl,turnout,austerity_dummy,austerity_lag,austerity_lead,lower_secondary_educ,upper_secondary_educ,manufacturing,rti,fiscal_balance,female_dummy,age,retired,student,service,unemployed,selfemployed
+AT,3.0,3924.0,3.0,0.0,2.372097969055176,6.769230842590332,3,0,1.0,0.0,1.0,0.0,0,1,0.0,0.25,-2.510899305343628,1,47,0,0,1,0,1
+AT,3.0,405.0,3.0,0.0,0.9661304354667664,,,,,0.0,1.0,0.0,1,0,,,-2.510899305343628,0,17,0,0,0,0,0
+AT,1.0,3073.0,1.0,0.0,1.1382825374603271,,,,1.0,1.0,1.0,0.0,0,1,0.0,0.5,-0.6613068580627441,1,51,0,0,0,0,0
+AT,3.0,539.0,3.0,0.0,0.9416355490684509,6.769230842590332,3,0,1.0,0.0,1.0,0.0,0,1,0.0,0.25,-2.510899305343628,1,81,1,0,0,0,0
+AT,3.0,17.0,3.0,0.0,0.4171624779701233,3.3529412746429443,2,0,1.0,0.0,1.0,0.0,0,1,0.0,0.5,-2.510899305343628,1,49,0,0,0,0,0
