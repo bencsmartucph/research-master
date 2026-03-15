@@ -51,6 +51,7 @@ The risk of downward mobility particularly affects political behavior:
 ---
 
 ## See Also
+
 - [02_automation_technological_change.md](./02_automation_technological_change.md) — Task-based vulnerability in automated jobs
 - [03_globalization_trade_spatial.md](./03_globalization_trade_spatial.md) — Trade-based vulnerability by occupation and region
 - [08_status_recognition_theory.md](./08_status_recognition_theory.md) — How skill-based identity shapes status concerns

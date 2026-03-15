@@ -1,4 +1,5 @@
 # Phase 2: Frontier Literature Survey (2022–2026)
+
 > Generated: 2026-03-15 | Overnight ideation session
 > Covers seven thematic subfields relevant to Ben's dissertation programme
 
@@ -23,6 +24,7 @@ The most important development in this subfield is the maturation of a literatur
 **Busemeyer, Rathgeb & Sahm (2021, WEP)** extended this empirically, finding that PRRP voters have notably low support for social investment while maintaining moderate support for passive transfers. The interpretation: social investment is coded as a middle-class cosmopolitan project, not as a benefit for "people like them." This is a crucial finding for Ben's DPAA argument — it means social investment policies may face a demand-side political barrier among the very voters they are designed to protect.
 
 **Bergman (2024, WEP)** — "Labour market policies and support for populist radical right parties: the role of nostalgic producerism, occupational risk, and feedback effects" — is the most directly relevant piece on the frontier. It introduces three important refinements:
+
 - **Nostalgic producerism** as the ideological frame through which PRRP voters evaluate labour market policy: policies that visibly reward productive contribution are accepted; those coded as assisting "non-contributors" are rejected.
 - **Occupational risk** as a moderator: workers in objectively high-automation-risk occupations respond differently to the same policy design depending on whether it appears to offer dignified pathways (enabling ALMPs) or punitive compliance requirements (workfare).
 - **Self-undermining feedback effects**: high levels of punitive activation can generate backlash, shifting public opinion against interventionism. This is directly relevant to Ben's temporal and dignity dimensions — it suggests not just that poorly designed policies fail to reduce populist support, but that they may actively generate it.
@@ -118,6 +120,7 @@ No published paper uses the Baccini (2024) austerity data **merged with Cicollin
 ### What the frontier has established (2022–2026)
 
 **Hemerijck, Ronchi & Plavgo (2023, European Political Science Review)** — "Social investment as a conceptual framework for analysing well-being returns and reforms in 21st century welfare states" — provides the most comprehensive recent synthesis of what social investment actually accomplishes. Key findings:
+
 - Social investment policies consistently improve stock (human capital), flow (labour market transitions), and buffer (safety net adequacy) outcomes in countries that implement them consistently.
 - The political problem: social investment generates diffuse long-run benefits but concentrated short-run costs, making it harder to build winning coalitions than passive transfers.
 - Countries with already-high social investment spending (Nordic) show diminishing returns; those with low base-rates (Southern, Eastern Europe) show larger returns — with implications for heterogeneity analysis.

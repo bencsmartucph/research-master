@@ -47,13 +47,13 @@ Reading the manuscripts against the theory modules and literature, several deepe
 
 ## Theoretical Commitments and Their Empirical Implications
 
-| Theoretical commitment | Empirical implication |
-|---|---|
-| Status matters more than absolute income | Need positional income change (`posit_income_change`), not just household income |
-| Anticipated hardship drives radical right | Need forward-looking economic expectations, not just current conditions |
-| Welfare *design* matters, not just generosity | Need variation in ALMP spending, conditionality, benefit type — not just expenditure levels |
-| Institutions moderate individual-level effects | Need multilevel design with country-level institutional variables |
-| Temporal anticipation is the key mechanism | Need mediation analysis or instruments for subjective expectations |
+| Theoretical commitment                         | Empirical implication                                                                       |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Status matters more than absolute income       | Need positional income change (`posit_income_change`), not just household income            |
+| Anticipated hardship drives radical right      | Need forward-looking economic expectations, not just current conditions                     |
+| Welfare *design* matters, not just generosity  | Need variation in ALMP spending, conditionality, benefit type — not just expenditure levels |
+| Institutions moderate individual-level effects | Need multilevel design with country-level institutional variables                           |
+| Temporal anticipation is the key mechanism     | Need mediation analysis or instruments for subjective expectations                          |
 
 ---
 

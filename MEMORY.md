@@ -17,11 +17,17 @@
 
 - [LEARN:data] ESS ISCO-08 codes are 4-digit. The task score file (`isco08_3d-task3.csv`) uses 3-digit. Truncate with `df['isco08'] // 10` BEFORE merging. Failing to do this produces ~0% match rate silently.
 
+- [LEARN:data] **CORRECTION (2026-03-15 audit):** The task score file (`isco08_3d-task3.csv`) has column `task`, NOT `rtask` or `nrtask`. Every reference to `rtask`/`nrtask` in CLAUDE.md, HANDOVER.md, theory_data_bridge.md, and domain-profile.md is wrong. Use `task` when merging.
+
+- [LEARN:data] **CORRECTION (2026-03-15 audit):** ESS Gugushvili waves 1–5 use ISCO-88 (`iscoco`), NOT `isco08`. The two-step merge path for RTI is: `iscoco` → `data/raw/kurer_2020_declining_middle/correspondence.dta` (ISCO-88 → ISCO-08 crosswalk, 446 rows) → truncate 4→3 digit → `task` score. `correspondence.dta` is many-to-many — deduplicate before merging to avoid row inflation (~190% inflation observed in audit).
+
+- [LEARN:data] `ess_populist_crosswalk.csv` in `data/raw/langenkamp_2022/` is semicolon-delimited. Always load with `pd.read_csv(..., sep=';')`. Standard `read_csv` will silently return a single-column dataframe.
+
 - [LEARN:data] The two Euroscepticism files are the same study in different formats: `Euroscepticism as a syndrome of stagnation.csv` (135MB) and `...-Data for replication-1.dta` (90MB). Always use the `.dta` for analysis.
 
 - [LEARN:data] Baccini raw vs. analysis-ready: `Raw Data/` contains components; `Data/individualdata.dta` and `Data/districtdata.dta` are the merged, analysis-ready files. Always use the latter. In Research_Master these are at `data/raw/baccini_2024/Data/`.
 
-- [LEARN:data] `posit_income_change` in Cicollini's `essprt-all.dta` is pre-constructed. Do NOT reconstruct it from ESS income variables — the construction methodology is in the paper and replicating it is error-prone.
+- [LEARN:data] **CORRECTION (2026-03-15 audit):** `posit_income_change` is NOT in `essprt-all.dta` and is NOT in this repository. Cicollini constructs it from EU-SILC microdata in a separate Stata do file. `essprt-all.dta` is a party crosswalk (5,402 rows × 13 cols: cntry, essround, prtvt variable codes → partyfacts IDs). Using `essprt-all.dta` for status analysis will silently return no usable data. Module 08 (Status/Recognition) REQUIRES NEW DATA for the positional income pathway.
 
 - [LEARN:data] `world-c.dta` and `world-d.dta` in Cicollini are geographic map files, not analysis datasets. Do not load them expecting survey data.
 
@@ -58,6 +64,12 @@
 ## Method
 
 - [LEARN:method] When using country × wave FE in ESS regressions, you cannot also include country-level time-invariant variables (e.g., welfare regime type) directly — they are absorbed. Use interactions (welfare_regime × treatment) or cross-country variance in robustness checks.
+
+---
+
+- [LEARN:data] `atchctr` and `atcherp` (national/European attachment, Module 09) are absent from Gugushvili ESS waves 1–5. They are present in Baccini ESSdata (waves 6+). Ontological security analysis using these variables is limited to more recent waves.
+
+- [LEARN:data] `hinctnta` (household income decile) is absent from ESS waves 1–3. Present in waves 4–5 (Gugushvili) and Baccini (waves 6+). For multi-wave income controls, use `hinctnt` (waves 1–3) and document the variable switch.
 
 ---
 
