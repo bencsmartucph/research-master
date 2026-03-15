@@ -2,7 +2,7 @@
 
 > This file captures corrections, discoveries, and hard-won knowledge from working sessions.
 > Tag format: `[LEARN:category]` — categories: data, theory, code, notation, citation, method, pitfall
->
+> 
 > **How to use:** When you correct Claude mid-session, add a [LEARN] tag here.
 > Run `/tools learn` (or ask Claude to formalise it into a skill) when a correction is multi-step.
 > Claude should read this file at the start of every session that involves data or code.

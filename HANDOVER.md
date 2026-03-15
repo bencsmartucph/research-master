@@ -82,13 +82,14 @@ Research_Master/
 
 Always use these together before writing code or designing analysis:
 
-| System | File | Use when |
-|--------|------|----------|
-| **Theory Bridge** | `metadata/theory_data_bridge.md` | Translating a mechanism into a testable variable |
-| **Data Dictionary** | `metadata/data_dictionary.md` | Looking up exact column names, value ranges, missingness |
-| **Domain Profile** | `.claude/rules/domain-profile.md` | Calibrating analysis design, identification strategy, target journal |
+| System              | File                              | Use when                                                             |
+| ------------------- | --------------------------------- | -------------------------------------------------------------------- |
+| **Theory Bridge**   | `metadata/theory_data_bridge.md`  | Translating a mechanism into a testable variable                     |
+| **Data Dictionary** | `metadata/data_dictionary.md`     | Looking up exact column names, value ranges, missingness             |
+| **Domain Profile**  | `.claude/rules/domain-profile.md` | Calibrating analysis design, identification strategy, target journal |
 
 **Mandatory pre-coding sequence:**
+
 1. Read `CLAUDE.md` (you're doing this now via HANDOVER.md)
 2. Read `MEMORY.md` — absorb all `[LEARN]` tags before writing any code
 3. Check `theory_data_bridge.md` for the relevant theory module
@@ -100,24 +101,25 @@ Always use these together before writing code or designing analysis:
 ## Workflow System (Clo-Author + DAAF Hybrid)
 
 This repository implements a research workflow modelled on two open-source frameworks:
+
 - **Clo-Author** (hsantanna.org/clo-author) — command-based research pipeline with worker-critic pairs
 - **DAAF** (github.com/DAAF-Contribution-Community/daaf) — agent behavioural protocols, adversarial verification
 
 ### Command Reference
 
-| Command | What runs | Output |
-|---------|-----------|--------|
-| `/discover --theory [mechanism]` | Read relevant module from `docs/theory/` + check bridge | Mechanism summary + testable hypotheses |
-| `/discover --lit [topic]` | lit-review-assistant skill + Consensus/Scholar Gateway search | Annotated bibliography, frontier map |
-| `/discover --data [construct]` | source-researcher pattern on target dataset | Variable map, caveats, suppression patterns |
-| `/strategize` | Strategist + strategist-critic (worker-critic pair) | Strategy memo, pseudo-code, robustness plan |
-| `/strategize --pap` | Strategist in PAP mode | Pre-analysis plan (AEA/OSF format) |
-| `/analyze [dataset]` | data-planner → research-executor → code-reviewer | Scripts + output + QA report |
-| `/analyze --dual r,python` | Same analysis in R + Python, convergence check | Two implementations + divergence flag |
-| `/review --peer [journal]` | domain-referee + methods-referee (blind, parallel) | Editorial decision + point-by-point |
-| `/review --methods` | strategist-critic only | Identification critique |
-| `/review --code` | code-reviewer only | Script QA |
-| `/tools learn` | Formalise a multi-step discovery into a skill | New `.claude/skills/[name]/SKILL.md` |
+| Command                          | What runs                                                     | Output                                      |
+| -------------------------------- | ------------------------------------------------------------- | ------------------------------------------- |
+| `/discover --theory [mechanism]` | Read relevant module from `docs/theory/` + check bridge       | Mechanism summary + testable hypotheses     |
+| `/discover --lit [topic]`        | lit-review-assistant skill + Consensus/Scholar Gateway search | Annotated bibliography, frontier map        |
+| `/discover --data [construct]`   | source-researcher pattern on target dataset                   | Variable map, caveats, suppression patterns |
+| `/strategize`                    | Strategist + strategist-critic (worker-critic pair)           | Strategy memo, pseudo-code, robustness plan |
+| `/strategize --pap`              | Strategist in PAP mode                                        | Pre-analysis plan (AEA/OSF format)          |
+| `/analyze [dataset]`             | data-planner → research-executor → code-reviewer              | Scripts + output + QA report                |
+| `/analyze --dual r,python`       | Same analysis in R + Python, convergence check                | Two implementations + divergence flag       |
+| `/review --peer [journal]`       | domain-referee + methods-referee (blind, parallel)            | Editorial decision + point-by-point         |
+| `/review --methods`              | strategist-critic only                                        | Identification critique                     |
+| `/review --code`                 | code-reviewer only                                            | Script QA                                   |
+| `/tools learn`                   | Formalise a multi-step discovery into a skill                 | New `.claude/skills/[name]/SKILL.md`        |
 
 *Note: These commands are workflow conventions. Invoke them by describing the intent to Claude — e.g., "Run a /strategize --pap for the following research question..."*
 
@@ -126,28 +128,33 @@ This repository implements a research workflow modelled on two open-source frame
 Every substantive output should be reviewed adversarially before Ben sees it. Standard pair:
 
 **For empirical strategy:**
+
 - Worker: "You are the Strategist. Given this research question and the theory bridge, propose an empirical strategy. Use the domain-profile for identification conventions."
 - Critic: "You are the Strategist-Critic. Here is a proposed empirical strategy. Apply the five adversarial lenses: Coherence, Semantic, Omission, Fragility, Stakeholder. What are the three hardest problems with this design?"
 
 **For code:**
+
 - Worker writes script following sequential inline Python style (see `CLAUDE.md`)
 - Critic reads script + data sample and asks: "Would code-reviewer flag this? Does the methodology in the code match the strategy memo?"
 
 **For literature:**
+
 - Worker: Librarian collects and synthesises
 - Critic: Asks "What is missing? What contradicts this? What would a hostile referee say?"
 
 ### Quality Gates (adapted for dissertation)
-| Gate | Score | Applies to |
-|------|-------|------------|
-| Exploration | 60/100 | `explorations/` sandbox work |
-| Analysis-ready | 80/100 | Scripts graduating to `analysis/` |
-| Pre-registration | 90/100 | PAP before touching full data |
-| Chapter draft | 95/100 | Before sharing with supervisor |
+
+| Gate             | Score  | Applies to                        |
+| ---------------- | ------ | --------------------------------- |
+| Exploration      | 60/100 | `explorations/` sandbox work      |
+| Analysis-ready   | 80/100 | Scripts graduating to `analysis/` |
+| Pre-registration | 90/100 | PAP before touching full data     |
+| Chapter draft    | 95/100 | Before sharing with supervisor    |
 
 ### The LEARN System
 
 When Ben corrects you or you discover something important:
+
 1. Add a `[LEARN:category]` tag to `MEMORY.md` immediately
 2. If the correction is multi-step or reusable, run `/tools learn` to create a full skill in `.claude/skills/`
 3. Read `MEMORY.md` at the start of every coding session
@@ -157,6 +164,7 @@ When Ben corrects you or you discover something important:
 ## Skills: What Exists vs. What Needs Building
 
 ### Currently Available (Cowork built-ins)
+
 - `lit-review-assistant` — literature search and synthesis
 - `academic-paper-writer` — economics paper structure and style
 - `pdf`, `docx`, `pptx`, `xlsx` — document creation
@@ -180,6 +188,7 @@ Adapted from DAAF: when Ben adds a new dataset, run a profiling session that gen
 ## Key Merge Logic (reproduce exactly, do not improvise)
 
 ### ESS → Task Scores
+
 ```python
 tasks = pd.read_csv('data/raw/shared_isco_task_scores/isco08_3d-task3.csv')
 df['isco08_3d'] = df['isco08'] // 10   # CRITICAL: 4→3 digit truncation
@@ -187,12 +196,14 @@ df = df.merge(tasks[['isco08_3d','rtask','nrtask']], on='isco08_3d', how='left')
 ```
 
 ### ESS → Party Populism Scores
+
 ```python
 crosswalk = pd.read_csv('data/raw/langenkamp_belonging/ess_populist_crosswalk.csv')
 # Match on: cntry + essround + country-specific prtvtXXX variable
 ```
 
 ### Individual → Regional Data
+
 ```python
 # ESS has: cntry (ISO-2) + nuts2 (when available)
 # Regional files: data/raw/milner_2021/
@@ -206,6 +217,7 @@ crosswalk = pd.read_csv('data/raw/langenkamp_belonging/ess_populist_crosswalk.cs
 Repository initialised at `Research_Master/`. Initial commit: `3f866f7` (157 files, 2026-03-14).
 `data/raw/` is git-ignored (2.6GB). All docs, metadata, scripts, samples are tracked.
 **No remote has been set up yet** — push to GitHub when ready:
+
 ```bash
 git remote add origin https://github.com/YOUR_USERNAME/research-master.git
 git push -u origin main
