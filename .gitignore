@@ -2,3 +2,6 @@ data/raw/
 *.dta
 __pycache__/
 .DS_Store
+
+# Derived datasets (regenerate via analysis/run_sorting_mechanism.py)
+analysis/sorting_mechanism_master.csv
