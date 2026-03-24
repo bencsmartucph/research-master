@@ -1,0 +1,68 @@
+{
+  "model2_verified": true,
+  "random_slope": {
+    "lr_stat": 89.65872444352135,
+    "lr_p": 3.3951218049720054e-20,
+    "rs_liberal_coef": 0.1268266645569875,
+    "rs_liberal_se": 0.04183307101903381,
+    "rs_liberal_p": 0.002431548976002194
+  },
+  "model3_controls": {
+    "original_coef": -0.05604834942100598,
+    "original_se": 0.006685044889163957,
+    "original_p": 5.109813348051751e-17,
+    "controlled_coef": -0.05600616398272759,
+    "controlled_se": 0.006685022094773759,
+    "controlled_p": 5.389974481893987e-17
+  },
+  "overlap": {
+    "n": 15,
+    "cwed_r": -0.8483065292427672,
+    "cwed_p": 6.422163559666424e-05,
+    "almp_r": 0.010938846910117454,
+    "almp_p": 0.9691365567355883,
+    "countries": [
+      "AT",
+      "BE",
+      "CH",
+      "DE",
+      "DK",
+      "ES",
+      "FI",
+      "FR",
+      "GB",
+      "IE",
+      "IT",
+      "NL",
+      "NO",
+      "PT",
+      "SE"
+    ]
+  },
+  "bootstrap": {
+    "observed_coef": 0.17510051008511424,
+    "observed_t": 4.921075552362826,
+    "boot_p_percentile": 0.9849246231155779,
+    "boot_p_tstat": 0.49246231155778897,
+    "boot_ci_lo": 0.11065213417517121,
+    "boot_ci_hi": 0.2399276552893261,
+    "n_boot": 199,
+    "n_subsample": 30000
+  },
+  "composition": {
+    "rti_edu_r": -0.45051537694068716,
+    "rti_edu_p": 0.0,
+    "high_rti_by_regime": {
+      "Nordic": 0.3062240663900415,
+      "Continental": 0.27895731436193866,
+      "Liberal": 0.35146310432569977,
+      "Southern": 0.3802861185348216,
+      "Eastern": 0.336516952773519
+    }
+  },
+  "nonlinear_interaction": {
+    "coef": -0.029067566566363143,
+    "se": 0.03975345536810111,
+    "p": 0.4646594581874103
+  }
+}

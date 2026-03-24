@@ -1,0 +1,107 @@
+{
+  "Model 1": {
+    "coef_rti": 0.18179616988603467,
+    "se_rti": 0.009392540812137633,
+    "p_rti": 1.8364547158447738e-83,
+    "n": 125169,
+    "r2": 0.18206353634269712
+  },
+  "Model 2": {
+    "params": {
+      "task_z": {
+        "coef": 0.20404182022506323,
+        "se": 0.013005595089584526,
+        "p": 1.8051301759890655e-55
+      },
+      "task_z:C(welfare_regime, Treatment(reference=\"Nordic\"))[T.Continental]": {
+        "coef": 0.029430817883983322,
+        "se": 0.01640744607731874,
+        "p": 0.0728534556489711
+      },
+      "task_z:C(welfare_regime, Treatment(reference=\"Nordic\"))[T.Eastern]": {
+        "coef": -0.1468057794522004,
+        "se": 0.01624272023592958,
+        "p": 1.5919874709493902e-19
+      },
+      "task_z:C(welfare_regime, Treatment(reference=\"Nordic\"))[T.Liberal]": {
+        "coef": 0.11721782508417573,
+        "se": 0.021259555902814548,
+        "p": 3.514601974842421e-08
+      },
+      "task_z:C(welfare_regime, Treatment(reference=\"Nordic\"))[T.Southern]": {
+        "coef": 0.019424654156782826,
+        "se": 0.021921117098331125,
+        "p": 0.375554983727176
+      }
+    },
+    "n": 125169,
+    "converged": true
+  },
+  "Model 3": {
+    "coef_rti": 0.21601689417179576,
+    "se_rti": 0.007800564479706979,
+    "coef_cwed": -0.06915811939115626,
+    "se_cwed": 0.0640937606955486,
+    "coef_interaction": -0.056412549678672194,
+    "se_interaction": 0.00672848408222307,
+    "p_interaction": 5.109813348051751e-17,
+    "n": 81885,
+    "converged": true
+  },
+  "Model 4": {
+    "params": {
+      "task_z": {
+        "coef": 0.1364279173917372,
+        "se": 0.0340531429033905,
+        "p": 6.167108799378796e-05
+      },
+      "task_z:C(welfare_regime, Treatment(reference=\"Nordic\"))[T.Continental]": {
+        "coef": -0.027670854242627597,
+        "se": 0.047786141045279625,
+        "p": 0.5625513516877543
+      },
+      "task_z:C(welfare_regime, Treatment(reference=\"Nordic\"))[T.Eastern]": {
+        "coef": -0.02641493426962657,
+        "se": 0.044449457078219526,
+        "p": 0.5523322112876838
+      },
+      "task_z:C(welfare_regime, Treatment(reference=\"Nordic\"))[T.Liberal]": {
+        "coef": -0.030538864108581844,
+        "se": 0.05654929802856554,
+        "p": 0.5891696765409682
+      },
+      "task_z:C(welfare_regime, Treatment(reference=\"Nordic\"))[T.Southern]": {
+        "coef": -0.007745926240880246,
+        "se": 0.06117603643442984,
+        "p": 0.8992435407219042
+      },
+      "task_z:non_college": {
+        "coef": 0.07416596865501218,
+        "se": 0.03742752793193826,
+        "p": 0.04752528622910602
+      },
+      "task_z:C(welfare_regime, Treatment(reference=\"Nordic\"))[T.Continental]:non_college": {
+        "coef": 0.04002179184123165,
+        "se": 0.051780687720891436,
+        "p": 0.43957586907303114
+      },
+      "task_z:C(welfare_regime, Treatment(reference=\"Nordic\"))[T.Eastern]:non_college": {
+        "coef": -0.05848732739872797,
+        "se": 0.048760998186508274,
+        "p": 0.23034545907436388
+      },
+      "task_z:C(welfare_regime, Treatment(reference=\"Nordic\"))[T.Liberal]:non_college": {
+        "coef": 0.08372108417192212,
+        "se": 0.06225943206424036,
+        "p": 0.17871784920622658
+      },
+      "task_z:C(welfare_regime, Treatment(reference=\"Nordic\"))[T.Southern]:non_college": {
+        "coef": 0.024500217269196083,
+        "se": 0.06693078724026257,
+        "p": 0.7143255075097894
+      }
+    },
+    "n": 125169,
+    "converged": true
+  }
+}

@@ -23,7 +23,43 @@ Research_Master/               ← ROOT
 │
 ├── CLAUDE.md                  ← YOU ARE HERE — read first
 ├── README.md                  ← Human overview
+├── MEMORY.md                  ← Persistent [LEARN] entries across sessions
+├── HANDOVER.md                ← Session continuity & state
 ├── .gitignore                 ← data/raw/ excluded from git
+│
+├── .claude/
+│   ├── agents/                ← Adversarial agent pairs (worker + critic)
+│   │   ├── orchestrator.md    ← Dispatches and coordinates all agents
+│   │   ├── writer.md / writer-critic.md
+│   │   ├── coder.md / coder-critic.md
+│   │   ├── librarian.md / librarian-critic.md
+│   │   ├── strategist.md / strategist-critic.md
+│   │   ├── explorer.md / explorer-critic.md
+│   │   ├── storyteller.md / storyteller-critic.md
+│   │   ├── data-engineer.md / verifier.md
+│   │   ├── domain-referee.md / methods-referee.md
+│   │   └── archive/           ← Retired agent definitions
+│   ├── skills/                ← Slash commands (/analyze, /write, /review, etc.)
+│   │   ├── analyze/SKILL.md
+│   │   ├── write/SKILL.md
+│   │   ├── review/SKILL.md
+│   │   ├── revise/SKILL.md
+│   │   ├── discover/SKILL.md
+│   │   ├── strategize/SKILL.md
+│   │   ├── submit/SKILL.md
+│   │   ├── talk/SKILL.md
+│   │   ├── tools/SKILL.md
+│   │   └── archive/           ← Retired skills
+│   └── rules/                 ← Persistent rules loaded each session
+│       ├── agents.md          ← Adversarial pairing + escalation
+│       ├── workflow.md        ← Plan-first, orchestrator loop, dependencies
+│       ├── domain-profile.md  ← Ben's field, journals, data, referee concerns
+│       ├── quality.md         ← Scoring thresholds + severity gradient
+│       ├── content-standards.md
+│       ├── figures.md / tables.md
+│       ├── logging.md
+│       ├── revision.md
+│       └── archive/           ← Retired rules
 │
 ├── docs/
 │   ├── theory/                ← 15 theory module .md files + theory_index.json
@@ -66,10 +102,14 @@ Research_Master/               ← ROOT
 │   ├── load_ess.R             ← Same for R
 │   └── make_stratified_samples.py
 │
-├── analysis/                  ← Your R/Python analysis scripts go here
-└── outputs/
-    ├── figures/               ← Plots and visualisations
-    └── tables/                ← Regression tables, summary stats
+├── manuscripts/               ← Paper drafts
+├── explorations/              ← Timestamped exploratory sessions
+├── analysis/                  ← Analysis scripts and outputs
+├── outputs/
+│   ├── figures/               ← Plots and visualisations
+│   └── tables/                ← Regression tables, summary stats
+└── quality_reports/           ← Session logs, plans, merge reports
+    └── session_logs/
 ```
 
 ---
@@ -187,6 +227,34 @@ regional, _ = pyreadstat.read_dta('data/raw/milner_2021/data/imputed/imputed_eco
 4. **Euroscepticism .dta and .csv are the same data** — use the .dta
 5. **Baccini analysis-ready files** — use `baccini_2024/Data/individualdata.dta` and `districtdata.dta`, not the raw components
 6. **`posit_income_change` is pre-constructed** in Cicollini's `essprt-all.dta` — don't rebuild from ESS income variables
+
+---
+
+## Python & Data Pitfalls
+
+1. **Verify file paths before analysis** — check that every data file exists (`Path(f).exists()`) before loading. Don't assume `.dta` files are directories.
+2. **Always use explicit encoding** — open text files with `encoding='utf-8'` or `encoding='utf-8-sig'` on Windows. Never rely on the default.
+3. **No single-character string matching** — when filtering party names, categories, or labels, never use single-character keywords (e.g., `'O'`) that will match unintentionally. Use exact matches, multi-word substrings, or word-boundary regex.
+4. **Print dtypes on load** — after loading any dataset, print `df.dtypes` for merge key columns before joining. Catch object/int mismatches early.
+5. **Test merges on small samples first** — run any merge on 100 rows, check output shape and NaN rates before running on full data.
+
+---
+
+## Git & GitHub
+
+1. **Check remote before pushing** — run `git remote -v` before any push/PR operation. If no remote is configured, set one up or report to user.
+2. **Check gh CLI before PR creation** — run `gh --version` first. If absent, provide the manual browser URL (`https://github.com/[owner]/[repo]/compare/[branch]`) instead of failing.
+3. **Verify staged files before committing** — run `git status` to confirm what's staged. Don't assume files are in the expected state from a previous session.
+4. **Stage specific files** — prefer `git add [specific files]` over `git add -A` to avoid accidentally staging `.env`, large data files, or generated outputs.
+
+---
+
+## Academic Research Workflows
+
+1. **Complete all pipeline steps before moving on** — when running a multi-step analysis (data verification → cleaning → regressions → figures → report), use TodoWrite to create a checklist upfront and complete every step. Do not context-switch mid-pipeline.
+2. **Verify column dtypes at load time** — always check that merge keys and numeric variables have the expected types immediately after loading. Fix before proceeding.
+3. **Don't skip figures or robustness** — if a pipeline includes figure generation and robustness checks, these are not optional. A completed pipeline means all outputs exist.
+4. **Document any skipped steps explicitly** — if a step genuinely cannot be completed (missing data, blocked by external dependency), log it in a STATUS note and flag it to the user. Don't silently omit it.
 
 ---
 
