@@ -1,0 +1,4 @@
+spec,model1_rti,model3_cwed,jackknife
+Python (old: random intercept),0.18179616988603467,-0.056412549678672194,see final_results.json
+Python (new: random slopes),0.16810083733693354,-0.059184031054589754,"[-0.062, -0.051]"
+Python (random slopes + GDP/Gini controls),0.16810083733693354,-0.065546412394787,N/A
