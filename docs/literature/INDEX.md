@@ -42,7 +42,6 @@
 - baccini_2024_austerity_economic_vulnerability.md | Austerity drives vulnerable voters to populism (European DiD) | DiD | theory:01,12,04
 - ballard_rosa_et_al_isq_2022_economic_decline.md | Economic decline, social identity, and authoritarian values (ISQ) | OLS/survey | theory:03,08,15
 - ballard_rosa_malik_rickard_scheve_2022_econo.md | Regional economic decline → social identity loss → authoritarian values | OLS/survey | theory:03,08
-- bell_primary_theories_used.md | Intergroup threat and welfare chauvinism in Nordic welfare states | OLS/survey | theory:07,10
 - brian_burgoon_and_wouter_schakel_2022_embedded_li.md | Welfare generosity dampens anti-globalization nationalism in party platforms | panel FE | theory:01,07,12
 - broz_2021_populism_in_place_the_economic_geograp.md | Economic geography of globalization backlash; place-based populism | conceptual/review | theory:01,03,12
 - burgoon_van_noort_rooduijn_and_underhill_2019.md | Positional deprivation (dynamic + relative) and radical party support | multilevel OLS | theory:04,08,12
@@ -74,7 +73,6 @@
 - kurer_2020_the_declining_middle_occupational_ch.md | Status decline (not hardship) drives populist right among routine workers | panel/SOEP | theory:02,08,12
 - kurer_and_bruno_palier_e2019_shrinking_and_shout.md | Employment polarization, status decline, and political revolt | multilevel/survey | theory:02,08,12
 - kurer_and_hausermen_2019_economic_grievances_and_p.md | Economic grievance level depresses turnout; deterioration boosts protest | panel | theory:04,12
-- kurer_associates_threat_and_anxiety_about_status_w.md | Status threat → authoritarianism and out-group hostility (lit note) | conceptual | theory:08,10
 - kurer_van_staalduinen_2022_disappointed_expec.md | Downward mobility from unmet expectations drives electoral change (SOEP) | random forest + OLS | theory:08,12,02
 - laenen_2018_do_institutions_matter_the_interpl.md | Benefit design shapes deservingness perceptions and welfare legitimacy | OLS/survey | theory:05,07,10
 - laenen_et_al_2019_why_deservingness_theory_nee.md | Qualitative evidence on CARIN deservingness criteria across regimes | comparative qualitative | theory:10,07
