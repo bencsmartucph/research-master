@@ -9,24 +9,26 @@ description: "Resume work on a specific project. Reads project STATUS, recent gi
 
 ## Workflow
 
+### Step 0: Validate argument
+```bash
+test -d "projects/$PROJECT" || { echo "Unknown project. Available:"; ls -1 projects/; exit 1; }
+test -f "projects/$PROJECT/STATUS.md" || { echo "projects/$PROJECT exists but has no STATUS.md"; exit 1; }
+```
+
 ### Step 1: Read project status
-```
-Read projects/<project>/STATUS.md
-```
-This contains: current state, decisions made, outstanding tasks, and the NEXT action.
+`Read projects/<project>/STATUS.md` in full — it's small by design (~50 lines cap).
 
 ### Step 2: Read recent git history
 ```bash
-git log -5 --oneline --all
+git log -5 --oneline          # current branch only; --all pulls noise
 ```
-Shows what was done in the last few sessions.
 
 ### Step 3: Read latest plan (if any)
 ```bash
-# Find most recent plan file
-ls -t quality_reports/plans/ | head -1
+LATEST=$(ls -t quality_reports/plans/*.md 2>/dev/null | head -1)
+[ -z "$LATEST" ] && echo "(no plans on disk yet)" || head -40 "$LATEST"
 ```
-Read the first 30 lines of the most recent plan for session context.
+Read ~40 lines to catch Status + Approach + NEXT (plans have metadata at top, but the NEXT line can be deeper).
 
 ### Step 4: Present briefing
 Produce a 10-line session briefing:

@@ -9,14 +9,19 @@ description: "Ingest a new paper (PDF, docx, or markdown). Converts heavy format
 
 ## Workflow
 
-### Step 1: Identify format
-- If `.pdf` → convert with `python -c "import pymupdf; doc=pymupdf.open('FILE'); [print(p.get_text()) for p in doc]"` or `pdftotext`
-- If `.docx` → convert with `pandoc FILE -o /tmp/converted.md`
-- If `.md` → read directly
-- **Rule:** Do NOT read the full file in main context if >500 lines. Use a subagent.
+### Step 1: Convert to markdown
+Probe tool availability in order, use the first that works. Output path: use bash `$(mktemp -d)/converted.md` (works on Git Bash for Windows — avoids `/tmp` and cmd-quoting issues).
+
+- **.pdf** — try in order:
+  1. `python -c "import pymupdf" 2>/dev/null` → `python -c "import pymupdf,sys; [print(p.get_text()) for p in pymupdf.open(sys.argv[1])]" "$FILE" > "$OUT"`
+  2. `pdftotext --version 2>/dev/null` → `pdftotext -layout "$FILE" "$OUT"`
+  3. Else: fail with instruction "install pymupdf (`pip install pymupdf`) or poppler pdftotext"
+- **.docx** — `pandoc --version 2>/dev/null` → `pandoc "$FILE" -o "$OUT"`; else fail with install hint
+- **.md** — skip conversion, set `OUT=$FILE`
+- **Scanned/image PDF check:** after conversion, if `wc -w "$OUT" < 200`, warn "likely scanned PDF, OCR not run — aborting; run OCR first" and exit without writing a lit note
 
 ### Step 2: Extract via subagent
-Delegate to the **explorer** agent with this prompt:
+Invoke the Agent tool with `subagent_type: general-purpose` (keep convention consistent with /critique — do NOT use named agents like `explorer` here; they carry their own framing). Prompt:
 
 ```
 Read the converted file and extract:
@@ -33,21 +38,24 @@ Return as structured markdown, max 200 words.
 ```
 
 ### Step 3: Write literature note
-Save to `docs/literature/SLUG.md` using the standard format already in use.
-- Slug format: `YYYY_authorlast_first_few_words.md`
-- Include the full subagent summary plus any additional context
+Save to `docs/literature/SLUG.md` using the template at `docs/literature/_TEMPLATE.md` (create it on first run if missing — mirror the structure of any existing note under `docs/literature/*.md`).
+
+**Slug:** `YYYY_firstauthorlast_three_title_words.md`, lowercase, underscores. If file exists, append `_v2`, `_v3` etc. Never overwrite.
 
 ### Step 4: Update INDEX
 Append one line to `docs/literature/INDEX.md`:
 ```
 - SLUG.md | Core finding ≤80 chars | method | theory:XX,YY
 ```
+- If theory modules unclear from the paper, write `theory:?` — do not invent
+- Before appending, `grep -q "^- SLUG.md" INDEX.md` — if already present, update in place rather than duplicate
 
-### Step 5: Commit
-```bash
-git add docs/literature/SLUG.md docs/literature/INDEX.md
-git commit -m "lit: add SLUG (via /read-paper)"
+### Step 5: Report (do NOT auto-commit)
+Print a one-line summary to the user:
 ```
+✓ Wrote docs/literature/SLUG.md and appended INDEX.md entry. Review and commit manually.
+```
+Rationale: auto-commit sweeps unrelated dirty files and risks network-drive `.git/index.lock` issues (see global CLAUDE.md). The user commits when they're satisfied.
 
 ## What this replaces
 The old librarian → librarian-critic pipeline. One skill, no scoring, no frontier maps.

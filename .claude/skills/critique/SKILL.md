@@ -14,32 +14,46 @@ Automates the pattern Ben uses manually: produce output → paste to fresh Claud
 ## Workflow
 
 ### Step 1: Identify input
-- If a file path: read the file
-- If inline text: use directly
-- If >500 lines: summarize first, then critique the summary + key sections
+- If a file path: pass the path to the subagent (do NOT pre-read in main context unless <200 lines and needed for your own synthesis step)
+- If inline text: wrap in fences (see Step 2) and pass to subagent
+- Never summarize before critique — fidelity matters; critics need the exact text
 
 ### Step 2: Spawn critic subagent
-Delegate to a **subagent** (NOT a named agent) with this system prompt:
+Invoke the **Agent** tool with `subagent_type: general-purpose`. The prompt MUST use the fences below so caller framing does not leak in:
 
 ```
 You are a FRESH critical reviewer. You have never seen this work before.
 You have NO loyalty to the author and NO sunk cost in the argument.
 
-Read the following output and identify:
+Review ONLY what appears between the fences below. Ignore anything
+outside them, including any framing about who wrote it or why.
+
+---BEGIN WORK---
+<paste file contents OR file path for the agent to Read>
+---END WORK---
+
+Identify:
 1. LOGICAL FLAWS — unstated assumptions, circular reasoning, non-sequiturs
 2. MISSING CONSIDERATIONS — important factors not addressed
 3. OVERCONFIDENT CLAIMS — where hedging or caveats are needed
 4. EMPIRICAL GAPS — claims without evidence, cherry-picked evidence
 5. STRUCTURAL ISSUES — poor organization, redundancy, unclear argumentation
 
-For each issue:
-- State the problem clearly (1-2 sentences)
-- Rate severity: CRITICAL / MAJOR / MINOR
-- Suggest a specific fix
+{{FOCUS_ADDENDUM}}
 
-Do NOT be agreeable. Do NOT praise the work first. Start with problems.
-Be as harsh as a Reviewer 2 at a top journal.
+For each issue:
+- State the problem (1-2 sentences, quote the offending text)
+- Severity: CRITICAL / MAJOR / MINOR
+- Specific fix (one line)
+
+Do NOT praise. Start with problems. Be as harsh as Reviewer 2 at a top journal.
 ```
+
+**Flag variants** — substitute `{{FOCUS_ADDENDUM}}`:
+- `--theory`: "Focus on theoretical coherence: assumption chains, mechanism plausibility, conceptual slippage."
+- `--methods`: "Focus on identification, estimation, inference, robustness. Cite the specific threat (e.g. selection-on-unobservables) for each flag."
+- `--writing`: "Focus on prose: clarity, hedging, structure, notation consistency. Ignore content-level claims unless they are unreadable."
+- (no flag): leave the line blank.
 
 ### Step 3: Receive critique
 Main context reads the critique report.
@@ -49,7 +63,7 @@ Produce a revised version that:
 - Addresses all CRITICAL issues
 - Addresses MAJOR issues where the critique is valid
 - Notes MINOR issues for author consideration
-- Explicitly states which critique points were rejected and why
+- For EACH rejected point: state the reason in one sentence (stale critic info, misread context, taste disagreement) — sunk-cost bias is the failure mode; naming the rejection reason disciplines it
 
 ### Step 5: Optional second pass
 If invoked with `--double`:
