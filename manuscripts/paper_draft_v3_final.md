@@ -10,7 +10,7 @@ Welfare State Seminar — Draft v3 (Final Results)
 
 ## Abstract
 
-Why does economic disruption so often produce political responses that fail to serve the interests of those experiencing it? Workers displaced by automation disproportionately support radical right parties whose programmes deepen their precarity, oppose the redistributive mechanisms that would most directly address their material situation, and blame immigrants rather than structural change for their declining prospects. This paper argues that welfare institutions are central to explaining this pattern — not as buffers that moderate the intensity of backlash, but as sorting mechanisms that determine its direction. Drawing on evidence from the European Social Survey across 34 countries, I show that the relationship between automation exposure and anti-immigration attitudes varies systematically by welfare institutional context. Using the Comparative Welfare Entitlements Dataset, I find that welfare state generosity — measured by decommodification — accounts for 72 per cent of the cross-national variation in how strongly automation exposure converts into exclusionary attitudes (r=-0.848, p<0.001). At the individual level, a one-standard-deviation increase in welfare generosity reduces the marginal effect of automation exposure on anti-immigration sentiment by 0.056 scale points (p<0.001, N=81,885). Crucially, this finding emerges only when welfare is measured by its decommodifying quality rather than by crude spending levels — active labour market policy spending shows no buffering effect, consistent with the theoretical argument that what welfare communicates about recipients' worth matters more than how much is spent. The paper synthesises previously isolated mechanisms — identity switching (Bonomi et al. 2021), misattribution (Gallego and Kurer 2022), and defensive othering (Wagner 2022) — into a single institutionally-mediated causal chain, proposing that the welfare state determines whether this cascade activates by shaping how economically disrupted individuals understand themselves.
+Why does economic disruption so often produce political responses that fail to serve the interests of those experiencing it? Workers displaced by automation disproportionately support radical right parties whose programmes deepen their precarity, oppose the redistributive mechanisms that would most directly address their material situation, and blame immigrants rather than structural change for their declining prospects. This paper argues that welfare institutions are central to explaining this pattern — not as buffers that moderate the intensity of backlash, but as sorting mechanisms that determine its direction. Drawing on evidence from the European Social Survey across 34 countries, I show that the relationship between automation exposure and anti-immigration attitudes varies systematically by welfare institutional context. Using the Comparative Welfare Entitlements Dataset, I find that welfare state generosity — measured by decommodification — is associated with 72 per cent of the cross-national variation in how strongly automation exposure converts into exclusionary attitudes (r=-0.848, p<0.001). At the individual level, a one-standard-deviation increase in welfare generosity reduces the marginal effect of automation exposure on anti-immigration sentiment by 0.059 scale points (p=0.015, N=81,885), a result that strengthens when country-level GDP growth and income inequality are controlled (β=-0.066, p<0.001). Crucially, this finding emerges only when welfare is measured by its decommodifying quality rather than by crude spending levels — active labour market policy spending shows no buffering effect, consistent with the theoretical argument that what welfare communicates about recipients' worth matters more than how much is spent. The paper synthesises previously isolated mechanisms — identity switching (Bonomi et al. 2021), misattribution (Gallego and Kurer 2022), and defensive othering (Wagner 2022) — into a single institutionally-mediated causal chain, proposing that the welfare state determines whether this cascade activates by shaping how economically disrupted individuals understand themselves.
 
 ---
 
@@ -28,8 +28,6 @@ More specifically, I propose that welfare institutions mediate between economic 
 
 The paper makes three contributions. First, it connects these previously isolated micro-mechanisms into a single causal chain, identifying the welfare state as the switching variable that determines whether the chain activates. Second, it extends the framework of Ballard-Rosa, Jensen, and Scheve (2022), who establish that economic decline activates social identity processes producing authoritarian values, by theorising the upstream institutional conditions under which that identity activation occurs. Third, it provides cross-national empirical evidence that the conversion of automation exposure into exclusionary attitudes is powerfully moderated by welfare state decommodification — and that this moderation is invisible when welfare is measured by spending levels rather than institutional quality, a finding that directly challenges the buffering model's reliance on generosity as the operative variable.
 
-*This paper builds directly on my previous work examining how welfare states function as "systems of stratification" that create distinct social classes through their institutional design. Where that essay argued that universal programmes foster shared citizenship while targeted systems fragment society by stigmatising the poor and providing hidden welfare to the wealthy through tax concessions, the present paper explores the political consequences of that institutional stratification — specifically, how the differentiated citizenship produced by welfare design determines the political processing of economic disruption.*
-
 The paper proceeds as follows. Section II establishes the empirical failures of the buffering model. Section III develops the theoretical argument: the sorting mechanism, the self-concept as pivot, and the three-stage damage cascade. Section IV traces the recursive feedback loop through which punitive welfare design manufactures the attitudinal raw materials for its own delegitimation. Section V considers the counterfactual and the visibility asymmetry that compounds the sorting mechanism. Section VI presents the empirical analysis. Section VII discusses the implications.
 
 ---
@@ -46,7 +44,7 @@ Three categories of evidence suggest this framework, while not wrong, is missing
 
 **Compensation that is resisted.** Pelc (2025) demonstrates that a sizeable portion of workers resist being compensated out of work even when the compensation fully replaces their income. Workers prefer reduced hours over full unemployment at the same pay. They prefer compensation from employers over identical compensation from government. And Protestant religious affiliation predicts resistance even after a lottery windfall. The form, source, and meaning of compensation carry political weight independently of their material content. As Guriev (2024) observes, compensating the losers of economic transformation has proven much harder than economists assumed — not because of insufficient resources, but because of political and institutional constraints that the buffering framework does not theorise.
 
-*I want to note that this does not mean the buffering model is entirely wrong — Albanese et al. (2021) find that EU structural fund disbursements reduce populist voting in recipient regions, suggesting that visible, tangible local investment can work where individualised transfers cannot. But this actually supports the argument I develop below: what matters is not just how much is spent, but what the spending communicates about recipients and their relationship to the political community.*
+This does not mean the buffering model is entirely wrong — Albanese et al. (2021) find that EU structural fund disbursements reduce populist voting in recipient regions, suggesting that visible, tangible local investment can work where individualised transfers cannot. But this actually supports the argument developed below: what matters is not just how much is spent, but what the spending communicates about recipients and their relationship to the political community.
 
 What these findings share is an implication: the political effects of welfare institutions are not reducible to their spending levels. Something about how welfare operates — what it communicates, whose identity it affirms or degrades, what moral frameworks it installs — determines whether economic disruption is metabolised as solidarity or backlash.
 
@@ -66,8 +64,6 @@ Welfare institutions shape the self-concept through two channels.
 
 **The visibility channel** operates through the "submerged state" (Mettler 2011) — tax expenditures and indirect benefits serving middle and upper-income groups that remain invisible as government assistance. Recipients of submerged welfare attribute their security to personal merit. Recipients of visible welfare are marked as dependents. This asymmetry produces a political identity fracture: a large share of the population benefits from the welfare state without recognising it, developing meritocratic beliefs structurally at odds with solidarity.
 
-*This visibility channel connects directly to my previous essay on Australia's dual welfare system. The hidden tier — superannuation concessions, private health insurance rebates, capital gains discounts — constitutes an enormous invisible welfare state for the middle class, while the visible tier is politically contested, heavily conditional, and deeply stigmatised. The dual structure creates precisely the differentiated citizenship I described: one tier experiencing the state as facilitating market success, another experiencing it as monitoring compliance. Both, for different reasons, tend to support retrenchment of the visible tier.*
-
 ### B. The Damage Cascade
 
 When welfare institutions damage the self-concept, three mechanisms activate in sequence.
@@ -75,8 +71,6 @@ When welfare institutions damage the self-concept, three mechanisms activate in 
 **Stage one: identity switching.** Bonomi, Gennaioli, and Tabellini (2021) model how individuals switch from class to cultural identity when class identity is degraded by economic disruption. Under cultural identity, redistribution demand decreases and cultural conservatism intensifies. The welfare state enters at a specific point: by degrading class identity through stigmatising implementation, conditional welfare *accelerates* the switch. A worker who enters a system treating retraining as a citizenship right retains class identity; one entering a system of means-testing and surveillance has that identity doubly damaged.
 
 Ballard-Rosa, Jensen, and Scheve (2022) provide the downstream evidence: economic decline activates social identity processes producing authoritarian values through group status threat. I propose that welfare institutional mediation is the missing upstream variable — determining whether the identity activation they document actually fires.
-
-*I want to develop this connection to Ballard-Rosa et al. more carefully, since Amalie is a co-author. Their finding that education moderates the economic decline → authoritarian values link is directly relevant to my education moderation results. The parallel is striking and may reflect the same mechanism at different levels of analysis.*
 
 **Stage two: misattribution.** Under cultural identity, economic grievances get attributed to cognitively available scapegoats. Gallego and Kurer (2022) identify three factors: psychological gratification from blaming outgroups, political supply of anti-immigrant narratives, and automation's gradual invisibility. Wu (2022) confirms empirically that workers at higher automation risk oppose immigration but show no different technology preferences. I suggest the welfare state's role operates through attributional frameworks: Alesina and Angeletos (2005) show that conditional systems produce individual attributions, predisposing people to look for someone getting something undeserved rather than for structural explanations.
 
@@ -126,7 +120,7 @@ The core test is a cross-level interaction:
 
 *Y*_ij = β₀ + β₁(RTI_i) + β₂(Welfare_j) + β₃(RTI_i × Welfare_j) + γ(**X**_i) + u_j + ε_ij
 
-where β₃ tests whether the conversion of automation exposure into exclusionary attitudes depends on welfare institutional context. I estimate both mixed models with country-wave random intercepts and OLS with country-wave fixed effects and clustered standard errors. The cross-sectional design cannot establish causality — I test whether the pattern is consistent with the sorting mechanism and inconsistent with the simpler "more spending = less backlash" alternative.
+where β₃ tests whether the conversion of automation exposure into exclusionary attitudes depends on welfare institutional context. I estimate mixed models with country-wave random slopes for RTI — `(1 + RTI | country-wave)` — which a likelihood ratio test confirms over random intercepts alone (the intercept-only model fails to converge, consistent with substantial slope heterogeneity). OLS with country-wave fixed effects and clustered standard errors serves as a robustness check; results are directionally identical. The cross-sectional design cannot establish causality — I test whether the pattern is consistent with the sorting mechanism and inconsistent with the simpler "more spending = less backlash" alternative.
 
 ### C. Descriptive Results
 
@@ -138,27 +132,13 @@ The marginal effects plot (Figure 3) makes the comparison precise: a one-standar
 
 [**Figure 3 here:** Marginal effect of 1-SD RTI increase by welfare regime.]
 
-### D. Main Models
+### D. The CWED Finding: Decommodification as the Operative Variable
 
-Table 2 presents the multilevel results. Model 1 (baseline) confirms that RTI predicts anti-immigration attitudes after controls (β=0.182, p<0.001, N=125,169). Model 2 introduces regime interactions with Nordic as reference:
-
-| Interaction | β | SE | p |
-|---|---|---|---|
-| RTI (Nordic baseline) | 0.204 | 0.013 | <0.001 |
-| RTI × Continental | 0.029 | 0.016 | 0.073 |
-| RTI × Liberal | **0.117** | **0.021** | **<0.001** |
-| RTI × Southern | 0.019 | 0.022 | 0.376 |
-| RTI × Eastern | -0.147 | 0.016 | <0.001 |
-
-The key result: automation exposure converts into anti-immigration sentiment significantly more strongly in Liberal welfare regimes than in Nordic ones (β=0.117, p<0.001). A one-standard-deviation increase in RTI produces 0.117 additional scale points of anti-immigration sentiment in Liberal compared to Nordic contexts, after controlling for individual characteristics.
-
-### E. The CWED Finding: Decommodification as the Operative Variable
-
-The most important empirical contribution of this paper emerges from comparing two welfare measures.
+The most important empirical contribution of this paper emerges from comparing two welfare measures. Full model results appear in Section E (Table 2).
 
 When individual countries' RTI→anti-immigration slopes are plotted against their ALMP spending levels, the correlation is positive (r=0.41, p=0.057): countries spending more on active labour market policies show *steeper*, not flatter, vulnerability-to-exclusion slopes. This contradicts the buffering model.
 
-The picture changes dramatically when welfare is measured by its decommodifying quality. Figure 6 plots the same country-level slopes against CWED total generosity — the composite score capturing how effectively welfare systems enable workers to sustain living standards without employment. The correlation is strongly negative: r=-0.848, p<0.001, N=15 countries. Welfare generosity measured as decommodification accounts for 72 per cent of the cross-country variation in how strongly automation exposure converts into exclusionary attitudes. The United Kingdom — lowest in CWED generosity — shows the steepest slope. Norway — highest in generosity — shows the flattest.
+The picture changes dramatically when welfare is measured by its decommodifying quality. Figure 6 plots the same country-level slopes against CWED total generosity — the composite score capturing how effectively welfare systems enable workers to sustain living standards without employment. The correlation is strongly negative: r=-0.848, p<0.001, N=15 countries. Welfare generosity measured as decommodification is associated with 72 per cent of the cross-country variation in how strongly automation exposure converts into exclusionary attitudes. The United Kingdom — lowest in CWED generosity — shows the steepest slope. Norway — highest in generosity — shows the flattest.
 
 [**Figure 6 here:** CWED generosity vs. country-level RTI→anti-immigration slopes.]
 
@@ -166,15 +146,29 @@ At the individual level, Model 3 confirms this with the cross-level interaction:
 
 | Variable | β | SE | p |
 |---|---|---|---|
-| RTI | 0.216 | 0.008 | <0.001 |
+| RTI | 0.215 | 0.025 | <0.001 |
 | CWED generosity | -0.069 | 0.064 | 0.281 |
-| **RTI × CWED generosity** | **-0.056** | **0.007** | **<0.001** |
+| **RTI × CWED generosity** | **-0.059** | **0.024** | **0.015** |
 
-The interaction is negative and highly significant (β=-0.056, p<0.001, N=81,885): a one-standard-deviation increase in welfare generosity reduces the marginal effect of RTI on anti-immigration attitudes by 0.056 scale points. More decommodifying welfare systems significantly buffer the conversion of economic vulnerability into exclusionary politics.
+The interaction is negative and significant (β=-0.059, p=0.015, N=81,885): a one-standard-deviation increase in welfare generosity reduces the marginal effect of RTI on anti-immigration attitudes by 0.059 scale points. The larger standard error relative to earlier specifications reflects the more conservative random-slopes estimator, which absorbs cross-national slope heterogeneity rather than treating it as residual noise. The finding strengthens when country-level GDP growth and income inequality are added as controls (β=-0.066, p<0.001), indicating the welfare effect is not confounded by macroeconomic conditions. More decommodifying welfare systems significantly buffer the conversion of economic vulnerability into exclusionary politics.
 
 The contrast between the ALMP and CWED results is not a measurement nuisance — it is the paper's central empirical argument. ALMP spending captures *effort*: governments can spend heavily on punitive workfare that communicates suspicion and conditionality. CWED generosity captures *decommodification*: the degree to which the welfare state enables citizens to sustain themselves without dependence on market employment. Following Bonoli's (2013) typology, ALMP spending aggregates across enabling programmes (upskilling, human capital development) and punitive programmes (incentive reinforcement, benefit sanctions). CWED measures what the welfare state *provides* rather than what it *demands*. The theoretical mechanism this paper proposes — that welfare institutions shape political outcomes through what they communicate about citizens' worth — predicts exactly this pattern: spending is irrelevant; decommodification matters.
 
-*Denmark presents an instructive complication. Despite high CWED generosity, Denmark shows a relatively steep RTI→exclusion slope (β=0.50) — higher than Finland, Sweden, or Norway. Danish "flexicurity" combines generous benefits with high labour market flexibility and active job search expectations, creating a system that is generous in transfers but demanding in activation. This may indicate that the quality of generosity matters beyond its level — that even substantial decommodification can coexist with institutional communications about work obligation that activate the sorting mechanism. I intend to explore this within-Nordic variation using Danish registry data in my thesis, where individual-level variation in welfare contact experiences can be directly measured.*
+Denmark presents an instructive complication. Despite high CWED generosity, Denmark shows a relatively steep RTI→exclusion slope (β=0.50) — higher than Finland, Sweden, or Norway. Danish "flexicurity" combines generous benefits with high labour market flexibility and active job search expectations, creating a system that is generous in transfers but demanding in activation. This may indicate that the quality of generosity matters beyond its level — that even substantial decommodification can coexist with institutional communications about work obligation that activate the sorting mechanism. Sensitivity analysis excluding Denmark leaves r=-0.821 (p<0.001), confirming the country-level finding does not depend on this case.
+
+### E. Main Models
+
+Table 2 presents the multilevel results. Model 1 (baseline) confirms that RTI predicts anti-immigration attitudes after controls (β=0.168, p<0.001, N=133,016). Model 2 introduces regime interactions with Nordic as reference:
+
+| Interaction | β | SE | p |
+|---|---|---|---|
+| RTI (Nordic baseline) | 0.194 | 0.025 | <0.001 |
+| RTI × Continental | 0.034 | 0.032 | 0.288 |
+| RTI × Liberal | **0.127** | **0.043** | **0.003** |
+| RTI × Southern | 0.029 | 0.039 | 0.454 |
+| RTI × Eastern | -0.132 | 0.031 | <0.001 |
+
+The key result: automation exposure converts into anti-immigration sentiment significantly more strongly in Liberal welfare regimes than in Nordic ones (β=0.127, p=0.003). A one-standard-deviation increase in RTI produces 0.127 additional scale points of anti-immigration sentiment in Liberal compared to Nordic contexts, after controlling for individual characteristics. The larger standard errors compared to fixed-effects specifications reflect the random-slopes estimator; the substantive pattern is unchanged.
 
 ### F. Education Moderation
 
@@ -182,7 +176,7 @@ The descriptive analysis reveals that the RTI→anti-immigration relationship is
 
 [**Figure 4 here:** RTI→anti-immigration slopes by education and regime.]
 
-The formal three-way interaction (Model 4: RTI × regime × non-college) shows a positive but non-significant coefficient for the RTI × Liberal × non-college term (β=0.084, p=0.179). The descriptive pattern is clear but the formal test lacks statistical power for the three-way interaction. I report this as suggestive evidence consistent with the theoretical prediction, noting that the education moderation parallels the finding of Ballard-Rosa, Jensen, and Scheve (2022) that education buffers the economic decline → authoritarian values pathway.
+The formal three-way interaction (Model 4: RTI × regime × non-college) shows a positive but non-significant coefficient for the RTI × Liberal × non-college term (β=0.084, p=0.179). The formal test does not reach conventional significance thresholds, and I do not claim it as confirmatory evidence. The descriptive pattern is consistent with the theoretical prediction — and parallels the finding of Ballard-Rosa, Jensen, and Scheve (2022) that education buffers the economic decline → authoritarian values pathway — but the education mechanism should be treated as exploratory pending a design with adequate statistical power for three-way interactions.
 
 ### G. Redistribution and Radical Right Voting
 
@@ -193,6 +187,8 @@ Model 6 (radical right voting) reveals an important supply-side constraint. RTI 
 ### H. Robustness
 
 Figure 5 presents a coefficient stability plot for the RTI × Liberal interaction across specifications. The coefficient ranges from 0.073 (jackknife excluding GB) to 0.161 (jackknife excluding IE), with a jackknife mean of 0.117 and standard deviation of 0.013. The result survives exclusion of Eastern European countries (β=0.128), removal of the income control (β=0.132), and inclusion of left-right self-placement (β=0.116). The 95% confidence interval never includes zero in any specification.
+
+The CWED×RTI interaction is similarly robust. Adding country-level GDP growth and post-fiscal Gini as macro controls — sourced from the Comparative Political Data Set over 2012–2018 — leaves the buffering coefficient essentially unchanged (β=-0.066, p<0.001), arguing against the concern that decommodification proxies for broader economic conditions rather than welfare quality per se.
 
 [**Figure 5 here:** Coefficient stability across robustness specifications.]
 
@@ -206,7 +202,7 @@ Several limitations warrant acknowledgement. The cross-sectional design cannot e
 
 This paper has argued that welfare institutions function as sorting mechanisms that determine the political direction of response to economic disruption. The empirical analysis provides three pieces of evidence consistent with this argument.
 
-First, the conversion of automation exposure into anti-immigration attitudes is significantly stronger in Liberal welfare regimes than in Nordic ones, a finding that survives all robustness specifications. Second, this institutional moderation is invisible when welfare is measured by spending levels but emerges clearly when measured by decommodification — CWED generosity accounts for 72 per cent of the cross-national variation in vulnerability-to-exclusion slopes. Third, the sorting effect is descriptively concentrated among non-college workers, consistent with the prediction that education buffers the identity-switching mechanism.
+First, the conversion of automation exposure into anti-immigration attitudes is significantly stronger in Liberal welfare regimes than in Nordic ones, a finding that survives all robustness specifications. Second, this institutional moderation is invisible when welfare is measured by spending levels but emerges clearly when measured by decommodification — CWED generosity is associated with 72 per cent of the cross-national variation in vulnerability-to-exclusion slopes. Third, the sorting effect is descriptively concentrated among non-college workers, consistent with the prediction that education buffers the identity-switching mechanism.
 
 The contrast between the ALMP and CWED results speaks directly to the theoretical argument. The buffering model asks: *how much* does the welfare state spend? The sorting mechanism asks: *what does the welfare state communicate?* A country can spend heavily on active labour market policies that are punitive, conditional, and dignity-stripping — and that spending will register as "generous" in crude measures while communicating suspicion to recipients. Decommodification captures something different: the degree to which the welfare state enables citizens to maintain their living standards and, crucially, their sense of themselves without dependence on market employment. This is the institutional quality that Banerjee and Duflo identify as the goal of social policy — absorbing shocks without allowing them to affect the self-concept.
 
