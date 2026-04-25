@@ -45,6 +45,8 @@
 - [LEARN:theory] Welfare chauvinism (12) = supply-side response to demand-side status anxiety.
 - [LEARN:theory] Core claim: decommodification, not spending, is operative. ALMP/CWED contrast is the paper's central empirical argument.
 - [LEARN:theory] ALMP puzzle: spending aggregates enabling + punitive programmes. CWED captures whether workers can sustain themselves without employment — the theoretically correct dimension.
+- [LEARN:theory] **Asymmetric mechanism (committed April 2026):** welfare design's political effects are asymmetric — damage is detectable, equivalent protection is not. Three asymmetries: loss aversion (Kahneman-Tversky), positional status (Gidron-Hall 2017), irreversibility of defensive othering (Pierson 1994 photographic-negative reading). "Dignity is a baseline good. Its absence damages; its presence clears the ground for solidarity without producing it."
+- [LEARN:theory] Solidarity construction is *not* purely a function of welfare design — requires political work (coalitional framing, electoral institutions, narrative entrepreneurs) that welfare design alone cannot supply. Welfare's role is permissive not productive on the solidarity side.
 
 ---
 
@@ -55,8 +57,10 @@
 - [LEARN:writing] Working papers to verify: Wagner (2022/2023), Stutzmann (2025), Pelc (2025) — check for published versions.
 - [LEARN:writing] Model ordering: lead with Model 3 (CWED continuous), then Model 2 (regime categorical).
 - [LEARN:writing] Education moderation: report descriptively, note non-significant 3-way (p=0.179).
-- [LEARN:writing] Redistribution (H2): RTI × Liberal = 0.011, p=0.285. Accept as genuine asymmetry.
-- [LEARN:writing] RR vote (Model 6): RTI × Liberal = -0.123, p=0.032 (negative). Supply-side explanation.
+- [LEARN:writing] Redistribution (H2): RTI × Liberal = 0.011, p=0.285. Accept as genuine asymmetry — and (April 2026) foreground it as the paper's central theoretical claim, not a concession.
+- [LEARN:writing] RR vote (Model 6): RTI × Liberal = -0.123, p=0.032 (negative). Supply-side explanation. Frame as confirmation of attitudes-vs-votes distinction, not as puzzle.
+- [LEARN:writing] Title (April 2026): "Dignity Is a Baseline: Welfare Institutions and the Asymmetric Politics of Economic Disruption." Locked.
+- [LEARN:writing] Tier 1 added citations: Kurer & Palier 2019 (dignity appeal), Burgoon & Schakel 2022 (engagement, not contradiction — platform vs voter level), Van Hootegem 2025 (two faces of activation), Häusermann-Kurer-Zollinger 2023 (universalism-particularism), Im 2023 (status decline panel), Kurer & van Staalduinen 2022 (status discordance asymmetry), Kahneman & Tversky 1979 (loss aversion), Goos-Manning-Salomons 2014 (RTI), Iversen & Soskice 2001 (asset theory), Bornschier-Haffert-Häusermann 2024 (cleavage), Halikiopoulou & Vlandas 2016 (predecessor of V&H 2022), Ennser-Jedenastik 2019 (cushion or catalyst), Jeffrey 2020 (rhetoric), Kuziemko 2023 (predistribution preference).
 - [LEARN:writing] Country × wave FE absorbs time-invariant country vars. Use interactions or cross-country variance checks.
 - [LEARN:writing] CWED sample (N=81,885) differs from Model 2 sample (N=125,169). Always report Ns separately.
 
