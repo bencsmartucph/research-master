@@ -63,6 +63,9 @@
 - [LEARN:writing] Tier 1 added citations: Kurer & Palier 2019 (dignity appeal), Burgoon & Schakel 2022 (engagement, not contradiction — platform vs voter level), Van Hootegem 2025 (two faces of activation), Häusermann-Kurer-Zollinger 2023 (universalism-particularism), Im 2023 (status decline panel), Kurer & van Staalduinen 2022 (status discordance asymmetry), Kahneman & Tversky 1979 (loss aversion), Goos-Manning-Salomons 2014 (RTI), Iversen & Soskice 2001 (asset theory), Bornschier-Haffert-Häusermann 2024 (cleavage), Halikiopoulou & Vlandas 2016 (predecessor of V&H 2022), Ennser-Jedenastik 2019 (cushion or catalyst), Jeffrey 2020 (rhetoric), Kuziemko 2023 (predistribution preference).
 - [LEARN:writing] Country × wave FE absorbs time-invariant country vars. Use interactions or cross-country variance checks.
 - [LEARN:writing] CWED sample (N=81,885) differs from Model 2 sample (N=125,169). Always report Ns separately.
+- [LEARN:writing] Ben's pre-AI voice (Global Media essay 2017): heavy semicolons, near-zero em-dashes. Transition vocabulary "Indeed/Ultimately/Through this perspective/Consequently/Thus/Similarly/yet". Match this register when ghostwriting; em-dashes are the #1 AI-detection tell — purge to <30 per 7000 words.
+- [LEARN:writing] Will Francis humanizing rules are a starting heuristic. Where WF banned words conflict with Ben's voice (e.g., "foster" appears in Global Media essay), voice wins.
+- [LEARN:code] `scripts/build_submission_docx.py` now inserts figures via `FIGURE_MAP` dict. Currently maps Figure 2/3/6; add new entries when paper references additional figures. Falls back to grey placeholder if image not found.
 
 ---
 
