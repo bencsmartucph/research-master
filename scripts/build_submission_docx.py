@@ -48,10 +48,12 @@ def add_inline(para, text, base_bold=False, base_italic=False, size=None):
 # ─── Paragraph formatting helpers ─────────────────────────────────────────────
 
 def fmt_double(para):
+    """Body paragraph spacing. Single-spacing with paragraph gap fits AER
+    Insights page budget (~10-14 pages for 5500 words inc. refs and figures)."""
     pf = para.paragraph_format
-    pf.line_spacing_rule = WD_LINE_SPACING.DOUBLE
+    pf.line_spacing_rule = WD_LINE_SPACING.SINGLE
     pf.space_before = Pt(0)
-    pf.space_after  = Pt(0)
+    pf.space_after  = Pt(8)
 
 def fmt_single(para, after=Pt(4)):
     pf = para.paragraph_format
