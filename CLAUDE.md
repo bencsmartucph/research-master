@@ -26,8 +26,25 @@
 | Literature → theory mapping | `metadata/literature_map.md` |
 | Data dictionary | `metadata/data_dictionary.md` |
 | Persistent corrections | `MEMORY.md` |
+| **Working relationship & calibration** | **`docs/working_with_ben.md`** |
+| **Intellectual portrait** | **`docs/A Mind in Formation with part 6.md`** |
+| Strategic memo (active sprint) | `docs/strategic_memo_2026-04-25.md` |
 
 **Convention:** Never read .pdf, .docx, or files >500 lines in main context. Use the explorer agent or convert with pandoc first.
+
+---
+
+## Voice & Collaboration Rules (standing context)
+
+**Before drafting anything that will appear under Ben's name:** invoke the `voice-ben` skill. Pre-AI samples in `manuscripts/Writing Samples/` are the calibration. Em-dashes are the #1 AI tell and not in his voice; use semicolons. Distinctive transitions: `Indeed`, `Furthermore`, `Through this perspective`, `Effectively`, `undergirding`, `as purported by`, `Drawing on`, `Firstly/Secondly/Thirdly`.
+
+**Before recommending hedged prose:** invoke `notes-prose-gap`. He has a pattern of hedging in prose claims that his working notes have already accepted. Catch the gap; don't perpetuate it.
+
+**For detector-resistance work:** invoke `humanize-academic`. Honest about limits — AI editing AI cannot reach high human-detection scores; the reliable fix is for him to type key paragraphs himself. Recommend that explicitly when surface editing is exhausted.
+
+**For theory-heavy intros:** invoke `quote-mosaic`. The structure (3-5 direct quotes with author commentary) aligns with his curatorial method and breaks LLM perplexity signature. This worked on the asymmetric welfare paper (100% AI → 60% human in one restructure).
+
+**Recommendation default:** when offered safe-vs-authentic choices, recommend authentic. When offered shorter-vs-deeper, recommend deeper. He picks the bigger move reliably and benefits from being offered it. See `docs/working_with_ben.md` for the full collaboration theory.
 
 ---
 
