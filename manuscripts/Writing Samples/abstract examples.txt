@@ -1,0 +1,108 @@
+ince the 1990s, welfare reform has placed increasing emphasis on the “activation” of recipients. This
+has come with a growing load of obligations and responsibilities for recipients, requiring them to prove
+their deservingness to receive welfare benefits. What feedback does this have on the welfare attitudes
+of target populations? I draw on qualitative interviews with Austrian and German labor market and
+pension policy recipients, showing there is a general tendency to internalize deservingness criteria and
+to “mirror” them onto others. This mechanism, however, can work in different directions. Where
+recipients lack the capacity to meet access criteria, this leads to experiences of misrecognition and
+social exclusion. Many react to these by pointing their finger at less deserving welfare recipient groups,
+arguing that based on the criteria proposed by the policy norm, those rather than themselves should
+be excluded from public solidarity provision. This results in a dynamic of “kicking down” along the “rank
+order” of deservingness (van Oorschot 2000), typically ending with blaming of immigrants (welfare
+chauvinism). On the contrary, I find some evidence that where social investment policies provide active
+resources that raise recipients’ capacity, enabling them to socially participate, this comes with
+experiences of recognition and social inclusion. In reaction, there is a tendency to argue that “others
+should be provided the same opportunity”, even if they have a lower standing in the rank order of
+deservingness. These findings contribute to the literature on welfare reform and policy feedback
+
+
+--------
+Mature welfare states must increasingly handle growing fiscal pressures and a multitude of needs
+with smaller resources. Meanwhile, evaluations of policy outputs are characterized as ‘the weakest
+link’ in welfare state support, resulting in generalized political distrust. We assess the procedural
+fairness argument that citizens are not only concerned with welfare state outcomes but also
+assess the fairness of the processes of service delivery. The fairness perspective has usually been
+tested in cross-sectional studies, experiments or on the ‘input side’ of democracy. By contrast, we
+use primary three-wave panel data on evaluations and experiences with welfare state institutions.
+The random-effects within-between framework allows improved causal evidence that both
+outputs (service quality satisfaction) and procedural fairness (experienced voice opportunities)
+affect political trust. Crucially, however, perceived fairness mitigates detrimental effects of poor
+outcomes. This is because procedural voice matters, especially for the formation of political trust
+among losers.
+
+
+-----
+Does becoming poorer always cause people to shift their attitudes towards higher demand for
+redistribution? Through a systematic review of the literature on this question, we reveal five
+important themes in existing research: a person’s current income, their future expectations, their
+expectations about redistribution benefits, their income in early life and their attitudes towards
+beneficiaries. Identifying these themes helps explain why responses to economic hardship are
+variable and heterogeneous, and can very usefully guide future research.
+
+
+Support for populist radical right parties in Europe has dramatically increased in recent
+years.
+We decompose the rise of these parties from 2005 to 2020 into four compo-
+nents: shifts in party positions, changes in voter attributes (opinions and demograph-
+ics), changes in voter priorities, and a residual. We merge two wide datasets on party
+positions and voter attributes and estimate voter priorities using a probabilistic voting
+model. We find that shifts in party positions and changes in voter attributes do not
+play a major role in the recent success of populist radical right parties. Instead, the
+primary driver behind their electoral success lies in voters’ changing priorities. Particu-
+larly, voters are less likely to decide which party to support based on parties’ economic
+positions. Rather, voters—mainly older, nonunionized, low-educated men—increasingly
+prioritize nativist cultural positions. This allows populist radical right parties to tap
+into a preexisting reservoir of culturally conservative voters. Using the same datasets,
+we provide a set of reduced-form evidence supporting our results. First, while parties’
+positions have changed, these changes are not consistent with the main supply-side hy-
+potheses for populist support. Second, on aggregate, voters have not adopted populist
+right-wing opinions. Third, voters are more likely to self-identify ideologically based on
+their cultural rather than their economic opinions.
+
+
+-----
+
+
+ABSTRACT
+Labor-saving technology has already decreased employment oppor-
+tunities for middle-skill workers. Experts anticipate that advances
+in AI and robotics will cause even more significant disruptions in
+the labor market over the next two decades. This paper presents
+three experimental studies that investigate how this profound eco-
+nomic change could affect mass politics. Recent observational stud-
+ies suggest that workers’ exposure to automation risk predicts their
+support not only for redistribution but also for right-wing populist
+policies and candidates. Other observational studies, including my
+own, find that workers underestimate the impact of automation
+on their job security. Misdirected blame towards immigrants and
+workers in foreign countries, rather than concerns about workplace
+automation, could be driving support for right-wing populism. To
+correct American workers’ beliefs about the threats to their jobs,
+I conducted three survey experiments in which I informed work-
+ers about the existent and future impact of workplace automation.
+While these informational treatments convinced workers that au-
+tomation threatens American jobs, they failed to change respon-
+dents’ preferences on welfare, immigration, and trade policies. My
+research finds that raising awareness about workplace automation
+did not decrease opposition to globalization or increase support for
+policies that will prepare workers for future technological disrup-
+tions.
+
+
+----
+Abstract
+This article investigates the political consequences of occupational change in
+times of rapid technological advancement and sheds light on the economic
+and cultural roots of right-wing populism. A growing body of research shows
+that the disadvantages of a transforming employment structure are strongly
+concentrated among semiskilled routine workers in the lower middle class.
+I argue that individual employment trajectories and relative shifts in the
+social hierarchy are key to better understand recent political disruptions.
+A perception of relative economic decline among politically powerful
+groups—not their impoverishment—drives support for conservative and,
+especially, right-wing populist parties. Individual-level panel data from
+three postindustrial democracies and original survey data demonstrate
+this relationship. A possible interpretation of the findings is that traditional
+welfare policy might be an ineffective remedy against the ascent of right-
+wing populism.
+

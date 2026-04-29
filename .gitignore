@@ -1,7 +1,20 @@
+# Data (large, regeneratable)
 data/raw/
 *.dta
-__pycache__/
-.DS_Store
-
-# Derived datasets (regenerate via analysis/run_sorting_mechanism.py)
 analysis/sorting_mechanism_master.csv
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / sync artifacts
+.DS_Store
+__MACOSX/
+.tmp.driveupload/
+~$*.docx
+~$*.xlsx
+*.crdownload
+*.tmp
+
+# Obsidian (in case another stray vault appears)
+.obsidian/
