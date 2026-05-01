@@ -28,6 +28,7 @@
 | Persistent corrections | `MEMORY.md` |
 | **Working relationship & calibration** | **`docs/working_with_ben.md`** |
 | **Intellectual portrait** | **`docs/A Mind in Formation with part 6.md`** |
+| **Harness reference (trust tiers, agents, skills, hooks)** | **`docs/working_with_harness.md`** |
 | Strategic memo (active sprint) | `docs/strategic_memo_2026-04-25.md` |
 
 **Convention:** Never read .pdf, .docx, or files >500 lines in main context. Use the explorer agent or convert with pandoc first.
