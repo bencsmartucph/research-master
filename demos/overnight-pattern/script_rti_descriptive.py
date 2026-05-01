@@ -175,35 +175,38 @@ def label_to_major(label):
     return np.nan
 
 
-# --- Coerce isco08 to major group ---
+# --- Coerce isco08 to major group + immigration items to numeric ---
+# Build all derived columns in a single concat to avoid DataFrame fragmentation.
 isco_raw = df["isco08"]
 if pd.api.types.is_numeric_dtype(isco_raw):
-    # 4-digit numeric ISCO-08 → first digit is major group
-    df["isco_major"] = (
-        pd.to_numeric(isco_raw, errors="coerce").astype("Float64") // 1000
-    ).astype("Float64")
+    isco_major = (pd.to_numeric(isco_raw, errors="coerce") // 1000).astype("Float64")
     print("[rti] Numeric isco08 detected; major group = first digit of 4-digit code.")
 else:
-    df["isco_major"] = isco_raw.apply(label_to_major)
-    matched = df["isco_major"].notna().sum()
+    isco_major = isco_raw.apply(label_to_major)
+    matched = isco_major.notna().sum()
     total = df["isco08"].notna().sum()
     print(f"[rti] String isco08 detected; keyword-matched "
           f"{matched}/{total} occupation labels to major groups.")
 
-df["rti_proxy"] = df["isco_major"].map(MAJOR_GROUP_RTI)
-assert df["rti_proxy"].notna().sum() > 0, "RTI proxy is fully missing — keyword map failed."
-print(f"[rti] rti_proxy non-missing: {df['rti_proxy'].notna().sum()}/{len(df)}")
+rti_proxy = isco_major.map(MAJOR_GROUP_RTI)
+assert rti_proxy.notna().sum() > 0, "RTI proxy is fully missing — keyword map failed."
 
-# --- Coerce immigration items to numeric and build anti-immigration index ---
-for item in IMMIG_ITEMS:
-    if item not in df.columns:
-        continue
-    df[item + "_num"] = pd.to_numeric(df[item], errors="coerce")
-
-num_cols = [c + "_num" for c in IMMIG_ITEMS if c + "_num" in df.columns]
+immig_numeric_frame = pd.DataFrame(
+    {item + "_num": pd.to_numeric(df[item], errors="coerce")
+     for item in IMMIG_ITEMS if item in df.columns},
+    index=df.index,
+)
+num_cols = list(immig_numeric_frame.columns)
 assert len(num_cols) >= 2, "Fewer than 2 immigration items numeric — index unreliable."
 # ESS items run 0-10 with 0 = anti, 10 = pro. Recode to anti-immigration direction.
-df["anti_immig_index"] = 10 - df[num_cols].mean(axis=1)
+anti_immig_index = 10 - immig_numeric_frame.mean(axis=1)
+
+df = pd.concat(
+    [df, isco_major.rename("isco_major"), rti_proxy.rename("rti_proxy"),
+     immig_numeric_frame, anti_immig_index.rename("anti_immig_index")],
+    axis=1,
+)
+print(f"[rti] rti_proxy non-missing: {df['rti_proxy'].notna().sum()}/{len(df)}")
 print(f"[attitudes] anti_immig_index non-missing: "
       f"{df['anti_immig_index'].notna().sum()}/{len(df)}")
 print(f"[attitudes] index summary: mean={df['anti_immig_index'].mean():.2f}, "
@@ -254,14 +257,18 @@ for idx, country in enumerate(countries):
         xs = np.linspace(x.min(), x.max(), 50)
         ax.plot(xs, intercept + slope * xs, color="#c0392b", linewidth=1.2, alpha=0.8)
 
-    ax.set_xlabel("Routine task intensity (major-group proxy, z-like)")
-    ax.set_ylabel("Anti-immigration index (0-10)")
     ax.grid(True, alpha=0.25, linewidth=0.4)
     ax.set_axisbelow(True)
 
 # Blank any unused subplots
 for idx in range(n_countries, nrows * ncols):
     fig.delaxes(axes[idx // ncols][idx % ncols])
+
+# Shared axis labels — one per figure, not per panel — to avoid overlap.
+fig.supxlabel("Routine task intensity (ISCO-08 major-group proxy)",
+              fontfamily="serif", fontsize=10)
+fig.supylabel("Anti-immigration index (0-10, higher = more anti)",
+              fontfamily="serif", fontsize=10)
 
 # Per .claude/rules/figures.md: NO embedded title or subtitle on the figure.
 fig.suptitle("")  # explicit blank
