@@ -260,6 +260,14 @@
   "almp_vs_slopes": {
     "r": 0.4116277421764231,
     "p": 0.056991675254640606,
-    "n": 22
+    "n": 22,
+    "note": "Full ALMP sample including 7 Eastern European countries. Not matched to CWED sample."
+  },
+  "almp_vs_slopes_matched": {
+    "r": 0.010938846910117454,
+    "p": 0.9691365567355883,
+    "n": 15,
+    "note": "Same 15 Western European countries as CWED analysis. Source: part2_findings.json overlap key.",
+    "countries": ["AT","BE","CH","DE","DK","ES","FI","FR","GB","IE","IT","NL","NO","PT","SE"]
   }
 }
