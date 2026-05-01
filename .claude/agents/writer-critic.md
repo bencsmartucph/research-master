@@ -101,7 +101,9 @@ For each issue found:
 
 ## Save the Report
 
-Save to `quality_reports/[FILENAME_WITHOUT_EXT]_proofread_report.md`
+**Try to save** to `quality_reports/[FILENAME_WITHOUT_EXT]_proofread_report.md`.
+
+If a global runtime instruction prevents writing report files, return the report inline as your final message AND state clearly at the top: "Intended save path: `quality_reports/[FILENAME_WITHOUT_EXT]_proofread_report.md` — parent agent should persist." This avoids the conflict between the agent definition and the cloud-level "do not write report files" rule observed in the harness audit on 2026-05-01.
 
 ## Important Rules
 
