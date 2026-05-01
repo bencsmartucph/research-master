@@ -1,0 +1,168 @@
+/*-- scss:defaults --*/
+
+// Typography — academic but readable
+$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: "Source Serif Pro", "Crimson Text", Georgia, serif;
+
+$presentation-font-size-root: 32px;
+$presentation-h1-font-size: 1.8em;
+$presentation-h2-font-size: 1.4em;
+$presentation-h3-font-size: 1.1em;
+
+// Colours — restrained academic palette
+$body-bg: #fdfdfd;
+$body-color: #1a1a1a;
+$link-color: #0b3d91;
+$selection-bg: #d6e4f0;
+
+$accent-1: #0b3d91;  // dark blue — primary
+$accent-2: #c9302c;  // muted red — emphasis (use sparingly)
+$accent-3: #6c757d;  // grey — secondary text
+
+$presentation-heading-color: $accent-1;
+$presentation-heading-font-weight: 600;
+
+/*-- scss:rules --*/
+
+// Base body
+.reveal {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+// Headings
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: $font-family-sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6em;
+}
+
+.reveal h1.larger {
+  font-size: 2.2em !important;
+  line-height: 1.1;
+}
+
+.reveal h2 {
+  border-bottom: 2px solid $accent-1;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+// Body text and lists
+.reveal p {
+  line-height: 1.45;
+  margin-bottom: 0.5em;
+}
+
+.reveal ul li, .reveal ol li {
+  margin-bottom: 0.3em;
+  line-height: 1.4;
+}
+
+// Blockquotes — for direct quotes from cited literature
+.reveal blockquote {
+  border-left: 4px solid $accent-1;
+  background: #f6f8fa;
+  padding: 0.6em 1em;
+  font-style: italic;
+  font-family: $font-family-serif;
+  margin: 0.8em 0;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.reveal blockquote::before, .reveal blockquote::after {
+  content: none;
+}
+
+// Tables — clean academic style
+.reveal table {
+  font-size: 0.85em;
+  border-collapse: collapse;
+  margin: 0.5em auto;
+}
+
+.reveal table th {
+  border-bottom: 2px solid $accent-1;
+  padding: 0.4em 0.8em;
+  font-weight: 600;
+  background: transparent;
+}
+
+.reveal table td {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.3em 0.8em;
+}
+
+.reveal table tr:last-child td {
+  border-bottom: 2px solid $accent-1;
+}
+
+// Strong emphasis — restrained
+.reveal strong {
+  color: $accent-1;
+  font-weight: 600;
+}
+
+// Three-column layout improvements
+.reveal .columns {
+  gap: 1.5em;
+}
+
+.reveal .column {
+  font-size: 0.9em;
+}
+
+.reveal .column h3 {
+  font-size: 1em;
+  color: $accent-1;
+  margin-bottom: 0.4em;
+}
+
+// Code (rare in this deck, but tidy)
+.reveal code {
+  font-size: 0.85em;
+  background: #f0f0f0;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+// Slide numbers — quiet
+.reveal .slide-number {
+  font-size: 0.6em;
+  color: $accent-3;
+  bottom: 12px;
+  right: 16px;
+}
+
+// Progress bar — quiet
+.reveal .progress {
+  color: $accent-1;
+  height: 3px;
+}
+
+// Center-class slides (title + closing)
+.reveal .center {
+  text-align: center;
+}
+
+// Footnotes / smaller text
+.reveal .smaller {
+  font-size: 0.85em;
+  color: $accent-3;
+}
+
+// Highlighted result — used very sparingly
+.reveal .highlight {
+  background: #fff5d4;
+  padding: 0.05em 0.25em;
+  border-radius: 2px;
+}
+
+// Speaker notes — when shown
+.reveal aside.notes {
+  font-family: $font-family-sans-serif;
+  font-size: 0.9em;
+}
