@@ -36,6 +36,9 @@
 - [LEARN:code] Final pipeline: `analysis/final_analysis_pipeline.py`. Master dataset: `analysis/sorting_mechanism_master_v2.csv` (188,764 × 48).
 - [LEARN:code] R final spec: `lme4::lmer` with `anti_immig_index ~ task_z * welfare_regime + controls + (1 + task_z | cntry_wave)`.
 - [LEARN:code] Random slopes REQUIRED. LR test p<10⁻²⁰. SE doubles but survives at p=0.002. Python statsmodels = diagnostic only.
+- [LEARN:code] **Published §V.D r=-0.848 comes from BLUPs of random-slopes MixedLM with individual controls, NOT bivariate per-country OLS.** Canonical source: `scripts/random_slopes_models.py`. Older `analysis/final_analysis_pipeline.py` Model 3 (random intercepts only, separate-OLS slopes) is superseded for headline numbers. Same data, four methodologies: bivariate r=-0.625, OLS+controls r=-0.786, BLUPs r=-0.855 (published), country-wave averages r=-0.702.
+- [LEARN:code] `scripts/random_slopes_models.py` now includes two-country jackknife (105 pairs), per-country OLS slopes vs CWED, RI vs RS direct comparison. Adds `outputs/tables/jackknife_two_country.csv`, `per_country_slopes.csv`, `rs_vs_ri_model3.csv`.
+- [LEARN:code] `analysis/walkthrough_figures.py` produces 8 PNG figures + 3 Plotly HTML interactives in `outputs/figures/walkthrough/`. Used by the empirical walkthrough doc. Run after any master-CSV change.
 
 ---
 
@@ -66,6 +69,10 @@
 - [LEARN:writing] Ben's pre-AI voice (Global Media essay 2017): heavy semicolons, near-zero em-dashes. Transition vocabulary "Indeed/Ultimately/Through this perspective/Consequently/Thus/Similarly/yet". Match this register when ghostwriting; em-dashes are the #1 AI-detection tell — purge to <30 per 7000 words.
 - [LEARN:writing] Will Francis humanizing rules are a starting heuristic. Where WF banned words conflict with Ben's voice (e.g., "foster" appears in Global Media essay), voice wins.
 - [LEARN:code] `scripts/build_submission_docx.py` now inserts figures via `FIGURE_MAP` dict. Currently maps Figure 2/3/6; add new entries when paper references additional figures. Falls back to grey placeholder if image not found.
+- [LEARN:writing] `docs/empirical_walkthrough_v1.md` (~17,200 words) is the consolidated defence document for §V — read before any methodology defence/Q&A. Eight static figures + three interactive HTMLs embedded. "Defending the choice in 30 seconds" rehearsal box at the end of each of the 8 concepts.
+- [LEARN:writing] **BLUPs disclosure inserted in `manuscripts/paper_draft_v4_final.md` §V.D (2026-05-03):** two sentences before any reported correlation, naming the slope-extraction methodology and noting the bivariate alternative gives r=-0.625.
+- [LEARN:writing] Public-writing project lives in `essays/`, separate from `manuscripts/`. Audience: AI labs as employers, LinkedIn + Substack venues, NOT academic journals. Voice-ben + humanize-academic auto-trigger for anything in `essays/` that will appear under Ben's name.
+- [LEARN:writing] Voice-ben + humanize-academic do NOT trigger for tutor docs addressed TO Ben (e.g., `docs/empirical_walkthrough_v1.md`, `docs/learning_econometrics/01_*.md`). Trigger only for prose Ben publishes UNDER his name.
 
 ---
 
@@ -76,6 +83,8 @@
 - [LEARN:workflow] Stage specific files with `git add [files]`, not `git add -A`.
 - [LEARN:workflow] Complete all pipeline steps before moving on — use TodoWrite upfront.
 - [LEARN:workflow] CWED interaction β=-0.056 survives GDP, Gini, immigrant stock controls. This is the key robustness check.
+- [LEARN:workflow] **Multi-session adversarial iteration pattern**: when a draft feels stale, dispatch a second Claude session to critique it without seeing the first session's reasoning. Ben adjudicates between the two. The second session frequently catches what the first missed (e.g., the "paper-is-the-curriculum" reframe came from a side session reviewing a "patient tutor" outline). Use whenever a piece is on its second pass and feels like it has run out of intellectual tension.
+- [LEARN:workflow] Anchor-paragraph retype protocol for detector resistance: Ben types opening + closing paragraphs from memory (closes file, types fresh). Three retyped paragraphs out of ten typically averages document detector scores down by 30-50 percentage points. Other paragraphs can stay close to drafted.
 
 ---
 

@@ -1,0 +1,64 @@
+What we're doing in this session is not "explain econometrics to me" and not "help me with my homework". It's closer to apprentice-master pacing, adapted to a graduate student returning to a subject after years away, with his own paper as the curriculum. Three properties matter, and none are about model intelligence: the paper is the running example throughout, the tutor remembers across sessions through structured persistent files, and the test of whether learning has happened is defending the choice under adversarial pressure rather than reproducing the definition. If this becomes more common, it will be because graduate students in the same position recognise it as the best version of supervision they have realistic access to.
+
+
+
+
+
+
+
+
+
+-----------
+
+
+1. When helping me develop my study plan for microeconomics, which I hadn't touched in seven years, my small question is asking for pedagogical best practices for teaching topics like this and to have those practices inform or be a foundation for learning the topic as efficiently, but also practically and deeply, as possible. This was refreshing compared to my previous way of loosely writing notes from lecture slides, condensing those notes, and then doing some practice questions, which was both tedious and restraining.
+
+You can inspect my microeconomic database base (https://www.notion.so/bencsmart/3267844a449d81be92a9e63acf2cdbf1?v=3267844a449d81aab8ce000cdf3ce36e&source=copy_link) where, for every assignment, I have agents collect the most relevant pages so I'm not spending any time floating between resources looking for the help I need, but I'm also not just asking them to solve the problem or point me there. And create a "conceptial primer" for each assignment which isn't overly detailed, but keeps the key "vibes" (or at least the vibes that I respond to) on a single page that I can reference for inspiration but not for answers (https://www.notion.so/bencsmart/Conceptual-Primer-Signaling-PBE-from-Scratch-3517844a449d815a878ef1d84c5bbf65?source=copy_link) 
+
+Moreoover, I also have a lecture slides to notion page creation automation via an agent (https://www.notion.so/agent/3267844a449d804ba17e00929d2f33ae?wfv=settings), but instead of just verbatim copying the lecture slides, I figured out over the past few years of using AI for study what structures and formatting and techniques work best for me and keep me engaged.
+
+A minimum example of that is when I'm looking at complex equations, I find it so lovely to have chunks of the equation be color-coded so they can be referenced more easily in the follow-up explanations. This has been a game changer for me! 
+
+
+
+
+So the notes come out structured in a way optimised for my leanring - toggle headings for concepts that might have been forgotten, call-out boxes for common mistakes students make, and toggle headings with "test yourself" who's existence is like a lassoo that stops me from rushing - the kind of rushinf that sometimes come from the anxieties of feeling overwhelmed alongside arrogance that "kinda getting it" is enough. The demoralisation is short lived when I can just ask opus to generate five more practice questions, and only help me after 20 minutes of my best attempt. 
+
+
+Now I have full documentation on, like, an actual markdown file of pedagogical best practices for teaching Ben, and it's not only made my learning more efficient but it's made it way more fun.
+
+
+
+
+
+KNOWLEDGE BASE AND SYNTHESIS
+- When helping me develop my study plan for microeconomics, which I hadn't touched in seven years, my small question is asking for pedagogical best practices for teaching topics like this and to have those practices inform or be a foundation for learning the topic as efficiently, but also practically and deeply, as possible. This was refreshing compared to my previous way of loosely writing notes from lecture slides, condensing those notes, and then doing some practice questions, which was both tedious and restraining. You can inspect my microeconomic start a base where, for every assignment, I have agents collect the most relevant pages so I'm not spending any time floating between resources looking for the help I need, but I'm also not just asking them to solve the problem or point me there. I also have a notion lecture slides to notion page creation automation, but instead of just verbatim copying the lecture slides, I figured out over the past few years of using AI for study what works best for me. 
+
+A minimum example of that is when I'm looking at complex equations, I find it so lovely to have chunks of the equation be color-coded so they can be referenced more easily in the follow-up explanations. This has been a game changer for me! 
+
+" $$
+\begin{array}{ l | l }
+    \color{blue}{k_{t+1}} = (1 - \color{green}{\delta})
+    \color{blue}{k_t} + \color{purple}{f(\color{blue}{k_t})}
+    - \color{orange}{c_t}
+    & \begin{array}{ l l }"
+
+
+
+When adding the lecture slides to notion, perhaps having little toggle headings for concepts that might have been forgotten if you hadn't studied it in a few years, testing myself in that way is that then I can say, "Okay, can you just give me five more practice questions?"
+
+ Now I have full documentation on, like, an actual markdown file of pedagogical best practices for teaching Ben, and it's not only made my learning more efficient but it's made it way more fun.
+
+
+
+
+Smaller examples:
+- using Notebook LLM to turn a research paper into a podcast. Althought the form factor is a little tiny bit cringe, its a refreshing way of ingesting priority 2 papers or ideas in a passive (and I think entertaining) way.
+- Any PDF that gets downloaded to my downloads folder gets instantly turned into Markdown via a watchdog script that I have. If it's a complicated PDF, it gets sent to Markdown using Dockling. This is primarily a context window and token usage limits approach, but it was so easy to set up, and now how could I ever go back?!
+- Having Claude create artificial check points for the minimum requirements of study and revision that I should have done in the months and weeks leading up to the exam, because even though they're not real and there isn't really a way to make an actual deadline. Having this external and well thought-out idea of whether or not I'm behind or not, it's very easy to convince myself that I'm not behind. Having that set in stone has been so motivating! https://www.notion.so/bencsmart/Micro-III-Exam-Study-Plan-Apr-21-Jun-1-f5e32e38d7fd4f7fb3454db7e8c81fe7?source=copy_linkq
+
+
+
+
+1. Learning/Consolidating Econometrics from the ground up by having Opus teach me every step of the way and the logic of applying certain ideas to a topic I love: 
+

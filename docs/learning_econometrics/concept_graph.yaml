@@ -1,0 +1,360 @@
+# Concept dependency graph for the learning_econometrics resource.
+#
+# Concepts are keyed by short snake_case slugs. Slugs are stable across
+# chapter renumbering (concepts may move chapters as Parts II-VI are drafted;
+# slugs survive the move). Chapter manifests reference these slugs in their
+# `introduces` and `requires` fields.
+#
+# Validator: scripts/validate_concept_graph.py (TODO) checks that for every
+# chapter manifest, its `requires` are subsets of the union of `introduces`
+# from all chapters with smaller chapter_id.
+#
+# Maintain the alphabetical order within each section so diffs are readable.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Part I — The Counterfactual Question
+# ─────────────────────────────────────────────────────────────────────────────
+
+ate_att:
+  name: "Average treatment effect (ATE) and ATT"
+  introduced_in: 01
+  description: "Population-average causal contrasts; the things observational econometrics actually estimates."
+  depends_on: [potential_outcomes]
+
+conditional_independence:
+  name: "Conditional independence assumption"
+  introduced_in: 03
+  description: "Treatment is independent of potential outcomes given X. The technical condition that lets controls do their job."
+  depends_on: [potential_outcomes, selection_bias]
+
+four_observational_moves:
+  name: "Conditioning, differencing, instrumenting, matching"
+  introduced_in: 01
+  description: "The four strategies for substituting for missing potential outcomes when randomisation isn't available."
+  depends_on: [randomisation, selection_bias]
+
+fundamental_problem:
+  name: "Fundamental problem of causal inference"
+  introduced_in: 01
+  description: "For every unit we observe one of two potential outcomes; the other is missing."
+  depends_on: [potential_outcomes]
+
+potential_outcomes:
+  name: "Potential outcomes notation"
+  introduced_in: 01
+  description: "Y_i(0), Y_i(1), D_i, the bookkeeping that makes counterfactual claims precise."
+  depends_on: []
+
+randomisation:
+  name: "Randomisation as a solution to selection bias"
+  introduced_in: 01
+  description: "Why coin-flip assignment gives an unbiased ATE estimate: severs the link between D and Y(0)."
+  depends_on: [potential_outcomes, selection_bias]
+
+selection_bias:
+  name: "Selection bias and its decomposition"
+  introduced_in: 01
+  description: "Naive comparison = ATT + selection bias; the algebra that explains why comparing groups usually lies."
+  depends_on: [potential_outcomes]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Part II — Regression as a Tool for Counterfactuals
+# ─────────────────────────────────────────────────────────────────────────────
+
+clustered_se:
+  name: "Cluster-robust standard errors"
+  introduced_in: 08
+  description: "Non-parametric SE correction for within-cluster residual correlation. Design effect = 1 + (n-1)*rho."
+  depends_on: [ols_projection, standard_errors]
+
+frisch_waugh_lovell:
+  name: "Frisch-Waugh-Lovell theorem (regression as matching)"
+  introduced_in: 06
+  description: "Coefficient on X equals coefficient on residualised X after partialling out other regressors. Why controls work."
+  depends_on: [ols_projection, conditional_independence]
+
+ols_projection:
+  name: "OLS as projection (the geometric picture)"
+  introduced_in: 05
+  description: "Minimising sum of squared residuals = projecting Y onto the column space of X. Not 'a method', a unique decomposition."
+  depends_on: [conditional_independence]
+
+standard_errors:
+  name: "What standard errors actually measure"
+  introduced_in: 07
+  description: "Sampling variability of the estimator under repeated sampling. Not the spread of the data, not the precision of any one estimate."
+  depends_on: [ols_projection]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Part III — The Multilevel Move
+# ─────────────────────────────────────────────────────────────────────────────
+
+blups_shrinkage:
+  name: "BLUPs and shrinkage"
+  introduced_in: 12
+  description: "Best Linear Unbiased Predictors: country-specific deviations from fixed effects, weighted toward grand mean by precision."
+  depends_on: [random_intercepts, random_slopes]
+
+likelihood_ratio_test:
+  name: "Likelihood ratio test for nested random-effects structures"
+  introduced_in: 13
+  description: "2*(loglik_full - loglik_reduced) ~ chi-squared(k). The formal warrant for adding random slopes."
+  depends_on: [random_slopes]
+
+multilevel_clumping:
+  name: "When observations clump (the multilevel setup)"
+  introduced_in: 09
+  description: "Country-waves, classrooms, hospitals. The unit at which residuals correlate."
+  depends_on: [standard_errors, clustered_se]
+
+random_intercepts:
+  name: "Random intercepts (letting baselines vary)"
+  introduced_in: 10
+  description: "u_0j ~ N(0, tau^2). The simplest multilevel model."
+  depends_on: [multilevel_clumping]
+
+random_slopes:
+  name: "Random slopes (letting effects vary)"
+  introduced_in: 11
+  description: "(1 + X | group). Allowing the effect of X to differ across groups, with the variance of those differences as a parameter."
+  depends_on: [random_intercepts]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Part IV — Cross-Level Reasoning
+# ─────────────────────────────────────────────────────────────────────────────
+
+cross_level_interaction:
+  name: "Cross-level interaction"
+  introduced_in: 14
+  description: "X_individual * W_country: how the slope of one variable depends on the level of another that varies at a higher level."
+  depends_on: [random_slopes, blups_shrinkage]
+
+jackknife_bootstrap:
+  name: "Jackknife and bootstrap (leverage and resampling)"
+  introduced_in: 17
+  description: "Leave-one-out and resampling-with-replacement. Probing where the inferential weight sits at small N."
+  depends_on: [n_15_inference]
+
+matched_sample:
+  name: "Matched-sample logic"
+  introduced_in: 16
+  description: "Restricting two comparisons to the same units, accepting the power loss to foreclose the sample-composition objection."
+  depends_on: [cross_level_interaction]
+
+n_15_inference:
+  name: "Inference at small country-level N"
+  introduced_in: 15
+  description: "Where the leverage lives when you only have 15 country-level observations to estimate a cross-level effect."
+  depends_on: [cross_level_interaction]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Part V — From Coefficients to Claims
+# ─────────────────────────────────────────────────────────────────────────────
+
+attitudes_vs_behaviours:
+  name: "Attitudes vs behaviours (the supply-side filter)"
+  introduced_in: 20
+  description: "Attitudes form one way; votes follow attitudes through a supply-side translation that varies institutionally."
+  depends_on: [cross_level_interaction]
+
+defence_catalogue:
+  name: "The killer-line catalogue"
+  introduced_in: 21
+  description: "30-second referee responses for every methodological choice. The fluency artefact."
+  depends_on: []  # synthesises everything; depends on all earlier concepts in practice
+
+null_as_evidence:
+  name: "Reading nulls as evidence"
+  introduced_in: 18
+  description: "When a theory predicts a null, observing the null is confirmation. Power analysis distinguishes substantive nulls from underpowered noise."
+  depends_on: [standard_errors, n_15_inference]
+
+two_dv_asymmetry:
+  name: "Two-DV asymmetry"
+  introduced_in: 19
+  description: "Independent positive + null findings on different DVs are theoretically more informative than one positive alone."
+  depends_on: [null_as_evidence]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Part VI — The Within-Country Step (thesis design)
+# ─────────────────────────────────────────────────────────────────────────────
+
+did_basic:
+  name: "Difference-in-differences (the school-vs-school question with time)"
+  introduced_in: 22
+  description: "(Y_post,treat - Y_pre,treat) - (Y_post,control - Y_pre,control). The cleanest observational design when you have before-and-after data."
+  depends_on: [potential_outcomes, conditional_independence, frisch_waugh_lovell]
+
+event_study:
+  name: "Event study"
+  introduced_in: 23
+  description: "Tracking the dynamic of a treatment effect across event-time. DiD's continuous-time cousin."
+  depends_on: [did_basic]
+
+triple_difference:
+  name: "Triple-difference (DDD)"
+  introduced_in: 24
+  description: "When the treatment varies along a third dimension. The DiD generalisation that handles regional × time × group structures."
+  depends_on: [did_basic]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Chapter index — maps chapter_id → (introduces, requires) for quick lookup
+# ─────────────────────────────────────────────────────────────────────────────
+
+chapters:
+  "01":
+    title: "The Counterfactual Question"
+    part: I
+    status: drafted
+    introduces:
+      - potential_outcomes
+      - selection_bias
+      - randomisation
+      - fundamental_problem
+      - ate_att
+      - four_observational_moves
+    requires: []
+  "02":
+    title: "The Selection Problem"
+    part: I
+    status: planned
+    introduces: []
+    requires: [selection_bias]
+  "03":
+    title: "Conditional Independence"
+    part: I
+    status: planned
+    introduces: [conditional_independence]
+    requires: [selection_bias, potential_outcomes]
+  "04":
+    title: "From Experiments to Observational Data"
+    part: I
+    status: planned
+    introduces: []
+    requires: [randomisation, four_observational_moves]
+  "05":
+    title: "What OLS Is Doing (the projection picture)"
+    part: II
+    status: planned
+    introduces: [ols_projection]
+    requires: [conditional_independence]
+  "06":
+    title: "Controls, Partial-Out, and FWL"
+    part: II
+    status: planned
+    introduces: [frisch_waugh_lovell]
+    requires: [ols_projection, conditional_independence]
+  "07":
+    title: "What Standard Errors Actually Measure"
+    part: II
+    status: planned
+    introduces: [standard_errors]
+    requires: [ols_projection]
+  "08":
+    title: "Clustering: When the IID Assumption Breaks"
+    part: II
+    status: planned
+    introduces: [clustered_se]
+    requires: [standard_errors]
+  "09":
+    title: "When Observations Clump"
+    part: III
+    status: planned
+    introduces: [multilevel_clumping]
+    requires: [standard_errors, clustered_se]
+  "10":
+    title: "Random Intercepts"
+    part: III
+    status: planned
+    introduces: [random_intercepts]
+    requires: [multilevel_clumping]
+  "11":
+    title: "Random Slopes"
+    part: III
+    status: planned
+    introduces: [random_slopes]
+    requires: [random_intercepts]
+  "12":
+    title: "BLUPs and Shrinkage"
+    part: III
+    status: planned
+    introduces: [blups_shrinkage]
+    requires: [random_intercepts, random_slopes]
+  "13":
+    title: "Likelihood Ratio Tests"
+    part: III
+    status: planned
+    introduces: [likelihood_ratio_test]
+    requires: [random_slopes]
+  "14":
+    title: "The Cross-Level Interaction"
+    part: IV
+    status: planned
+    introduces: [cross_level_interaction]
+    requires: [random_slopes, blups_shrinkage]
+  "15":
+    title: "Identification at N=15"
+    part: IV
+    status: planned
+    introduces: [n_15_inference]
+    requires: [cross_level_interaction]
+  "16":
+    title: "The Matched-Sample Move"
+    part: IV
+    status: planned
+    introduces: [matched_sample]
+    requires: [cross_level_interaction]
+  "17":
+    title: "Jackknife and Bootstrap"
+    part: IV
+    status: planned
+    introduces: [jackknife_bootstrap]
+    requires: [n_15_inference]
+  "18":
+    title: "Reading Nulls as Evidence"
+    part: V
+    status: planned
+    introduces: [null_as_evidence]
+    requires: [standard_errors, n_15_inference]
+  "19":
+    title: "The Two-DV Asymmetry"
+    part: V
+    status: planned
+    introduces: [two_dv_asymmetry]
+    requires: [null_as_evidence]
+  "20":
+    title: "Attitudes vs Behaviours"
+    part: V
+    status: planned
+    introduces: [attitudes_vs_behaviours]
+    requires: [cross_level_interaction]
+  "21":
+    title: "The Killer-Line Catalogue"
+    part: V
+    status: planned
+    introduces: [defence_catalogue]
+    requires: []  # synthesis chapter
+  "22":
+    title: "Difference-in-Differences"
+    part: VI
+    status: planned
+    introduces: [did_basic]
+    requires: [potential_outcomes, conditional_independence, frisch_waugh_lovell]
+  "23":
+    title: "Event Study"
+    part: VI
+    status: planned
+    introduces: [event_study]
+    requires: [did_basic]
+  "24":
+    title: "Triple-Difference"
+    part: VI
+    status: planned
+    introduces: [triple_difference]
+    requires: [did_basic]
+  "25":
+    title: "What Your Thesis Will and Won't Claim"
+    part: VI
+    status: planned
+    introduces: []
+    requires: [did_basic, event_study]
