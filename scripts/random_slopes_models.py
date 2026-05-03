@@ -213,6 +213,95 @@ jack_min, jack_max = jack_df['cwed_int'].min(), jack_df['cwed_int'].max()
 sign_stable = 'YES' if jack_max < 0 else 'NO — sign flip!'
 print(f"  Jackknife range: [{jack_min:.3f}, {jack_max:.3f}] — never crosses zero: {sign_stable}")
 
+# ── Direct random-intercepts vs random-slopes comparison (REML) ───────────────
+# Paper Model 3 reports β=-0.059 from random-intercepts spec.
+# This block fits both REML versions on the same complete-case sample so
+# the SEs and p-values are directly comparable.
+print("\nDirect RI vs RS comparison for Model 3 (REML)...")
+try:
+    m3_ri_reml = _MixedLM(_endog3, _exog3, groups=_grp3).fit(reml=True, method='lbfgs', disp=False)
+    m3_rs_reml = _MixedLM(_endog3, _exog3, groups=_grp3, exog_re=_re3).fit(reml=True, method='lbfgs', disp=False)
+    k_ri = next((k for k in m3_ri_reml.params.index if 'cwed_generosity_z' in k and 'task_z' in k), None)
+    k_rs = next((k for k in m3_rs_reml.params.index if 'cwed_generosity_z' in k and 'task_z' in k), None)
+    ri_b, ri_se, ri_p = m3_ri_reml.params[k_ri], m3_ri_reml.bse[k_ri], m3_ri_reml.pvalues[k_ri]
+    rs_b, rs_se, rs_p = m3_rs_reml.params[k_rs], m3_rs_reml.bse[k_rs], m3_rs_reml.pvalues[k_rs]
+    print(f"  Random intercepts only:  β={ri_b:.4f}  SE={ri_se:.4f}  p={ri_p:.4f}")
+    print(f"  Random slopes (1+RTI|j): β={rs_b:.4f}  SE={rs_se:.4f}  p={rs_p:.4f}")
+    print(f"  SE inflation factor (RS/RI): {rs_se/ri_se:.2f}x")
+    pd.DataFrame([
+        {'spec':'random intercepts only', 'beta':ri_b, 'se':ri_se, 'p':ri_p},
+        {'spec':'random slopes (1+RTI|j)', 'beta':rs_b, 'se':rs_se, 'p':rs_p},
+    ]).to_csv('outputs/tables/rs_vs_ri_model3.csv', index=False)
+except Exception as e:
+    print(f"  RI vs RS comparison failed: {e}")
+
+# ── Per-country OLS slopes + correlation jackknife (§V.D statistic) ──────────
+# The published r=-0.848 / r=-0.802 (excl UK) / r=-0.794 (excl NO) / r=-0.717
+# (excl UK+NO) numbers come from per-country OLS slopes correlated with CWED,
+# not from the mixed model. This block reproduces those numbers and extends to
+# the full two-country jackknife (105 pairs), which was previously ad-hoc.
+print("\nPer-country OLS slopes + correlation jackknife (§V.D)...")
+import itertools
+from scipy import stats as _stats
+
+# Per-country slopes on the CWED-available 15-country sample
+slopes_rows = []
+for ctry in sorted(df3['cntry'].dropna().unique()):
+    dc = df3[df3['cntry'] == ctry][['task_z','anti_immig_index','cwed_generosity']].dropna()
+    if len(dc) < 50:
+        continue
+    s, _, _, _, se = _stats.linregress(dc['task_z'], dc['anti_immig_index'])
+    cwed_val = dc['cwed_generosity'].iloc[0]
+    slopes_rows.append({'cntry': ctry, 'slope': s, 'se': se, 'cwed': cwed_val, 'n': len(dc)})
+slopes_df = pd.DataFrame(slopes_rows)
+print(f"  Per-country slopes computed: N_countries={len(slopes_df)}")
+
+# Headline correlation
+r_full, p_full = _stats.pearsonr(slopes_df['cwed'], slopes_df['slope'])
+print(f"  Headline (all 15): r={r_full:.3f}, p={p_full:.4f}")
+
+# Single-country jackknife
+single_rows = []
+for c in slopes_df['cntry']:
+    sub = slopes_df[slopes_df['cntry'] != c]
+    r1, p1 = _stats.pearsonr(sub['cwed'], sub['slope'])
+    single_rows.append({'excluded': c, 'r': r1, 'p': p1, 'n': len(sub)})
+single_df = pd.DataFrame(single_rows).sort_values('r')
+print(f"  Single-country jackknife range: r ∈ [{single_df['r'].min():.3f}, {single_df['r'].max():.3f}]")
+print(f"    Worst (closest to zero): excl {single_df.iloc[-1]['excluded']} → r={single_df.iloc[-1]['r']:.3f}")
+print(f"    Best (most negative):    excl {single_df.iloc[0]['excluded']}  → r={single_df.iloc[0]['r']:.3f}")
+
+# TWO-COUNTRY JACKKNIFE — 105 pairs from C(15,2)
+pairs = list(itertools.combinations(slopes_df['cntry'].tolist(), 2))
+pair_rows = []
+for c1, c2 in pairs:
+    sub = slopes_df[~slopes_df['cntry'].isin([c1, c2])]
+    if len(sub) < 5:
+        continue
+    r2, p2 = _stats.pearsonr(sub['cwed'], sub['slope'])
+    pair_rows.append({'excl_a': c1, 'excl_b': c2, 'r': r2, 'p': p2, 'n': len(sub)})
+pair_df = pd.DataFrame(pair_rows).sort_values('r', ascending=False)  # worst (least negative) on top
+print(f"  Two-country jackknife: {len(pair_df)} pairs evaluated")
+print(f"    Worst pair (least negative): excl {pair_df.iloc[0]['excl_a']}+{pair_df.iloc[0]['excl_b']} → r={pair_df.iloc[0]['r']:.3f}, p={pair_df.iloc[0]['p']:.4f}")
+print(f"    Median r across pairs: {pair_df['r'].median():.3f}")
+print(f"    Specific UK+NO exclusion: ", end='')
+uk_no = pair_df[((pair_df['excl_a']=='GB') & (pair_df['excl_b']=='NO')) |
+                ((pair_df['excl_a']=='NO') & (pair_df['excl_b']=='GB'))]
+if len(uk_no):
+    print(f"r={uk_no.iloc[0]['r']:.3f}, p={uk_no.iloc[0]['p']:.4f}")
+else:
+    print("not found in pairs")
+
+# How many of the 105 pairs cross zero or change sign?
+n_crossing = (pair_df['r'] >= 0).sum()
+n_significant = (pair_df['p'] < 0.05).sum()
+print(f"    Pairs with r ≥ 0 (sign flip): {n_crossing} of {len(pair_df)}")
+print(f"    Pairs with p < 0.05:          {n_significant} of {len(pair_df)} ({n_significant/len(pair_df):.0%})")
+
+slopes_df.to_csv('outputs/tables/per_country_slopes.csv', index=False)
+single_df.to_csv('outputs/tables/jackknife_single_country.csv', index=False)
+pair_df.to_csv('outputs/tables/jackknife_two_country.csv', index=False)
+
 # ── Compare old vs new spec ────────────────────────────────────────────────────
 py_results = json.load(open('analysis/final_results.json'))
 comparison = pd.DataFrame([
