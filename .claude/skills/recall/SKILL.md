@@ -28,7 +28,9 @@ Read these paths in order, capping the total at ~50 files:
 3. `quality_reports/research_journal.md`
 4. `projects/*/STATUS.md` (all active project STATUSes)
 
-**Skip files under `quality_reports/session_logs/_private/`** — these are excluded by convention from the recall corpus.
+**Skip files under `quality_reports/session_logs/_private/`** — excluded by convention from the recall corpus.
+
+**De-prioritise `quality_reports/session_logs/_auto/`** — these are SessionEnd hook checkpoints (uncommitted-files snapshots). Surface them only when the query is about "what was I doing last" or "what's uncommitted" — not for substantive recall. Breadcrumbs, not summaries.
 
 If the corpus has >50 entries, prefer the **30 most recent session logs** + the four canonical files above. Skip older logs unless the query explicitly mentions a date range.
 

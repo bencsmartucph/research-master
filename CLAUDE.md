@@ -4,6 +4,35 @@
 
 ---
 
+## Environment
+
+- OS: Windows. Prefer PowerShell tool for shell commands; fall back to Bash only when needed.
+- Git is not always on PATH for plugin/marketplace installs. If `git not found` appears, suggest setting PATH or using full path to git.exe rather than retrying.
+- `.claude/` writes require interactive approval — never dispatch parallel sub-agents for edits inside `.claude/`. Edit those from the main session.
+
+---
+
+## Ask before persistent writes (bypass-permissions guard)
+
+Ben often runs in **bypass-permissions mode**, so the harness will not prompt before writes. This means *Claude* has to be the gate. Before writing or editing any of the following, **explicitly ask first** — even for what looks like a small change:
+
+- `CLAUDE.md` (any), `MEMORY.md`, `~/.claude/CLAUDE.md`
+- Anything inside `.claude/skills/`, `.claude/agents/`, `.claude/rules/`, `.claude/settings*.json`
+- `projects/*/STATUS.md` *content edits* (the `/done` skill's appended session blocks are exempt)
+- Adding a new entry to controlled vocabularies (e.g., `/done` topics list)
+
+For ordinary working files (scripts, manuscripts, figures, session logs, plans), proceed without asking. The rule targets *persistent context that auto-loads forever* — those edits compound, so they need a human nod every time.
+
+Phrasing: *"I want to add X to MEMORY.md / CLAUDE.md / the done skill — confirm?"* One line, then wait.
+
+---
+
+## Voice gate before publication
+
+Before committing prose Ben will sign (papers, abstracts, blog posts, applications), run `/voice-audit <path>`. Score must be ≥ 75 (Mixed → Recognisable band) before commit. Fix flagged violations, re-run, repeat.
+
+---
+
 ## Researcher
 
 **Ben Smart** (`bencsmart@gmail.com`) — MSc Economics (University of Copenhagen, conferred 2026), beginning PhD in political economy / comparative politics.
@@ -29,8 +58,9 @@
 | **Working relationship & calibration** | **`docs/working_with_ben.md`** |
 | **Intellectual portrait** | **`docs/A Mind in Formation with part 6.md`** |
 | Strategic memo (active sprint) | `docs/strategic_memo_2026-04-25.md` |
+| **Build commands (docx, slides, figures, analysis)** | **`scripts/README.md`** |
 
-**Convention:** Never read .pdf, .docx, or files >500 lines in main context. Use the explorer agent or convert with pandoc first.
+**Convention:** Never read `.pdf` or files >2000 lines in main context. `.docx` is fine after `pandoc` conversion to `.md` (if under 2000 lines). Files 500–2000 lines may be read directly when calibration / analytical fidelity matters. Subagents doing analytical work must return raw counts + method, not just summary stats. See `.claude/rules/heavy-reads.md` for the full contract.
 
 ---
 

@@ -58,6 +58,60 @@ Determine which project this session worked on:
 
 If `none`, the skill skips the STATUS.md update step but still writes session log + SESSION_REPORT + research_journal.
 
+### Step 1.5 — Pre-capture checks (git + STATUS staleness)
+
+Before generating the summary, run three checks and surface results to the user. These catch the most common end-of-session leakage points (forgotten commits, stale STATUS, stranded WIP).
+
+**a) Git state snapshot.** Run:
+
+```
+git status --porcelain
+git log --oneline origin/master..HEAD
+```
+
+- If `git log` shows commits ahead of `origin/master`, capture the list — they go into the session log under a "Git state" section.
+- If `git status --porcelain` returns non-empty, **classify the dirty files using these heuristics first, then propose the action — don't open the four-way menu unless the case is genuinely ambiguous**:
+
+  | Signal | Auto-action |
+  |--------|-------------|
+  | All dirty files match auto-generated/noise patterns: `*.aux`, `*.log`, `*.synctex.gz`, `__pycache__/`, `*_files/`, `*.tmp`, `slides_files/` | **ignore silently** (don't even mention) |
+  | Dirty files are exclusively under `quality_reports/`, `SESSION_REPORT.md`, `projects/*/STATUS.md` (i.e., /done's own outputs being written right now) | **ignore silently** |
+  | Dirty files were *not* touched in this session (compare against conversation evidence — file paths the assistant read or wrote) | **ignore + warn once**: *"N pre-existing dirty file(s) — leaving untouched"* |
+  | Dirty files were touched this session AND form a coherent change (same area: `.claude/skills/`, or `manuscripts/`, or `scripts/`) | **propose commit**: *"I'll commit these N files as `<drafted message>` — confirm? (y / wip / stash)"* — draft the message from the dominant area + most descriptive change |
+  | Dirty files touched this session but span unrelated areas (e.g., a manuscript edit + a skill edit + a figure) | **propose split commits**: list each group with a draft message; user confirms or says wip |
+  | User has signalled context switch ("switching to thesis", "moving on") earlier in conversation | **stash**: `git stash push -m "/done WIP YYYY-MM-DD <area>"` |
+
+  Only fall back to the four-way menu (commit | stash | wip | ignore) if the heuristic genuinely can't classify.
+
+  Action semantics:
+  - **commit** → pause, draft message, run `git add <files>` + `git commit`; record hash in session log.
+  - **stash** → `git stash push -m "/done WIP YYYY-MM-DD"`; record stash ref.
+  - **wip** → no git action; session log records "Stranded WIP" with file list.
+  - **ignore** → no action, no log entry (or one-line warn for pre-existing dirt).
+
+**b) STATUS.md staleness.** If the active project's `STATUS.md` mtime is >7 days old, prompt:
+
+> *"projects/<name>/STATUS.md last updated N days ago. Update top-of-file 'Current state' before this /done writes its session block? (yes | skip)"*
+
+If yes, ask the user for 1-3 lines on current state and prepend (do not append — the head of STATUS.md is the live snapshot).
+
+**c) Pending-item cross-check.** Read the active STATUS.md "Pending" / "Open questions" sections (if present). For each pending item, check whether any file path mentioned in the item was modified this session (use the conversation evidence from Step 1 plus the git diff from check (a)). If matches found, prompt:
+
+> *"These pending items may be resolved this session — tick off in STATUS.md?\n- [ ] <item> (touched: <files>)\nMark complete? (yes | no | partial)"*
+
+Skip silently if no matches.
+
+**Capture output for the session log.** All three checks feed into a new "Git state" section appended to the session log (Step 3a):
+
+```markdown
+## Git state
+- Branch: <branch>
+- Commits ahead of origin/master: N
+  - <hash> <message>
+- Uncommitted at /done: <list or "clean">
+- STATUS.md staleness: <N days, "fresh", or "updated this session">
+```
+
 ### Step 2 — Generate the session summary
 
 Extract from the conversation. Required sections:

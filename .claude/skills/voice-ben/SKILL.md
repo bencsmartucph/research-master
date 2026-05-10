@@ -365,7 +365,9 @@ sentence_rules:
   no_em_dash_apposition_stacking: true
   prefer_semicolon_over_em_dash: true
   embed_citations_mid_sentence: true
-  first_person_commitment_explicit: true   # "I argue", "I find", "I contend"
+  first_person_commitment_explicit: false  # Ben's stated preference (2026-05-10): avoid first-person.
+                                           # Pre-AI corpus has 0 "I"; the "I argue / I suggest" instances are Origins-only (post-AI drift).
+                                           # Prefer third-person paper-as-agent: "this paper argues", "the analysis shows", "our research".
   short_sentence_share: "20-30%"           # sentences under 8 words
   slight_grammatical_roughness_acceptable: true
   no_throat_clearing_openers: true
@@ -395,6 +397,8 @@ diagnostic_targets:
   banned_words_count: 0           # excepting banned_vocabulary_exceptions
   what_x_is_constructions: 0
   ben_transitions_per_1000_words: ">=5"
+  first_person_singular_per_1000_words: "<0.5"   # Hard cap; pre-AI corpus is at 0.0
+  first_person_plural_per_1000_words: "<3"        # "our research", "our study" are fine; "we find" sparingly
 
 voice_calibration_sources:
   - "manuscripts/Writing Samples/Ben Smart - Final Essay - Global Media.docx"
@@ -454,7 +458,7 @@ Three pre-AI samples calibrate this voice (see `voice_calibration_sources`). The
 - **Long compound sentences are the default.** 25-40 words is normal; 67 words is the opening of the Global Media essay.
 - **Heavy semicolons, sparing em-dashes.** Em-dashes appear in the 2018 Newspaper Representations sample but never as default cadence punctuation.
 - **Citations embedded mid-sentence**, often stacked: `(Sunstein 2007 p.19; Van Aelst et. Al 2017 p.13; Wojcieszak 2010 p.636)`.
-- **First-person argumentative commitments are explicit:** "I argue", "I contend", "I take this literally".
+- **Avoid first-person; the paper is the agent.** Pre-AI corpus has zero "I" across Global Media, Politicians and Twitter, and Newspaper Representations. The "I argue / I suggest / I aim" instances in the lexicon are Origins-only and reflect post-AI drift. Use "this paper argues", "the analysis shows", "our research / our study"; reserve "we" for genuine multi-author work or sparingly as editorial-we, not as default voice.
 - **Distinctive vocabulary:** Ben reaches for `homophilous`, `factitious`, `polemical`, `undergirding`, `valorises`, `disunifying` — words LLMs typically avoid.
 - **Slight grammatical roughness is real.** Subject-verb spreads, occasional awkward clause stacks. Don't over-smooth.
 
