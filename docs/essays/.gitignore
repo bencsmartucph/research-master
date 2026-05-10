@@ -18,6 +18,3 @@ __MACOSX/
 
 # Obsidian (in case another stray vault appears)
 .obsidian/
-
-# Local-only: git worktree scratch space (created by skills)
-.claude/worktrees/
