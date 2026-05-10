@@ -3,6 +3,7 @@
 **Talk:** Welfare Seminar, 4 May 2026
 **Duration:** 20 minutes (15 substantive slides + 4 backup) + Q&A
 **Audience:** Peer reviewer (read paper) + classmates + supervisor possibly
+**Render:** Quarto Reveal.js (`slides.html`) — open in Chrome/Edge, press `f` for fullscreen, `s` for speaker view
 
 ---
 
@@ -11,9 +12,9 @@
 | Section | Slides | Minutes | Cumulative |
 |---------|--------|---------|------------|
 | Opening + puzzle | 1–2 | 2 | 2 |
-| Buffering account + evidence against it | 3–5 | 4 | 6 |
-| **Theoretical core** (asymmetric mechanism) | 6–9 | 7 | 13 |
-| Empirical setup + results | 10–13 | 5 | 18 |
+| Buffering account + evidence against it | 3–4 | 3 | 5 |
+| **Theoretical core** (asymmetric mechanism) | 5–8 | 8 | 13 |
+| Empirical setup + results | 9–13 | 5 | 18 |
 | Implications + close | 14–15 | 2 | 20 |
 
 Aim to land at **18 minutes** on the closing slide. The two-minute buffer protects you from running over and gives Q&A breathing room.
@@ -44,35 +45,21 @@ Aim to land at **18 minutes** on the closing slide. The two-minute buffer protec
 
 ---
 
-## SLIDE 3 — What the buffering account predicts (60 seconds)
+## SLIDE 3 — What the buffering account predicts (90 seconds)
 
 > The buffering account rests on Ruggie's framework of embedded liberalism. Democratic governments, recognising that economic openness produces losers, provide social protection as compensation. The assumption is that compensation will dampen the political resentment of the dislocated.
 >
-> The operative variable is quantity. More spending, less populism. Symmetric: damage and repair as mirror images. Compensation works by replacing income lost to disruption.
+> The operative variable is quantity. More spending, less populism. Symmetric: damage and repair as mirror images.
 >
-> The quantity assumption is what I'm going to challenge.
+> Three different research designs push back. Gingrich's cross-national analysis: workers exposed to automation are *not* less likely to vote populist in countries with more generous early retirement, in-kind spending, or protective regulation. Stutzmann on the German coal phase-out: substantial compensatory investment, affected communities had material conditions held constant, and they showed *higher* abstention and *lower* support for the issue-owning party. Pelc's experimental work: workers refuse to be compensated out of work *even when the compensation fully replaces their income*.
+>
+> Three different designs. Same direction. Material compensation is doing less of the political work than the buffering model assumes.
 
-**Glance at the navy quote box but speak to the room.**
+**This slide takes the longest in the opening section. Don't rush. The evidence is what gives you permission to make the theoretical move next.**
 
 ---
 
-## SLIDE 4 — Three streams of evidence (120 seconds)
-
-> Three different research designs, all pointing the same direction.
->
-> [Point to first column.] Gingrich's cross-national analysis. Workers exposed to automation are *not* less likely to vote populist in countries with more generous early retirement, more in-kind spending, or more protective regulation. Gallego and Kurer call this "a concerning finding" — careful language for a damaging one.
->
-> [Point to second column.] Stutzmann on the German coal phase-out. Substantial compensatory investment. Affected communities had material conditions held constant. They showed *higher* abstention and *lower* support for the issue-owning party. Compensation backfired.
->
-> [Point to third column.] Pelc's experimental work. Workers refuse to be compensated out of work *even when the compensation fully replaces their income*. Form, source, and meaning of compensation matter independently of material content.
->
-> Three different designs. Same conclusion. Material compensation is doing less of the political work than the buffering model assumes.
-
-**This slide takes the longest. Don't rush. The evidence is what gives you permission to make the theoretical move next.**
-
----
-
-## SLIDE 5 — Kurer names the tension (60 seconds)
+## SLIDE 4 — Kurer names the tension (60 seconds)
 
 > Tobias Kurer names what's going on directly. [Read the quote slowly.]
 >
@@ -80,7 +67,7 @@ Aim to land at **18 minutes** on the closing slide. The two-minute buffer protec
 >
 > Kurer and Palier, in stronger phrasing: "this appeal to personal dignity is key to winning routine workers' support. Perhaps even more than social protection, they demand economic *and* cultural protection."
 >
-> And Gidron and Hall, the most-cited statement of the recognition claim: right-populist voters "care as much, or even more, about recognition as about redistribution."
+> And Gidron and Hall: right-populist voters "care as much, or even more, about recognition as about redistribution."
 >
 > The pattern across these is that redistribution and recognition aren't fungible. The buffering framework treats them as if they were. They aren't. This paper takes Kurer's claim literally and asks which institutional dimension actually does the political work.
 
@@ -88,13 +75,13 @@ Aim to land at **18 minutes** on the closing slide. The two-minute buffer protec
 
 ---
 
-## SLIDE 6 — The argument in one slide (120 seconds) ⭐ CENTRAL
+## SLIDE 5 — The argument (90 seconds) ⭐ CENTRAL
 
 > Here's the argument.
 >
 > Welfare institutions are *asymmetric* in their political effects.
 >
-> They can fail politically — by damaging the self-concept of vulnerable workers — through a cascade I'll detail in a moment: identity switching, misattribution, defensive othering. Each step has a documented empirical literature; the contribution is connecting them.
+> They can fail politically — by damaging the self-concept of vulnerable workers — through a documented chain of psychological responses I'll show you in a moment.
 >
 > They cannot, by symmetric operation, succeed.
 >
@@ -108,65 +95,81 @@ Aim to land at **18 minutes** on the closing slide. The two-minute buffer protec
 
 ---
 
-## SLIDE 7 — Why welfare and not something else (60 seconds)
+## SLIDE 6 — Why welfare and not something else (60 seconds)
 
-> A reasonable objection at this point: lots of institutions shape identity. Media environments construct group boundaries. Religious traditions supply moral narratives. Class structures generate interest coalitions. Why isolate welfare?
+> A reasonable objection at this point: lots of institutions shape identity. Media construct group boundaries. Religious traditions supply moral narratives. Class structures generate interest coalitions. Why isolate welfare?
 >
-> The answer is that welfare is the single state domain where economic vulnerability and institutional treatment meet at the same moment.
+> [Pause; let them register the question.]
 >
-> When a worker encounters the welfare state, the institution allocates resources *and* renders judgement about the worker's claim to those resources, in the same act.
+> Welfare is the single state domain where economic vulnerability and institutional treatment meet at the same moment. When a worker encounters the welfare state, the institution allocates resources *and* renders judgement about the worker's claim to those resources, in the same act.
 >
-> Courts judge but rarely allocate. Markets allocate without judgement, or pretend to. Religious institutions judge but cannot compel.
+> [Walk through the table.] Courts judge but rarely allocate. Markets allocate without judgement, or pretend to. Religious institutions judge but cannot compel.
 >
-> Only welfare does both. At the point of maximum material dependence.
+> Only welfare does both, at the point of maximum material dependence. That's why welfare and not something else.
 
-**Use your hands here. The "courts judge but rarely allocate" sequence is rhythmic — let it carry.**
+**Use your hands here. The "courts judge but rarely allocate" sequence is rhythmic — let it carry. This slide earns the deeper move on the next slide.**
 
 ---
 
-## SLIDE 8 — The damage cascade (120 seconds)
+## SLIDE 7 — The damage cascade (120 seconds) ⭐ MECHANISM
 
-> Three responses follow when welfare institutions damage the self-concept. Each builds on, and is harder to reverse than, the one before.
+> Here's what follows when welfare institutions damage the self-concept. Each step in the chain has its own documented literature; the contribution of this paper is the *connection* between them.
 >
-> [Point to column 1.] First, identity switches. Bonomi, Gennaioli and Tabellini model how individuals move from class to cultural identity when class identity is degraded by economic disruption. The welfare state enters at a specific point: stigmatising implementation degrades class identity *directly*, accelerating the switch.
+> [Trace the flowchart left to right slowly. Pause between each box.]
 >
-> [Point to column 2.] Once cultural identity is in charge, grievances misattribute. Wu shows this empirically: workers at higher automation risk oppose immigration, but show no different technology preferences. The misdirection has no protective analogue — there's no condition under which structural attribution emerges as a substitute for cultural attribution workers would otherwise have made.
+> First, stigmatising welfare implementation degrades class identity directly. Soss on welfare implementation, Wagner on dignity injuries.
 >
-> [Point to column 3.] The third move is defensive: othering. Patrick documents UK benefit claimants shoring up their own deservingness through critique of those below them, using the welfare system's own criteria. Wagner calls this "kicking down."
+> Once class identity is damaged, cultural identity activates. Bonomi, Gennaioli and Tabellini model this exactly: individuals move from class to cultural identity when class identity is degraded by economic disruption.
+>
+> Cultural identity now in charge, grievances misattribute. Wu shows this empirically: workers at higher automation risk oppose immigration, but show no different technology preferences. The misdirection has no protective analogue — there's no condition under which structural attribution emerges as a substitute for the cultural one workers would otherwise have made.
+>
+> The third move is defensive: othering. Patrick documents UK benefit claimants shoring up their own deservingness through critique of those below them, using the welfare system's own criteria. Wagner calls this "kicking down."
 >
 > The cascade ends in what Busemeyer, Rathgeb and Sahm call the *particularistic-authoritarian* welfare preference: pro-workfare, anti-poor, anti-social-investment. The political programme of a self-concept the welfare state has helped construct.
+>
+> What's mine is the connection — that these mechanisms are linked, that welfare design is the institutional condition under which they engage together.
 
-**This is dense. Speak slowly. Move physically across the slide as you point.**
+**This is dense. Speak slowly. Move physically across the slide as you trace the arrows. The pause between cultural identity → misattribution is the moment listeners often "get" why the chain runs only one direction.**
 
 ---
 
-## SLIDE 9 — Why no mirror image (120 seconds)
+## SLIDE 8 — Why no mirror image (90 seconds)
 
 > Three reasons the mechanism runs only one way.
 >
-> First, loss aversion. Kahneman and Tversky's old finding: losses loom larger than equivalent gains in evaluation. This applies directly to dignity shocks. A stigmatising welfare encounter registers as a status loss. A dignity-preserving encounter does not register as a status *gain* of equivalent magnitude. What it produces is the absence of damage. Damage mobilises; the absence of damage tends not to.
+> First, loss aversion. Kahneman and Tversky's old finding: losses loom larger than equivalent gains. This applies directly to dignity shocks. A stigmatising welfare encounter registers as a status loss. A dignity-preserving encounter does not register as a status *gain* of equivalent magnitude. What it produces is the *absence* of damage. Damage mobilises; the absence of damage tends not to.
 >
 > Second, status is positional. Recognition cannot be redistributed without losses to the currently-recognised. Dignity-preserving welfare *removes an obstacle* to inclusive solidarity. It does not, by itself, *construct* the inclusion. Active solidarity requires political work that welfare design alone cannot do.
 >
-> Third — and the one I find theoretically most interesting — defensive othering, once committed to, is costly to reverse. Identity investments are not undone by changing the institutional environment alone. Pierson's classic positive feedback runs forward into supportive constituencies; the damage cascade runs forward into a population that has forgotten the position it now defends was constructed for it.
+> Third — and the one I find theoretically most interesting and *least directly tested* — defensive othering, once committed to, is costly to reverse. Identity investments are not undone by changing the institutional environment alone. Pierson's classic positive feedback runs forward into supportive constituencies; the damage cascade runs forward into a population that has forgotten the position it now defends was constructed for it.
 
-**The third asymmetry is the strongest theoretical move. Slow down on it. "Forgotten the position it now defends was constructed for it" is the line — earn the pause after.**
+**The third asymmetry is the strongest theoretical move. Slow down on it. "Forgotten the position it now defends was constructed for it" is the line — earn the pause after. Flag the caveat — you'd rather signal honesty than bury it.**
 
 ---
 
-## SLIDE 10 — Empirical setup (60 seconds)
+## SLIDE 9 — Empirical setup (45 seconds)
 
-> Quick description of the data and approach.
+> Quick description of the data.
 >
-> European Social Survey, rounds 6 to 9, fieldwork 2012 to 2018. Thirty-four countries, 188,000 observations. The headline analysis restricts to fifteen Western European countries — these are the countries with CWED welfare-quality measures available.
+> European Social Survey, rounds 6 to 9, fieldwork 2012 to 2018. Thirty-four countries, 188,000 observations. The headline analysis restricts to fifteen Western European countries — these are the ones with CWED welfare-quality data available.
 >
-> RTI is the standard routine task intensity measure from Goos, Manning and Salomons. Anti-immigration is a three-item index, alpha point eight six. Welfare context measured three ways: regimes, ALMP spending, and CWED decommodification.
+> Two competing welfare measures. ALMP spending — what most of the buffering literature uses — captures welfare *effort*. CWED decommodification — Esping-Andersen's index — captures the degree to which workers can sustain themselves *without dependence on the market*.
 >
-> Approach: cross-level interactions. Country-wave fixed effects. Cluster-robust standard errors. Random-slopes mixed models for cross-national heterogeneity.
->
-> Cross-sectional design — I'm honest about that. The claim is consistency with the asymmetric mechanism, not causation. The thesis follow-up will use Danish registry data for the within-individual test.
+> The asymmetric mechanism makes a sharp prediction: ALMP shouldn't predict the cross-national pattern. CWED should.
 
 **Don't dwell here. Setup, not findings.**
+
+---
+
+## SLIDE 10 — Cross-national pattern: 5 regimes (45 seconds)
+
+> Before testing the prediction, the cross-national pattern itself.
+>
+> Each panel is a welfare regime. The line is RTI predicting anti-immigration. Liberal slope is steepest, beta point five one two. Nordic flattest, beta point four one three. Same routine-task exposure, different conversion into exclusion.
+>
+> This is the variation that needs explaining. The buffering reading predicts: more spending, flatter slope. We test that directly next.
+
+**Brief — this slide is a setup beat, not a finding. Move quickly to the real comparison.**
 
 ---
 
@@ -186,9 +189,9 @@ Aim to land at **18 minutes** on the closing slide. The two-minute buffer protec
 
 ---
 
-## SLIDE 12 — Sub-components (90 seconds) ⭐ NEW FINDING
+## SLIDE 12 — Sub-components (75 seconds) ⭐ NEW FINDING
 
-> One concern someone might have: maybe the CWED finding is about something other than what I'm claiming. Decomposing the composite gives a sharper test.
+> Decomposing the composite gives a sharper test.
 >
 > CWED has three sub-components: unemployment generosity, sickness generosity, pension generosity. Theory predicts unemployment should drive the result. That's where automation-exposed routine workers actually meet the welfare state. Pensions are decoupled from the working-age dignity dynamic.
 >
@@ -206,7 +209,7 @@ Aim to land at **18 minutes** on the closing slide. The two-minute buffer protec
 
 > The asymmetric prediction has a corresponding empirical test: same data, opposite outcome.
 >
-> RTI predicts anti-immigration attitudes more strongly in Liberal regimes than Nordic ones — beta point one two seven, p equals point zero zero three. The interaction is significant across every specification.
+> RTI predicts anti-immigration attitudes more strongly in Liberal regimes than Nordic ones — beta point one two seven, p equals point zero zero three. The interaction is robust across every specification.
 >
 > RTI predicts slightly higher redistribution support across all regimes — but the cross-regime variation in *that* pathway is small, non-significant, and in the wrong direction.
 >
@@ -256,11 +259,15 @@ Aim to land at **18 minutes** on the closing slide. The two-minute buffer protec
 
 ### "Isn't this just the recognition vs redistribution debate restated?"
 
-> Recognition vs redistribution debates the value pluralism — what should welfare prioritise? My paper is about institutional mechanism — given welfare design, what does it produce? I'm extending the recognition literature in an institutional direction by saying: welfare design *is* what determines whether economic disruption gets read in cultural terms. Gidron and Hall describe the demand-side preference; I'm specifying the institutional supply-side that shapes that demand.
+> Recognition vs redistribution debates value pluralism — what *should* welfare prioritise? My paper is about institutional mechanism — given welfare design, what does it produce? I'm extending the recognition literature in an institutional direction by saying: welfare design *is* what determines whether economic disruption gets read in cultural terms. Gidron and Hall describe the demand-side preference; I'm specifying the institutional supply-side that shapes that demand.
 
 ### "Your design is cross-sectional. How can you support causal claims?"
 
 > I don't make causal claims here. I make consistency claims: the cross-national pattern is consistent with the asymmetric mechanism and inconsistent with the symmetric buffering account. The within-individual test belongs to the thesis, using Danish registry data on the 2003, 2006, 2013 activation reforms.
+
+### "Is the damage cascade real or theoretical synthesis?"
+
+> Honest answer: each step has its own empirical literature, but the connected sequence is theoretical synthesis. Soss documents stigmatising welfare degrading class identity. Bonomi et al model identity switching under economic threat. Wu shows misattribution. Patrick documents defensive othering. I'm arguing these are *connected* and that welfare design is the institutional condition that links them. The within-individual test of the chain firing is the thesis follow-up.
 
 ### "Country-level r=−0.85 on N=15 — robust?"
 
@@ -294,11 +301,11 @@ Aim to land at **18 minutes** on the closing slide. The two-minute buffer protec
 
 ## Pre-talk checklist
 
-- [ ] Open file: `Dignity_Is_a_Baseline_2026-05-04.pptx`
-- [ ] Speaker view enabled (notes appear on your screen, slides on projector)
-- [ ] Test transitions on actual projector — sometimes 16:9 doesn't auto-fit
-- [ ] Bring a printed copy of speaker_script.md as backup
-- [ ] Time yourself once on Sunday — the 18-min target has 2-min buffer
+- [ ] Open `slides.html` in Chrome or Edge. Press `f` for fullscreen, `s` for speaker view (notes appear on your screen, slides on projector).
+- [ ] Backup: `Dignity_Is_a_Baseline_2026-05-04_v2.pptx` if HTML fails to project.
+- [ ] Test transitions on actual projector — sometimes 16:9 doesn't auto-fit.
+- [ ] Bring a printed copy of `speaker_script.md` as fallback.
+- [ ] Time yourself once on Sunday — the 18-min target has 2-min buffer.
 - [ ] Water bottle. Phone on silent.
 
 ## After-talk reflection (write within 24h while it's fresh)

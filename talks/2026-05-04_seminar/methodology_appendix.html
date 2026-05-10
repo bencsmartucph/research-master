@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Methodology Appendix — Dignity Is a Baseline</title>
+<style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    max-width: 980px;
+    margin: 2em auto;
+    padding: 0 1.5em;
+    color: #222;
+    line-height: 1.55;
+    background: #fafafa;
+  }
+  header {
+    border-bottom: 3px solid #0b3d91;
+    padding-bottom: 0.8em;
+    margin-bottom: 1.5em;
+  }
+  header h1 { margin-bottom: 0.1em; color: #0b3d91; }
+  header .subtitle { color: #666; font-style: italic; }
+  h2 {
+    color: #0b3d91;
+    border-bottom: 1px solid #d0d7de;
+    padding-bottom: 0.3em;
+    margin-top: 2em;
+  }
+  .interactive-card {
+    display: flex;
+    gap: 1.5em;
+    background: white;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 1.2em;
+    margin: 1em 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .interactive-card .thumb {
+    flex: 0 0 280px;
+  }
+  .interactive-card .thumb a {
+    display: block;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .interactive-card .thumb img {
+    width: 100%;
+    display: block;
+    transition: transform 0.2s;
+  }
+  .interactive-card .thumb a:hover img { transform: scale(1.02); }
+  .interactive-card .body { flex: 1; }
+  .interactive-card .body h3 { margin-top: 0; }
+  .interactive-card .body .concept-tag {
+    display: inline-block;
+    font-size: 0.8em;
+    background: #ddebf7;
+    color: #0b3d91;
+    padding: 0.2em 0.6em;
+    border-radius: 3px;
+    margin-bottom: 0.5em;
+    font-family: monospace;
+  }
+  .interactive-card .body .open-btn {
+    display: inline-block;
+    background: #0b3d91;
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1.1em;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 0.5em;
+    transition: background 0.15s;
+  }
+  .interactive-card .body .open-btn:hover { background: #082a66; }
+  .key-numbers {
+    background: #fff8e1;
+    border-left: 4px solid #d4a017;
+    padding: 0.6em 1em;
+    margin: 0.8em 0;
+    font-size: 0.95em;
+  }
+  .key-numbers strong { color: #6b4d00; }
+  .figure-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.8em;
+    margin-top: 1em;
+  }
+  .figure-gallery a {
+    display: block;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #333;
+    background: white;
+  }
+  .figure-gallery a:hover { border-color: #0b3d91; }
+  .figure-gallery img {
+    width: 100%;
+    display: block;
+    background: #f0f0f0;
+  }
+  .figure-gallery .caption {
+    padding: 0.5em 0.7em;
+    font-size: 0.85em;
+    line-height: 1.3;
+  }
+  footer {
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid #d0d7de;
+    color: #666;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Methodology Appendix</h1>
+  <div class="subtitle">
+    Interactive supplements for <em>Dignity Is a Baseline: Welfare Institutions and the Asymmetric Politics of Economic Disruption</em><br>
+    Welfare State Seminar — University of Copenhagen, 5 May 2026 — Ben Smart
+  </div>
+</header>
+
+<p>
+  This page collects the three interactive visualisations and eight static figures that
+  underwrite the empirical analysis in §V of the paper. It is intended for the seminar Q&amp;A
+  and for any reader who wants to interrogate the methodological choices directly.
+</p>
+
+<p>
+  Three methodological decisions in particular are worth seeing rather than reading about,
+  and each has its own interactive below: the cross-level interaction $\beta_3$, the
+  choice of slope estimator for the §V.D country-level scatter (BLUPs vs bivariate OLS),
+  and the cluster-robust standard error correction.
+</p>
+
+<h2>Interactive 1 — The cross-level interaction, $\beta_3 = -0.059$</h2>
+
+<div class="interactive-card">
+  <div class="thumb">
+    <a href="../../outputs/figures/walkthrough/interactive_cross_level.html" target="_blank">
+      <img src="../../outputs/figures/walkthrough/fig7_cross_level_fan.png" alt="Cross-level fan preview">
+    </a>
+  </div>
+  <div class="body">
+    <span class="concept-tag">Concept 2 — cross-level interactions</span>
+    <h3>How $\beta_3$ translates from a number into a fan of country-specific slopes</h3>
+    <p>
+      Two panels, side by side. On the left, the predicted RTI-slope as CWED varies — the
+      "fan" interpretation of the cross-level interaction. On the right, the implied
+      regression line of anti-immigration on RTI for low-CWED, average, and high-CWED
+      countries (red, grey, blue). Hover the country dots on the left panel to see where
+      each country sits.
+    </p>
+    <div class="key-numbers">
+      <strong>Predicted RTI-slope at:</strong> low CWED (UK-like, $z=-2$) → 0.333 &nbsp;|&nbsp;
+      average CWED ($z=0$) → 0.215 &nbsp;|&nbsp; high CWED (Norway-like, $z=+2$) → 0.097.
+      Total spread: 0.236 scale points per SD of RTI across the observed CWED range.
+    </div>
+    <a class="open-btn" href="../../outputs/figures/walkthrough/interactive_cross_level.html" target="_blank">Open interactive →</a>
+  </div>
+</div>
+
+<h2>Interactive 2 — BLUPs vs bivariate slopes (the §V.D methodology)</h2>
+
+<div class="interactive-card">
+  <div class="thumb">
+    <a href="../../outputs/figures/walkthrough/interactive_blups_vs_bivariate.html" target="_blank">
+      <img src="../../outputs/figures/walkthrough/fig1b_blups_vs_bivariate.png" alt="BLUPs vs bivariate preview">
+    </a>
+  </div>
+  <div class="body">
+    <span class="concept-tag">Concept 5 — matched-sample logic + slope estimator</span>
+    <h3>Toggle between bivariate and BLUP per-country slopes</h3>
+    <p>
+      Switch slope methodology and watch the correlation with CWED move from $r=-0.625$
+      (bivariate per-country OLS) to $r=-0.855$ (BLUPs from a random-slopes mixed model
+      with controls). The published number is the BLUPs version. Hovering any country
+      shows both estimates and the shrinkage gap. The "Both" view connects each country's
+      two estimates with a dashed line, making the shrinkage-plus-partial-out visible
+      country by country.
+    </p>
+    <div class="key-numbers">
+      <strong>Same 15 countries, four methodologies:</strong> bivariate OLS $r=-0.625$
+      &nbsp;|&nbsp; OLS with controls $r=-0.786$ &nbsp;|&nbsp; <strong>BLUPs $r=-0.855$
+      ← published</strong> &nbsp;|&nbsp; country-wave averaged $r=-0.702$. Choice of slope
+      methodology moves the headline correlation by 23 percentage points.
+    </div>
+    <a class="open-btn" href="../../outputs/figures/walkthrough/interactive_blups_vs_bivariate.html" target="_blank">Open interactive →</a>
+  </div>
+</div>
+
+<h2>Interactive 3 — Cluster-robust SE inflation</h2>
+
+<div class="interactive-card">
+  <div class="thumb">
+    <a href="../../outputs/figures/walkthrough/interactive_cluster_se.html" target="_blank">
+      <img src="../../outputs/figures/walkthrough/fig8_cluster_se_static.png" alt="Cluster SE preview">
+    </a>
+  </div>
+  <div class="body">
+    <span class="concept-tag">Concept 4 — cluster-robust standard errors</span>
+    <h3>How wrong is the naive standard error?</h3>
+    <p>
+      Heatmap of SE inflation factor across (intra-cluster correlation $\rho$, cluster
+      size $\bar n$). Your paper's actual values appear as a red star. Hover any combination
+      to see "naive SE is X× too small at this combo". Reference cases (classroom data,
+      mild ICC, strong ICC) are marked for context.
+    </p>
+    <div class="key-numbers">
+      <strong>Your country-wave clustering:</strong> $\bar n \approx 1{,}400$, $\rho \approx 0.05$.
+      Design effect $= 1 + (\bar n - 1)\rho = 71$. SE inflation factor $= \sqrt{71} \approx 8.4\times$.
+      Naive SE is roughly 8 times too small. Same point estimate either way; only the inference changes.
+    </div>
+    <a class="open-btn" href="../../outputs/figures/walkthrough/interactive_cluster_se.html" target="_blank">Open interactive →</a>
+  </div>
+</div>
+
+<h2>Teaching interactives — multilevel intuition</h2>
+
+<p>
+  Two interactives aimed at the conceptual rather than the methodological layer.
+  These don't appear in the slide deck but are the pieces I'd reach for if
+  someone asks "why a multilevel model rather than just OLS?" or "what does
+  partial pooling actually do?".
+</p>
+
+<div class="interactive-card">
+  <div class="thumb">
+    <a href="../../outputs/figures/walkthrough/teaching_same_mean.html" target="_blank" style="display:flex;align-items:center;justify-content:center;height:170px;background:#ddebf7;color:#0b3d91;font-weight:bold;text-decoration:none;text-align:center;padding:1em;">
+      <span>Drag the slider to set the<br>gap between country means →</span>
+    </a>
+  </div>
+  <div class="body">
+    <span class="concept-tag">Conceptual anchor — why averages lie</span>
+    <h3>Same mean, different slopes</h3>
+    <p>
+      Two synthetic countries with very different RTI-to-attitudes slopes (0.55 vs 0.18).
+      A slider controls the gap between their mean attitudes. Drag the slider to zero — the
+      bar chart confirms the means become identical, but the regression lines on the scatter
+      barely move. The slope difference is preserved. Pedagogical point: the welfare-state
+      moderation question is about slopes, not means; the multilevel model's job is to
+      isolate the slope variation that naive comparison invisibly washes away.
+    </p>
+    <a class="open-btn" href="../../outputs/figures/walkthrough/teaching_same_mean.html" target="_blank">Open interactive →</a>
+  </div>
+</div>
+
+<div class="interactive-card">
+  <div class="thumb">
+    <a href="../../outputs/figures/walkthrough/teaching_three_estimators.html" target="_blank" style="display:flex;align-items:center;justify-content:center;height:170px;background:#fff8e1;color:#6b4d00;font-weight:bold;text-decoration:none;text-align:center;padding:1em;">
+      <span>Three panels: pure pooling /<br>no pooling / partial pooling →</span>
+    </a>
+  </div>
+  <div class="body">
+    <span class="concept-tag">Conceptual anchor — partial pooling and BLUPs</span>
+    <h3>Three estimators on the same data</h3>
+    <p>
+      Twelve synthetic countries with varying sample sizes and noise levels. Three panels
+      show what each estimator gives you: pure pooling (one global slope), no pooling
+      (separate OLS per country, each weighted equally), and partial pooling (multilevel —
+      small-N countries get shrunk toward the grand mean). A scenario toggle switches
+      between low-noise/large-samples, realistic, and high-noise/small-samples conditions.
+      Watch what happens to the no-pooling lines as data quality drops.
+    </p>
+    <div class="key-numbers">
+      <strong>Why partial pooling wins under noise:</strong> RMSE versus the true slopes.
+      Low-noise scenario: no pooling 0.009, partial 0.008 (essentially identical).
+      Realistic: 0.035 vs 0.033. <strong>High-noise: 0.200 vs 0.152 — partial pooling 24% better.</strong>
+      Partial pooling shines exactly when data is poor; that is the entire reason BLUPs are the
+      principled choice for Figure 6.
+    </div>
+    <a class="open-btn" href="../../outputs/figures/walkthrough/teaching_three_estimators.html" target="_blank">Open interactive →</a>
+  </div>
+</div>
+
+<h2>Static figure gallery</h2>
+
+<p>
+  The eight static figures referenced in the methodology backup slides, indexed by
+  concept. Click any thumbnail for the full-resolution version.
+</p>
+
+<div class="figure-gallery">
+  <a href="../../outputs/figures/walkthrough/fig1_spaghetti_random_slopes.png" target="_blank">
+    <img src="../../outputs/figures/walkthrough/fig1_spaghetti_random_slopes.png" alt="Spaghetti plot">
+    <div class="caption"><strong>Random slopes — the spaghetti plot.</strong> 15 country regression lines around the pooled fit.</div>
+  </a>
+  <a href="../../outputs/figures/walkthrough/fig1b_blups_vs_bivariate.png" target="_blank">
+    <img src="../../outputs/figures/walkthrough/fig1b_blups_vs_bivariate.png" alt="BLUPs vs bivariate">
+    <div class="caption"><strong>BLUPs vs bivariate.</strong> Country-level slopes under each methodology, plus the grand-mean line.</div>
+  </a>
+  <a href="../../outputs/figures/walkthrough/fig2_cwed_vs_slopes.png" target="_blank">
+    <img src="../../outputs/figures/walkthrough/fig2_cwed_vs_slopes.png" alt="CWED vs slopes">
+    <div class="caption"><strong>The §V.D headline scatter.</strong> BLUP slopes against CWED, with bivariate trend for comparison.</div>
+  </a>
+  <a href="../../outputs/figures/walkthrough/fig3_matched_sample.png" target="_blank">
+    <img src="../../outputs/figures/walkthrough/fig3_matched_sample.png" alt="Matched sample">
+    <div class="caption"><strong>Matched-sample comparison.</strong> ALMP vs CWED on the same 15 countries, same slope methodology.</div>
+  </a>
+  <a href="../../outputs/figures/walkthrough/fig4_jackknife.png" target="_blank">
+    <img src="../../outputs/figures/walkthrough/fig4_jackknife.png" alt="Jackknife">
+    <div class="caption"><strong>Jackknife distributions.</strong> Single-country and two-country exclusions; worst case stays substantial.</div>
+  </a>
+  <a href="../../outputs/figures/walkthrough/fig5_lr_test_chi2.png" target="_blank">
+    <img src="../../outputs/figures/walkthrough/fig5_lr_test_chi2.png" alt="LR test">
+    <div class="caption"><strong>The LR test, visualised.</strong> $\chi^2(2)$ distribution with the test statistic at &gt;100 (log y-axis).</div>
+  </a>
+  <a href="../../outputs/figures/walkthrough/fig6_asymmetry.png" target="_blank">
+    <img src="../../outputs/figures/walkthrough/fig6_asymmetry.png" alt="Asymmetry">
+    <div class="caption"><strong>The asymmetry.</strong> Four interaction coefficients with 95% CIs — exclusion vs solidarity.</div>
+  </a>
+  <a href="../../outputs/figures/walkthrough/fig7_cross_level_fan.png" target="_blank">
+    <img src="../../outputs/figures/walkthrough/fig7_cross_level_fan.png" alt="Cross-level fan">
+    <div class="caption"><strong>The cross-level fan.</strong> Predicted RTI-slope as CWED varies, with 95% CI band.</div>
+  </a>
+  <a href="../../outputs/figures/walkthrough/fig8_cluster_se_static.png" target="_blank">
+    <img src="../../outputs/figures/walkthrough/fig8_cluster_se_static.png" alt="Cluster SE static">
+    <div class="caption"><strong>Cluster-SE design effect.</strong> Static heatmap with the paper's values marked.</div>
+  </a>
+</div>
+
+<footer>
+  Ben Smart, MSc Economics, University of Copenhagen.<br>
+  Paper draft and full methodology in <code>manuscripts/paper_draft_v4_final.md</code>;
+  empirical walkthrough in <code>docs/empirical_walkthrough_v1.md</code>;
+  source scripts in <code>analysis/walkthrough_*.py</code>.
+</footer>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+</html>

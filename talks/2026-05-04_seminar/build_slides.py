@@ -1,9 +1,9 @@
 """
 Build PowerPoint slides for the 2026-05-04 seminar presentation.
 
-Produces a .pptx version of the slides defined in slides.qmd, ready to
-present from PowerPoint or LibreOffice Impress on Monday. Use the .qmd
-source file for iteration; rebuild .pptx via this script.
+Version 2 (2026-05-01): rebalanced for ~20 min @ 130 wpm, more visual,
+honest framing of the damage cascade as theoretical synthesis rather
+than empirically demonstrated chain. Speaker notes ~150 words/slide.
 
 Run:
     python talks/2026-05-04_seminar/build_slides.py
@@ -17,6 +17,7 @@ from pathlib import Path
 from pptx import Presentation
 from pptx.util import Inches, Pt, Emu
 from pptx.enum.text import PP_ALIGN
+from pptx.enum.shapes import MSO_SHAPE
 from pptx.dml.color import RGBColor
 
 ROOT = Path(r'C:\Users\PKF715\Documents\claude_repos\Research_Master')
@@ -29,23 +30,22 @@ FIG7 = FIG_DIR / 'fig7_cwed_subcomponents.png'
 FIG2 = FIG_DIR / 'fig2_rti_vs_antiimmig_by_regime.png'
 FIG3 = FIG_DIR / 'fig3_marginal_effects.png'
 
-# Colours — matches custom.scss
-NAVY = RGBColor(0x0B, 0x3D, 0x91)   # primary
-RED  = RGBColor(0xC9, 0x30, 0x2C)   # emphasis (rare)
-GREY = RGBColor(0x6C, 0x75, 0x7D)   # secondary
-DARK = RGBColor(0x1A, 0x1A, 0x1A)   # body text
+# Colours
+NAVY    = RGBColor(0x0B, 0x3D, 0x91)
+RED     = RGBColor(0xC9, 0x30, 0x2C)
+GREY    = RGBColor(0x6C, 0x75, 0x7D)
+DARK    = RGBColor(0x1A, 0x1A, 0x1A)
+PALE_BG = RGBColor(0xF6, 0xF8, 0xFA)
+WARN_BG = RGBColor(0xFF, 0xF5, 0xE1)
+WHITE   = RGBColor(0xFF, 0xFF, 0xFF)
 
-# 16:9 widescreen
 prs = Presentation()
 prs.slide_width = Inches(13.333)
 prs.slide_height = Inches(7.5)
 
-SW, SH = prs.slide_width, prs.slide_height
-
 
 def add_blank_slide():
-    blank_layout = prs.slide_layouts[6]
-    return prs.slides.add_slide(blank_layout)
+    return prs.slides.add_slide(prs.slide_layouts[6])
 
 
 def add_text(slide, x, y, w, h, text, *, size=24, bold=False, italic=False,
@@ -65,22 +65,43 @@ def add_text(slide, x, y, w, h, text, *, size=24, bold=False, italic=False,
     return tx
 
 
-def add_bullet_list(slide, x, y, w, h, items, *, size=20, color=DARK,
-                    indent_levels=None, font='Calibri'):
-    """items: list of strings or (level, text) tuples."""
+def add_multi_text(slide, x, y, w, h, parts, *, size=18, color=DARK,
+                   align=PP_ALIGN.LEFT, font='Calibri'):
+    """parts: list of (text, {'bold': bool, 'italic': bool, 'color': rgb, 'size': pt})"""
     tx = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
-    tf = tx.text_frame
-    tf.word_wrap = True
-    for i, it in enumerate(items):
-        if isinstance(it, tuple):
-            level, text = it
+    tf = tx.text_frame; tf.word_wrap = True
+    for i, item in enumerate(parts):
+        if isinstance(item, str):
+            text, opts = item, {}
         else:
-            level, text = 0, it
+            text, opts = item
+        if i == 0:
+            p = tf.paragraphs[0]
+        elif text == '\n':
+            p = tf.add_paragraph()
+            continue
+        else:
+            p = tf.add_paragraph()
+        p.alignment = align
+        run = p.add_run()
+        run.text = text
+        run.font.size = Pt(opts.get('size', size))
+        run.font.bold = opts.get('bold', False)
+        run.font.italic = opts.get('italic', False)
+        run.font.color.rgb = opts.get('color', color)
+        run.font.name = font
+    return tx
+
+
+def add_bullet_list(slide, x, y, w, h, items, *, size=18, color=DARK, font='Calibri'):
+    tx = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
+    tf = tx.text_frame; tf.word_wrap = True
+    for i, it in enumerate(items):
+        level, text = (it if isinstance(it, tuple) else (0, it))
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
         p.level = level
         p.alignment = PP_ALIGN.LEFT
-        p.space_before = Pt(6)
-        p.space_after = Pt(6)
+        p.space_before = Pt(4); p.space_after = Pt(4)
         run = p.add_run()
         run.text = ('•  ' if level == 0 else '–  ') + text
         run.font.size = Pt(size - 2 * level)
@@ -89,14 +110,12 @@ def add_bullet_list(slide, x, y, w, h, items, *, size=20, color=DARK,
     return tx
 
 
-def add_title_bar(slide, text):
-    """Slide title with navy underline."""
-    add_text(slide, 0.6, 0.35, 12, 0.7, text, size=30, bold=True, color=NAVY)
-    # underline
-    line = slide.shapes.add_shape(1, Inches(0.6), Inches(1.0), Inches(12.1), Inches(0.04))
+def add_title_bar(slide, text, *, color=NAVY):
+    add_text(slide, 0.6, 0.35, 12, 0.7, text, size=28, bold=True, color=color)
+    line = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.6), Inches(1.0),
+                                   Inches(12.1), Inches(0.04))
     line.line.fill.background()
-    line.fill.solid()
-    line.fill.fore_color.rgb = NAVY
+    line.fill.solid(); line.fill.fore_color.rgb = color
 
 
 def add_image(slide, x, y, w, h, path):
@@ -105,6 +124,42 @@ def add_image(slide, x, y, w, h, path):
     else:
         add_text(slide, x, y, w, 0.5, f"[FIGURE NOT FOUND: {path.name}]",
                  size=14, color=RED, italic=True)
+
+
+def add_callout_box(slide, x, y, w, h, *, fill=PALE_BG, border_color=NAVY,
+                    border_left_only=True, opacity=1.0):
+    """Coloured rounded rectangle. Returns shape so you can add text on top."""
+    shape = slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE,
+                                    Inches(x), Inches(y), Inches(w), Inches(h))
+    shape.fill.solid(); shape.fill.fore_color.rgb = fill
+    if border_left_only:
+        shape.line.fill.background()
+        # Add left border via narrow rectangle
+        bar = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE,
+                                      Inches(x), Inches(y),
+                                      Inches(0.06), Inches(h))
+        bar.fill.solid(); bar.fill.fore_color.rgb = border_color
+        bar.line.fill.background()
+    else:
+        shape.line.color.rgb = border_color
+        shape.line.width = Pt(1)
+    return shape
+
+
+def add_arrow(slide, x1, y1, x2, y2, *, color=NAVY, width=Pt(2)):
+    """Draw an arrow from (x1,y1) to (x2,y2) in inches."""
+    line = slide.shapes.add_connector(2, Inches(x1), Inches(y1), Inches(x2), Inches(y2))
+    line.line.color.rgb = color
+    line.line.width = width
+    # Add arrowhead via end_arrow
+    line_format = line.line._get_or_add_ln()
+    from pptx.oxml.ns import qn
+    from lxml import etree
+    tail = etree.SubElement(line_format, qn('a:tailEnd'))
+    tail.set('type', 'triangle')
+    tail.set('w', 'med')
+    tail.set('h', 'med')
+    return line
 
 
 def add_speaker_notes(slide, text):
@@ -116,786 +171,802 @@ def add_speaker_notes(slide, text):
 # Slide 1 — Title
 # =====================================================================
 s = add_blank_slide()
-add_text(s, 0, 2.4, 13.333, 1.2,
+add_text(s, 0, 2.6, 13.333, 1.2,
          "Dignity Is a Baseline",
-         size=54, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
-add_text(s, 0, 3.7, 13.333, 0.7,
+         size=58, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
+add_text(s, 0, 3.9, 13.333, 0.7,
          "Welfare Institutions and the Asymmetric Politics of Economic Disruption",
-         size=24, italic=True, color=DARK, align=PP_ALIGN.CENTER)
-add_text(s, 0, 5.2, 13.333, 0.5,
+         size=22, italic=True, color=DARK, align=PP_ALIGN.CENTER)
+add_text(s, 0, 5.4, 13.333, 0.5,
          "Ben Smart",
          size=22, bold=True, color=DARK, align=PP_ALIGN.CENTER)
-add_text(s, 0, 5.7, 13.333, 0.4,
+add_text(s, 0, 5.95, 13.333, 0.4,
          "University of Copenhagen — Department of Economics",
-         size=16, color=GREY, align=PP_ALIGN.CENTER)
-add_text(s, 0, 6.4, 13.333, 0.4,
+         size=15, color=GREY, align=PP_ALIGN.CENTER)
+add_text(s, 0, 6.55, 13.333, 0.4,
          "Welfare State Seminar  ·  4 May 2026",
-         size=14, italic=True, color=GREY, align=PP_ALIGN.CENTER)
-add_speaker_notes(s, """[20 sec open]
+         size=13, italic=True, color=GREY, align=PP_ALIGN.CENTER)
+add_speaker_notes(s, """[~20s]
 
-Good afternoon. The paper is called "Dignity Is a Baseline." The thirty-second
-version: workers exposed to automation are more anti-immigration than their
-material interests would predict, the gap is bigger in some welfare states
-than in others, and the conventional explanation — that more generous welfare
-buffers the political backlash — is wrong about the mechanism in a specific
-and testable way. The mechanism is asymmetric. I'll show you why.""")
+Good afternoon. The thirty-second version: workers exposed to automation are
+more anti-immigration than their material interests would predict. The gap is
+bigger in some welfare states than others. The conventional explanation —
+welfare buffers the backlash — is wrong about the mechanism. The mechanism is
+asymmetric. I'll show you why.""")
 
 
 # =====================================================================
-# Slide 2 — The puzzle
+# Slide 2 — The puzzle (2-column with callouts)
 # =====================================================================
 s = add_blank_slide()
 add_title_bar(s, "The puzzle")
-add_bullet_list(s, 0.7, 1.5, 12, 5, [
-    "Workers in routine-task-intensive (RTI) occupations across Europe disproportionately support populist radical right parties (Gingrich 2019; Kurer 2020; Im et al. 2019; Autor et al. 2020)",
-    "Cross-national variation: the same automation exposure converts into anti-immigration sentiment more readily in some welfare states than in others",
-    "Standard reading: welfare generosity buffers the political backlash. Spend more, get less populism.",
-    "Today's argument: this account is missing the mechanism it claims to describe",
-], size=22)
-add_speaker_notes(s, """[1.5 min]
 
-Set up the empirical regularity, then the puzzle. RTI workers vote radical right
-disproportionately — well documented. The cross-national variation is also
-documented. The dominant interpretation is the buffering account: generous
-welfare states see less populism because they cushion the dislocated.
+# Left column — the empirical regularity
+add_callout_box(s, 0.6, 1.4, 6.5, 2.3, fill=PALE_BG, border_color=NAVY)
+add_text(s, 0.85, 1.55, 6, 0.4, "Robust empirical regularity",
+         size=15, bold=True, color=NAVY)
+add_text(s, 0.85, 2.0, 6, 1.5,
+         "Workers in routine-task-intensive (RTI) occupations across Europe disproportionately support populist radical right parties.",
+         size=15, color=DARK)
+add_text(s, 0.85, 3.2, 6, 0.5,
+         "Gingrich (2019); Kurer (2020); Im et al. (2019); Autor et al. (2020)",
+         size=11, italic=True, color=GREY)
 
-I'm going to argue this account is wrong about the mechanism. Not wrong that
-welfare matters — wrong about HOW welfare matters. And the consequences for
-how we think about welfare-state design are real.""")
+add_callout_box(s, 0.6, 3.95, 6.5, 2.3, fill=PALE_BG, border_color=NAVY)
+add_text(s, 0.85, 4.1, 6, 0.4, "Cross-national variation",
+         size=15, bold=True, color=NAVY)
+add_text(s, 0.85, 4.55, 6, 1.5,
+         "The same automation exposure converts into anti-immigration sentiment more readily in some welfare states than others.",
+         size=15, color=DARK)
+add_text(s, 0.85, 5.75, 6, 0.5,
+         "Vlandas & Halikiopoulou (2022); Caselli et al. (2021)",
+         size=11, italic=True, color=GREY)
+
+# Right column — standard reading + my claim
+add_callout_box(s, 7.5, 1.4, 5.3, 2.3, fill=WARN_BG, border_color=GREY)
+add_text(s, 7.75, 1.55, 5, 0.4, "The standard reading",
+         size=15, bold=True, color=GREY)
+add_text(s, 7.75, 2.05, 5, 1.5,
+         "Welfare buffers the backlash.",
+         size=18, bold=True, color=DARK)
+add_text(s, 7.75, 2.7, 5, 1,
+         "Spend more, get less populism.",
+         size=15, italic=True, color=GREY)
+
+add_callout_box(s, 7.5, 3.95, 5.3, 2.8, fill=PALE_BG, border_color=NAVY)
+add_text(s, 7.75, 4.1, 5, 0.4, "My claim",
+         size=15, bold=True, color=NAVY)
+add_text(s, 7.75, 4.55, 5, 1,
+         "The standard reading is missing the mechanism.",
+         size=16, bold=True, color=NAVY)
+add_text(s, 7.75, 5.55, 5, 1.2,
+         "What welfare communicates matters more than what welfare spends.",
+         size=14, italic=True, color=DARK)
+
+add_speaker_notes(s, """[~75s]
+
+Two things are well documented. RTI workers vote radical right disproportionately.
+And the pattern varies across welfare states.
+
+The dominant explanation: welfare buffers the backlash. Quantity-based.
+Compensation as cushion.
+
+I'll argue today this account is missing the mechanism. Not wrong that welfare
+matters; wrong about how. The dimension that matters is what welfare
+communicates, not what it spends.""")
 
 
 # =====================================================================
-# Slide 3 — What buffering predicts
+# Slide 3 — What buffering predicts + 3 pushbacks
 # =====================================================================
 s = add_blank_slide()
-add_title_bar(s, "What the buffering account predicts")
+add_title_bar(s, "What buffering predicts — and where it fails")
+
 # Quote box
-qx = s.shapes.add_textbox(Inches(0.7), Inches(1.5), Inches(12), Inches(1.2))
-qtf = qx.text_frame
-qtf.word_wrap = True
-qp = qtf.paragraphs[0]
-qrun = qp.add_run()
-qrun.text = "Following Ruggie's (1982) embedded liberalism bargain, generous compensation should dampen the political insecurity produced by economic openness."
-qrun.font.size = Pt(20)
-qrun.font.italic = True
-qrun.font.color.rgb = GREY
-qrun.font.name = 'Calibri'
-# Navy left border via shape
-border = s.shapes.add_shape(1, Inches(0.55), Inches(1.5), Inches(0.05), Inches(1.2))
-border.line.fill.background()
-border.fill.solid()
-border.fill.fore_color.rgb = NAVY
+add_callout_box(s, 0.6, 1.3, 12.1, 1.0, fill=PALE_BG, border_color=NAVY)
+add_text(s, 0.9, 1.45, 11.5, 0.7,
+         '"Following Ruggie\'s (1982) embedded liberalism bargain, generous compensation should dampen the political insecurity produced by economic openness."',
+         size=15, italic=True, color=DARK)
 
-add_text(s, 0.7, 3.3, 12, 0.6, "Operative variable: quantity",
-         size=26, bold=True, color=NAVY)
-add_bullet_list(s, 0.7, 4.0, 12, 3, [
-    "More spending → less populism",
-    "Symmetric: damage and repair are mirror images of each other",
-    "Compensation works by replacing income lost to disruption",
-], size=20)
-add_speaker_notes(s, """[1 min]
+add_text(s, 0.6, 2.5, 12, 0.4,
+         "Operative variable: quantity. More spending → less populism. Symmetric mechanism.",
+         size=15, color=DARK)
 
-The buffering reading rests on Ruggie's embedded liberalism. Compensation is a
-quantity. The mechanism is symmetric — what damages is undone by what compensates.
-The variable is how much the welfare state spends.
+# Three failure cases — horizontal cards
+y = 3.3
+card_w = 4.0
+card_h = 3.5
+for i, (title, body, cite) in enumerate([
+    ("Compensation that doesn't work",
+     "Generous welfare states show no weaker automation→populism effect.",
+     "Gingrich (2019)"),
+    ("Compensation that backfires",
+     "German coal phase-out: compensated communities had higher abstention and lower issue-owner support.",
+     "Stutzmann (2025)"),
+    ("Compensation that is resisted",
+     "Workers refuse compensation that fully replaces income. Form & source matter independently of material content.",
+     "Pelc (2025)"),
+]):
+    x = 0.6 + i * (card_w + 0.2)
+    add_callout_box(s, x, y, card_w, card_h, fill=WARN_BG, border_color=RED)
+    add_text(s, x + 0.2, y + 0.15, card_w - 0.4, 0.55, title,
+             size=14, bold=True, color=RED)
+    add_text(s, x + 0.2, y + 0.85, card_w - 0.4, 1.8, body,
+             size=13, color=DARK)
+    add_text(s, x + 0.2, y + card_h - 0.5, card_w - 0.4, 0.4,
+             cite, size=12, italic=True, color=GREY)
 
-The quantity assumption is what I want to challenge. Spend more, get less
-populism — this turns out to fit the data poorly.""")
+add_speaker_notes(s, """[~75s]
+
+Buffering rests on Ruggie. Compensation as quantity. Symmetric mechanism.
+
+Three streams of evidence push back. Gingrich's cross-national: generous welfare
+states don't show weaker automation-to-populism effects. Stutzmann on the German
+coal phase-out: compensated communities had higher abstention. Pelc: workers
+refuse compensation even when it fully replaces income.
+
+Three different designs, same direction. Material compensation is doing less
+of the political work than the buffering model assumes.""")
 
 
 # =====================================================================
-# Slide 4 — Three streams of evidence
+# Slide 4 — Recognition literature names it (3 quotes stacked)
 # =====================================================================
 s = add_blank_slide()
-add_title_bar(s, "Three streams of evidence against buffering")
+add_title_bar(s, "What's missing — the recognition literature names it")
 
-col_w = 4.0
-col_y = 1.4
-col_h = 5.5
+# Three stacked quote boxes
+y = 1.3
+quote_h = 1.7
+for i, (q, attribution) in enumerate([
+    ('"When relative societal decline rather than material hardship are at the heart of socially conservative resentment, traditional welfare policy may be an insufficient response..."',
+     "Kurer (2020, p.1801)"),
+    ('"This appeal to personal dignity is key to winning routine workers\' support. Perhaps even more than social protection, they demand economic AND cultural protection."',
+     "Kurer & Palier (2019)"),
+    ('Right-populist voters "care as much, or even more, about recognition as about redistribution."',
+     "Gidron & Hall (2017, p.26)"),
+]):
+    yy = y + i * (quote_h + 0.2)
+    add_callout_box(s, 0.6, yy, 12.1, quote_h, fill=PALE_BG, border_color=NAVY)
+    add_text(s, 0.9, yy + 0.15, 11.5, 1.1, q,
+             size=15, italic=True, color=DARK)
+    add_text(s, 0.9, yy + quote_h - 0.45, 11.5, 0.4,
+             "— " + attribution, size=13, bold=True, color=NAVY)
 
-# Column 1 — does not work
-add_text(s, 0.6, col_y, col_w, 0.5, "Compensation that doesn't work",
-         size=18, bold=True, color=NAVY)
-add_text(s, 0.6, col_y + 0.7, col_w, col_h - 0.7,
-         "Gingrich (2019) finds workers exposed to automation are NOT less likely to vote populist in countries with more generous early retirement, more in-kind spending, or more protective regulation.\n\nGallego & Kurer (2022) call this 'a concerning finding'.",
-         size=15, color=DARK)
+add_speaker_notes(s, """[~60s]
 
-# Column 2 — backfires
-add_text(s, 4.7, col_y, col_w, 0.5, "Compensation that backfires",
-         size=18, bold=True, color=NAVY)
-add_text(s, 4.7, col_y + 0.7, col_w, col_h - 0.7,
-         "Stutzmann (2025) examines Germany's coal phase-out. Substantial compensatory investment. Material conditions held.\n\nAffected municipalities showed higher abstention and lower support for the issue-owning party.",
-         size=15, color=DARK)
+The recognition literature has been pointing at this for a decade.
 
-# Column 3 — resisted
-add_text(s, 8.8, col_y, col_w, 0.5, "Compensation that is resisted",
-         size=18, bold=True, color=NAVY)
-add_text(s, 8.8, col_y + 0.7, col_w, col_h - 0.7,
-         "Pelc (2025): workers refuse to be compensated out of work even when the compensation fully replaces their income.\n\nForm, source, and meaning of compensation matter independently of material content.",
-         size=15, color=DARK)
+Kurer: traditional welfare may be insufficient when relative decline drives
+resentment. Kurer-Palier: the appeal is to dignity, not just protection. Gidron
+and Hall: voters care as much about recognition as about redistribution.
 
-add_speaker_notes(s, """[2 min — speak to each column for ~30 sec]
-
-Three different research designs, three different findings, all pointing the
-same direction. Gingrich's cross-national analysis: more generous welfare
-states do not show weaker automation-to-populism effects. Stutzmann on the
-German coal phase-out: a textbook case of policy compensation that backfired
-politically. Pelc's experimental work: workers reject compensation that
-should, materially, satisfy them.
-
-The pattern across these is that material compensation is doing less of the
-political work than the buffering model assumes.""")
+The pattern: redistribution and recognition aren't fungible. The buffering
+framework treats them as if they were. They aren't.""")
 
 
 # =====================================================================
-# Slide 5 — Kurer quote
-# =====================================================================
-s = add_blank_slide()
-add_title_bar(s, "Kurer (2020) names the tension")
-
-# Big quote
-q1 = s.shapes.add_textbox(Inches(0.7), Inches(1.4), Inches(12), Inches(1.6))
-q1tf = q1.text_frame
-q1tf.word_wrap = True
-q1p = q1tf.paragraphs[0]
-q1r = q1p.add_run()
-q1r.text = '"When relative societal decline rather than material hardship are at the heart of socially conservative resentment, traditional welfare policy may be an insufficient response to satisfy exposed workers and hence an ineffective remedy to counter the ascent of right-wing populist movements."'
-q1r.font.size = Pt(18)
-q1r.font.italic = True
-q1r.font.color.rgb = DARK
-q1r.font.name = 'Calibri'
-b1 = s.shapes.add_shape(1, Inches(0.55), Inches(1.4), Inches(0.05), Inches(1.6))
-b1.line.fill.background(); b1.fill.solid(); b1.fill.fore_color.rgb = NAVY
-
-add_text(s, 0.7, 3.2, 8, 0.4, "Kurer & Palier (2019):",
-         size=14, bold=True, color=NAVY)
-q2 = s.shapes.add_textbox(Inches(0.7), Inches(3.65), Inches(12), Inches(1.0))
-q2tf = q2.text_frame; q2tf.word_wrap = True
-q2p = q2tf.paragraphs[0]
-q2r = q2p.add_run()
-q2r.text = '"This appeal to personal dignity is key to winning routine workers\' support. Perhaps even more than social protection, they demand economic AND cultural protection."'
-q2r.font.size = Pt(15); q2r.font.italic = True
-q2r.font.color.rgb = DARK; q2r.font.name = 'Calibri'
-
-add_text(s, 0.7, 5.0, 8, 0.4, "Gidron & Hall (2017, p. 26):",
-         size=14, bold=True, color=NAVY)
-q3 = s.shapes.add_textbox(Inches(0.7), Inches(5.45), Inches(12), Inches(1.0))
-q3tf = q3.text_frame; q3tf.word_wrap = True
-q3p = q3tf.paragraphs[0]
-q3r = q3p.add_run()
-q3r.text = 'Right-populist voters "care as much, or even more, about recognition as about redistribution."'
-q3r.font.size = Pt(15); q3r.font.italic = True
-q3r.font.color.rgb = DARK; q3r.font.name = 'Calibri'
-
-add_speaker_notes(s, """[1 min]
-
-Three quotes from major contributions in the literature, all pointing at the
-same thing: redistribution and recognition aren't fungible. The buffering
-framework treats them as if they were. They aren't, and the empirical record
-keeps showing this.
-
-This is where my argument enters. I take Kurer's claim literally — that
-traditional welfare may be an insufficient response — and ask which
-institutional dimension actually does the political work.""")
-
-
-# =====================================================================
-# Slide 6 — The argument in one slide (CENTRAL)
+# Slide 5 — The argument (CENTRAL)
 # =====================================================================
 s = add_blank_slide()
 add_title_bar(s, "The argument")
 
-add_text(s, 0.7, 1.4, 12, 0.6,
+add_text(s, 0.6, 1.35, 12, 0.6,
          "Welfare institutions are asymmetric in their political effects",
-         size=26, bold=True, color=NAVY)
+         size=24, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
 
-add_text(s, 0.7, 2.4, 12, 0.5,
-         "They can fail politically — by damaging the self-concept of vulnerable workers — through a cascade:",
-         size=18, color=DARK)
+# Two-column callouts: failure / success
+add_callout_box(s, 0.6, 2.2, 6.0, 3.0, fill=WARN_BG, border_color=RED)
+add_text(s, 0.85, 2.35, 5.5, 0.4, "They CAN fail",
+         size=16, bold=True, color=RED)
+add_text(s, 0.85, 2.85, 5.5, 1.0,
+         "By degrading recognition for vulnerable workers, conditioning three documented psychological mechanisms to engage in sequence:",
+         size=12, color=DARK)
+add_bullet_list(s, 1.0, 3.85, 5.3, 1.3, [
+    "Identity switching  (Bonomi et al. 2021)",
+    "Misattribution  (Gallego & Kurer 2022)",
+    "Defensive othering  (Patrick 2016; Wagner 2022)",
+], size=12)
 
-# Three-step cascade boxes
-box_w = 3.8
-box_h = 1.0
-box_y = 3.2
-for i, (title, text) in enumerate([
-    ("1. Identity switching", "Bonomi, Gennaioli & Tabellini (2021)"),
-    ("2. Misattribution",     "Gallego & Kurer (2022)"),
-    ("3. Defensive othering", "Wagner (2022); Patrick (2016)"),
-]):
-    x = 0.7 + i * (box_w + 0.2)
-    box = s.shapes.add_shape(5, Inches(x), Inches(box_y), Inches(box_w), Inches(box_h))
-    box.fill.solid(); box.fill.fore_color.rgb = RGBColor(0xF6, 0xF8, 0xFA)
-    box.line.color.rgb = NAVY
-    tf = box.text_frame; tf.word_wrap = True
-    tf.margin_left = Inches(0.15); tf.margin_right = Inches(0.15)
-    tf.margin_top = Inches(0.12); tf.margin_bottom = Inches(0.12)
-    p1 = tf.paragraphs[0]
-    r1 = p1.add_run(); r1.text = title
-    r1.font.size = Pt(18); r1.font.bold = True; r1.font.color.rgb = NAVY; r1.font.name = 'Calibri'
-    p2 = tf.add_paragraph()
-    r2 = p2.add_run(); r2.text = text
-    r2.font.size = Pt(13); r2.font.italic = True; r2.font.color.rgb = GREY; r2.font.name = 'Calibri'
+add_callout_box(s, 6.85, 2.2, 6.0, 3.0, fill=PALE_BG, border_color=NAVY)
+add_text(s, 7.1, 2.35, 5.5, 0.4, "They CANNOT symmetrically succeed",
+         size=16, bold=True, color=NAVY)
+add_text(s, 7.1, 2.85, 5.5, 2.0,
+         "Producing solidarity requires constructive political work that welfare design alone cannot do.\n\nThe mirror-image mechanism does not exist.",
+         size=13, color=DARK)
 
-add_text(s, 0.7, 4.7, 12, 0.5,
-         "They cannot, by symmetric operation, succeed.",
-         size=20, italic=True, color=DARK)
-
-# Highlighted thesis
-thesis_box = s.shapes.add_shape(5, Inches(0.7), Inches(5.5), Inches(11.9), Inches(1.5))
-thesis_box.fill.solid(); thesis_box.fill.fore_color.rgb = NAVY
-thesis_box.line.fill.background()
-ttf = thesis_box.text_frame; ttf.word_wrap = True
+# Thesis box
+thesis = s.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE,
+                             Inches(0.6), Inches(5.5),
+                             Inches(12.1), Inches(1.5))
+thesis.fill.solid(); thesis.fill.fore_color.rgb = NAVY
+thesis.line.fill.background()
+ttf = thesis.text_frame; ttf.word_wrap = True
 ttf.margin_left = Inches(0.4); ttf.margin_right = Inches(0.4)
-ttf.margin_top = Inches(0.25); ttf.margin_bottom = Inches(0.25)
-tp = ttf.paragraphs[0]
-tp.alignment = PP_ALIGN.CENTER
+ttf.margin_top = Inches(0.25)
+tp = ttf.paragraphs[0]; tp.alignment = PP_ALIGN.CENTER
 tr = tp.add_run()
 tr.text = "Dignity is a baseline good."
-tr.font.size = Pt(24); tr.font.bold = True
-tr.font.color.rgb = RGBColor(0xFF, 0xFF, 0xFF); tr.font.name = 'Calibri'
+tr.font.size = Pt(22); tr.font.bold = True
+tr.font.color.rgb = WHITE; tr.font.name = 'Calibri'
 tp2 = ttf.add_paragraph(); tp2.alignment = PP_ALIGN.CENTER
 tr2 = tp2.add_run()
 tr2.text = "Its absence damages. Its presence clears the ground for solidarity without producing it."
-tr2.font.size = Pt(16); tr2.font.italic = True
-tr2.font.color.rgb = RGBColor(0xFF, 0xFF, 0xFF); tr2.font.name = 'Calibri'
+tr2.font.size = Pt(15); tr2.font.italic = True
+tr2.font.color.rgb = WHITE; tr2.font.name = 'Calibri'
 
-add_speaker_notes(s, """[2 min — this is the central conceptual slide]
+add_speaker_notes(s, """[~75s — central slide]
 
-This is the argument. Welfare institutions can fail politically through a
-specific cascade — identity switching, misattribution, defensive othering. I'll
-walk through each in a moment.
+Welfare's political effects are asymmetric.
 
-The key claim is asymmetric. The mechanism that damages is real and observable.
-The mirror-image protective mechanism — where dignity-preserving welfare
-produces solidarity — is not. In my data and in others'.
+The literature has documented three psychological mechanisms separately. I argue
+welfare design is the institutional condition that makes these mechanisms more
+or less likely to engage. I'm not demonstrating the full chain empirically;
+each step is independently documented, the institutional conditioning is my
+theoretical claim.
 
-That last sentence is the paper's title in compressed form. Dignity is a
-baseline good. Its absence damages. Its presence clears ground for solidarity
-that other things have to build.""")
+The asymmetric piece: there's no mirror-image mechanism. Dignity-preserving
+welfare clears space for solidarity but doesn't produce it. Solidarity requires
+political construction welfare design alone can't supply.
 
-
-# =====================================================================
-# Slide 7 — Why welfare and not something else
-# =====================================================================
-s = add_blank_slide()
-add_title_bar(s, "Why welfare, and not something else")
-add_bullet_list(s, 0.7, 1.4, 12, 1.2, [
-    "Many institutions shape identity: media environments, religious traditions, class structures",
-    "Why isolate welfare?",
-], size=20)
-
-add_text(s, 0.7, 3.0, 12, 0.6,
-         "Welfare is the single state domain where economic vulnerability and institutional treatment meet at the same moment",
-         size=22, bold=True, color=NAVY)
-
-add_text(s, 0.7, 4.0, 12, 0.7,
-         "When a worker encounters the welfare state, the institution allocates resources AND renders judgement about their claim to those resources, in the same act.",
-         size=17, color=DARK, italic=True)
-
-add_bullet_list(s, 0.7, 5.0, 12, 1.5, [
-    "Courts judge but rarely allocate",
-    "Markets allocate without judgement",
-    "Religious institutions judge but cannot compel",
-], size=16, color=GREY)
-
-add_text(s, 0.7, 6.4, 12, 0.6,
-         "Only welfare does both. At the point of maximum material dependence.",
-         size=20, bold=True, color=NAVY)
-
-add_speaker_notes(s, """[1 min]
-
-The objection one would make at this stage is that lots of institutions shape
-identity. Why is welfare special?
-
-Welfare is the one state domain where economic vulnerability meets institutional
-treatment in the same act. A worker encountering the welfare state is being
-allocated resources AND being judged about their claim to them, simultaneously.
-That joint operation is unusual.
-
-This is what makes welfare uniquely load-bearing as a communicator of citizen
-worth. It's what Wagner's recipients are hearing when they "internalize
-deservingness criteria." It's what makes dignity an institutional outcome, not
-just a personal one.""")
+That last sentence is the title in compressed form.""")
 
 
 # =====================================================================
-# Slide 8 — The damage cascade (detail)
+# Slide 6 — Documented vs argued (HONESTY SLIDE)
 # =====================================================================
 s = add_blank_slide()
-add_title_bar(s, "The damage cascade")
+add_title_bar(s, "What's documented in the literature vs what I argue")
+
+# Two columns
+# LEFT — documented
+add_callout_box(s, 0.6, 1.4, 6.0, 5.6, fill=PALE_BG, border_color=NAVY)
+add_text(s, 0.85, 1.55, 5.5, 0.45,
+         "DOCUMENTED  (each step has its own literature)",
+         size=13, bold=True, color=NAVY)
+add_bullet_list(s, 0.85, 2.15, 5.5, 4.6, [
+    "Stigmatising welfare implementation degrades class identity  (Soss 1999; Wagner 2022)",
+    "Class identity loss → cultural identity activation  (Bonomi et al. 2021)",
+    "Cultural identity → exclusionary attitudes  (Ballard-Rosa et al. 2022; Wu 2022)",
+    "Conditional welfare → individual rather than structural attribution  (Alesina & Angeletos 2005)",
+], size=13)
+
+# RIGHT — argued
+add_callout_box(s, 6.85, 1.4, 6.0, 5.6, fill=WARN_BG, border_color=RED)
+add_text(s, 7.1, 1.55, 5.5, 0.45,
+         "ARGUED  (my contribution, not yet proven)",
+         size=13, bold=True, color=RED)
+add_bullet_list(s, 7.1, 2.15, 5.5, 4.6, [
+    "These three mechanisms operate as a connected sequence",
+    "Welfare design is the institutional condition determining whether they engage",
+    "The mechanism is asymmetric — no symmetric protective mechanism with comparable evidence",
+    "The cross-national correlation is consistent with this; within-individual test belongs to the thesis follow-up",
+], size=13)
+
+add_speaker_notes(s, """[~60s — honesty slide, important]
+
+I want to be careful here. Each step in the chain has its own literature. Soss
+on welfare implementation. Bonomi et al on identity switching. Ballard-Rosa on
+cultural identity to authoritarian values. Alesina-Angeletos on conditional
+attribution.
+
+What's mine is the synthesis: that these mechanisms are connected, that welfare
+design is the institutional condition under which they engage together, that no
+symmetric protective mechanism exists with comparable evidence.
+
+The cross-national correlation is consistent with this argument. The within-
+individual test belongs to the thesis. I'm not overclaiming.""")
+
+
+# =====================================================================
+# Slide 7 — Why no mirror image (3 reasons)
+# =====================================================================
+s = add_blank_slide()
+add_title_bar(s, "Why no symmetric mirror image — three reasons")
 
 # Three columns
-col_w = 4.0
-col_y = 1.5
-for i, (num, title, body) in enumerate([
-    ("1.", "Identity switches",
-     "Bonomi et al. (2021): individuals move from class to cultural identity when class identity is degraded.\n\nStigmatising welfare implementation degrades class identity DIRECTLY — accelerating the switch."),
-    ("2.", "Grievances misattribute",
-     "Once cultural identity is in charge, frustration finds available scapegoats.\n\nWu (2022): workers at higher automation risk oppose immigration but show no different technology preferences.\n\nMisdirection has no protective analogue."),
-    ("3.", "Othering turns defensive",
-     "Patrick (2016): UK benefit claimants shore up their own deservingness through critique of those below them — using the welfare system's own criteria.\n\nWagner (2022): 'kicking down'."),
-]):
-    x = 0.6 + i * (col_w + 0.2)
-    add_text(s, x, col_y, col_w, 0.5, num + " " + title,
-             size=18, bold=True, color=NAVY)
-    add_text(s, x, col_y + 0.6, col_w, 4, body,
-             size=13, color=DARK)
-
-# Endpoint box
-end_y = 6.3
-end = s.shapes.add_shape(5, Inches(0.7), Inches(end_y), Inches(11.9), Inches(0.85))
-end.fill.solid(); end.fill.fore_color.rgb = RGBColor(0xF6, 0xF8, 0xFA)
-end.line.color.rgb = NAVY
-etf = end.text_frame; etf.word_wrap = True
-etf.margin_left = Inches(0.3); etf.margin_top = Inches(0.12)
-ep = etf.paragraphs[0]
-er = ep.add_run()
-er.text = "Endpoint (Busemeyer, Rathgeb & Sahm 2023): "
-er.font.size = Pt(15); er.font.bold = True; er.font.color.rgb = NAVY; er.font.name = 'Calibri'
-er2 = ep.add_run()
-er2.text = "the particularistic-authoritarian welfare preference — pro-workfare, anti-poor, anti-social-investment."
-er2.font.size = Pt(15); er2.font.color.rgb = DARK; er2.font.name = 'Calibri'
-
-add_speaker_notes(s, """[2 min]
-
-Three steps in sequence. Identity switches first — class to cultural. Then
-grievances misattribute — frustration that should target the actual cause of
-vulnerability gets pointed at immigrants. Then othering turns defensive — the
-worker shores up their own deservingness on critique of those below them.
-
-The cascade ends in what Busemeyer and colleagues call the
-"particularistic-authoritarian" preference. Pro-workfare, anti-poor,
-anti-social-investment.
-
-What's important about this slide: each step has a documented empirical
-literature, but no one has connected the chain. Connecting them — with welfare
-design as the upstream condition — is one of the paper's contributions.""")
-
-
-# =====================================================================
-# Slide 9 — Why no mirror image
-# =====================================================================
-s = add_blank_slide()
-add_title_bar(s, "Why no mirror image")
-
-add_text(s, 0.7, 1.4, 12, 0.6,
-         "Three asymmetries, none with a symmetric counterpart",
-         size=22, bold=True, color=NAVY)
-
-# Three asymmetry blocks
-blocks = [
-    ("Loss aversion (Kahneman & Tversky 1979)",
-     "Stigmatising encounters register as losses; dignity-preserving ones don't register as gains of equivalent magnitude. Damage mobilises; the absence of damage tends not to."),
-    ("Status is positional",
-     "Recognition cannot be redistributed without losses to the currently-recognised (Gidron & Hall 2017). Dignity-preserving welfare REMOVES an obstacle to inclusive solidarity. It does not, by itself, CONSTRUCT inclusion."),
-    ("Defensive othering is costly to reverse",
-     "Identity investments are not undone by changing the institutional environment alone. Pierson's (1994) positive feedback runs forward into supportive constituencies; the damage cascade runs forward into a population that has forgotten the position it now defends was constructed for it."),
+y = 1.4
+card_h = 5.5
+card_w = 4.0
+reasons = [
+    ("1.  Loss aversion",
+     "Kahneman & Tversky (1979): losses loom larger than equivalent gains.",
+     "A stigmatising encounter registers as a status loss. A dignity-preserving one registers as the ABSENCE of damage.",
+     "Damage mobilises; absence of damage tends not to.",
+     None),
+    ("2.  Status is positional",
+     "Recognition cannot be redistributed without losses to the currently-recognised.",
+     "Dignity-preserving welfare REMOVES an obstacle to inclusive solidarity.",
+     "It does not, by itself, CONSTRUCT the inclusion.",
+     "Gidron & Hall (2017)"),
+    ("3.  Investments are sticky",
+     "Once a worker has built deservingness on critique of those below, the identity investment is costly to reverse.",
+     "Pierson's (1994) positive feedback runs FORWARD into support.",
+     "The cascade runs forward into harder-to-reverse opposition.",
+     "Caveat: strongest theoretical claim, least directly tested."),
 ]
-for i, (title, body) in enumerate(blocks):
-    y = 2.2 + i * 1.55
-    # Number circle
-    add_text(s, 0.6, y, 0.5, 0.5, str(i+1) + ".",
-             size=22, bold=True, color=NAVY)
-    add_text(s, 1.1, y, 11.5, 0.5, title,
-             size=18, bold=True, color=NAVY)
-    add_text(s, 1.1, y + 0.5, 11.5, 1.0, body,
-             size=14, color=DARK)
+for i, (title, p1, p2, p3, footer) in enumerate(reasons):
+    x = 0.6 + i * (card_w + 0.2)
+    add_callout_box(s, x, y, card_w, card_h, fill=PALE_BG, border_color=NAVY)
+    add_text(s, x + 0.2, y + 0.15, card_w - 0.4, 0.5, title,
+             size=16, bold=True, color=NAVY)
+    add_text(s, x + 0.2, y + 0.75, card_w - 0.4, 1.2, p1, size=12, color=DARK)
+    add_text(s, x + 0.2, y + 1.95, card_w - 0.4, 1.2, p2, size=12, color=DARK)
+    add_text(s, x + 0.2, y + 3.15, card_w - 0.4, 1.2, p3,
+             size=12, color=DARK, bold=True)
+    if footer:
+        add_text(s, x + 0.2, y + card_h - 0.55, card_w - 0.4, 0.4, footer,
+                 size=11, italic=True, color=GREY)
 
-add_speaker_notes(s, """[2 min]
+add_speaker_notes(s, """[~75s]
 
-Three reasons the mechanism is one-way, not symmetric.
+Three reasons the mechanism runs only one way.
 
 First, loss aversion. Damage is psychologically heavier than equivalent
-non-damage. This applies to dignity shocks just as it applies to material ones.
+non-damage. Applies to dignity shocks just as material ones.
 
-Second, status is positional. Recognition can't be redistributed the way money
-can — relational goods don't add to a fixed pool. Dignity-preserving welfare
-clears space for inclusive solidarity but doesn't itself produce the inclusion.
+Second, status is positional. Recognition can't be redistributed the way
+money can. Welfare clears space for inclusive solidarity but doesn't construct
+it.
 
-Third — and the one I find theoretically most interesting — defensive othering,
-once committed to, is costly to reverse. The cascade isn't just additive. It's
-identity-investing. Pierson's classic positive-feedback story is forward into
-support; the damage cascade is forward into opposition that gets harder to
-reverse with each iteration.
-
-The implication: even if you fix the institutions, the cascade has already
-made commitments that institutions alone cannot undo.""")
+Third — and the one I'll flag honestly — defensive othering, once committed
+to, is costly to reverse. Pierson's positive feedback runs forward into
+support; the damage cascade runs forward into opposition that's harder to
+reverse. This is the strongest theoretical claim and the least directly
+tested. Worth flagging that.""")
 
 
 # =====================================================================
-# Slide 10 — Empirical setup
+# Slide 8 — Empirical setup
 # =====================================================================
 s = add_blank_slide()
 add_title_bar(s, "Empirical setup")
 
-# Two columns
-add_text(s, 0.7, 1.4, 6, 0.5, "Data", size=20, bold=True, color=NAVY)
-add_bullet_list(s, 0.7, 2.0, 6, 3, [
+# Two-column
+add_text(s, 0.6, 1.35, 6, 0.45, "Data", size=18, bold=True, color=NAVY)
+add_bullet_list(s, 0.6, 1.85, 6, 2.2, [
     "European Social Survey rounds 6–9 (2012–2018)",
     "34 countries, N = 188,764",
-    "15 Western European countries (CWED welfare-quality analysis)",
-], size=15)
+    "15 Western European countries in CWED welfare-quality comparison",
+], size=14)
 
-add_text(s, 0.7, 4.5, 6, 0.5, "Key variables", size=20, bold=True, color=NAVY)
-add_bullet_list(s, 0.7, 5.0, 6, 2.5, [
-    "RTI: routine task intensity (Goos, Manning & Salomons 2014)",
-    "Anti-immigration: 3-item index (α = 0.864)",
-    "Welfare context: regimes; ALMP spending; CWED decommodification",
-], size=15)
-
-add_text(s, 7.0, 1.4, 6, 0.5, "Approach", size=20, bold=True, color=NAVY)
-add_bullet_list(s, 7.0, 2.0, 6, 5, [
+add_text(s, 0.6, 4.2, 6, 0.45, "Identification", size=18, bold=True, color=NAVY)
+add_bullet_list(s, 0.6, 4.7, 6, 2.5, [
     "Cross-level interactions: RTI × Welfare → attitudes",
     "Country-wave fixed effects, cluster-robust SEs",
     "Random-slope mixed models for cross-national heterogeneity",
-    "15-country matched sample for ALMP/CWED comparison",
     "Cross-sectional design — claim is consistency, not causation",
-], size=15)
+], size=14)
 
-add_speaker_notes(s, """[1 min]
+# Right side — two welfare measures contrasted
+add_text(s, 7.0, 1.35, 6, 0.45, "Two competing welfare measures",
+         size=18, bold=True, color=NAVY)
 
-Quick description of the data. ESS waves 6 to 9, 34 countries. The headline
-analysis is a cross-level interaction — RTI predicting anti-immigration
-attitudes, with the slope conditional on welfare context. I run regimes,
-spending, and decommodification as alternative welfare measures.
+add_callout_box(s, 7.0, 2.0, 5.8, 1.6, fill=WARN_BG, border_color=GREY)
+add_text(s, 7.25, 2.15, 5.4, 0.4, "ALMP spending (% GDP)",
+         size=15, bold=True, color=GREY)
+add_text(s, 7.25, 2.6, 5.4, 0.5,
+         "What the buffering literature uses",
+         size=13, italic=True, color=GREY)
+add_text(s, 7.25, 3.1, 5.4, 0.5,
+         "Captures welfare EFFORT.",
+         size=13, color=DARK)
 
-Cross-sectional design — I'm honest about that in the paper. I can show the
-pattern is consistent with the asymmetric mechanism; I can't establish
-causation here. The thesis follow-up does that with Danish registry data.""")
+add_callout_box(s, 7.0, 3.85, 5.8, 1.8, fill=PALE_BG, border_color=NAVY)
+add_text(s, 7.25, 4.0, 5.4, 0.4, "CWED decommodification",
+         size=15, bold=True, color=NAVY)
+add_text(s, 7.25, 4.45, 5.4, 0.5,
+         "Esping-Andersen index",
+         size=13, italic=True, color=GREY)
+add_text(s, 7.25, 4.95, 5.4, 0.7,
+         "The degree to which workers can sustain themselves WITHOUT dependence on the market.",
+         size=13, color=DARK)
+
+# Prediction box
+add_text(s, 7.0, 6.0, 6, 1,
+         "Asymmetric mechanism predicts:\nALMP fails; CWED predicts strongly.",
+         size=14, italic=True, bold=True, color=NAVY)
+
+add_speaker_notes(s, """[~60s]
+
+ESS rounds 6 to 9, 34 countries, N=188,764. The headline analysis restricts
+to the 15 Western European countries with CWED welfare-quality data.
+
+Cross-level interactions, country-wave fixed effects, cluster-robust SEs.
+Cross-sectional design. The claim is consistency with the asymmetric
+mechanism, not causation.
+
+Two competing welfare measures: ALMP spending — what the buffering literature
+typically uses — and CWED decommodification, the Esping-Andersen index.
+
+The asymmetric mechanism makes a sharp prediction: ALMP shouldn't predict the
+slope; CWED should.""")
 
 
 # =====================================================================
-# Slide 11 — ALMP vs CWED (HEADLINE)
+# Slide 9 — Cross-national pattern by regime
 # =====================================================================
 s = add_blank_slide()
-add_title_bar(s, "ALMP vs CWED — the headline")
+add_title_bar(s, "Cross-national pattern: 5 welfare regimes")
 
-add_image(s, 2.0, 1.3, 9.3, 4.5, FIG6)
+add_image(s, 1.0, 1.3, 8.5, 5.0, FIG2)
 
-# Findings strip
-add_text(s, 0.7, 6.0, 12, 0.4, "Same 15 countries, two welfare measures:",
-         size=16, bold=True, color=DARK)
-add_bullet_list(s, 0.7, 6.5, 12.5, 1, [
-    "ALMP spending:  r = +0.01 (n.s.)  →  spending effort doesn't predict the slope",
-    "CWED decommodification:  r = −0.85 (p<0.001)  →  72 per cent of cross-national variation",
-], size=15)
+# Right panel — regime ordering
+add_text(s, 9.8, 2.0, 3.2, 0.4, "Slope: RTI → anti-immig",
+         size=13, bold=True, color=NAVY)
+ty = 2.5
+for regime, slope, is_top, is_bot in [
+    ("Liberal",     "0.512", True, False),
+    ("Southern",    "0.462", False, False),
+    ("Continental", "0.443", False, False),
+    ("Nordic",      "0.413", False, False),
+    ("Eastern",     "0.263", False, True),
+]:
+    color = NAVY if is_top else (GREY if is_bot else DARK)
+    bold = is_top
+    add_text(s, 9.8, ty, 2, 0.35, regime,
+             size=13, color=color, bold=bold)
+    add_text(s, 11.5, ty, 1.5, 0.35, "β = " + slope,
+             size=13, color=color, bold=bold)
+    ty += 0.4
 
-add_speaker_notes(s, """[2 min — the empirical highlight]
+add_text(s, 0.6, 6.5, 12, 0.5,
+         "Same RTI exposure, different conversion into exclusion. Liberal steepest, Nordic flattest.",
+         size=14, italic=True, color=DARK, align=PP_ALIGN.CENTER)
+
+add_speaker_notes(s, """[~45s]
+
+Cross-national pattern by regime. Each panel a welfare regime; line is RTI
+predicting anti-immigration. Liberal steepest at point five one two. Nordic
+flattest at point four one three.
+
+Same routine-task exposure, different conversion into exclusion. The buffering
+reading would predict more spending → flatter slope. We test that next.""")
+
+
+# =====================================================================
+# Slide 10 — ALMP vs CWED (HEADLINE)
+# =====================================================================
+s = add_blank_slide()
+add_title_bar(s, "The empirical headline: ALMP vs CWED")
+
+add_image(s, 2.5, 1.3, 8.3, 4.3, FIG6)
+
+# Below — two contrast boxes
+add_callout_box(s, 0.6, 5.85, 6.0, 1.4, fill=WARN_BG, border_color=GREY)
+add_text(s, 0.85, 5.95, 5.5, 0.4, "ALMP spending",
+         size=14, bold=True, color=GREY)
+add_text(s, 0.85, 6.4, 5.5, 0.4,
+         "r = +0.01,  p = 0.97  (n.s.)",
+         size=15, bold=True, color=DARK)
+add_text(s, 0.85, 6.85, 5.5, 0.35,
+         "Spending effort is uncorrelated with the slope.",
+         size=12, italic=True, color=DARK)
+
+add_callout_box(s, 6.85, 5.85, 6.0, 1.4, fill=PALE_BG, border_color=NAVY)
+add_text(s, 7.1, 5.95, 5.5, 0.4, "CWED decommodification",
+         size=14, bold=True, color=NAVY)
+add_text(s, 7.1, 6.4, 5.5, 0.4,
+         "r = −0.85,  p < 0.001",
+         size=15, bold=True, color=NAVY)
+add_text(s, 7.1, 6.85, 5.5, 0.35,
+         "Decommodification accounts for 72% of cross-national variation.",
+         size=12, italic=True, color=DARK)
+
+add_speaker_notes(s, """[~90s — empirical highlight]
 
 This is the paper's most important empirical contrast. Same fifteen Western
-European countries, two ways of measuring welfare. Active labour market policy
-spending — what most of the buffering literature uses as its measure of
-welfare effort. CWED decommodification — the degree to which the welfare
-state lets you sustain yourself without market employment.
+European countries, two ways of measuring welfare.
 
-ALMP spending: essentially zero correlation with how strongly automation
-exposure converts into exclusion. Spending more on labour market policies has
-nothing to do with the cross-national pattern.
+ALMP spending: r equals plus point zero one. Essentially zero. Spending more
+on labour market policies has nothing to do with the cross-national pattern.
 
-CWED decommodification: r equals negative point eight five. Seventy-two percent
-of the cross-national variation. The line you're looking at is what the
-asymmetric mechanism predicts and what the buffering account cannot explain.
+CWED decommodification: r equals negative point eight five. Seventy-two
+percent of the cross-national variation. UK lowest, Norway highest. Exactly
+what the asymmetric mechanism predicts and what the buffering account cannot
+explain.
 
-What's the difference? ALMP captures effort. You can spend a lot on punitive
+The difference: ALMP captures effort. You can spend a lot on punitive
 workfare. CWED captures decommodification — what the welfare state lets you
-have, not what it costs to provide. The dignity dimension travels along the
-second variable.""")
+have, not what it costs to provide. Dignity travels along the second variable.""")
 
 
 # =====================================================================
-# Slide 12 — Sub-components decomposition (NEW)
+# Slide 11 — Sub-components decomposition (NEW)
 # =====================================================================
 s = add_blank_slide()
-add_title_bar(s, "Decomposition: which decommodification dimension matters?")
+add_title_bar(s, "Decomposing CWED: which dimension carries the signal?")
 
-add_image(s, 0.5, 1.3, 7.5, 3.5, FIG7)
+add_image(s, 0.5, 1.3, 7.3, 3.7, FIG7)
 
-# Right panel — table
-add_text(s, 8.3, 1.3, 4.5, 0.5, "Individual-level interactions",
-         size=15, bold=True, color=NAVY)
+# Right — table
+add_text(s, 8.0, 1.4, 5, 0.4,
+         "Individual-level: RTI × component → anti-immigration",
+         size=12, bold=True, color=NAVY)
 
 # Mini table
 table_data = [
-    ("Component",     "β",       "p"),
-    ("Unemployment",  "−0.053",  "<0.001 ★"),
-    ("Sickness",      "−0.037",  "0.003"),
-    ("Pensions",      "−0.019",  "0.066"),
-    ("Composite",     "−0.051",  "<0.001"),
+    ("Component",   "β",       "p"),
+    ("Unemployment","−0.053",  "<0.001 ★"),
+    ("Sickness",    "−0.037",  "0.003"),
+    ("Pensions",    "−0.019",  "0.066"),
+    ("Composite",   "−0.051",  "<0.001"),
 ]
-ty = 1.85
+ty = 2.0
 for r, row in enumerate(table_data):
     is_header = r == 0
-    is_highlight = (r == 1)  # unemployment
+    is_highlight = (r == 1)
     fcolor = NAVY if (is_header or is_highlight) else DARK
     fbold = is_header or is_highlight
-    add_text(s, 8.3, ty, 1.7, 0.35, row[0], size=13, bold=fbold, color=fcolor)
-    add_text(s, 10.0, ty, 1.0, 0.35, row[1], size=13, bold=fbold, color=fcolor)
-    add_text(s, 11.0, ty, 1.7, 0.35, row[2], size=13, bold=fbold, color=fcolor)
-    ty += 0.4
+    add_text(s, 8.0, ty, 1.7, 0.35, row[0], size=12, bold=fbold, color=fcolor)
+    add_text(s, 9.7, ty, 1.0, 0.35, row[1], size=12, bold=fbold, color=fcolor)
+    add_text(s, 10.7, ty, 1.7, 0.35, row[2], size=12, bold=fbold, color=fcolor)
+    ty += 0.35
 
-# Predicted ordering
-add_text(s, 0.7, 5.2, 12, 0.45, "Predicted ordering: UE > SK > PEN.",
-         size=15, italic=True, color=GREY)
-add_text(s, 0.7, 5.65, 12, 0.45, "Observed at individual level: UE > SK > PEN.  ✓",
-         size=16, bold=True, color=NAVY)
+add_text(s, 8.0, 4.0, 5, 0.35,
+         "N = 81,887; country-wave FE; cluster-robust SEs",
+         size=10, italic=True, color=GREY)
 
-add_text(s, 0.7, 6.4, 12, 0.4,
-         "The damage cascade fires through the point of economic vulnerability.",
-         size=16, italic=True, color=DARK)
+# Theory check below
+add_callout_box(s, 0.6, 5.4, 12.1, 1.7, fill=PALE_BG, border_color=NAVY)
+add_text(s, 0.85, 5.55, 11.5, 0.4,
+         "Theory predicts UE > SK > PEN.    Observed at individual level: UE > SK > PEN.  ✓",
+         size=14, bold=True, color=NAVY)
+add_text(s, 0.85, 6.05, 11.5, 0.5,
+         "The cascade fires through the point of economic vulnerability — where automation-exposed workers actually meet the welfare state.",
+         size=13, color=DARK)
+add_text(s, 0.85, 6.6, 11.5, 0.4,
+         "Implication for thesis: Danish 2003/2006/2013 activation reforms should produce damage signatures; pension reforms should not.",
+         size=12, italic=True, color=GREY)
 
-add_speaker_notes(s, """[1.5 min — the new finding]
+add_speaker_notes(s, """[~75s — new finding]
 
-This is the new analysis I ran this week. The composite CWED hides three
-sub-components: unemployment generosity, sickness generosity, pension
-generosity. Theory predicts unemployment should drive the result — that's where
-automation-exposed workers actually meet the welfare state.
+Decomposing CWED into three sub-components: unemployment generosity, sickness,
+pensions. Theory predicts unemployment should drive the result — that's where
+automation-exposed routine workers meet the welfare state.
 
-Individual-level interaction: unemployment generosity, beta minus zero point
-zero five three, p less than point zero zero one. Sickness intermediate.
-Pensions weakest, marginally significant only.
+Individual-level: unemployment beta minus zero point zero five three, p less
+than point zero zero one. Sickness intermediate. Pensions weakest, marginal.
 
-Theory holds at the test that matters: the institutional channel runs through
-the point of economic vulnerability, not through welfare expenditure in the
-abstract.
+Predicted UE greater than SK greater than PEN. Observed: same. The asymmetric
+mechanism's specific prediction holds at the test that matters.
 
-For thesis design, this matters: the within-Denmark test should focus on
-unemployment benefit reforms — the 2003, 2006, and 2013 activation reforms.
-Pension reforms should NOT show damage signatures of the same magnitude.""")
+For thesis design: focus on unemployment benefit reforms — 2003, 2006, 2013
+activation reforms. Pension reforms shouldn't show damage signatures.""")
 
 
 # =====================================================================
-# Slide 13 — Asymmetric confirmation
+# Slide 12 — Asymmetric confirmation
 # =====================================================================
 s = add_blank_slide()
-add_title_bar(s, "The asymmetric confirmation")
-
-add_text(s, 0.7, 1.4, 12, 0.5, "Same data, opposite outcome",
-         size=22, bold=True, color=NAVY)
+add_title_bar(s, "Same data, opposite outcome — the asymmetric confirmation")
 
 # Comparison table
-ty = 2.2
-headers = ("Outcome", "RTI × Liberal interaction", "p")
-add_text(s, 0.7, ty, 4.5, 0.4, headers[0], size=16, bold=True, color=GREY)
-add_text(s, 5.5, ty, 4.5, 0.4, headers[1], size=16, bold=True, color=GREY)
-add_text(s, 10.5, ty, 2, 0.4, headers[2], size=16, bold=True, color=GREY)
-
-# Underline
-ul = s.shapes.add_shape(1, Inches(0.7), Inches(2.65), Inches(12), Inches(0.03))
+ty = 1.5
+add_text(s, 0.6, ty, 6.5, 0.45, "Outcome", size=14, bold=True, color=GREY)
+add_text(s, 7.5, ty, 3.5, 0.45, "RTI × Liberal", size=14, bold=True, color=GREY)
+add_text(s, 11.0, ty, 2, 0.45, "p", size=14, bold=True, color=GREY)
+ul = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.6), Inches(1.95),
+                         Inches(12.1), Inches(0.03))
 ul.line.fill.background(); ul.fill.solid(); ul.fill.fore_color.rgb = NAVY
 
-add_text(s, 0.7, 2.8, 4.5, 0.5, "Anti-immigration", size=18, bold=True, color=NAVY)
-add_text(s, 5.5, 2.8, 4.5, 0.5, "β = +0.127", size=18, bold=True, color=NAVY)
-add_text(s, 10.5, 2.8, 2, 0.5, "0.003 ✓", size=18, bold=True, color=NAVY)
+ty = 2.15
+add_text(s, 0.6, ty, 6.5, 0.5, "Anti-immigration",
+         size=18, bold=True, color=NAVY)
+add_text(s, 7.5, ty, 3.5, 0.5, "β = +0.127",
+         size=18, bold=True, color=NAVY)
+add_text(s, 11.0, ty, 2, 0.5, "0.003 ✓",
+         size=18, bold=True, color=NAVY)
 
-add_text(s, 0.7, 3.5, 4.5, 0.5, "Redistribution support", size=18, color=DARK)
-add_text(s, 5.5, 3.5, 4.5, 0.5, "β = +0.011", size=18, color=DARK)
-add_text(s, 10.5, 3.5, 2, 0.5, "0.285 (n.s.)", size=18, color=GREY)
+ty = 2.85
+add_text(s, 0.6, ty, 6.5, 0.5, "Redistribution support",
+         size=18, color=DARK)
+add_text(s, 7.5, ty, 3.5, 0.5, "β = +0.011",
+         size=18, color=DARK)
+add_text(s, 11.0, ty, 2, 0.5, "0.285 (n.s.)",
+         size=18, color=GREY)
 
-# Underline
-ul2 = s.shapes.add_shape(1, Inches(0.7), Inches(4.05), Inches(12), Inches(0.03))
+ul2 = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.6), Inches(3.5),
+                          Inches(12.1), Inches(0.03))
 ul2.line.fill.background(); ul2.fill.solid(); ul2.fill.fore_color.rgb = NAVY
 
-add_text(s, 0.7, 4.4, 12, 0.5,
-         "The exclusion side is robust. The solidarity side is null.",
-         size=22, bold=True, color=NAVY)
+# Findings boxes
+add_callout_box(s, 0.6, 4.0, 6.0, 2.8, fill=PALE_BG, border_color=NAVY)
+add_text(s, 0.85, 4.15, 5.5, 0.4, "The exclusion side is robust",
+         size=14, bold=True, color=NAVY)
+add_text(s, 0.85, 4.6, 5.5, 1.0,
+         "Welfare context cleanly attenuates the conversion of vulnerability into exclusion.",
+         size=13, color=DARK)
+add_text(s, 0.85, 5.65, 5.5, 1.0,
+         "Robust across every specification.",
+         size=13, italic=True, color=DARK)
 
-add_bullet_list(s, 0.7, 5.1, 12, 2, [
-    "Welfare context cleanly attenuates the conversion of vulnerability into exclusion",
-    "Welfare context does NOT detectably moderate the conversion of the same vulnerability into solidarity",
-    "Supplementary ISSP test on different sample, outcome, time period: same null",
-], size=15)
+add_callout_box(s, 6.85, 4.0, 6.0, 2.8, fill=WARN_BG, border_color=RED)
+add_text(s, 7.1, 4.15, 5.5, 0.4, "The solidarity side is null",
+         size=14, bold=True, color=RED)
+add_text(s, 7.1, 4.6, 5.5, 1.5,
+         "Welfare context does NOT detectably moderate conversion into solidarity.",
+         size=13, color=DARK)
+add_text(s, 7.1, 5.7, 5.5, 1.0,
+         "ISSP 2006 confirmation: same null on different sample/outcome/period (β=+0.010, p=0.55).",
+         size=12, italic=True, color=DARK)
 
-add_text(s, 0.7, 6.6, 12, 0.45,
+add_text(s, 0.6, 7.0, 12, 0.4,
          "This is what the asymmetric mechanism predicts.",
-         size=18, italic=True, bold=True, color=NAVY)
+         size=15, italic=True, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
 
-add_speaker_notes(s, """[1 min]
+add_speaker_notes(s, """[~75s]
 
-The same data tested two ways. RTI predicts anti-immigration attitudes more
-strongly in Liberal regimes than Nordic ones — the interaction is significant
-across every specification. RTI predicts slightly higher redistribution support
-across all regimes — but the cross-regime variation in that pathway is small,
-non-significant, and in the wrong direction.
+Same data, two outcomes. RTI predicts anti-immigration more strongly in
+Liberal regimes than Nordic — beta point one two seven, p equals point zero
+zero three. Robust across every specification.
 
-Welfare context attenuates conversion into exclusion. It does not detectably
-moderate conversion into solidarity.
+RTI also predicts slightly higher redistribution support across all regimes,
+but the cross-regime variation in that pathway is small, non-significant, and
+in the wrong direction.
 
-Two ways to read the null. As a measurement limitation — single-item scales,
-panel limitations. Or as a substantive confirmation — the mechanism IS
-asymmetric. The supplementary ISSP analysis on different data with a different
-outcome returns the same null. I take the substantive reading. It's what the
-theory predicts.""")
+Welfare context attenuates exclusion. It does not detectably moderate
+solidarity.
+
+Two readings: measurement limitation, or substantive confirmation. The
+supplementary ISSP test on different data with different outcome returns the
+same null. I take the substantive reading. It's what the theory predicts.""")
 
 
 # =====================================================================
-# Slide 14 — Implications
+# Slide 13 — Implications
 # =====================================================================
 s = add_blank_slide()
 add_title_bar(s, "Implications")
 
 implications = [
-    ("Welfare-state theory",
-     "the political consequences of welfare design travel along WHAT welfare communicates, not HOW MUCH welfare spends"),
-    ("Cultural-vs-economic debate",
-     "cultural backlash isn't a rival explanation to economic disruption — it's what economic disruption looks like, cross-nationally, where welfare institutions are less decommodifying"),
-    ("Policy",
-     "dignity-preserving welfare is necessary for solidarity but not sufficient. Active solidarity requires political work that welfare design alone cannot do"),
-    ("Thesis follow-up",
+    (NAVY, "For welfare-state theory:",
+     "the political consequences of welfare design travel along WHAT welfare communicates, not HOW MUCH it spends"),
+    (NAVY, "For the cultural-vs-economic debate:",
+     "cultural backlash isn't a rival explanation to economic disruption; it's what economic disruption LOOKS LIKE, cross-nationally, where welfare institutions are less decommodifying"),
+    (NAVY, "For policy:",
+     "dignity-preserving welfare is necessary but not sufficient for solidarity. Active solidarity requires political work welfare design alone can't do"),
+    (RED, "For the thesis follow-up:",
      "Danish registry data on individuals before and after the 2003/2006/2013 activation reforms — testing within-individual whether conditionality shocks produce damage signatures"),
 ]
+for i, (color, title, body) in enumerate(implications):
+    y = 1.55 + i * 1.35
+    bar = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.6), Inches(y),
+                              Inches(0.06), Inches(1.1))
+    bar.fill.solid(); bar.fill.fore_color.rgb = color
+    bar.line.fill.background()
+    add_text(s, 0.85, y + 0.05, 12, 0.4, title,
+             size=15, bold=True, color=color)
+    add_text(s, 0.85, y + 0.45, 12, 0.7, body,
+             size=14, color=DARK)
 
-for i, (title, text) in enumerate(implications):
-    y = 1.5 + i * 1.3
-    add_text(s, 0.7, y, 3.5, 0.5, "For " + title + ":",
-             size=16, bold=True, color=NAVY)
-    add_text(s, 4.4, y, 8.5, 1.2, text,
-             size=15, color=DARK)
-
-add_speaker_notes(s, """[1 min]
+add_speaker_notes(s, """[~50s]
 
 Four implications.
 
-First, welfare-state theory: the dimension along which welfare's political
-effects travel is what it communicates, not how much it spends. Decommodification
-is a measure of the former. Spending is a measure of the latter.
+Welfare-state theory: dimension that matters is what welfare communicates.
 
-Second, the cultural-vs-economic debate. People keep arguing about whether
-populism is fundamentally about culture or about economics. My answer is: this
-distinction is misleading. Cultural backlash is what economic disruption looks
-like cross-nationally, when welfare institutions don't preserve recognition.
+Cultural-vs-economic: cultural backlash IS what economic disruption looks
+like under thin decommodification.
 
-Third, policy. Dignity-preserving welfare is a baseline good. It's necessary
-for solidarity but doesn't itself construct it.
+Policy: dignity is necessary but not sufficient.
 
-Fourth, where this goes next. Danish registry data lets me test the
-within-individual claim — that conditionality reforms produce damage signatures
-in panel attitudes. That's the thesis.""")
+Thesis: Danish registry data, the 2003, 2006, 2013 activation reforms —
+within-individual test of the cascade.""")
 
 
 # =====================================================================
-# Slide 15 — Closing
+# Slide 14 — Closing
 # =====================================================================
 s = add_blank_slide()
 
-add_text(s, 0, 1.8, 13.333, 1.0,
+add_text(s, 0, 1.8, 13.333, 1.2,
          "Dignity is a baseline",
-         size=56, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
+         size=58, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
 
-add_text(s, 0, 3.4, 13.333, 0.6,
+add_text(s, 0, 3.5, 13.333, 0.55,
          "Its absence damages.",
-         size=26, italic=True, color=DARK, align=PP_ALIGN.CENTER)
-add_text(s, 0, 4.0, 13.333, 0.6,
+         size=24, italic=True, color=DARK, align=PP_ALIGN.CENTER)
+add_text(s, 0, 4.05, 13.333, 0.55,
          "Its presence clears the ground for solidarity.",
-         size=26, italic=True, color=DARK, align=PP_ALIGN.CENTER)
-add_text(s, 0, 4.6, 13.333, 0.6,
+         size=24, italic=True, color=DARK, align=PP_ALIGN.CENTER)
+add_text(s, 0, 4.6, 13.333, 0.55,
          "It does not, by itself, produce solidarity.",
-         size=26, italic=True, color=DARK, align=PP_ALIGN.CENTER)
+         size=24, italic=True, color=DARK, align=PP_ALIGN.CENTER)
 
-add_text(s, 0, 6.0, 13.333, 0.6,
+add_text(s, 0, 6.0, 13.333, 0.55,
          "Thank you.",
-         size=32, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
-add_text(s, 0, 6.7, 13.333, 0.4,
+         size=30, bold=True, color=NAVY, align=PP_ALIGN.CENTER)
+add_text(s, 0, 6.65, 13.333, 0.4,
          "ben.smart@econ.ku.dk",
-         size=14, color=GREY, align=PP_ALIGN.CENTER)
+         size=13, color=GREY, align=PP_ALIGN.CENTER)
 
-add_speaker_notes(s, """[Closing — 30 seconds]
+add_speaker_notes(s, """[~30s]
 
-The line that holds the paper together. Dignity is a baseline good. Its absence
-damages. Its presence clears ground for solidarity that has to be built on top,
-by other means.
+Dignity is a baseline. Its absence damages. Its presence clears the ground
+for solidarity. It does not, by itself, produce solidarity.
 
-The asymmetric mechanism is the technical version. The line is the moral version.
-Both are saying the same thing.
+The asymmetric mechanism is the technical version. The line is the moral
+version. Both are saying the same thing.
 
 Thank you. Happy to take questions.""")
 
 
 # =====================================================================
-# Backup slides (16-19) — for Q&A
+# Backup slides — for Q&A
 # =====================================================================
 
-# Backup 1: Regime descriptive
-s = add_blank_slide()
-add_title_bar(s, "Backup: regime descriptive results")
-add_image(s, 1.5, 1.3, 7, 4.5, FIG2)
-
-# Right panel — table
-add_text(s, 9, 2.0, 4, 0.4, "Regime", size=14, bold=True, color=NAVY)
-add_text(s, 11.5, 2.0, 1.5, 0.4, "Slope", size=14, bold=True, color=NAVY)
-ty = 2.5
-for regime, slope in [
-    ("Liberal", "β = 0.512"),
-    ("Southern", "β = 0.462"),
-    ("Continental", "β = 0.443"),
-    ("Nordic", "β = 0.413"),
-    ("Eastern", "β = 0.263"),
-]:
-    add_text(s, 9, ty, 4, 0.4, regime, size=13, color=DARK)
-    add_text(s, 11.5, ty, 1.5, 0.4, slope, size=13, color=DARK)
-    ty += 0.4
-
-# Backup 2: Marginal effects
+# Backup: marginal effects
 s = add_blank_slide()
 add_title_bar(s, "Backup: marginal effects")
-add_image(s, 2.5, 1.3, 8.5, 4.5, FIG3)
-add_text(s, 0.7, 6.0, 12, 0.5,
+add_image(s, 2.5, 1.3, 8.3, 4.5, FIG3)
+add_text(s, 0.6, 6.0, 12, 0.5,
          "A 1-SD increase in RTI is associated with:",
-         size=16, bold=True, color=DARK)
-add_bullet_list(s, 0.7, 6.5, 12, 1.5, [
+         size=15, bold=True, color=DARK)
+add_bullet_list(s, 0.6, 6.5, 12, 1.5, [
     "0.32 additional scale points of anti-immigration sentiment in Liberal regimes",
     "0.20 in Nordic regimes — gap is significant and substantively meaningful",
 ], size=14)
 
-# Backup 3: Burgoon & Schakel
+# Backup: Burgoon & Schakel
 s = add_blank_slide()
 add_title_bar(s, "Backup: Burgoon & Schakel (2022)")
-add_text(s, 0.7, 1.3, 12, 0.6, "They find:", size=18, bold=True, color=NAVY)
-add_text(s, 0.7, 1.9, 12, 0.6,
+add_text(s, 0.6, 1.3, 12, 0.6, "They find:", size=18, bold=True, color=NAVY)
+add_text(s, 0.6, 1.85, 12, 0.7,
          "welfare generosity dampens anti-globalisation nationalism in European party platforms.",
-         size=16, color=DARK)
-add_text(s, 0.7, 2.9, 12, 0.6,
+         size=15, color=DARK)
+add_callout_box(s, 0.6, 3.0, 12.1, 3.5, fill=PALE_BG, border_color=NAVY)
+add_text(s, 0.85, 3.15, 11.5, 0.5,
          "Apparent contradiction with my null on ALMP — resolved by unit of analysis:",
-         size=16, italic=True, color=DARK)
-add_bullet_list(s, 0.7, 3.6, 12, 2, [
+         size=15, bold=True, color=NAVY)
+add_bullet_list(s, 0.85, 3.7, 11.5, 1.8, [
     "B&S measure platform language at the PARTY level",
-    "I measure attitudinal slopes at the INDIVIDUAL level conditional on RTI exposure",
-    "Mechanisms differ: elite incentives + coalition arithmetic vs. institutional encounter + self-concept",
-], size=15)
-add_text(s, 0.7, 5.6, 12, 0.5,
-         "Both can be true.",
-         size=18, bold=True, color=NAVY)
-add_text(s, 0.7, 6.1, 12, 1,
-         "Welfare generosity at scale may dampen the SUPPLY of anti-globalisation rhetoric in party systems while the DEMAND for exclusionary attitudes among vulnerable workers responds to a different welfare dimension entirely.",
-         size=14, color=DARK)
+    "I measure attitudinal slopes at the INDIVIDUAL level conditional on RTI",
+    "Mechanisms differ: elite incentives + coalition arithmetic vs institutional encounter + self-concept",
+], size=14)
+add_text(s, 0.85, 5.5, 11.5, 0.9,
+         "Both findings can be true. Welfare generosity may dampen the SUPPLY of anti-globalisation rhetoric while the DEMAND for exclusionary attitudes responds to a different dimension entirely.",
+         size=13, italic=True, color=DARK)
 
-# Backup 4: Denmark
+# Backup: Denmark
 s = add_blank_slide()
 add_title_bar(s, "Backup: Denmark complication")
-add_text(s, 0.7, 1.3, 12, 0.7,
+add_text(s, 0.6, 1.3, 12, 0.7,
          "Despite high CWED generosity, Denmark shows steeper RTI → exclusion slope (β=0.50) than Finland, Sweden, or Norway.",
-         size=15, color=DARK)
-add_text(s, 0.7, 2.4, 12, 0.6,
-         "Reading: not an anomaly. Confirmation.",
-         size=20, bold=True, color=NAVY)
-add_text(s, 0.7, 3.1, 12, 0.7,
-         "Danish 'flexicurity' combines generous benefits with high labour market flexibility and active job search requirements — generous in transfers but demanding in activation.",
-         size=14, italic=True, color=DARK)
-add_text(s, 0.7, 4.2, 12, 0.5, "The asymmetric mechanism predicts:",
-         size=16, bold=True, color=NAVY)
-add_bullet_list(s, 0.7, 4.7, 12, 2, [
-    "Conditionality and surveillance damage the self-concept EVEN WHEN transfer levels are high",
-    "Conditionality is what communicates suspicion, not (only) thinness of provision",
-], size=14)
-add_text(s, 0.7, 6.5, 12, 0.4,
-         "Robustness: country-level finding survives all single-country exclusions. r=−0.717 even with both highest-leverage observations dropped (p=0.006).",
+         size=14, color=DARK)
+add_callout_box(s, 0.6, 2.4, 12.1, 3.0, fill=PALE_BG, border_color=NAVY)
+add_text(s, 0.85, 2.55, 11.5, 0.5,
+         "Reading: confirmation, not anomaly.",
+         size=18, bold=True, color=NAVY)
+add_text(s, 0.85, 3.15, 11.5, 1.0,
+         "Danish 'flexicurity' combines generous benefits with high labour market flexibility and active job search requirements — generous in transfers, demanding in activation.",
+         size=13, italic=True, color=DARK)
+add_text(s, 0.85, 4.3, 11.5, 1.0,
+         "The asymmetric mechanism predicts conditionality and surveillance damage the self-concept EVEN WHEN transfer levels are high. Conditionality communicates suspicion.",
+         size=13, color=DARK)
+add_text(s, 0.6, 5.7, 12, 0.4,
+         "Robustness: country-level finding survives all single-country exclusions.",
          size=12, italic=True, color=GREY)
+add_text(s, 0.6, 6.1, 12, 0.4,
+         "r = −0.717 even with both highest-leverage observations dropped (p = 0.006).",
+         size=12, italic=True, color=GREY)
+
+# Backup: limitations
+s = add_blank_slide()
+add_title_bar(s, "Backup: limitations")
+add_bullet_list(s, 0.6, 1.4, 12.5, 5.5, [
+    "Cross-sectional design cannot establish temporal ordering. Within-individual test belongs to the registry follow-up.",
+    "Country-level confounders: Nordic high-CWED also have higher social trust, stronger unions, PR systems, lower ethnic heterogeneity.",
+    "N = 15 country-level observations for the headline correlation. Individual-level Model 3 (β = −0.06, p = 0.015, N ≈ 82k) is the more defensible test.",
+    "Loss aversion claim applies behavioural economics by analogy to dignity shocks. Supporting work consistent but doesn't test it directly.",
+    "The damage cascade as a connected sequence is theoretical synthesis, not empirically demonstrated. Each step has independent evidence; the chain is my contribution.",
+], size=14)
 
 
 # =====================================================================
 # Save
 # =====================================================================
-out = TALK_DIR / 'Dignity_Is_a_Baseline_2026-05-04.pptx'
+out = TALK_DIR / 'Dignity_Is_a_Baseline_2026-05-04_v2.pptx'
 prs.save(str(out))
 print(f"Saved: {out}")
-print(f"Total slides: {len(prs.slides)}")
-print(f"Including: title, 13 main slides, closing, 4 backup")
+print(f"Total slides: {len(prs.slides)}  (14 main + 4 backup)")

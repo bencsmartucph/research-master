@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Palm Cards — Dignity Is a Baseline</title>
+<style>
+  @page {
+    size: A4;
+    margin: 1.2cm;
+  }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #222;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+  }
+  .page-header {
+    background: #0b3d91;
+    color: white;
+    padding: 1em 1.5em;
+    margin-bottom: 1em;
+  }
+  .page-header h1 { margin: 0; font-size: 1.4em; }
+  .page-header .meta { font-size: 0.9em; opacity: 0.9; }
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 1em 3em;
+  }
+  .instructions {
+    background: #fff8e1;
+    border-left: 4px solid #d4a017;
+    padding: 0.8em 1.2em;
+    margin: 1em 0;
+    font-size: 0.92em;
+  }
+  .panic-card {
+    background: #fee;
+    border: 2px solid #c9302c;
+    border-radius: 6px;
+    padding: 1em 1.4em;
+    margin: 1em 0;
+  }
+  .panic-card h2 { margin-top: 0; color: #c9302c; }
+  .card {
+    background: white;
+    border: 1.5px solid #333;
+    border-radius: 4px;
+    padding: 0.8em 1.2em;
+    margin: 0.6em 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .card-num {
+    display: inline-block;
+    background: #0b3d91;
+    color: white;
+    font-size: 0.75em;
+    padding: 0.15em 0.55em;
+    border-radius: 3px;
+    margin-right: 0.6em;
+    vertical-align: middle;
+    font-family: monospace;
+  }
+  .card-title {
+    font-weight: bold;
+    font-size: 1.05em;
+    color: #0b3d91;
+    margin-bottom: 0.3em;
+    display: inline;
+  }
+  .card .opener {
+    font-style: italic;
+    color: #333;
+    background: #f0f4f8;
+    padding: 0.4em 0.7em;
+    border-left: 3px solid #0b3d91;
+    margin: 0.4em 0;
+    font-size: 0.95em;
+  }
+  .card .opener::before { content: '“'; font-size: 1.4em; line-height: 0; vertical-align: -0.2em; color: #0b3d91; }
+  .card .opener::after { content: '”'; font-size: 1.4em; line-height: 0; vertical-align: -0.2em; color: #0b3d91; }
+  .card ul {
+    margin: 0.3em 0;
+    padding-left: 1.4em;
+    font-size: 0.92em;
+  }
+  .card ul li { margin-bottom: 0.15em; }
+  .card .transition {
+    color: #666;
+    font-size: 0.85em;
+    font-style: italic;
+    margin-top: 0.4em;
+    padding-top: 0.3em;
+    border-top: 1px dashed #ccc;
+  }
+  .card .if-asked {
+    background: #f0f8f0;
+    border-left: 3px solid #2d7a2d;
+    padding: 0.4em 0.7em;
+    margin: 0.4em 0 0.2em;
+    font-size: 0.88em;
+  }
+  .card .if-asked strong { color: #1a5c1a; }
+  .card .number {
+    font-weight: bold;
+    color: #0b3d91;
+    font-family: 'Lucida Console', monospace;
+  }
+  .section-break {
+    margin-top: 2em;
+    padding-top: 0.6em;
+    border-top: 2px dashed #999;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    color: #666;
+    page-break-before: always;
+    break-before: page;
+  }
+  @media print {
+    body { background: white; }
+    .container { padding: 0; }
+    .instructions { display: none; }
+    .page-header { background: white; color: #0b3d91; border-bottom: 3px solid #0b3d91; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Palm Cards — Dignity Is a Baseline</h1>
+  <div class="meta">Welfare State Seminar · 5 May 2026 · Ben Smart · panic-recovery format</div>
+</div>
+
+<div class="container">
+
+<div class="instructions">
+  <strong>How to use these:</strong> Print on A4. Cut between cards if you want physical cards, or just keep the page next to you on the lectern. Each card has the opener line you should start the slide with (in italic quotes), 2–4 bullet cues, and a transition. The methods cards have an "<em>If asked</em>" section with the 30-second defence. The first card is the panic protocol — read it now, before you start.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PANIC PROTOCOL                                                -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="panic-card">
+  <h2>If you panic, do this</h2>
+  <ol>
+    <li><strong>Stop talking.</strong> Two slow breaths. The audience will read this as confidence.</li>
+    <li><strong>Look at the slide.</strong> The slide knows what comes next; you just have to read it aloud and elaborate.</li>
+    <li><strong>If you've lost the thread, say:</strong> <em>"Let me reorient — the question I'm working on here is whether [slide title]."</em> Then keep going.</li>
+    <li><strong>If you can't recover, jump to the next slide.</strong> "Let me move on and come back to this if there's time." Nobody minds.</li>
+    <li><strong>Q&amp;A blank:</strong> <em>"That's a great question — let me think for a moment."</em> Pause for 4–5 seconds. The pause looks thoughtful, not panicked. Then answer.</li>
+    <li><strong>Q&amp;A on methods you forgot:</strong> <em>"Let me show you the backup slide on this."</em> Flip to it. The slide does the explaining; you narrate.</li>
+  </ol>
+  <p style="margin: 0.4em 0 0;"><strong>The whole audience is rooting for you.</strong> Their second-most-likely state is "wishing this person well"; their first is "thinking about lunch". Neither hostile.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- TITLE / OPENING                                                -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="card">
+  <span class="card-num">0</span>
+  <span class="card-title">Title slide — the first 30 seconds</span>
+  <div class="opener">Welfare states across Europe spend wildly different amounts to compensate workers exposed to economic disruption — and yet, the political effects don't track spending. They track something else. This paper identifies what.</div>
+  <ul>
+    <li>Two slow breaths before you start</li>
+    <li>Look at one face in the back of the room — not your laptop</li>
+    <li>Speak slower than feels natural for the first sentence</li>
+  </ul>
+  <div class="transition">→ The puzzle.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- THEORY ARC (cards 1–6)                                         -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="card">
+  <span class="card-num">1</span>
+  <span class="card-title">The puzzle</span>
+  <div class="opener">Workers in routine-task occupations — the ones automation hits hardest — are systematically more anti-immigration than their material interests would predict. And the gap is wider in some welfare states than in others.</div>
+  <ul>
+    <li>RTI = routine task intensity (automation exposure)</li>
+    <li>Same shock, different political response across regimes</li>
+    <li>The literature has explained this by spending. We'll see why that's wrong.</li>
+  </ul>
+  <div class="transition">→ What buffering predicts.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">2</span>
+  <span class="card-title">The literature is split — and asks the wrong question</span>
+  <div class="opener">Two literatures have been speaking past each other. The buffering account says quantity — more welfare spending dampens political insecurity. The recognition literature says no, redistribution and recognition aren't fungible — and routine workers demand both.</div>
+  <ul>
+    <li><strong>Buffering side:</strong> Ruggie 1982; Vlandas &amp; Halikiopoulou; Burgoon &amp; Schakel 2022 (welfare ↓ anti-globalisation rhetoric in <em>party platforms</em>)</li>
+    <li><strong>Three streams of pushback:</strong> Gingrich (no buffering), Stutzmann (compensation backfires), Pelc (compensation refused)</li>
+    <li><strong>Recognition challenge:</strong> Kurer 2020 — traditional welfare insufficient when relative decline drives resentment; Kurer &amp; Palier — economic <em>and</em> cultural protection; Gidron &amp; Hall — recognition matters as much as redistribution</li>
+    <li><strong>The reconciliation my paper offers:</strong> the political effects travel along <em>what welfare communicates</em>, not how much it spends</li>
+  </ul>
+  <div class="transition">→ The argument.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">3</span>
+  <span class="card-title">The argument: welfare effects are asymmetric</span>
+  <div class="opener">Welfare institutions can fail politically by damaging the self-concept of vulnerable workers and triggering a cascade. They cannot, by symmetric operation, succeed.</div>
+  <ul>
+    <li><strong>Damage</strong> mechanism: detectable, robust across specifications</li>
+    <li><strong>Protective</strong> mechanism: not detectable, by design</li>
+    <li>Three reasons (next slide): loss aversion, positional status, irreversibility</li>
+  </ul>
+  <div class="transition">→ Why welfare specifically?</div>
+</div>
+
+<div class="card">
+  <span class="card-num">4</span>
+  <span class="card-title">Why welfare and not something else?</span>
+  <div class="opener">Welfare is the single state domain where economic vulnerability and institutional treatment meet at the same moment. The institution allocates resources <em>and</em> renders a judgement about the worker's claim, in the same act.</div>
+  <ul>
+    <li>Other identity-shaping institutions can't match the combination</li>
+    <li>Wagner: recipients "internalize" and "mirror" deservingness norms</li>
+    <li>Soss 1999, De Blok &amp; Kumlin: implementation quality matters most for the most vulnerable</li>
+  </ul>
+  <div class="transition">→ The damage cascade itself.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">5</span>
+  <span class="card-title">The damage cascade</span>
+  <div class="opener">Three responses follow when welfare damages self-concept, each harder to reverse than the one before: identity switching, misattribution, defensive othering.</div>
+  <ul>
+    <li><strong>Identity:</strong> Bonomi-Gennaioli-Tabellini class→cultural switch</li>
+    <li><strong>Misattribution:</strong> Wu — frustration at scapegoats, not technology</li>
+    <li><strong>Defensive othering:</strong> Patrick "scrounger"; Wagner "kicking down"</li>
+    <li>Ends at: Busemeyer's "particularistic-authoritarian" preference</li>
+  </ul>
+  <div class="transition">→ Why no symmetric mirror image.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">6</span>
+  <span class="card-title">Why no mirror image — three reasons</span>
+  <div class="opener">The symmetric account would predict that welfare which preserves the self-concept produces solidarity through a mirror cascade. The empirical null on the solidarity side says otherwise — and the mechanism predicts the null on three separate grounds.</div>
+  <ul>
+    <li><strong>Loss aversion</strong> (Kahneman &amp; Tversky): damage registers, absence of damage doesn't</li>
+    <li><strong>Status is positional</strong>: relational goods can't be redistributed without losses</li>
+    <li><strong>Defensive othering is irreversible</strong>: identity investments don't unwind</li>
+  </ul>
+  <div class="transition">→ Empirical setup.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- EMPIRICAL ARC (cards 8–13)                                     -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="card">
+  <span class="card-num">7</span>
+  <span class="card-title">Empirical setup</span>
+  <div class="opener">European Social Survey rounds 6 through 9, fieldwork 2012 to 2018, 34 countries, N equals 188,764. The headline analysis restricts to the 15 Western European countries with CWED welfare-quality data.</div>
+  <ul>
+    <li>Cross-level interactions, country-wave FE, cluster-robust SEs, random-slope mixed models</li>
+    <li><strong>Cross-sectional design</strong> — claim is consistency, not causation</li>
+    <li>Two welfare measures: ALMP (effort) vs CWED (decommodification)</li>
+    <li>Sharp prediction: ALMP shouldn't predict the slope; CWED should.</li>
+  </ul>
+  <div class="if-asked"><strong>If asked about random slopes:</strong> LR test χ² &gt; 90, p &lt; 10⁻²⁰. Required by the data, not optional. Backup slide has the spec comparison.</div>
+  <div class="transition">→ Empirical strategy &amp; the hierarchy of evidence.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">8</span>
+  <span class="card-title">Empirical strategy &amp; methodology hierarchy</span>
+  <div class="opener">The model is a cross-level interaction with random slopes. β₃ — the RTI-times-welfare interaction — is the parameter of interest. But which test is the strongest? That's the framing point.</div>
+  <ul>
+    <li><strong>Primary test (formally identified):</strong> Model 3 individual-level. <span class="number">N ≈ 82,000, β₃ = −0.059, p = 0.015</span></li>
+    <li><strong>Visual companion (illustration):</strong> Country-level scatter. <span class="number">N = 15, r = −0.85</span></li>
+    <li><strong>Robustness:</strong> OLS + country-wave FE + clustered SE. Directionally identical.</li>
+    <li><em>Lead with Model 3. Treat the scatter as the picture that explains why the interaction exists, not the primary evidence that it does.</em></li>
+  </ul>
+  <div class="if-asked"><strong>If asked which is your headline:</strong> Model 3, individual-level. The country-level r=−0.85 is striking but rests on N=15. The hierarchy matters, and three independent methodologies converge.</div>
+  <div class="transition">→ What β₃ is asking, visually.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">9</span>
+  <span class="card-title">What β₃ tests — the cross-level fan</span>
+  <div class="opener">Before the data — what the cross-level interaction is asking. β₃ is the rate at which the slope of RTI on anti-immigration changes per one standard deviation of CWED.</div>
+  <ul>
+    <li>Each country sits on a point of the line</li>
+    <li><span class="number">UK (z=−2): predicted slope 0.333</span></li>
+    <li><span class="number">Average: 0.215</span></li>
+    <li><span class="number">Norway (z=+2): 0.097</span></li>
+    <li>Spread: 0.236 scale points across observed CWED range</li>
+  </ul>
+  <div class="transition">→ The cross-national pattern by regime.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">10</span>
+  <span class="card-title">Cross-national pattern: 5 regimes</span>
+  <div class="opener">Each panel is a welfare regime. The line in each panel is RTI predicting anti-immigration. Liberal steepest at 0.512. Nordic flattest at 0.413. Same routine exposure, different conversion.</div>
+  <ul>
+    <li>Liberal &gt; Southern &gt; Continental &gt; Nordic &gt; Eastern</li>
+    <li>Same RTI, different political response</li>
+    <li>Buffering predicts: more spending → flatter slope. Tested directly next.</li>
+  </ul>
+  <div class="transition">→ Marginal effects in scale points.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">11</span>
+  <span class="card-title">Marginal effects: the gap, in scale points</span>
+  <div class="opener">Translated into substantive scale points. A one-standard-deviation increase in RTI gets you 0.32 additional anti-immigration points in Liberal regimes versus 0.20 in Nordic regimes. Liberal slope is 60 percent steeper at the same exposure.</div>
+  <ul>
+    <li><span class="number">Liberal: +0.32 / Nordic: +0.20 / gap: +0.127</span></li>
+    <li>Significant: <span class="number">p = 0.003</span></li>
+    <li>Survives every robustness check</li>
+  </ul>
+  <div class="transition">→ The empirical headline.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">12</span>
+  <span class="card-title">The empirical headline: ALMP vs CWED</span>
+  <div class="opener">The paper's most important empirical contrast. Same 15 Western European countries, two ways of measuring welfare.</div>
+  <ul>
+    <li><span class="number">ALMP: r = +0.01, p = 0.97</span> — essentially zero</li>
+    <li><span class="number">CWED: r = −0.85, p &lt; 0.001</span> — 72% of cross-national variation</li>
+    <li>UK lowest; Norway highest. Predicted by the asymmetric mechanism.</li>
+    <li>ALMP captures effort; CWED captures decommodification. <strong>Dignity travels along the second.</strong></li>
+  </ul>
+  <div class="if-asked"><strong>If asked how the slopes were computed:</strong> BLUPs from a random-slopes mixed model with controls — same methodology on both sides. Backup slide has the four-methodology comparison. Bivariate gives r=−0.62; controls partial out within-country confounders.</div>
+  <div class="transition">→ Decomposing CWED.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">13</span>
+  <span class="card-title">Decomposing CWED</span>
+  <div class="opener">CWED has three sub-components — unemployment, sickness, pensions. The asymmetric mechanism predicts the signal should run strongest through unemployment, where automation-exposed routine workers actually meet the welfare state. Pensions decoupled from working-age dynamics.</div>
+  <ul>
+    <li><strong>Predicted ordering: UE &gt; SK &gt; PEN</strong></li>
+    <li>Individual-level: <span class="number">UE β = −0.053, SK = −0.037, PEN = −0.019</span></li>
+    <li><strong>Confirmed.</strong> Cascade fires through the point of vulnerability.</li>
+  </ul>
+  <div class="transition">→ The asymmetric confirmation.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">14</span>
+  <span class="card-title">Same data, opposite outcome</span>
+  <div class="opener">Same data tested two ways. RTI predicts anti-immigration more strongly in Liberal regimes than Nordic — interaction beta point one two seven, p equals point zero zero three. Robust everywhere.</div>
+  <ul>
+    <li><strong>Exclusion side:</strong> <span class="number">β = +0.127, p = 0.003</span> — robust</li>
+    <li><strong>Solidarity side:</strong> <span class="number">β = +0.011, p = 0.29</span> — null</li>
+    <li><strong>ISSP confirmation:</strong> <span class="number">β = +0.010, p = 0.55</span> — same null, different sample</li>
+    <li>Two readings: measurement issue, or substantive asymmetry. I take the second.</li>
+  </ul>
+  <div class="if-asked"><strong>If asked about the null:</strong> Power to detect a solidarity moderation of equal magnitude exceeds 0.99. Power isn't the binding constraint. The asymmetric theory predicts the null on three independent grounds.</div>
+  <div class="transition">→ Robustness.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">15</span>
+  <span class="card-title">Robustness — what survives</span>
+  <div class="opener">What survives. Three checks. The pattern is robust to single-country exclusion, robust to two-country exclusion, robust to macro controls, and robust to the choice of slope methodology.</div>
+  <ul>
+    <li><strong>Single-country jackknife:</strong> r ∈ <span class="number">[−0.79, −0.85]</span>. Sign-stable. Never crosses zero.</li>
+    <li><strong>Two-country jackknife (105 pairs):</strong> worst case UK + NO, <span class="number">r = −0.71, p = 0.006</span>.</li>
+    <li><strong>Macro controls (GDP + Gini):</strong> <span class="number">β₃ strengthens to −0.066, p &lt; 0.001</span>. Argues against "CWED proxies for development".</li>
+    <li><strong>Methodology convergence:</strong> BLUPs −0.85, bivariate −0.63, OLS+FE+clustered directionally identical.</li>
+  </ul>
+  <div class="if-asked"><strong>If asked about deeper confounders</strong> (social trust, unions, electoral system): macro controls handle macroeconomic confounders, not these. That's why the within-country thesis design with Danish registry data is the next move. The cross-sectional claim is consistency, not identification.</div>
+  <div class="transition">→ Implications.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- CLOSING                                                        -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="card">
+  <span class="card-num">16</span>
+  <span class="card-title">Implications + closing</span>
+  <div class="opener">Four implications follow.</div>
+  <ul>
+    <li><strong>Welfare-state theory:</strong> the dimension that matters is what welfare communicates, not how much it spends</li>
+    <li><strong>Cultural-vs-economic debate:</strong> cultural backlash IS what economic disruption looks like under thin decommodification</li>
+    <li><strong>Policy:</strong> dignity is necessary but not sufficient for solidarity</li>
+    <li><strong>Thesis follow-up:</strong> Danish registry, the 2003/2006/2013 activation reforms — within-individual test of the cascade</li>
+  </ul>
+  <div class="transition">→ Closing slide. <strong>Land it slowly.</strong> "Dignity is a baseline." Pause. Take questions.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- Q&A KILLER LINES — METHODS DEFENCES                            -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="section-break">Q&amp;A — Methods defences (if asked)</div>
+
+<div class="card">
+  <span class="card-num">D1</span>
+  <span class="card-title">"Why mixed models with random slopes rather than country FE?"</span>
+  <div class="opener">Required by the data. The LR test rejects slope homogeneity at p &lt; 10⁻²⁰. The wider SE under random slopes is the correct SE; the smaller one assumes slopes are identical, which is exactly what we're testing against.</div>
+  <ul>
+    <li>SE inflation under RS vs RI: <span class="number">3.6×</span></li>
+    <li>OLS+FE+clustered runs as a robustness check; substantively identical</li>
+  </ul>
+</div>
+
+<div class="card">
+  <span class="card-num">D2</span>
+  <span class="card-title">"Walk me through what β₃ = −0.059 means."</span>
+  <div class="opener">Each one-SD increase in CWED reduces the slope of RTI on anti-immigration by 0.059 scale points. A negative interaction means more decommodifying welfare flattens the conversion. The total spread across the observed CWED range is 0.236 scale points per SD of RTI.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">D3</span>
+  <span class="card-title">"How did the LR test justify random slopes?"</span>
+  <div class="opener">χ²(2) statistic exceeds 90, with p below 10⁻²⁰. Not a marginal call. ML rather than REML on both fits, since REML log-likelihoods aren't comparable across nested random structures. AIC and BIC overwhelmingly favour random slopes too.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">D4</span>
+  <span class="card-title">"Why cluster at country-wave? What's the inflation factor?"</span>
+  <div class="opener">Within a country-wave, observations share unobserved shocks — electoral campaigns, media, contemporaneous economy — that create residual correlation. Design effect = 1 + (n−1)·ρ. With n̄ = 1,400 and ρ ≈ 0.05, that's 71. SE inflation factor = √71 ≈ 8.4×.</div>
+  <ul>
+    <li>Naive SE 8× too small; same point estimate either way</li>
+    <li>G = 136 clusters, well above the small-sample threshold</li>
+    <li>Paired with country-wave FE: dummies absorb levels, clustering handles residual correlation</li>
+  </ul>
+</div>
+
+<div class="card">
+  <span class="card-num">D5</span>
+  <span class="card-title">"How are the Figure 6 country-slopes computed?"</span>
+  <div class="opener">BLUPs from a random-slopes mixed model with individual-level controls. Same methodology on both ALMP and CWED panels — so the difference between r=0.01 and r=−0.85 isn't a methodology artefact, it's a measure-content finding.</div>
+  <ul>
+    <li>BLUPs do two things: shrink toward grand mean, partial out within-country confounders</li>
+    <li>Bivariate per-country OLS gives r=−0.625 (weaker but same direction)</li>
+    <li>Partial-out does most of the work — RTI workers are older, less educated, lower-income, all of which independently predict anti-immigration</li>
+  </ul>
+</div>
+
+<div class="card">
+  <span class="card-num">D6</span>
+  <span class="card-title">"N=15 is small. What's the leverage check?"</span>
+  <div class="opener">Three checks. Single-country jackknife: r ranges from −0.79 to −0.85, never crosses zero. Two-country jackknife across all 105 pairs: worst case is UK plus Norway dropped, r = −0.71, p = 0.006 — softer, still substantial, still significant.</div>
+  <ul>
+    <li>Individual-level Model 3 identified from N≈82,000 — more powerful test of same hypothesis</li>
+    <li>Triangulation: country-level scatter (visual), Model 3 (formal inference), jackknife (leverage diagnostic)</li>
+  </ul>
+</div>
+
+<div class="card">
+  <span class="card-num">D7</span>
+  <span class="card-title">"Why isn't the redistribution null a measurement failure?"</span>
+  <div class="opener">Three things. First, same data, same estimator, comparable spec detected exclusion cleanly — power to detect equal-magnitude solidarity moderation exceeds 0.99. Second, ISSP 2006 — different sample, different outcome, different period — gives the same null. Third, the asymmetric mechanism predicts the null on three independent grounds.</div>
+</div>
+
+<div class="card">
+  <span class="card-num">D8</span>
+  <span class="card-title">"Why does the radical-right voting result go the other way?"</span>
+  <div class="opener">Attitudes are what voters are; votes are what voters do given supply-side constraints. Liberal regimes structurally suppress radical-right ballots — Ireland has no significant RR party; the UK channels exclusion through Brexit and mainstream Conservative voting. The voting moderation reflects supply-side translation, not contradicts the attitude finding.</div>
+  <ul>
+    <li>RTI×Liberal on attitudes: <span class="number">+0.127, p=0.003</span></li>
+    <li>RTI×Liberal on RR voting: <span class="number">−0.123, p=0.032</span></li>
+    <li>Different DVs, different mechanisms; full account needs party-level data — separate paper</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- Q&A SUBSTANCE — three more likely questions                    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div class="section-break">Q&amp;A — Substantive questions (if asked)</div>
+
+<div class="card">
+  <span class="card-num">S1</span>
+  <span class="card-title">"What's the difference between ALMP and CWED?"</span>
+  <div class="opener">ALMP is a flow variable — Euros per GDP per year on training, job-search assistance, employment subsidies. CWED is a parametric variable — the legal architecture of entitlement: replacement rate, duration, coverage, qualifying conditions, waiting period.</div>
+  <ul>
+    <li>A country can double ALMP overnight without changing CWED</li>
+    <li>UE benefit generosity is inside CWED already — that's why we don't compare CWED to UE spending separately</li>
+    <li>ALMP aggregates enabling (training) + punitive (sanctions) — political signatures cancel; that's why ALMP shows null</li>
+  </ul>
+</div>
+
+<div class="card">
+  <span class="card-num">S2</span>
+  <span class="card-title">"How is decommodification actually measured?"</span>
+  <div class="opener">Esping-Andersen's definition — the degree to which a worker can maintain a livelihood without reliance on the market. CWED operationalises it from policy parameters: replacement rate, benefit duration, coverage rate, qualifying conditions, waiting period — for unemployment, sickness, and pensions separately.</div>
+  <ul>
+    <li>Read off legal entitlements, not spending flows</li>
+    <li>Three sub-scores (UEGEN, SKGEN, PGEN) sum to TOTGEN</li>
+    <li>That's why CWED ≠ ALMP — different domains</li>
+  </ul>
+</div>
+
+<div class="card">
+  <span class="card-num">S3</span>
+  <span class="card-title">"What can you actually claim?"</span>
+  <div class="opener">A consistency argument — the data are consistent with the asymmetric mechanism, and inconsistent with the symmetric buffering account, on multiple independent margins. Not a causal estimate. The thesis design with Danish registry data is where causal identification lives.</div>
+  <ul>
+    <li><strong>Can argue:</strong> robust association; methodology-symmetric ALMP-vs-CWED contrast; survives jackknife and macro-controls; asymmetric pattern replicates on independent ISSP test</li>
+    <li><strong>Can't prove:</strong> causation, time-invariant institutional confounding, the loss-aversion claim directly</li>
+    <li><strong>Not about:</strong> normative welfare ranking, supply-side translation, all populism, the within-country test</li>
+  </ul>
+</div>
+
+<div class="card" style="background: #f0f8ff; border-color: #0b3d91;">
+  <span class="card-num" style="background: #1a5c1a;">★</span>
+  <span class="card-title" style="color: #1a5c1a;">If you remember nothing else</span>
+  <div class="opener">ALMP r = +0.01. CWED r = −0.85. Same 15 countries, same slope methodology. Power isn't the problem. Asymmetric mechanism predicts the pattern observed.</div>
+</div>
+
+</div>
+
+</body>
+</html>
