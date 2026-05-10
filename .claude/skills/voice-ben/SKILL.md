@@ -72,6 +72,10 @@ banned_punctuation:
   oxford_comma:
     rule: "no_constraint"
     rationale: "Voice samples are inconsistent; do not enforce either way."
+  hyphen_clause_break:
+    rule: "positive_signature"
+    target: "expected 1-3 per 1000 words in modern (post-2019) prose; rare in pre-2019 samples"
+    rationale: "Ben adopted ` - ` (space-hyphen-space) as a clause-break around 2019 and uses it deliberately. In Origins it appears at ~2.4/1000 words. Do NOT normalise to `—`; do NOT flag as a violation. When writing in Ben's voice, use this hyphen pattern in place of em-dashes for inline appositions and clause breaks. Confirmed pattern; not an artifact."
 
 required_transitions:
   # Corpus-verified against 22,167 words of pre-AI Ben prose (May 2026 calibration).
@@ -401,11 +405,26 @@ diagnostic_targets:
   first_person_plural_per_1000_words: "<3"        # "our research", "our study" are fine; "we find" sparingly
 
 voice_calibration_sources:
-  - "manuscripts/Writing Samples/Ben Smart - Final Essay - Global Media.docx"
-  - "manuscripts/Writing Samples/Ben Smart - 759764- Politicians and Twitter.docx"
-  - "manuscripts/Writing Samples/Newspaper representations of homeless version - FINAL.docx"
-  - "manuscripts/Writing Samples/Voice and Writing Style.txt"
-  - "manuscripts/Writing Samples/Voice Sample.txt"
+  # Anchor priority confirmed 2026-05-10. Higher priority = greater calibration weight when
+  # samples disagree (e.g., Origins shifted to American spellings via a ChatGPT spell-check pass;
+  # ignore that drift, prefer the British -ise of older essays).
+  primary:
+    - "manuscripts/Writing Samples/Ben Smart - Final Essay - Global Media.docx"   # 2017, 3544w; 8 of 12 distinctive moves in lexicon source here
+  secondary:
+    - "manuscripts/Writing Samples/Newspaper representations of homeless version - FINAL.docx"   # 2018, 4610w
+    - "manuscripts/Writing Samples/Pre-AI Social Media and Democracy.docx"                       # ~2018, 2531w; source of 'granted-then-narrowed' move
+    - "manuscripts/Writing Samples/Ben Smart - 759764- Politicians and Twitter.docx"             # 2017, 1601w
+    - "manuscripts/Writing Samples/Ben Smart - 759764 - Culture Policy Analysis.docx"            # 3359w
+    - "manuscripts/Writing Samples/Pre-AI - Social capital in an online community - Global Media.docx"  # 1920w
+  partial:
+    # Origins is the most recent (2024) so it captures Ben's post-2019 hyphen-as-em-dash pattern
+    # and modern argumentative density. BUT exclude its first-person ("I argue", "I suggest") and
+    # American spellings (-ize) — those are AI-edit drift, not Ben's voice.
+    - "manuscripts/Writing Samples/Pre-AI/The Origins of Institutional Menus, Power, Performativity and the Rise of Neoliberalism in Australia.docx"   # 2024, 4602w; partial-anchor only
+  reference:
+    - "manuscripts/Writing Samples/Voice and Writing Style.txt"
+    - "manuscripts/Writing Samples/Voice Sample.txt"
+    - "manuscripts/Writing Samples/voice_lexicon.md"   # corpus-verified human-readable companion
 
 scope_applies_to:
   # Prose Ben SIGNS — voice-ben triggers automatically
@@ -434,11 +453,207 @@ detection_resistance:
   ceiling_for_ai_edited_ai_prose: "approximately 60% human; for higher, Ben must retype anchor paragraphs"
   successful_anchor_retype_protocol: "Ben types opening + closing paragraphs from memory (file closed). Three retyped paragraphs out of ten typically averages document score down by 30-50 percentage points."
 
+candidate_extensions:
+  # Stylistically congruent expansions (added 2026-05-10) — NOT corpus-verified.
+  # Deliberate-extension candidates Ben can use for variety beyond Indeed/undergirding.
+  # Future /voice-audit upgrade should treat these as half-weight matches in transition
+  # density. Once Ben publishes prose using one and the calibration corpus refreshes,
+  # the candidate graduates to a corpus-verified entry above.
+  conviction_openers:
+    - "Tellingly,"                # Indeed-family; symptom-of-larger-pattern
+    - "Strikingly,"               # foregrounds unexpected pattern
+    - "Pointedly,"                # signals sharpness
+    - "Revealingly,"              # softer Tellingly
+    - "Symptomatically,"          # diagnostic-of-structure
+    - "Aptly,"                    # citation-fits-with-precision
+    - "Critically,"               # stronger than Importantly
+    - "Pertinently,"              # tight-connection-to-prior
+    - "Fittingly,"                # resolves-prior-tension
+    - "Notably,"                  # neutral foregrounder
+    - "It is no accident that"    # structural-not-incidental marker
+  emphasis_pivots:
+    - "More fundamentally,"
+    - "More tellingly,"
+    - "More acutely,"
+    - "More consequentially,"
+    - "More revealing still,"
+    - "Of greater consequence,"
+    - "The deeper point is that"
+  concessive_alternatives:
+    - "Granted X, Y"              # tighter than Whilst
+    - "For all that,"             # post-concession pivot
+    - "Even granting X, Y"
+    - "X may hold, but it does not follow that Y"
+    - "X is true as far as it goes; what it misses is Y"
+    - "One might object that X — yet"
+    - "It is fashionable to say that X; the more careful claim is Y"
+  theoretical_frame_openers:
+    - "Read in this register,"
+    - "Seen this way,"
+    - "On this reading,"
+    - "Construed this way,"
+    - "Within this frame,"
+    - "Recast in these terms,"
+    - "Cast in [Author]'s terms,"
+    - "Translated into [framework] vocabulary,"
+    - "Refracted through [lens],"
+    - "Approached through [lens],"
+    - "Read against [comparator],"
+  focus_phrases:
+    - "The animating question is"
+    - "The load-bearing claim is"           # extends architecture-of-X family
+    - "The decisive move is"
+    - "The crucial move is"
+    - "What does the work of [X] is"        # multi-word signature
+    - "What earns [X] its keep is"
+    - "At the heart of [X] sits"
+    - "The genuine novelty lies in"
+    - "The structural insight is that"
+    - "What renders [X] coherent is"
+  synthesis_alternatives:
+    - "The upshot is"
+    - "Taken together,"
+    - "All told,"
+    - "In sum,"
+    - "The cumulative effect is"
+    - "The picture that emerges is"
+    - "What survives this scrutiny is"
+    - "The argument resolves into"
+    - "The thread that runs through these is"
+    - "The corollary is"
+  hedge_alternatives:
+    - "Plausibly,"
+    - "Defensibly,"
+    - "Provisionally,"
+    - "It is at least arguable that"
+    - "A defensible reading is that"
+    - "There is reason to think that"
+    - "A more cautious framing would be"
+  citation_alternatives:
+    - "In [Author]'s reading,"
+    - "On [Author]'s account,"
+    - "Per [Author],"
+    - "After [Author] (YEAR),"
+    - "In the spirit of [Author],"
+    - "Following the lead of [Author],"
+    - "Working in [Author]'s vein,"
+    - "[Author]'s account turns on"
+    - "[Author]'s contribution is to argue that"
+  candidate_verbs:
+    - crystallise
+    - coalesce
+    - delineate
+    - render
+    - entrench
+    - inscribe
+    - sediment
+    - dislodge
+    - destabilise
+    - unsettle
+    - rupture
+    - expose
+    - lay bare
+    - militate against
+    - cut against
+    - evince
+    - manifest
+    - bear witness to
+    - attest to
+    - bespeak
+    - refract
+    - inflect
+    - modulate
+    - attenuate
+    - amplify
+    - temper
+    - channel
+    - enshrine
+    - vindicate
+    - anchor
+    - underwrite
+    - ground
+  candidate_adjectives:
+    - constitutive
+    - conjunctural        # ⚠ overlaps with negative_space — conscious adoption only
+    - recursive
+    - emergent
+    - relational
+    - mediated
+    - contingent
+    - overdetermined
+    - sedimented
+    - dispositional
+    - generative
+    - iterative
+    - decisive
+    - consequential
+    - load-bearing
+    - foundational
+    - pervasive
+    - abiding
+    - enduring
+    - durable
+    - recalcitrant
+    - intractable
+    - corrosive
+    - erosive
+    - attritional
+    - punitive
+    - coercive
+  candidate_nouns:
+    - nexus
+    - entanglement
+    - terrain
+    - topography
+    - lattice
+    - circuitry
+    - machinery
+    - apparatus
+    - choreography
+    - repertoire
+    - grammar
+    - lexicon
+    - syntax
+    - idiom
+    - enactment
+    - iteration
+    - transmission
+    - inheritance
+    - residue
+    - accretion
+    - disjuncture
+    - ambit
+    - horizon
+    - register
+    - timbre
+    - texture
+    - contour
+    - threshold
+  multiword_constructions:
+    # Compact phrasing that does argumentative work without single-word reach
+    - "what does the work of [X] is"
+    - "what earns [X] its keep is"
+    - "the load-bearing claim is"
+    - "turns on"
+    - "consists in"
+    - "lies in"
+    - "comes down to"
+    - "cashes out as"
+    - "amounts to"
+    - "renders [X] visible / invisible"
+    - "is constitutive of"
+    - "is parasitic on"
+    - "is hostage to"
+    - "is a function of"
+    - "does the work of [X]"
+  candidate_extensions_note: "Use deliberately, not as default cadence. Pair each new word with a familiar anchor. Earn metaphors. Default to corpus-verified entries when in doubt. ⚠ items overlap with negative_space — conscious adoption only."
+
 last_recalibrated: "2026-05-10"
 calibration_history:
   - "2026-04-25: initial calibration from three pre-AI samples; 100% AI -> 60% human after quote-mosaic intro restructure"
   - "2026-05-08: em-dash rule revised from 'eliminated' to 'selective use, <8 per 1000 words' after v4 voice pass over-corrected to zero and lost rhythm"
   - "2026-05-10: full corpus extraction across 7 pre-AI essays (22,167 words). Removed AI-extrapolated vocabulary that scored 0 in corpus (valorises in pure form, instigates, inveigle, obsequious, avaricious, concomitant, incipient, pertinacity, progenitor, configurations, elucidates, presupposes, promulgates). Added corpus-verified items including: 'Essentially,' (14), 'Corroborating' (5), 'Supporting this theory,' (6), 'This is exemplified by' (5), 'Whilst X, Y' (7 occurrences, 7:1 over 'while'), the 'Through this perspective' family (9 across variants). Negative-space list added to prevent future LLM drift toward hegemony/ethos/milieu/assemblage/conjuncture vocabulary that sounds-like-theory-but-isn't-Ben."
+  - "2026-05-10 (later): added candidate_extensions section — stylistically congruent expansions for variety beyond Indeed/undergirding monotony. NOT corpus-verified; deliberate-adoption candidates only. Includes 11 conviction-openers, 7 emphasis pivots, 7 concessive alternatives, 11 theoretical-frame openers, 10 focus phrases, 10 synthesis closers, 7 hedge variants, 9 citation alternatives, 32 verbs, 27 adjectives, 28 nouns, 15 multiword constructions. Future /voice-audit upgrade should weight these as half-strength matches; corpus-verified entries above remain canonical."
 ---
 
 # Voice — Ben Smart

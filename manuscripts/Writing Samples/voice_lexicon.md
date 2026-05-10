@@ -560,6 +560,371 @@ If a future draft contains these, verify against pre-AI before keeping.
 
 ---
 
+# Candidate extensions — variety beyond the corpus
+
+> **What this section is.** Stylistically congruent expansions of your register. None of these appeared in your pre-AI corpus, but each fits the established voice signature: long compound sentences, theoretical-political vocabulary, architectural metaphors, citation-stacked academic register. Adopting any of them is a *conscious* move; once you use it under your name and the prose is added to the calibration corpus, future extractions will absorb it into the corpus-verified list above.
+>
+> **Use these to break out of "Indeed,"-and-"undergirding"-fatigue.** The existing top-30 has 28 instances of *Indeed,* across 22k words — that's roughly one every 800 words. Stretch into the variants below; cycle through them.
+>
+> **Items marked ⚠ overlap with the `negative_space` anti-list.** That list flags drift to LLM-default theory vocabulary. Conscious adoption is different from drift. If you reach for one of these deliberately, it's yours. Use sparingly — once or twice per piece, not as default cadence.
+
+## Conviction-establishing openers — alternatives to *Indeed,*
+
+For when you want to assert that the next sentence follows from or sharpens what came before:
+
+| Alternative | Function / register |
+|---|---|
+| **Tellingly,** | Implies the evidence is symptomatic of something larger |
+| **Strikingly,** | Foregrounds an unexpected pattern |
+| **Pointedly,** | Signals the next claim is sharp, not incidental |
+| **Revealingly,** | Same as Tellingly, slightly less aggressive |
+| **Symptomatically,** | Strong theoretical move — signals the example is diagnostic of the structure |
+| **Aptly,** | When a citation or example fits with unusual precision |
+| **Suggestively,** | Soft version — implies the inference is invited rather than forced |
+| **Critically,** | Stronger than *Importantly,*; signals load-bearing |
+| **Pertinently,** | When the connection to the prior claim is tight |
+| **Fittingly,** | When the next move resolves a tension set up earlier |
+| **Notably,** | Standard but underused — neutral foregrounder |
+| **Strikingly enough,** | Variant that stretches the rhythm |
+| **It is no accident that** + clause | When you want to insist the pattern is structural rather than incidental |
+
+## Emphasis pivots — alternatives to *More importantly,*
+
+| Alternative | Function |
+|---|---|
+| **More fundamentally,** | Pivot to a deeper layer |
+| **More tellingly,** | Pivot to a more diagnostic example |
+| **More acutely,** | When the second case is sharper than the first |
+| **More consequentially,** | When the second has bigger downstream effects |
+| **More revealing still,** | Stretches the rhythm beyond the comma-only forms |
+| **Yet more revealing is** + noun phrase | Inversion that emphasises the noun |
+| **Of greater consequence,** | Formal alternative |
+| **Of equal weight,** | When the second claim is parallel rather than escalating |
+| **What matters more is** + clause | Plain, declarative |
+| **The deeper point is that** + clause | Excellent for theory-heavy sections |
+
+## Concessive structures — alternatives to *Whilst X, Y*
+
+| Alternative | When to use |
+|---|---|
+| **Granted X, Y** | Tighter than Whilst; commits more clearly to Y |
+| **Granting X for the sake of argument, Y** | Stronger philosophical move — accepts X provisionally |
+| **For all that X, Y** | When X is conceded but doesn't undermine Y |
+| **For all the X, Y** | Variant for plural noun |
+| **Even granting X, Y** | Lower-stakes concession |
+| **No reading of X can avoid Y, however generous** | Aggressive — commits to Y absolutely |
+| **X may hold, but it does not follow that Y** | Logical-form pivot |
+| **X is true as far as it goes; what it misses is Y** | Charitable concession before the move |
+| **One might object that X — yet [pivot]** | Anticipating-the-objection structure |
+| **It is fashionable to say that X; the more careful claim is Y** | Strong, slightly polemical |
+| **The standard reading is X, but Y is closer to the structure** | When pivoting against a literature consensus |
+
+## Theoretical-frame openers — alternatives to *Through this perspective,*
+
+This is one of your signature moves. Variants for variety:
+
+| Alternative | Register |
+|---|---|
+| **Read in this register,** | Literary-theory inflection |
+| **Seen this way,** | Plain, accessible |
+| **Viewed from [angle],** | When you want to name the angle explicitly |
+| **On this reading,** | Hermeneutic register |
+| **Construed this way,** | Slightly formal |
+| **In this register,** | Compact, distinctive |
+| **Within this frame,** | Compact alternative to "within this framework" |
+| **Recast in these terms,** | When translating a claim into a new vocabulary |
+| **Cast in [Author]'s terms,** | When borrowing an author's framework |
+| **Translated into [framework] vocabulary,** | When making a cross-disciplinary move |
+| **Refracted through [lens],** | Strong metaphor — implies the lens distorts as well as reveals |
+| **Approached through [lens],** | Neutral version of the above |
+| **Read against [comparator],** | When the move is comparative |
+| **In [Author]'s vocabulary,** | When citing the author's specific phrasing |
+| **From a [position] standpoint,** | Standpoint-theory inflection |
+
+## Focus-establishing phrases — alternatives to *Central to,*
+
+| Alternative | Strength / register |
+|---|---|
+| **The animating question is** + clause | When framing what drives the inquiry |
+| **The load-bearing claim is** + clause | Strong — your existing architectural metaphor |
+| **The decisive move is** + clause | When the next sentence is the pivot of the argument |
+| **The crucial move is** + clause | Slightly less assertive than decisive |
+| **At the heart of [X] sits** + noun | Architectural metaphor |
+| **At the core of [X] is** + clause | You already use this twice; deploy more freely |
+| **What does the work of [X] is** + noun | Distinctive — "what does the work" is yours |
+| **What earns [X] its keep is** + clause | When defending a claim's necessity |
+| **The genuine novelty lies in** + noun phrase | When asserting contribution |
+| **The structural insight is that** + clause | When a claim is about architecture, not surface |
+| **The operative variable is** + noun | You already use *operative*; extend with this construction |
+| **What renders [X] coherent is** + clause | When the next sentence supplies the missing piece |
+
+## Synthesis / closing alternatives — variants for *Ultimately,* / *Consequently,* / *Hence,* / *Thus,*
+
+| Alternative | Function |
+|---|---|
+| **The upshot is** + clause | Plain, punchy |
+| **Taken together,** | When summarising several points |
+| **All told,** | Slightly informal — use sparingly |
+| **In sum,** | Standard formal closer |
+| **The cumulative effect is** + noun | When the closing is about aggregate consequence |
+| **The picture that emerges is** + noun | Image-based — strong for theory paragraphs |
+| **What survives this scrutiny is** + clause | When closing a counter-argument paragraph |
+| **The residue is** + clause | When the closing is what's left after qualification |
+| **What remains, then, is** + clause | Adds rhythm |
+| **The argument resolves into** + noun phrase | Strong for closing a long theory section |
+| **The thread that runs through these is** + clause | When connecting earlier examples |
+| **The result is** + clause | Plain causal closer |
+| **The corollary is** + clause | When the next claim follows logically |
+
+## Hedge variants — alternatives to *Arguably,*
+
+| Alternative | Hedge strength |
+|---|---|
+| **Plausibly,** | Soft — invites agreement |
+| **Defensibly,** | Stronger — signals you'll back it up |
+| **Provisionally,** | When the claim is conditional on later evidence |
+| **Tentatively,** | Soft, can read as weak — use with care |
+| **It is at least arguable that** + clause | Stretches the rhythm |
+| **It is not unreasonable to suggest that** + clause | When facing a hostile reader |
+| **A defensible reading is that** + clause | When introducing your reading after surveying others |
+| **A more cautious framing would be** + clause | Self-consciously hedging your own prior claim |
+| **One might venture that** + clause | Lightly literary |
+| **There is reason to think that** + clause | When inference is from indirect evidence |
+
+## Citation-introducing variety — alternatives to *For [Author],*
+
+You already use *For [Author],* 14+ times. Mix in these to vary rhythm:
+
+| Alternative | Register |
+|---|---|
+| **In [Author]'s reading,** | Direct alternative |
+| **On [Author]'s account,** | Philosophical inflection |
+| **Per [Author],** | Tight, slightly informal |
+| **After [Author] (YEAR),** | Implies methodological inheritance |
+| **In the spirit of [Author],** | When borrowing approach without exactly citing |
+| **Following the lead of [Author],** | Methodological-inheritance marker |
+| **Working in [Author]'s vein,** | Implies stylistic / theoretical alignment |
+| **In a register similar to [Author],** | When emphasising stylistic kinship |
+| **Where [Author] writes that** + quote | Direct quotation lead-in |
+| **[Author]'s account turns on** + noun phrase | When summarising a position economically |
+| **[Author]'s contribution is to argue that** + clause | Foregrounds contribution |
+| **What [Author] (YEAR) sees in [X] is** + noun phrase | When summarising what an author identifies |
+
+## Distinctive verbs — eloquent extensions by function
+
+### Construction / production
+
+| Verb | Example construction |
+|---|---|
+| **crystallise** | "the argument crystallises into..." |
+| **coalesce** | "X and Y coalesce into Z" |
+| **delineate** | "delineates the boundary between..." |
+| **map** (verb) | "this section maps the relationship..." |
+| **chart** (verb) | "I chart the trajectory of..." |
+| **trace** (verb) | "tracing how X became Y" |
+| **formulate** | "formulates the question as..." |
+| **render** | "renders [X] visible / invisible / coherent" |
+
+### Reinforcement / persistence
+
+| Verb | Example |
+|---|---|
+| **entrench** | "entrenches the asymmetry" (you've used in Origins) |
+| **consolidate** | "consolidates the gain into a structural feature" |
+| **inscribe** | "inscribed in administrative practice" |
+| **sediment** | "the convention has sedimented into common sense" |
+| **congeal** | "congeals into ideology" |
+| **harden into** | "patterns that harden into expectations" |
+
+### Disruption / critique
+
+| Verb | Example |
+|---|---|
+| **dislodge** | "dislodges the prior framing" |
+| **destabilise** | "destabilises the inferential chain" |
+| **unsettle** | "unsettles the assumed equivalence" |
+| **rupture** | "ruptures the consensus" |
+| **expose** | "exposes the hidden premise" |
+| **lay bare** | "lays bare the assumption that..." |
+| **cast doubt on** | "casts doubt on the standard reading" |
+| **complicate** | "complicates the picture" |
+| **militate against** | "the evidence militates against..." |
+| **cut against** | "the finding cuts against the consensus that..." |
+| **run counter to** | "runs counter to the conventional wisdom" |
+
+### Demonstration / evidence
+
+| Verb | Example |
+|---|---|
+| **evince** | "the data evince a clear pattern" |
+| **manifest** | "manifests as a positional claim" |
+| **bear witness to** | "the literature bears witness to..." |
+| **attest to** | "attests to the durability of the pattern" |
+| **bespeak** | "the volume bespeaks an institutional commitment" |
+| **speak to** | "the result speaks to the broader question of..." |
+| **gesture toward** | "the data gesture toward a mechanism that..." |
+
+### Mediation / translation / inflection
+
+| Verb | Example |
+|---|---|
+| **refract** | "refracts the underlying tension into..." |
+| **inflect** | "the institution inflects the meaning of..." |
+| **modulate** | "modulates the strength of the relationship" |
+| **temper** | "tempered by the welfare design" |
+| **attenuate** | "attenuates the conversion of disruption into exclusion" |
+| **amplify** | "amplifies the underlying signal" |
+| **channel** | "channels grievance into voting behaviour" |
+| **broker** (verb) | "brokers the relationship between..." |
+
+### Legitimisation / authorisation
+
+| Verb | Example |
+|---|---|
+| **enshrine** | "enshrined in policy documents" |
+| **canonise** | "canonised as common sense" |
+| **vindicate** | "vindicates the prior claim" |
+| **ratify** | "ratifies the existing arrangement" |
+| **anchor** | "anchors the claim in observable institutional practice" |
+| **underwrite** | "underwrites the legitimacy of..." |
+| **ground** (verb) | "grounded in administrative practice" |
+
+## Adjectives — eloquent extensions
+
+### Theoretical register (some overlap with negative_space; mark with ⚠ when consciously reclaiming)
+
+| Adjective | Function |
+|---|---|
+| **constitutive** | "constitutive of the very practice it describes" |
+| **conjunctural** ⚠ | "conjunctural rather than structural" — Stuart Hall vocabulary |
+| **recursive** | "recursive reproduction of the institutional logic" |
+| **emergent** | "an emergent property of the system" |
+| **relational** | "relational rather than substantive" |
+| **mediated** | "mediated by institutional design" |
+| **contingent** | "contingent on the availability of party-system supply" |
+| **overdetermined** | Marxist register — "overdetermined by structural and contingent factors" |
+| **sedimented** | "sedimented assumptions of public administration" |
+| **dispositional** | "dispositional rather than situational" |
+| **generative** | "the generative grammar of welfare politics" |
+| **productive** (in the Foucauldian sense) | "productive of the very subject it claims to describe" |
+| **iterative** | "iterative reinforcement across the policy cycle" |
+
+### Strength / consequence
+
+| Adjective | Example |
+|---|---|
+| **decisive** | "the decisive variable" |
+| **consequential** | "consequential for downstream estimates" |
+| **load-bearing** | Your existing architectural metaphor |
+| **foundational** | "foundational to the framework" |
+| **pervasive** | "pervasive across the literature" |
+| **abiding** | "an abiding commitment to..." (formal) |
+| **enduring** | "the enduring puzzle" |
+| **durable** | "durable patterns of stratification" |
+| **recalcitrant** | "a recalcitrant minority of cases" |
+| **intractable** | "an intractable measurement problem" |
+
+### Critical / negative
+
+| Adjective | Example |
+|---|---|
+| **corrosive** | "corrosive to civic trust" |
+| **erosive** | "an erosive effect on coalition stability" |
+| **attritional** | "attritional rather than transformative" |
+| **punitive** | "punitive surveillance of welfare recipients" (you used in Origins) |
+| **coercive** | "coercive aspects of conditional benefits" |
+| **adversarial** | "an adversarial legal posture" |
+| **antagonistic** | "antagonistic toward universalism" |
+
+## Nouns — eloquent extensions
+
+### Theoretical structures
+
+| Noun | Example |
+|---|---|
+| **nexus** | "the nexus of welfare and identity" |
+| **entanglement** | "an entanglement of cultural and economic grievance" |
+| **assemblage** ⚠ | "an assemblage of practices" — DeleuzoGuattarian register; use sparingly |
+| **conjuncture** ⚠ | "a particular conjuncture of forces" — Hall / Gramsci register |
+| **terrain** | "the terrain on which the contest plays out" |
+| **topography** | "the topography of welfare regimes" |
+| **lattice** | "a lattice of mutual obligations" |
+| **circuitry** | "the circuitry of policy feedback" |
+| **machinery** | "the machinery of bureaucratic legitimation" |
+| **apparatus** | "the regulatory apparatus" |
+| **constellation** ⚠ | "a constellation of institutional features" |
+| **choreography** | "the choreography of austerity politics" |
+| **repertoire** | "the repertoire of policy responses available to the state" |
+| **grammar** | "the grammar of competition" |
+| **vocabulary** (theoretical) | "the vocabulary of efficiency" |
+| **lexicon** | "the lexicon of moralised markets" |
+| **syntax** | "the syntax of welfare entitlement" |
+| **idiom** | "the idiom of personal responsibility" |
+
+### Action / process
+
+| Noun | Example |
+|---|---|
+| **enactment** | "an enactment of bureaucratic discipline" |
+| **performance** (in the Goffmanian sense) | "the performance of deservingness" |
+| **iteration** | "across iterations of the policy" |
+| **transmission** | "transmission of advantage across generations" |
+| **inheritance** | "the institutional inheritance of the post-war settlement" |
+| **residue** | "the residue of the older paradigm" |
+| **sediment** (noun) | "a sediment of administrative routine" |
+| **accretion** | "an accretion of small reforms" |
+| **convergence** / **divergence** | "patterns of cross-national convergence" |
+| **disjuncture** | "a disjuncture between rhetoric and practice" |
+| **inflection** | "an inflection point in the policy trajectory" |
+
+### Conceptual / aesthetic
+
+| Noun | Example |
+|---|---|
+| **ambit** | "within the ambit of welfare policy" |
+| **horizon** | "on the horizon of the policy debate" |
+| **register** | "shifts the argument into a moral register" |
+| **timbre** | "the timbre of the public conversation" |
+| **texture** | "the texture of everyday administrative encounters" |
+| **contour** | "the contour of the institutional bargain" |
+| **threshold** | "the threshold at which conditional benefits become punitive" |
+
+## Multi-word signature constructions — argumentative texture
+
+These give prose a *layered* feel without single-word reach. Each is a compact phrasing that does real argumentative work:
+
+| Construction | Example |
+|---|---|
+| **what does the work of [X] is** | "what does the work of moderation here is institutional generosity, not party supply" |
+| **what earns [X] its keep is** | "what earns this paragraph its keep is the asymmetric mechanism" |
+| **the load-bearing claim is** | "the load-bearing claim is that decommodification produces a baseline of dignity" |
+| **the operative variable is** | "the operative variable is purported to be quantity" (you've used this) |
+| **turns on** | "the argument turns on whether..." |
+| **consists in** | "the contribution consists in identifying the asymmetry" |
+| **lies in** | "the genuine novelty lies in the equivalence test" |
+| **comes down to** | "the question comes down to whether..." |
+| **cashes out as** | "the abstract claim cashes out as a measurable interaction" |
+| **amounts to** | "the position amounts to a denial that..." |
+| **boils down to** | "the disagreement boils down to a single empirical question" |
+| **renders [X] visible/invisible** | "renders the gendered dimension invisible" |
+| **is constitutive of** | "is constitutive of the welfare contract itself" |
+| **is parasitic on** | "the second claim is parasitic on the first" |
+| **is hostage to** | "the asymmetry claim is hostage to the equivalence-test design" |
+| **is a function of** | "is a function of welfare design, not party supply" |
+| **does the work of [X]** | "the institution does the work of moderation" |
+
+## How to incorporate without sounding artificial
+
+Three rules that keep these from reading as showy:
+
+1. **Pair each new word with a familiar anchor.** A sentence with both *crystallises* and *Indeed,* reads as natural extension; a sentence with *crystallises*, *conjunctural*, *refracted*, and *constitutive* reads as showy. One new word per sentence; one new structure per paragraph.
+
+2. **Earn the metaphor.** Architectural metaphors (*load-bearing*, *scaffold*, *circuitry*, *lattice*) are part of your register but only when the noun they attach to genuinely has structure. *"Load-bearing claim"* works because claims have argumentative weight. *"Load-bearing welfare regime"* doesn't, because welfare regimes don't carry literal weight.
+
+3. **Trust the corpus over the candidate list.** When in doubt, default to a top-30 anchor (*Indeed,*, *Essentially,*, *frame*, *the architecture of*, *Through this perspective,*). The candidates are for breaking out of monotony, not for replacing the corpus-verified core.
+
+---
+
 # Negative space — words that SOUND like you but ARE NOT
 
 Zero occurrences across 22,167 words. If a draft contains these, it is LLM-default theory vocabulary, not your voice. Reject these proactively.
