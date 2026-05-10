@@ -19,10 +19,11 @@
 - Title changed; abstract rewritten; §I introduction rewritten
 
 **Key files:**
-- Draft: `manuscripts/paper_draft_v3_final.md`
-- Pipeline: `analysis/final_analysis_pipeline.py`
+- Draft: `manuscripts/paper_draft_v4_final.md`
+- Canonical-numbers pipeline: `scripts/random_slopes_models.py` → `outputs/tables/rs_results.csv`, `rs_vs_ri_model3.csv`, `rs_macro_controls.csv`, `blups_jackknife_*.csv`
+- Historical pipeline (random intercepts): `analysis/final_analysis_pipeline.py` → `analysis/final_results.json`
+- See `analysis/README.md` for the canonical-source map
 - Dataset: `analysis/sorting_mechanism_master_v2.csv` (188,764 × 48)
-- Results: `analysis/final_results.json`
 - ISSP solidarity script: `scripts/issp_solidarity_leg.py`
 - Review diagnostics: `analysis/review_diagnostics/part2_findings.json`
 
@@ -30,13 +31,16 @@
 
 ## Empirical Narrative (present in this order)
 
-1. RTI predicts anti-immigration everywhere (Model 1, β=0.182, N=125,169)
-2. Stronger in Liberal regimes (Model 2, RTI × Liberal β=0.117, p<0.001 with random slopes)
+Numbers below are from the canonical random-slopes pipeline (`rs_results.csv`), May 2026. Random-intercepts numbers from the older `final_results.json` differ slightly and are NOT canonical for the paper.
+
+1. RTI predicts anti-immigration everywhere (Model 1, β=0.168, p<0.001, N=133,016)
+2. Stronger in Liberal regimes (Model 2, RTI × Liberal β=0.127, p=0.003 with random slopes; Nordic baseline)
 3. NOT about spending — ALMP shows near-zero on matched 15-country sample (r=+0.011, p=0.97, N=15)
-4. IS about decommodification — CWED r=−0.848 across 15 countries (Model 3, β=−0.056, p<0.001)
-5. Concentrated among non-college workers (54% slope reduction, but p=0.179 — suggestive only)
-6. Attitude→vote conversion constrained by supply side (Model 6: Liberal β=−0.123 — FPTP + UKIP channel explains)
-7. Robust: jackknife range [0.073, 0.161], never crosses zero; stable across UK/NO/DK exclusions
+4. IS about decommodification — CWED BLUPs r=−0.848 across 15 countries; Model 3 β=−0.059, p=0.015, N=81,885
+5. Robust to macro controls — Model 3 + GDP growth + post-fiscal Gini gives β=−0.066, p<0.001 (`rs_macro_controls.csv`)
+6. Concentrated among non-college workers (54% bivariate slope reduction in Liberal regimes, but Model 4 three-way interaction p=0.179 — suggestive only)
+7. Attitude→vote conversion constrained by supply side (Model 6: RTI × Liberal β=−0.123, p=0.032 — FPTP + UKIP channel explains)
+8. Robust at BLUPs level: 0/105 two-country pairs flip sign; 105/105 stay p<0.05; excl GB+NO weakens to r=−0.700, p=0.008 (still significant). Bivariate jackknife is weaker (`jackknife_two_country.csv`) and is the "replication appendix" alternative
 
 **Figure 6** (CWED vs. country slopes) is the single most important figure.
 

@@ -261,11 +261,14 @@ r_full, p_full = _stats.pearsonr(slopes_df['cwed'], slopes_df['slope'])
 print(f"  Headline (all 15): r={r_full:.3f}, p={p_full:.4f}")
 
 # Single-country jackknife
+# (NB: do not name the correlation `r1` — that name is the Model 1 results
+# dict `r1, m1 = fit_mlm(...)` at the top of this script and the wrap-up
+# comparison block at the bottom reads `r1['rti_coef']`. Use `r_jk`/`p_jk`.)
 single_rows = []
 for c in slopes_df['cntry']:
     sub = slopes_df[slopes_df['cntry'] != c]
-    r1, p1 = _stats.pearsonr(sub['cwed'], sub['slope'])
-    single_rows.append({'excluded': c, 'r': r1, 'p': p1, 'n': len(sub)})
+    r_jk, p_jk = _stats.pearsonr(sub['cwed'], sub['slope'])
+    single_rows.append({'excluded': c, 'r': r_jk, 'p': p_jk, 'n': len(sub)})
 single_df = pd.DataFrame(single_rows).sort_values('r')
 print(f"  Single-country jackknife range: r ∈ [{single_df['r'].min():.3f}, {single_df['r'].max():.3f}]")
 print(f"    Worst (closest to zero): excl {single_df.iloc[-1]['excluded']} → r={single_df.iloc[-1]['r']:.3f}")
@@ -301,6 +304,107 @@ print(f"    Pairs with p < 0.05:          {n_significant} of {len(pair_df)} ({n_
 slopes_df.to_csv('outputs/tables/per_country_slopes.csv', index=False)
 single_df.to_csv('outputs/tables/jackknife_single_country.csv', index=False)
 pair_df.to_csv('outputs/tables/jackknife_two_country.csv', index=False)
+
+# ── BLUPs jackknife (§V.D headline statistic — r=-0.848) ──────────────────────
+# The published §V.D r=-0.848 is the BLUPs version: country-level slopes are
+# extracted from a random-slopes mixed model with individual controls and
+# `cntry` (not `cntry_wave`) as the grouping. The bivariate per-country OLS
+# version above gives r=-0.625 and is the "replication appendix" alternative.
+# This block computes the BLUPs jackknife the paper claims:
+#   excl GB → r=-0.802
+#   excl NO → r=-0.794
+#   excl GB+NO → r=-0.717
+# We use Method B (full-sample BLUPs, then jackknife the correlation) — fast
+# and standard for outlier-sensitivity reporting. If Method B doesn't reproduce
+# the paper's values, Method A (refit per subset) is the next step.
+print("\nBLUPs jackknife (§V.D — country grouping, with controls)...")
+
+ctrl_cols_blup = ['agea', 'age_sq', 'female', 'college', 'hinctnta', 'urban']
+df_blup = df3[['task_z', 'anti_immig_index', 'cntry', 'cwed_generosity'] + ctrl_cols_blup].dropna()
+formula_blup = 'anti_immig_index ~ task_z + ' + ' + '.join(ctrl_cols_blup)
+endog_blup, exog_blup = patsy.dmatrices(formula_blup, data=df_blup, return_type='dataframe')
+endog_blup = endog_blup.iloc[:, 0]
+groups_blup = df_blup['cntry'].astype(str).tolist()
+re_blup = patsy.dmatrix('~task_z', data=df_blup, return_type='dataframe')
+
+m_blup = _MixedLM(endog_blup, exog_blup, groups=groups_blup, exog_re=re_blup).fit(
+    reml=True, method='lbfgs', disp=False)
+fixed_slope = m_blup.params['task_z']
+ranef = m_blup.random_effects  # dict: country -> Series with 'Group' (intercept) and 'task_z'
+cwed_lookup = df_blup.groupby('cntry')['cwed_generosity'].first().to_dict()
+
+blup_data = []
+for c, vals in ranef.items():
+    blup_slope = fixed_slope + (vals.get('task_z', 0) if hasattr(vals, 'get') else (vals['task_z'] if 'task_z' in vals.index else 0))
+    if c in cwed_lookup:
+        blup_data.append({'cntry': c, 'blup_slope': float(blup_slope), 'cwed': cwed_lookup[c]})
+blup_df = pd.DataFrame(blup_data).sort_values('cntry').reset_index(drop=True)
+
+r_blup_full, p_blup_full = _stats.pearsonr(blup_df['cwed'], blup_df['blup_slope'])
+print(f"  Full-sample BLUPs correlation: r={r_blup_full:.4f}, p={p_blup_full:.6f}, N={len(blup_df)}")
+
+# Single-country jackknife on BLUPs
+single_blup_rows = []
+for c in blup_df['cntry']:
+    sub = blup_df[blup_df['cntry'] != c]
+    r_, p_ = _stats.pearsonr(sub['cwed'], sub['blup_slope'])
+    single_blup_rows.append({'excluded': c, 'r': r_, 'p': p_, 'n': len(sub)})
+single_blup_df = pd.DataFrame(single_blup_rows).sort_values('r').reset_index(drop=True)
+
+# Two-country jackknife on BLUPs
+pair_blup_rows = []
+for c1, c2 in itertools.combinations(blup_df['cntry'].tolist(), 2):
+    sub = blup_df[~blup_df['cntry'].isin([c1, c2])]
+    if len(sub) < 5:
+        continue
+    r_, p_ = _stats.pearsonr(sub['cwed'], sub['blup_slope'])
+    pair_blup_rows.append({'excl_a': c1, 'excl_b': c2, 'r': r_, 'p': p_, 'n': len(sub)})
+pair_blup_df = pd.DataFrame(pair_blup_rows).sort_values('r').reset_index(drop=True)
+
+print(f"  Single-country jackknife range: r ∈ [{single_blup_df['r'].min():.4f}, {single_blup_df['r'].max():.4f}]")
+gb_row = single_blup_df[single_blup_df['excluded'] == 'GB']
+no_row = single_blup_df[single_blup_df['excluded'] == 'NO']
+if len(gb_row):
+    print(f"    Excl GB:  r={gb_row.iloc[0]['r']:.4f}, p={gb_row.iloc[0]['p']:.4f}  (paper claims -0.802)")
+if len(no_row):
+    print(f"    Excl NO:  r={no_row.iloc[0]['r']:.4f}, p={no_row.iloc[0]['p']:.4f}  (paper claims -0.794)")
+
+uk_no_pair = pair_blup_df[((pair_blup_df['excl_a'] == 'GB') & (pair_blup_df['excl_b'] == 'NO')) |
+                          ((pair_blup_df['excl_a'] == 'NO') & (pair_blup_df['excl_b'] == 'GB'))]
+if len(uk_no_pair):
+    r_ukno = uk_no_pair.iloc[0]['r']
+    p_ukno = uk_no_pair.iloc[0]['p']
+    print(f"    Excl GB+NO: r={r_ukno:.4f}, p={p_ukno:.4f}  (paper claims -0.717, p=0.006)")
+
+# How many pairs cross zero or change sign?
+n_crossing_blup = (pair_blup_df['r'] >= 0).sum()
+n_significant_blup = (pair_blup_df['p'] < 0.05).sum()
+print(f"    Pairs with r ≥ 0 (sign flip): {n_crossing_blup} of {len(pair_blup_df)}")
+print(f"    Pairs with p < 0.05:          {n_significant_blup} of {len(pair_blup_df)} ({n_significant_blup/len(pair_blup_df):.0%})")
+
+blup_df.to_csv('outputs/tables/blups_country_slopes.csv', index=False)
+single_blup_df.to_csv('outputs/tables/blups_jackknife_single.csv', index=False)
+pair_blup_df.to_csv('outputs/tables/blups_jackknife_two.csv', index=False)
+print(f"  Saved: blups_country_slopes.csv, blups_jackknife_single.csv, blups_jackknife_two.csv")
+
+# ── Persist macro-controls robustness (Claim 13) ──────────────────────────────
+# r_macro and m_macro were fit at line ~184 but never written to CSV.
+# Save as a row alongside the rs_results.csv main models.
+print("\nPersisting macro-controls robustness (β=-0.066, Claim 13)...")
+macro_row = {
+    'model': 'M3_cwed_macro_controls',
+    'n_obs': int(m_macro.nobs),
+    'n_groups': df_r[GROUPS].nunique(),
+    'rti_coef': r_macro['rti_coef'],
+    'rti_se': r_macro['rti_se'],
+    'rti_pval': r_macro['rti_pval'],
+    'cwed_int_coef': cwed_int_r,
+    'cwed_int_se': m_macro.bse[cwed_int_r_key] if cwed_int_r_key else np.nan,
+    'cwed_int_p': cwed_p_r,
+}
+pd.DataFrame([macro_row]).to_csv('outputs/tables/rs_macro_controls.csv', index=False)
+print(f"  Saved: rs_macro_controls.csv")
+print(f"    M3 + GDP/Gini controls: β={cwed_int_r:.4f}, SE={macro_row['cwed_int_se']:.4f}, p={cwed_p_r:.6f}")
 
 # ── Compare old vs new spec ────────────────────────────────────────────────────
 py_results = json.load(open('analysis/final_results.json'))
