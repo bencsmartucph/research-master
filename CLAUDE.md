@@ -66,7 +66,7 @@ Before committing prose Ben will sign (papers, abstracts, blog posts, applicatio
 
 ## Voice & Collaboration Rules (standing context)
 
-**Before drafting anything that will appear under Ben's name:** invoke the `voice-ben` skill. Pre-AI samples in `manuscripts/Writing Samples/` are the calibration. Em-dashes are the #1 AI tell and not in his voice; use semicolons. Distinctive transitions: `Indeed`, `Furthermore`, `Through this perspective`, `Effectively`, `undergirding`, `as purported by`, `Drawing on`, `Firstly/Secondly/Thirdly`.
+**Before drafting anything that will appear under Ben's name:** invoke the `voice-ben` skill. Pre-AI samples in `manuscripts/Writing Samples/Pre-AI/` are the calibration; the full corpus-verified lexicon lives in `manuscripts/Writing Samples/voice_lexicon.md` and the canonical machine-readable spec is the YAML frontmatter of `.claude/skills/voice-ben/SKILL.md`. Em-dashes are banned (target 0); use semicolons or the ` - ` (space-hyphen-space) clause-break pattern. For distinctive transitions, verbs, adjectives, and argumentation moves, refer to `voice_lexicon.md` rather than memorising a list — it's corpus-verified and updates when new signed prose enters the calibration corpus. (Earlier inline lists here contained `Drawing on` and `as purported by`, which score zero in the corpus and were AI-extrapolated entries; removed 2026-05-10.)
 
 **Before recommending hedged prose:** invoke `notes-prose-gap`. He has a pattern of hedging in prose claims that his working notes have already accepted. Catch the gap; don't perpetuate it.
 
