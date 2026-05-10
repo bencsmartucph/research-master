@@ -9,6 +9,51 @@
 
 ## Priority 1 — do within the next 7 days
 
+### 1.0 Retrospective findings (council + Phase 2 deployments) — 2026-05-10
+
+The `/retrospective` audit (`quality_reports/retrospectives/2026-05-10_council-and-phase-2.md`) surfaced three high-leverage 5-10 minute fixes. Two are CRITICAL/MAJOR coherence gaps; the third closes a self-contradicting threshold. Doing all three takes ~20 minutes total and fixes findings flagged convergently across multiple personas.
+
+**1.0.a — Sync `/recall`'s topic-keyword pre-filter with `/done`'s full vocabulary** (CRITICAL — Coherence Critic).
+
+`/done` writes session logs tagged with one of 17 controlled-vocabulary topics. `/recall`'s Phase 2 pre-filter only covers 11 of them. **Missing entirely:** `econometrics`, `data-discovery`, `thesis-design`, `robustness`, `ideation`, `admin`. Sessions tagged with these fall through to full-corpus fallback.
+
+- [ ] Edit `.claude/skills/recall/SKILL.md` lines 43-54. Add the 6 missing topic associations:
+  - `econometrics ← regression, estimator, fixed effects, clustering, inference, panel`
+  - `data-discovery ← new dataset, source, register, coverage`
+  - `thesis-design ← thesis, chapter, PhD scope, registry`
+  - `robustness ← jackknife, sensitivity, spec curve, leave-one-out`
+  - `ideation ← brainstorm, council-ideate, direction`
+  - `admin ← supervisor, deadline, application, email`
+- [ ] (Optional but better) — refactor the table to read `/done`'s vocabulary at runtime, so future drift is impossible.
+
+**Time:** ~5 minutes.
+
+**1.0.b — Add council critiques + voice audits to `/recall`'s corpus** (MAJOR — Missed-opportunities Reviewer + Future-User Usability Critic).
+
+`/recall`'s Phase 1 corpus lists session logs + STATUS + research_journal + SESSION_REPORT — it does NOT include `quality_reports/council_critiques/*.md` or `quality_reports/voice_audits/*.md`. Those are exactly the durable decision artefacts the corpus should index. Currently `/recall` is structurally blind to past flagged issues.
+
+- [ ] Edit `.claude/skills/recall/SKILL.md` Phase 1 corpus list (around lines 24-29). Add:
+  - `quality_reports/council_critiques/*.md`
+  - `quality_reports/council_ideations/*.md`
+  - `quality_reports/voice_audits/*.md`
+  - `quality_reports/retrospectives/*.md`
+
+**Time:** ~5 minutes.
+
+**1.0.c — Reconcile voice-ben YAML `scope_excludes` with the pre-commit hook + fix the em-dash threshold contradiction** (MAJOR — Coherence Critic).
+
+The hook (`~/.claude/hooks/check-em-dashes.py`) excludes paths NOT listed in voice-ben's YAML: `working-notes/`, `docs/repo_building/`, `HANDOFF.md`, `HANDOVER.md`, `CLAUDE.md`, the `voice_*` filename glob, generalised `empirical_walkthrough_*`. The hook is the *more correct* / *more complete* list. Worse, the hook's `THRESHOLD_PER_1K = 5` contradicts voice-ben's `<8/1k` target — and the hook's own warning message says "voice-ben target: <5/1k", which contradicts both.
+
+- [ ] Edit `.claude/skills/voice-ben/SKILL.md` `scope_excludes` (around lines 420-429). Add the missing paths to bring it into line with the hook.
+- [ ] Generalise `docs/empirical_walkthrough_v1.md` → `docs/empirical_walkthrough_*.md` to match the hook.
+- [ ] Pick one em-dash threshold. Either (a) set `THRESHOLD_PER_1K = 8` in the hook + fix the warning message text, OR (b) tighten the YAML's `diagnostic_targets.em_dashes_per_1000_words` and `banned_punctuation.em_dash.target` to `<5`. Recommended (a) — the YAML's `<8` is the considered target; the hook's `<5` was probably aspirational.
+
+**Time:** ~10 minutes.
+
+---
+
+
+
 ### 1.1 Audit step — read all three council/audit reports end to end
 
 This is the validation step before relying on the new skills. Skim each report and ask: *did this surface real issues, or hallucinate plausible-sounding ones?* If real → skills are validated and you can lean on them. If mixed → adjust the persona prompts before next use.
