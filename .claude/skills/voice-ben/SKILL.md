@@ -98,24 +98,95 @@ required_transitions:
     - "Moreover,"                                # 2
     - "Primarily,"                               # 2
   citation_framings:
-    # Confirmed in corpus
+    # Confirmed in corpus — full read, not just grep
     - "Supporting this theory,"                  # 6 — formulaic citation lead-in
     - "Corroborating this idea,"                 # 5 — variant: "Corroborating the existence of..."
     - "This view is consistent with"             # 2
     - "Building on [framework / Author's work],"  # 2
-    - "[Author] (YEAR) argues that..."           # dominant citation verb form: argue/contend/outline/claim/suggest
+    - "[Author] (YEAR p.NN) argues that..."      # ~30+ — dominant citation form
+    - "[Author] (YEAR p.NN) suggests that..."    # 26+
+    - "[Author] (YEAR p.NN) contends that..."    # 14+
+    - "[Author] (YEAR p.NN) outlines how/that..." # 12+
+    - "[Author] (YEAR p.NN) claims that..."      # 10+
+    - "[Author] (YEAR p.NN) notes that..."       # several
+    - "[Author] (YEAR p.NN) posits that..."      # 2 (Origins)
+    - "For [Author], [claim]."                   # 14+ — SIGNATURE topical-attribution pivot
+    - "According to [Author/Source],"            # 4+
+    - "As [Author] argues/suggests/contends/notes/outlines,"  # 8+ — "As Mendes contends"; "As Pearson et al. suggest"
+    - "As outlined by [Author],"                 # 2
+    - "Following [Author]'s [proposition/work],"  # 1 (Origins) — gerund-opener variant
+    - "Expanding on [Author]'s work,"            # 1 (Origins)
+    - "Utilizing [Author]'s concept of [X],"     # 1 (Origins)
+    - "Through the perspectives of [Author],"    # 1
+    - "Such perspectives undergird [Author]'s contention"  # 1 — distinctive variant
+    - "As trumpeted by [school/authors],"        # 1 — distinctive
     - "Whilst [Author] (YEAR) suggests X, Y"     # concessive citation lead-in
+    - "(Author1 YEAR pNN; Author2 YEAR pNN; Author3 YEAR pNN)"  # signature: stacked parenthetical citations, often three deep
   argument_pivots:
     - "yet"                                      # mid-sentence pivot, comma + yet + clause; preferred over em-dash
-    - "Whilst X, Y"                              # 7 occurrences — Ben uses "whilst" 7:1 over "while"
+    - "Yet" (sentence-initial)                   # 2 — "Yet by exploring..."; "Yet while there is significant power..."
+    - "Whilst X, Y"                              # 7 — Ben uses "whilst" 7:1 over "while"
+    - "Although X, Y"                            # 5+ — concessive
+    - "Despite X, Y"                             # 2 (Origins) — concessive opener
+    - "Rather than [X], [Y]"                     # 2+
+    - "Instead, [main claim]"                    # 3+
     - "Through this perspective,"                # 4
     - "Through such perspectives,"               # 3 — variant
-    - "Through this {framework / lens},"         # 2 — pattern family
+    - "Through this {framework / lens / norm-inducing perspective / theoretical lens},"  # 4 family
+    - "Through application to [X],"              # 1 — gerund-opener
     - "This perspective directs our attention to" # 3 — distinctive bridging move
     - "This is exemplified by"                   # 5
     - "Central to {our study / this theory / much of this work},"  # 4
+    - "Core to our discussion is"                # 1 (Origins) — variant
+    - "At the core of [X] is"                    # 1
+    - "Of central concern for [Author] is that"  # 1
     - "At a fundamental level,"                  # 2
+    - "At a more fundamental level,"             # 1 — variant
     - "At their core,"                           # 2
+    - "A particular issue at stake here is"      # 1
+    - "These critiques are correct, yet are not central to"  # 1 — granted-then-narrowed move
+  in_x_openers:
+    # Family of "In X," / "Within X," / "Under X," structural sentence-openers (~30+ combined)
+    - "Within this,"                             # 3
+    - "Within [the discourse surrounding...],"   # 1
+    - "In particular,"                           # 2
+    - "In a traditional sense,"                  # 1
+    - "In a context of [X],"                     # 1
+    - "In an Australian context,"                # 1
+    - "In a definitional sense,"                 # 1
+    - "In their case,"                           # 1
+    - "In their response,"                       # 1
+    - "In light of these findings,"              # 1
+    - "In the past decade,"                      # 1
+    - "In the eyes of [X],"                      # 1
+    - "In the extreme,"                          # 1
+    - "In the short-term,"                       # 1
+    - "In this regard,"                          # 1
+    - "In this perspective,"                     # 1
+    - "In this respect,"                         # 1
+    - "In this context,"                         # 1
+    - "In this sense,"                           # 3
+    - "In terms of [X],"                         # 4+
+    - "In order to [X],"                         # 2+ — purpose-clause opener
+    - "From a [psychological / grounded] perspective,"  # 2+
+    - "From the perspective of [Author],"        # 1
+    - "From this perspective,"                   # 1
+    - "Under [equalisation / monitorial / supply] perspective,"  # 3+
+    - "Under the guise of [X],"                  # 1 (Origins)
+  gerund_openers:
+    # Subordinate-clause sentence-starts (distinctive in academic prose)
+    - "Building on [framework / contributions],"  # 2
+    - "Drawing on [Author]'s work,"              # rare
+    - "Following [Author]'s proposition,"        # 1
+    - "Expanding on [Author]'s work,"            # 1
+    - "Utilizing [framework / concept],"         # 1
+    - "Using [method / framework],"              # 2
+    - "Equipped with [X],"                       # 1
+    - "By [X-ing],"                              # 4+ — "By focusing the research on..."; "By examining..."; "By acknowledging..."; "By critically examining..."
+    - "Through [X-ing],"                         # 1+ — "Through an examination of..."
+    - "Through a utilisation of [X],"            # 1
+    - "Highlighting [X] is..."                   # 1
+    - "Resonating with [X],"                     # 1 (Origins)
   enumeration:
     - "Firstly / Secondly / Thirdly"             # confirmed in pre-AI; NEVER First/Second/Third
   signature_phrasing:
@@ -152,6 +223,32 @@ distinctive_vocabulary:
     - fortifies                   # 2
     - advocates                   # 2
     - embeds                      # 3 (also embedded as adj.)
+    - construct / constructs      # several — "constructing particular realities"
+    - reshape / reshaped          # 3+ (Origins)
+    - reproduce / reproduces      # 3+ (Origins)
+    - compose / composes          # 1 — "these categories compose the homeless..."
+    - augments                    # 5+ — also "augmentation"
+    - disseminates                # 7 (also as noun "dissemination")
+    - obscures                    # 1 (Origins) — "obscures the moral choices"
+    - circumscribes               # 1 — "circumscribe the spread"
+    - entrenches / entrenched     # 1 (Origins) — "entrenching the idea"
+    - imbues / imbued             # 1 (Origins) — "imbued with bureaucratic expertise"
+    - dictates                    # 1 — "discursive effects dictate the parameters"
+    - delegitimises / delegitimized # 1 (Origins)
+    - proliferates / proliferating # 1 — "further proliferating societal fragmentation"
+    - aggravates                  # 2+ — "aggravates partisan hostility"
+    - infringes / infringing      # 1 — "infringing on democratic liberal ideals"
+    - reinvigorates               # 1 — "predicted to reinvigorate deliberative democracy"
+    - incites                     # 3 — "incites collective decision-making"
+    - reconfigures                # 1 — "reconfigure their participation"
+    - excises                     # 1 — "excises contradicting and dissenting voices"
+    - dismantles                  # 1 (Origins)
+    - naturalises / naturalized   # 1 (Origins)
+    - internalises / internalized # 1 (Origins)
+    - marketizes / marketized     # 1 (Origins)
+    - stigmatises / stigmatization # 1 (Origins)
+    - valorises / valorized       # 3
+    - propagates / propagating    # 1 — "propagating favourable misinformation"
   citation_verbs:
     # Dominant verbs Ben uses to attribute claims (count across corpus):
     # argues (22) / argue (... ) / contend (9) / contends (5) / outlines (7) / outline (4)
