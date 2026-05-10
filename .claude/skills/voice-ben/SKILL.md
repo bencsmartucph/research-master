@@ -74,69 +74,192 @@ banned_punctuation:
     rationale: "Voice samples are inconsistent; do not enforce either way."
 
 required_transitions:
-  # Deploy at least 5 per 1000 words in argumentative prose
+  # Corpus-verified against 22,167 words of pre-AI Ben prose (May 2026 calibration).
+  # Counts shown in parentheses. Deploy at least 5 per 1000 words in argumentative prose.
   high_frequency:
-    - "Indeed,"
-    - "Furthermore,"
-    - "Similarly,"
-    - "Through this perspective,"
-    - "Through these perspectives,"
-    - "Conceptually,"
-    - "Consequently,"
-    - "Effectively,"
-    - "Ultimately,"
+    - "Indeed,"                                  # 28 occurrences — the dominant transition
+    - "Essentially,"                             # 14 — second-most-common; often paragraph-closer
+    - "However,"                                 # 13
+    - "Hence,"                                   # 11
+    - "Effectively,"                             # 11
+    - "Consequently,"                            # 12
+    - "Ultimately,"                              # 10
+    - "Furthermore,"                             # 8
+    - "Thus,"                                    # 7
+    - "Similarly,"                               # 6
+    - "Conceptually,"                            # 5
+    - "In contrast,"                             # 4
+    - "Accordingly,"                             # 4
+    - "Arguably,"                                # 3
+    - "Correspondingly,"                         # 3
+    - "Contrastingly,"                           # 3 — Ben uses this in place of "By contrast" / "Conversely"
+    - "In this sense,"                           # 3
+    - "Importantly,"                             # 2
+    - "Moreover,"                                # 2
+    - "Primarily,"                               # 2
   citation_framings:
-    - "Drawing on [Author]'s work,"
-    - "Supporting this theory,"
-    - "As articulated by [Author],"
-    - "As purported by [Authors],"
-    - "From this perspective,"
+    # Confirmed in corpus
+    - "Supporting this theory,"                  # 6 — formulaic citation lead-in
+    - "Corroborating this idea,"                 # 5 — variant: "Corroborating the existence of..."
+    - "This view is consistent with"             # 2
+    - "Building on [framework / Author's work],"  # 2
+    - "[Author] (YEAR) argues that..."           # dominant citation verb form: argue/contend/outline/claim/suggest
+    - "Whilst [Author] (YEAR) suggests X, Y"     # concessive citation lead-in
   argument_pivots:
-    - "In contrast to X, Y..."
-    - "Hence,"
-    - "Thus,"
-    - "yet"                # mid-sentence pivot, common in Ben's prose
+    - "yet"                                      # mid-sentence pivot, comma + yet + clause; preferred over em-dash
+    - "Whilst X, Y"                              # 7 occurrences — Ben uses "whilst" 7:1 over "while"
+    - "Through this perspective,"                # 4
+    - "Through such perspectives,"               # 3 — variant
+    - "Through this {framework / lens},"         # 2 — pattern family
+    - "This perspective directs our attention to" # 3 — distinctive bridging move
+    - "This is exemplified by"                   # 5
+    - "Central to {our study / this theory / much of this work},"  # 4
+    - "At a fundamental level,"                  # 2
+    - "At their core,"                           # 2
   enumeration:
-    - "Firstly / Secondly / Thirdly"   # NEVER First/Second/Third
+    - "Firstly / Secondly / Thirdly"             # confirmed in pre-AI; NEVER First/Second/Third
   signature_phrasing:
-    - "undergirding [much of this literature] is..."
+    - "undergirding [much of this literature] is..."  # 2 — high-perplexity-breaking when used
+    - "the architecture of [X]"                  # 8 — recurring noun-phrase pattern
 
 distinctive_vocabulary:
-  # LLMs typically avoid these; Ben uses them. Prefer when meaning fits.
+  # CORPUS-VERIFIED (May 2026 — counts across 7 pre-AI essays, 22,167 words).
+  # All entries below have count >= 2 in the corpus.
+  # Items that scored 0 in the corpus check (valorises, instigates, inveigle, obsequious,
+  # avaricious, concomitant, incipient, pertinacity, progenitor, configurations, etc.) have
+  # been removed — they were AI-extrapolated, not voice-calibrated.
   verbs:
-    - uncovers
-    - fortifies
-    - perpetuates
-    - instigates
-    - internalizes
-    - exacerbates
-    - propagates
-    - valorises
-    - legitimates
-    - promulgates
-    - elucidates
-    - presupposes
-    - inveigle
+    - frame                       # 22 — the highest-frequency verb family (frame/frames/framing/framed)
+    - reinforces                  # 12
+    - facilitates                 # 11
+    - exemplifies                 # 9 (also exemplified, exemplifying)
+    - legitimises                 # 7 (also legitimation, legitimising) — British -ise spelling
+    - generates                   # 6
+    - excludes                    # 6
+    - harnesses                   # 5
+    - characterises               # 5 — British -ise spelling
+    - augments                    # 5
+    - undermines                  # 4
+    - problematises               # 4
+    - perpetuates                 # 4
+    - contests                    # 4
+    - depicts                     # 3
+    - incites                     # 3
+    - exacerbates                 # 3
+    - valorises                   # 3 — paired often with "moralisation" (Origins essay)
+    - mediates                    # 2
+    - instigates                  # 2
+    - fortifies                   # 2
+    - advocates                   # 2
+    - embeds                      # 3 (also embedded as adj.)
+  citation_verbs:
+    # Dominant verbs Ben uses to attribute claims (count across corpus):
+    # argues (22) / argue (... ) / contend (9) / contends (5) / outlines (7) / outline (4)
+    # claims (7) / claim (3) / suggest (14) / suggests (12)
+    # Prefer these over "says", "states", "writes", "finds".
+    - argues
+    - contends
+    - outlines
+    - claims
+    - suggests
+    - notes
   adjectives:
-    - homophilous
-    - polemical
-    - factitious
-    - acrimonious
-    - polarising
-    - disunifying
-    - spreadable
-    - obsequious
-    - avaricious
-    - concomitant
-    - incipient
+    - civic                       # 18
+    - dominant                    # 12
+    - fundamental                 # 11 (also "fundamentally")
+    - inherent / inherently       # 17 + 11
+    - normative                   # 9
+    - hierarchical                # 6 (also "non-hierarchical" x3)
+    - contemporary                # 6
+    - technocratic                # 5
+    - structural                  # 6
+    - partisan                    # 5
+    - participatory               # 5
+    - ideological                 # 9
+    - polarising                  # 5
+    - homophilous                 # 4
+    - unconstrained               # 4
+    - heterogeneous               # 4
+    - contested                   # 4
+    - disunifying                 # 3
+    - unmediated                  # 3
+    - sociotechnical              # 3
+    - pluralistic                 # 3
+    - non-hierarchical            # 3 — note hyphenated compound
+    - instrumental                # 3
+    - egalitarian                 # 3
+    - spreadable                  # 2
+    - polemical                   # 1 — kept for theory-section availability
+    - factitious                  # 1
+    - acrimonious                 # 1
+    - performative                # 1 — appears in Origins essay only
+    - hegemonic                   # 2
   nouns:
-    - "architecture (of X)"
-    - undergirding
-    - configurations
-    - dynamics
-    - mechanisms
-    - pertinacity
-    - progenitor
+    - discourse                   # 31 (+ discourses 18 — total 49)
+    - sphere / spheres            # 22 (+ public sphere)
+    - values                      # 22
+    - framework                   # 15
+    - paradigm                    # 9
+    - formations                  # 9 (paired with "formation")
+    - architecture (of X)         # 8 — pattern: "the architecture of [X]"
+    - infrastructure              # 8
+    - constituents                # 8
+    - stakeholders                # 8
+    - logic / logics              # 7
+    - ideologies                  # 7
+    - dissemination               # 7
+    - rhetoric                    # 6
+    - narratives                  # 6
+    - factions                    # 6 — distinctive choice over "groups"
+    - diffusion                   # 6
+    - construction                # 6
+    - affordances                 # 5 — theory-marker (technology / Web 2.0 register)
+    - manifestations              # 4
+    - fragmentation               # 4
+    - mechanisms                  # 4
+    - agency                      # 4
+    - dichotomy / dichotomies     # 3
+    - dynamics                    # 3
+    - undergirding                # 2
+
+negative_space:
+  # Words that SOUND like Ben's register but are NOT in his pre-AI corpus (zero hits in 22k words).
+  # Do NOT use these as voice signals — they are LLM-default theory vocabulary, not Ben's.
+  - hegemony
+  - ethos
+  - milieu
+  - valence
+  - imaginary
+  - imaginaries
+  - assemblage
+  - ensemble
+  - terrain
+  - cleavage
+  - conjuncture
+  - edifice
+  - ecology (figurative)
+  - configuration  # appears as plural "configurations" 0 times — even though it sounds Ben-like
+  - inveigle
+  - obsequious
+  - avaricious
+  - concomitant
+  - incipient
+  - pertinacity
+  - progenitor
+  - elucidates
+  - presupposes
+  - promulgates
+  - internalizes
+  - propagates    # 0 hits despite being seeded — verify before using
+
+british_spelling_preference:
+  # Pre-AI samples consistently use British -ise/-isation forms in 2017-2018 essays;
+  # the 2024-vintage Origins essay shifts to mixed -ize/-ization. Default to British -ise.
+  - "polarisation NOT polarization (default)"
+  - "characterise NOT characterize (default)"
+  - "legitimise NOT legitimize (default)"
+  - "marginalise NOT marginalize (default)"
+  - "valorise NOT valorize (default)"
 
 sentence_rules:
   default_length_words: "25-40 in argumentative prose"
@@ -210,10 +333,11 @@ detection_resistance:
   ceiling_for_ai_edited_ai_prose: "approximately 60% human; for higher, Ben must retype anchor paragraphs"
   successful_anchor_retype_protocol: "Ben types opening + closing paragraphs from memory (file closed). Three retyped paragraphs out of ten typically averages document score down by 30-50 percentage points."
 
-last_recalibrated: "2026-05-08"
+last_recalibrated: "2026-05-10"
 calibration_history:
   - "2026-04-25: initial calibration from three pre-AI samples; 100% AI -> 60% human after quote-mosaic intro restructure"
   - "2026-05-08: em-dash rule revised from 'eliminated' to 'selective use, <8 per 1000 words' after v4 voice pass over-corrected to zero and lost rhythm"
+  - "2026-05-10: full corpus extraction across 7 pre-AI essays (22,167 words). Removed AI-extrapolated vocabulary that scored 0 in corpus (valorises in pure form, instigates, inveigle, obsequious, avaricious, concomitant, incipient, pertinacity, progenitor, configurations, elucidates, presupposes, promulgates). Added corpus-verified items including: 'Essentially,' (14), 'Corroborating' (5), 'Supporting this theory,' (6), 'This is exemplified by' (5), 'Whilst X, Y' (7 occurrences, 7:1 over 'while'), the 'Through this perspective' family (9 across variants). Negative-space list added to prevent future LLM drift toward hegemony/ethos/milieu/assemblage/conjuncture vocabulary that sounds-like-theory-but-isn't-Ben."
 ---
 
 # Voice — Ben Smart
