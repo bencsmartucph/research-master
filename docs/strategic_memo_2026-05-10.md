@@ -100,6 +100,222 @@ So: do TOST + SUR; *don't* worry that they're over-reach. *Do* worry that random
 
 ---
 
+## How to use the toolkit you've built
+
+You now have a substantial set of skills. Most have been used exactly once (the test runs during deployment). The infrastructure compounds only when you reach for the right tool at the right moment. This section is the practical *when-to-use-which* reference — keep it open during the next 2-4 weeks until the patterns become habit.
+
+### Quick decision card
+
+| You just... | Reach for | Why |
+|---|---|---|
+| Finished a writing or methodology session with Opus/Sonnet | **`/critique`** (single-file fresh-eyes) | Catches hallucinations and obvious misses; ~30 seconds |
+| Drafted a section that's about to commit to a position | **`/critique --double`** | Two-pass — catches what one pass missed |
+| Are about to submit a paper, finished a major draft milestone | **`/council-critique`** (5-persona panel) | Consequential pre-submission audit; ~5 min |
+| Are about to commit to a thesis chapter / research direction | **`/council-ideate`** (3 generative personas) | Pressure-tests the direction before months of effort |
+| Need to find a past decision (*"when did I decide X"*) | **`/recall <query>`** | Searches session logs + STATUS + research_journal |
+| Are wrapping up a session of any substance | **`/done`** | Captures session log, updates STATUS, makes /recall queryable |
+| Finished prose you'll sign your name to | **`/voice-audit <path>`** | Deterministic check against your YAML spec |
+| Just executed a multi-handover deployment or infrastructure rollout | **`/retrospective`** | Cross-cutting fresh-eyes audit on the whole arc |
+| Starting a fresh session and need orientation | **`/resume <project>`** | Reads STATUS + recent commits + latest plan |
+| Just got a paper PDF from a colleague | **`/read-paper <path>`** | Ingests, summarises, updates literature INDEX |
+
+### `/critique` — the one you haven't used yet
+
+This is the single most-useful tool in your toolkit and you should run it tomorrow on whatever you've been writing.
+
+**What it does:** spawns a fresh `general-purpose` subagent that reads your file with explicit "no loyalty to the author" framing, then audits for: logical flaws / missing considerations / overconfident claims / empirical gaps / structural issues. Tags each finding CRITICAL / MAJOR / MINOR with a one-line specific fix. Takes ~30 seconds.
+
+**Why it works:** when you've been working with an LLM for 30 minutes, you both share an embedded context where a fabricated claim or unstated assumption can pass unnoticed. A fresh subagent reads only what's between the explicit fences, with no conversation history. That decoupling from the writing-session context is the entire mechanism — and it's why it works even when the same model does both the writing and the critique.
+
+**How to invoke (concrete examples):**
+
+```
+# After a general writing session — default 5-category check:
+/critique manuscripts/paper_draft_v4_final.md
+
+# After a methodology section — focus on identification/inference issues:
+/critique --methods scripts/random_slopes_models.py
+/critique --methods manuscripts/paper_draft_v4_final.md
+
+# After a theory-heavy paragraph or section:
+/critique --theory manuscripts/paper_draft_v4_final.md
+
+# For prose specifically (clarity, hedging, structure):
+/critique --writing manuscripts/abstract_v2.md
+
+# When the artefact is consequential AND you want two passes:
+/critique --double manuscripts/paper_draft_v4_final.md
+```
+
+**Concrete moments in the next two weeks to use it:**
+
+1. **After you write the scoop-positioning paragraph** (advice item 2): `/critique --writing` on the new paragraph alone. The critic will catch overconfident claims about contribution and missing acknowledgements of what each precedent paper actually shows.
+
+2. **After implementing TOST + SUR** (if you go Path A): `/critique --methods scripts/tost_sur.py`. Catches logic errors in the equivalence-bound choice and any inferential overstatements.
+
+3. **After fixing the four em-dash apposition stackings**: `/critique --writing manuscripts/paper_draft_v4_final.md` to confirm the rewrites didn't introduce new problems.
+
+4. **At the end of any 30+ minute writing session with Opus or Sonnet** where you've been iterating on prose: default `/critique` on whatever you wrote. This is the canonical use case.
+
+**Output you get back (real example shape):**
+
+```
+CRITICAL: Line 47 — "the asymmetric mechanism explains the populist
+backlash" overstates the evidence. The paper shows asymmetric moderation
+of an attitudinal effect, not an explanation of vote-share movement.
+Fix: weaken to "is consistent with"; reserve "explains" for §VI Discussion.
+
+MAJOR: §V.D claim that "r=−0.848 confirms the mechanism" treats
+correlation as confirmatory. The four-estimator menu suggests r ranges
+from −0.625 to −0.855 across reasonable specifications.
+Fix: report range; reserve "confirms" for the multilevel β₃ result.
+
+MINOR: §IV opens with "It is important to note that..." — banned per
+voice-ben.
+Fix: drop the preamble.
+```
+
+That's actually useful. Run it tomorrow.
+
+### `/council-critique` — the heavyweight pre-commitment audit
+
+**When to use:** consequential, pre-commitment artefacts where you'd genuinely want five expert opinions.
+
+| Trigger | Concrete example |
+|---|---|
+| About to submit a paper to a journal | `/council-critique manuscripts/paper_draft_v5_for_AJPS.md` |
+| Finished a major section restructure (intro / theory / §V) | `/council-critique manuscripts/paper_draft_v4_final.md` |
+| Drafted an identification strategy memo | `/council-critique projects/seminar_paper/identification_memo.md` |
+| About to commit to a thesis chapter direction | `/council-critique projects/msc_thesis/chapter_2_plan.md` |
+| Got harsh seminar feedback and want to triangulate | `/council-critique manuscripts/paper_draft_v4_final.md` |
+
+**What you get back:** convergent critiques (≥2 personas flagged → high-confidence problem), divergent critiques (one persona only → judgement call), missing dimensions (what nobody flagged that should have been), top-three actions ranked. Saved to `quality_reports/council_critiques/YYYY-MM-DD_<artefact>.md`.
+
+**Cost:** 6 subagents (1 summary + 5 critics) running in parallel. ~5-8 min wall time. Real token cost. Use on consequential artefacts, not daily drafts.
+
+**Don't use it for:** daily writing iteration (use `/critique`), code review (use `coder-critic` directly when data work resumes), conversational replies, or anything you'll do more than once a week.
+
+**Worked example you can re-read:** `quality_reports/council_critiques/2026-05-08_empirical_walkthrough_v1.md`. Five personas, four convergent issues, three missing dimensions, top-three actions. That's the shape of a real run.
+
+### `/council-ideate` — pre-commitment ideation
+
+**When to use:** before months of effort go into a research direction.
+
+| Trigger | Concrete example |
+|---|---|
+| Choosing a thesis chapter | `/council-ideate "should chapter 2 be Danish-register displacement DiD or cross-national CWED extension"` |
+| Pivoting an existing paper | `/council-ideate manuscripts/paper_draft_v4_final.md` |
+| Job-market paper choice | `/council-ideate "what's the right job-market paper after the asymmetric paper"` |
+| Pitching to a supervisor | `/council-ideate "thesis pitch — welfare-state moderation of populist response, Danish registers as the empirical engine"` |
+| Stuck on a data question | `/council-ideate "what would I do with ESS rotating panel that I can't do with cross-section"` |
+
+**What you get back:** convergent thread (what all three angles share), boldest single move (highest information value if it works), five-year research programme combining them, three things to check before committing (falsifiers / scoop risk / data feasibility).
+
+**Worked example:** `quality_reports/council_ideations/2026-05-08_extend_asymmetric_welfare_danish_registry.md`. Three personas produced a coherent five-year thesis arc + three feasibility checks. That output literally became the structure of advice item 4 in this memo.
+
+### `/done` — end-of-session capture
+
+**When to use:** end of any session that produced a decision, an artefact, or substantive thinking. Roughly: "if a future-you would benefit from finding this in `/recall`, run /done."
+
+```
+/done
+```
+
+(no arguments — the skill identifies the active project automatically; will prompt if ambiguous.)
+
+**What it does:** writes a structured session log to `quality_reports/session_logs/YYYY-MM-DD_<slug>.md`, appends to `SESSION_REPORT.md`, appends to `quality_reports/research_journal.md` (if agents were dispatched), updates the active project's `STATUS.md`, tags topics from the controlled vocabulary so `/recall` can pre-filter later.
+
+**Critical:** the controlled vocabulary discipline matters. Don't add new topics speculatively — when the skill prompts you mid-`/done` because your session topic doesn't fit an existing tag, default to "use the closest existing one" rather than "Add new topic." Each new tag is a small tax on `/recall`'s precision over the next 4-6 years.
+
+**Frequency target:** 5+ real `/done` invocations over the next 2 weeks. Without that bedding-in, `/recall` returns nothing useful.
+
+### `/recall <query>` — finding past decisions
+
+**When to use:** any time you find yourself wondering *"when did I decide X"* or *"what did I conclude about Y"* — instead of guessing or grepping the repo, ask `/recall`.
+
+```
+/recall when did I decide to use BLUPs over bivariate slopes
+/recall what did the council critique flag about the empirical walkthrough
+/recall did I cite Vlandas-Halikiopoulou anywhere
+/recall what was my plan for the seminar paper revision
+/recall how did I justify the 15-country sample restriction
+```
+
+**What you get back:** direct answer (with file path) if the corpus contains one, top-3 relevant sessions with one-line summaries, confidence (HIGH/MEDIUM/LOW), suggested next read, files-consulted audit trail.
+
+**Honest about its limits:** the skill returns what the *corpus* says, not what you actually decided. If a decision was made before the session-log infrastructure existed, `/recall` will say so explicitly rather than fabricating. That's a feature.
+
+**Compounding effect:** the more `/done` invocations populate the corpus, the more useful `/recall` becomes. After 20-30 sessions captured, this skill becomes the single most-used tool in your toolkit because it offloads the "where did I write that down" cognitive overhead.
+
+### `/voice-audit <path>` — deterministic prose check
+
+**When to use:** before committing prose you'll sign your name to (per the new gate in `CLAUDE.md`: score ≥ 75 before commit).
+
+```
+/voice-audit manuscripts/paper_draft_v4_final.md
+/voice-audit manuscripts/abstract_v3.md
+/voice-audit essays/dignity_baseline_op_ed.md
+/voice-audit applications/UCL_statement_of_purpose.md
+```
+
+**What you get back:** voice-confidence score 0-100, hard violations (banned vocabulary, em-dash apposition stackings, banned structures) with line numbers, soft signals (low transition density, low semicolon density), specific suggested rewrites where possible.
+
+**What to ignore:** the score is a thermometer not a target. Don't optimise for the number; optimise for the violations it identifies.
+
+**What to act on:** every CRITICAL violation has a one-line fix. Apply them. Re-run. The voice-corpus expansion we did today should make the audit much more accurate now — your transition-density score on the next run should be substantially higher than the 1.7/1k it returned on the May 8 baseline.
+
+### `/retrospective` — post-deployment audit
+
+**When to use:** after multi-handover deployments, major infrastructure rollouts, or any cross-cutting project where the question is *"did execution match intent."*
+
+```
+/retrospective --handover docs/repo_building/<some_handover>.md --since YYYY-MM-DD --name <slug>
+```
+
+**Likely future moments:** Phase 3 continuous-improvement-pipeline handover (when you eventually run it); first thesis-chapter design phase; any future hand-off between sessions where the spec was written first.
+
+**Don't use it for:** single-file artefacts (use `/critique`); single-skill design audit (use the user-level `/council --chef-skill <skill_path>`).
+
+**Worked example:** `quality_reports/retrospectives/2026-05-10_council-and-phase-2.md`. Five convergent findings, ten divergent, three top follow-ups. That's the shape of a real run.
+
+---
+
+### A typical week's deployment of the toolkit
+
+To make this concrete: imagine a paper-revision week.
+
+**Monday morning** — `/resume seminar_paper`. Reads STATUS, recent commits, plans. Orients you in 2 minutes.
+
+**Monday afternoon, finished restructuring §V** — `/critique --writing manuscripts/paper_draft_v4_final.md`. 30 seconds. Catches the apposition-stacked em-dashes and one overconfident claim about asymmetry.
+
+**Monday evening** — `/done`. Tags `paper-draft, theory`. Writes session log, updates STATUS.
+
+**Tuesday** — implementing TOST + SUR per advice item 3. After writing `scripts/tost_sur.py`, run `/critique --methods scripts/tost_sur.py`. Catches a bandwidth-choice issue.
+
+**Wednesday morning** — re-reading what was decided about the equivalence bound. `/recall what equivalence bound did I commit to for the solidarity TOST`. Gets the answer from Tuesday's session log.
+
+**Wednesday afternoon, drafting the new contribution paragraph** — quick `/critique --writing manuscripts/paper_draft_v4_final.md` after each major edit.
+
+**Thursday** — full pre-submission audit: `/council-critique manuscripts/paper_draft_v5_for_seminar_response.md`. 5-8 minutes. Five-persona panel. Read the convergent findings. Apply the top-3.
+
+**Thursday evening** — before commit: `/voice-audit manuscripts/paper_draft_v5_for_seminar_response.md`. Confirms score ≥ 75. Commit.
+
+**Friday** — `/done` summarising the week's revision. End of cycle.
+
+**Saturday** — `/council-ideate "what's the second paper after the asymmetric one"`. 5 minutes of subagent work, plus 20 minutes reading the synthesis. Sets up next week's thinking.
+
+That's roughly 12 toolkit invocations over a productive week. None individually is more than 8 minutes; together they keep the work disciplined, audited, and findable later.
+
+### What if you forget which to use?
+
+`/recall how do I use the council` — the skill descriptions are in the corpus.
+
+Or open this file: `docs/strategic_memo_2026-05-10.md` — section above.
+
+Or just default to `/critique <path>`. It's the cheapest, fastest, hardest-to-misuse skill in the kit. If `/critique` flags something serious enough to warrant a panel, escalate to `/council-critique`. If it doesn't, you've spent 30 seconds and learned the artefact is clean enough to ship.
+
+---
+
 ## Closing meta-observation
 
 The thread across all six pieces of advice is **time-horizon discipline**: the paper has a near-term deadline (seminar response window), the thesis has a 4-year horizon, the infrastructure compounds over decades, and your sleep operates on a 24-hour cycle. The mistake would be to optimise any one of these at the expense of the others — building infrastructure when the paper deadline looms, doing late-night paper revisions that introduce errors, deferring seminar feedback that would redirect the paper, or letting a thesis-design opportunity (CEBI affiliation) slip because you're focused on the seminar paper. The skill is matching effort to horizon. You already do this instinctively when you ask "what's the cadence" questions; do it explicitly when you wake up tomorrow.
