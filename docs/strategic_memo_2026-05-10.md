@@ -43,9 +43,11 @@ Across this session, every time you said *"is there something missing"* or *"fre
 
 Make it ritual. After every major artefact — paper section, identification memo, thesis chapter draft — ask *"what would a fresh reader find."* Run the appropriate fresh-eyes tool (`/critique` for prose, `/council-critique` for consequential artefacts, `/retrospective` for deployments). The 5-30 minutes of friction prevents months of accumulated invisible debt.
 
-### 6. Sleep. Today's session is past five hours.
+### 6. Match the effort to the horizon
 
-Per your global instructions and the energy section in `~/.claude/CLAUDE.md`: when sessions exceed 5 hours, the right move is to stop. The work won't suffer from a night's sleep; it will suffer from a year of accumulated sleep debt. The seminar paper has a deadline; it doesn't have *tonight* as a deadline. Get distance from this. The paper revision and the Priority 1.0 retrospective fixes will both look different in the morning.
+The thread across the first five items is **time-horizon discipline**. The paper has a near-term deadline (seminar response window). The thesis has a 4-year horizon. The infrastructure compounds over decades. Each runs on its own clock, and each can be optimised at the expense of the others if you let one dominate.
+
+The recurring failure mode is letting infrastructure work crowd out paper work because building feels productive. That's the discipline to enforce: when you sit down for a session, declare the horizon up front (paper / thesis / infrastructure), and resist the gravitational pull of the others until that one is closed for the day. The audit-asking habit (item 5) is the single most reliable check — if you find yourself two hours into infrastructure work when you opened the laptop intending to do paper revision, something has slipped.
 
 ---
 
@@ -318,11 +320,11 @@ Or just default to `/critique <path>`. It's the cheapest, fastest, hardest-to-mi
 
 ## Closing meta-observation
 
-The thread across all six pieces of advice is **time-horizon discipline**: the paper has a near-term deadline (seminar response window), the thesis has a 4-year horizon, the infrastructure compounds over decades, and your sleep operates on a 24-hour cycle. The mistake would be to optimise any one of these at the expense of the others — building infrastructure when the paper deadline looms, doing late-night paper revisions that introduce errors, deferring seminar feedback that would redirect the paper, or letting a thesis-design opportunity (CEBI affiliation) slip because you're focused on the seminar paper. The skill is matching effort to horizon. You already do this instinctively when you ask "what's the cadence" questions; do it explicitly when you wake up tomorrow.
+The work in this deployment session was substantial. The infrastructure is in good shape. The paper has a clear set of 1-hour-to-1-day moves that would each shift it materially. You don't need more tools right now; you need to spend the next 2 weeks using the ones you have, on the paper that matters.
 
-The work today was substantial, the infrastructure is in good shape, and the paper has a clear set of 1-hour-to-1-day moves that would each shift it materially. You don't need more tools right now; you need to spend the next 2 weeks using the ones you have, on the paper that matters.
+The single most underrated skill you bring to all of this is the audit-asking habit (item 5). Across this session, every time you said *"is there something missing"* or *"fresh eyes on this"* or *"are we aligned"*, we found something real. Make it ritual. The 5-30 minutes of friction prevents months of accumulated invisible debt — and it's the discipline that lets you trust your own work over a long PhD without relying on supervisor-feedback as the only error-correction loop.
 
-Get some sleep.
+Start tomorrow with the scoop-positioning paragraph (item 2). It's the single highest-leverage hour you can spend on the paper this week.
 
 ---
 
