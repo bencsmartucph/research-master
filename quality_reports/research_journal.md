@@ -66,3 +66,10 @@
 **Score:** N/A
 **Verdict:** 3 angles — within-individual welfare exposure post-displacement (Dal Bó-style), intergenerational transmission via parental welfare experience, residential sorting as welfare response.
 **Report:** `quality_reports/council_ideations/2026-05-08_extend_asymmetric_welfare_danish_registry.md`
+
+### 2026-05-10 — general-purpose (voice corpus extraction)
+**Phase:** Infrastructure (voice tooling)
+**Target:** 7 pre-AI essays in `manuscripts/Writing Samples/Pre-AI/` (22,167 words total)
+**Score:** N/A
+**Verdict:** ~1/3 of seed vocabulary scored 0 in corpus (AI-extrapolated). Identified new corpus-verified high-frequency transitions (`Essentially,` 14x, `Corroborating` 5x, `Supporting this theory,` 6x, `This is exemplified by` 5x), the `Through this perspective` family (9 across variants), `Whilst X, Y` (7x, 7:1 over `while`), and the dominant verb family `frame/framing` (22x). Top-30 anchor table produced for the lexicon.
+**Report:** `quality_reports/session_logs/2026-05-10_voice-corpus-expansion.md` + `manuscripts/Writing Samples/voice_lexicon.md`

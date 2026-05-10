@@ -70,3 +70,34 @@
 **Status:**
 - Done: all infrastructure committed and pushed; tracker in place; git fundamentals taught
 - Pending: read all three deployment reports end-to-end (audit step); re-run `/voice-audit` after em-dash fixes to confirm score ≥ 75; user-confirm TOST+SUR timing path
+
+---
+
+## 2026-05-10 — Voice corpus expansion + pre-commit hook scope filter
+
+**Project:** General (infrastructure / voice tooling)
+**Topics:** voice, infrastructure
+
+**Operations:**
+- Converted 7 pre-AI essays from `manuscripts/Writing Samples/Pre-AI/` (.docx) to markdown via pandoc; total 22,167 words
+- Frequency-counted seed vocabulary across the corpus; identified ~1/3 of seed entries scoring 0 hits (AI-extrapolated, not Ben's voice)
+- Dispatched `general-purpose` subagent for deep pattern extraction; produced top-30 frequency table + new transitions, verbs, adjectives, nouns, argumentation moves
+- Refactored `.claude/skills/voice-ben/SKILL.md` frontmatter with corpus-verified vocabulary + new `negative_space` section + British -ise spelling preference
+- Created `manuscripts/Writing Samples/voice_lexicon.md` — standalone writing-aid (top-30 ref, transitions by purpose, verbs by function, citation-attribution rankings, 6 argumentation moves with quoted examples)
+- Updated `~/.claude/hooks/check-em-dashes.py` with SKIP_PATH_PARTS / SKIP_FILENAMES / SKIP_PATH_GLOBS mirroring voice-ben `scope_excludes`; 15-case test all OK
+- Two commits pushed: `309f7e2` (post-deployment loose ends) + `25927d0` (voice corpus expansion)
+
+**Decisions:**
+- Standalone lexicon alongside YAML — YAML is canonical for `/voice-audit`, lexicon is for human reference at writing time
+- `negative_space` anti-list pattern — most vocab guides say what TO use; the AI-detection failure mode is theory-tempters that aren't Ben's
+- Pre-commit hook scope filter at user level (not project `.git/hooks/`) — portable conventions across all repos
+- British -ise default spelling — pre-AI samples (2017-2018) are consistent; 2024-vintage Origins essay shifts to mixed -ize but defaulting to British
+
+**Results:**
+- Repo state: 7 commits pushed cleanly (`b0eeaaf..25927d0`); working tree had only the new session log + this SESSION_REPORT update at end of session
+- voice-ben spec now corpus-verified across 22,167 words; lexicon serves as writing aid for active drafting
+- Pre-commit hook no longer false-positives on infrastructure files (quality_reports/, .claude/, MEMORY.md, STATUS.md, voice_lexicon.md, repo_building/)
+
+**Status:**
+- Done: corpus extraction, lexicon, YAML refactor, hook fix, two commits + push
+- Pending: re-run `/voice-audit` on `paper_draft_v4_final.md` after the 4 em-dash apposition stackings are fixed; quarterly cadence (lexicon refresh / MEMORY prune / `/recall` corpus check) tracked in `docs/post_handover_followups.md`
