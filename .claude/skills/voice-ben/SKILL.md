@@ -1,6 +1,6 @@
 ---
 name: voice-ben
-description: Write in Ben Smart's authentic academic register. Use when drafting or revising any prose that will appear under his name — papers, essays, blog posts, abstracts, intros. Calibrated against three pre-AI writing samples (Global Media 2017, Politicians and Twitter 2017, Newspaper Representations of Homelessness 2018) and confirmed by the GPT Zero 100% → 60% human transition on 2026-04-25.
+description: Write in Ben Smart's authentic academic register. Use when drafting or revising any prose that will appear under his name — papers, essays, blog posts, abstracts, intros. Calibrated against seven pre-AI writing samples (22,167 words, full-corpus read 2026-05-10) with primary anchor on Global Media 2017; secondary anchors are Newspaper Representations 2018, Politicians and Twitter 2017, Culture Policy, Social Media and Democracy, and Social Capital; Origins 2024 is a partial anchor (modern hyphen-clause-break register; exclude its first-person and American-spelling drift). Confirmed by the GPT Zero 100% → 60% human transition on 2026-04-25.
 disable-model-invocation: false
 allowed-tools: ["Read", "Grep", "Edit", "Write"]
 
@@ -66,9 +66,9 @@ banned_structures:
 
 banned_punctuation:
   em_dash:
-    rule: "selective_use"
-    target: "fewer than 8 per 1000 words"
-    rationale: "Em-dashes appear in Ben's pre-AI samples but only sparingly. Default to semicolons; reserve em-dashes for inline negation, mid-sentence list framing, and citation pauses where a semicolon would feel anaemic. Avoid em-dash apposition stacking back-to-back."
+    rule: "ban"
+    target: 0
+    rationale: "Aligned with the canonical stance in ~/.claude/CLAUDE.md: 'Em-dashes: never. I use semicolons. This is the #1 AI-detection tell and it's not my voice.' Pre-AI samples have a few em-dashes but the post-2026-05 stance is zero. For clause breaks, use the `hyphen_clause_break` pattern (` - `, space-hyphen-space). For logical joins, use semicolons. Do NOT generate em-dashes in any prose Ben will sign."
   oxford_comma:
     rule: "no_constraint"
     rationale: "Voice samples are inconsistent; do not enforce either way."

@@ -1,0 +1,45 @@
+{
+  "n_countries": 15,
+  "estimators": {
+    "A_bivariate_per_country": {
+      "r_full": -0.6245196718389111,
+      "r_loo_range": [
+        -0.8699709330791515,
+        -0.49567596769402317
+      ],
+      "r_loo2_range": [
+        -0.9084066376230395,
+        -0.3352084280160355
+      ],
+      "loo2_n_pairs": 105,
+      "loo2_sign_flips": 0
+    },
+    "B_BLUPs_random_slopes_with_controls": {
+      "r_full": -0.855200878561046,
+      "r_loo_range": [
+        -0.8973478491022433,
+        -0.7925784819437175
+      ],
+      "r_loo2_range": [
+        -0.9224062180366693,
+        -0.7003414591701507
+      ],
+      "loo2_n_pairs": 105,
+      "loo2_sign_flips": 0
+    },
+    "D_inverse_variance_weighted": {
+      "r_full": -0.7526521595464625,
+      "r_loo_range": [
+        -0.8679822224708571,
+        -0.6701336464718733
+      ],
+      "r_loo2_range": [
+        -0.9016522551004226,
+        -0.5625872245910016
+      ],
+      "loo2_n_pairs": 105,
+      "loo2_sign_flips": 0
+    }
+  },
+  "headline_for_paper": "Across three defensible country-level estimators (bivariate, BLUPs random-slopes with controls, inverse-variance-weighted bivariate), the full-sample correlation between country-level RTI\u2192exclusion slope and CWED ranges from -0.855 to -0.625. All three estimators agree on the sign and the magnitude order; the BLUPs estimator gives the most extreme r as expected from shrinkage. The leave-two-out distribution across all 105 country pairs ranges from -0.922 to -0.335; no estimator \u00d7 pair combination produces a sign flip. The published BLUPs r=\u22120.848 is the upper bound of a defensible range, not a single point estimate."
+}

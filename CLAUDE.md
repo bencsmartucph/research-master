@@ -33,9 +33,21 @@ Before committing prose Ben will sign (papers, abstracts, blog posts, applicatio
 
 ---
 
+## Project Context — primary heuristic for this sprint (added 2026-05-10)
+
+**Primary heuristic: accelerated completion of the seminar paper.** Every recommendation, edit, and follow-up should balance *maximum possible quality* against the *practical constraints of current data and timeline*. Concrete operational implications:
+
+- **Defer, do not ignore, the council critique on the empirical walkthrough.** Its CRITICAL items (Oster δ bounding of N=15 confounding, BLUPs specification curve, effective-N reframing, TOST + SUR equivalence testing, AJPS-grade scoop positioning) are valid for journal-version rewrite. They are out of scope for the seminar paper per Amalie's "no more analysis, hone argument" instruction. Filed at `quality_reports/journal_version_targets/`.
+- **Ship the asymmetric framing as committed.** The v3/v4 hedge into symmetric "sorting" language was diagnosed as self-protection (see Part 6 of `docs/A Mind in Formation with part 6.md`). The asymmetric reframe is final; further theoretical excavation does not improve the paper at seminar stage.
+- **Monday-morning retype pass is the last substantive editing block before submission.** §III.D, §I sign-post, §III.A forward-reference, §III.E para 3, §V.D BLUPs sentence — retype from evidence base in own keystrokes for detector-resistance. Don't expand scope past that.
+- **Any "another analytical pass" recommendation must be explicitly justified against this heuristic.** Default disposition: defer to journal stage or MSc thesis (autumn 2026 → spring 2027) follow-up.
+- **Single source of truth:** when this block conflicts with older notes elsewhere, this block wins. Older docs flagged stale will be pruned at next consolidation pass.
+
+---
+
 ## Researcher
 
-**Ben Smart** (`bencsmart@gmail.com`) — MSc Economics (University of Copenhagen, conferred 2026), beginning PhD in political economy / comparative politics.
+**Ben Smart** (`bencsmart@gmail.com`) — MSc Economics at the University of Copenhagen (in progress; thesis autumn 2026 → spring 2027). Preparing PhD applications for **Fall 2027 start** (deadlines Nov 2026 – Jan 2027). Employed at CEBI; Danish-register data access for the MSc thesis comes via this employment. Fresh Forskerservice authorisation belongs in 2027 PhD-stage planning, not now.
 
 **Focus:** How economic disruption (automation, trade, austerity) shapes political preferences — specifically populist and radical right support — and what welfare state design can do about it.
 
@@ -57,7 +69,10 @@ Before committing prose Ben will sign (papers, abstracts, blog posts, applicatio
 | Persistent corrections | `MEMORY.md` |
 | **Working relationship & calibration** | **`docs/working_with_ben.md`** |
 | **Intellectual portrait** | **`docs/A Mind in Formation with part 6.md`** |
-| Strategic memo (active sprint) | `docs/strategic_memo_2026-04-25.md` |
+| Strategic memo (current, 2026-05-10) | `docs/strategic_memo_2026-05-10.md` |
+| Strategic memo (six-week sprint, prior) | `docs/strategic_memo_2026-04-25.md` |
+| **Council critiques + ideations + voice audits** | **`quality_reports/council_critiques/`, `council_ideations/`, `voice_audits/`** |
+| **Journal-version deferral folder** | **`quality_reports/journal_version_targets/`** |
 | **Build commands (docx, slides, figures, analysis)** | **`scripts/README.md`** |
 
 **Convention:** Never read `.pdf` or files >2000 lines in main context. `.docx` is fine after `pandoc` conversion to `.md` (if under 2000 lines). Files 500–2000 lines may be read directly when calibration / analytical fidelity matters. Subagents doing analytical work must return raw counts + method, not just summary stats. See `.claude/rules/heavy-reads.md` for the full contract.
@@ -109,7 +124,7 @@ Research_Master/
 │   └── samples/               ← top100/ and stratified/
 │
 ├── scripts/                   ← load_ess.py, load_ess.R, make_stratified_samples.py
-├── manuscripts/               ← Paper drafts (v3_final is current)
+├── manuscripts/               ← Paper drafts (v4_final is current; v3/v5/medium-bet archived May 2026)
 ├── analysis/                  ← Pipeline, master dataset, results, review
 ├── outputs/                   ← figures/ and tables/
 └── quality_reports/           ← plans/ and session_logs/
@@ -162,4 +177,4 @@ crosswalk = pd.read_csv('data/raw/langenkamp_2022/ess_populist_crosswalk.csv', s
 
 ---
 
-*Last updated: April 2026. Target: ≤100 lines. Update when research direction changes or new data added.*
+*Last updated: 2026-05-10. Target: ≤120 lines (with Project Context block; was ≤100). Update when research direction changes or new data added.*

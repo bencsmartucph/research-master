@@ -1,0 +1,18 @@
+{
+  "n_countries": 15,
+  "n_iterations": 10000,
+  "r_observed": -0.855200878561046,
+  "p_parametric_two_sided": 4.830083260566184e-05,
+  "p_empirical_two_sided": 0.0001,
+  "p_empirical_one_sided_negative": 0.0001,
+  "permutation_distribution_mean": -0.0010239121879805921,
+  "permutation_distribution_std": 0.26617132024923384,
+  "permutation_distribution_q1": -0.6123746841767425,
+  "permutation_distribution_q2.5": -0.5219001510529939,
+  "permutation_distribution_q5": -0.4419371726998558,
+  "permutation_distribution_q50": -0.004625337211973701,
+  "permutation_distribution_q95": 0.4412151950965096,
+  "permutation_distribution_q97.5": 0.5113550552799357,
+  "permutation_distribution_q99": 0.5917013843788393,
+  "interpretation": "Observed r=-0.8552 is more extreme than 99.99% of permutations under the null of no association. Empirical two-sided p = 0.0001. Parametric p = 0.000048 is comparable to the empirical p."
+}

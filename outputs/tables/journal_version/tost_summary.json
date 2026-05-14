@@ -1,0 +1,70 @@
+{
+  "reference_exclusion_moderation": {
+    "model": "M3 CWED random-slopes",
+    "beta": -0.0591840310545897,
+    "note": "The symmetric account predicts solidarity-side moderation of comparable magnitude. SESOI choices test against |\u03b2| of 0.06 (slightly above exclusion-side), 0.05 (matched), and 0.03 (half)."
+  },
+  "ess_model5_liberal": {
+    "beta": 0.0133140749447569,
+    "se": 0.019216238884328,
+    "n": 124075,
+    "tost_results_by_sesoi": {
+      "0.06": {
+        "equivalent_at_alpha_0.05": true,
+        "p_tost": 0.007559753575775006,
+        "ci90": [
+          -0.01829663801996266,
+          0.04492478790947646
+        ]
+      },
+      "0.05": {
+        "equivalent_at_alpha_0.05": true,
+        "p_tost": 0.028123913784039747,
+        "ci90": [
+          -0.01829663801996266,
+          0.04492478790947646
+        ]
+      },
+      "0.03": {
+        "equivalent_at_alpha_0.05": false,
+        "p_tost": 0.19260844172988612,
+        "ci90": [
+          -0.01829663801996266,
+          0.04492478790947646
+        ]
+      }
+    }
+  },
+  "issp_2006_rti_cwed": {
+    "beta": 0.01,
+    "se": 0.016,
+    "n": 10216,
+    "tost_results_by_sesoi": {
+      "0.06": {
+        "equivalent_at_alpha_0.05": true,
+        "p_tost": 0.0008890252991084338,
+        "ci90": [
+          -0.01632,
+          0.03632
+        ]
+      },
+      "0.05": {
+        "equivalent_at_alpha_0.05": true,
+        "p_tost": 0.006209665325776132,
+        "ci90": [
+          -0.01632,
+          0.03632
+        ]
+      },
+      "0.03": {
+        "equivalent_at_alpha_0.05": false,
+        "p_tost": 0.1056497736668553,
+        "ci90": [
+          -0.01632,
+          0.03632
+        ]
+      }
+    }
+  },
+  "headline_interpretation": "ESS Model 5 (\u03b2=0.0133, SE=0.0192, N=124,075): TOST rejects the symmetric prediction at SESOI=0.06. ISSP (\u03b2=0.010, SE=0.016, N=10,216): TOST rejects at SESOI=0.06. "
+}

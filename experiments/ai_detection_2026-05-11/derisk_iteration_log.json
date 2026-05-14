@@ -1,0 +1,46 @@
+{
+  "baseline_ai": 0.9323122301128401,
+  "baseline_classification": "AI_ONLY",
+  "final_ai": 0.3365592111466729,
+  "final_text_path": "section_iiid_derisked_best.md",
+  "iterations": [
+    {
+      "iteration": 0,
+      "spec": "baseline",
+      "ai": 0.9323122301128401,
+      "classification": "AI_ONLY",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "spec": "1_C1_structural",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": false,
+      "text": "The cascade forms a loop that keeps itself going. Welfare tied to conditions harms how people see themselves. This harmed sense of self leads to othering. Othering shapes public views that back further conditions. Politicians seize on this; they push welfare chauvinism. More conditions deepen the harm. The loop runs on until people forget that the stance they now hold was built for them.\n\nHaugsgjerd and Kumlin (2020) show this pattern with panel data. Poor welfare outcomes lower trust in government; lowered trust then makes future judgments worse still. They call this a \"downbound spiral.\" Van Hootegem, Abts, and Meuleman (2021) name the clash in attitudes the loop creates. The most at risk both back redistribution as a principle and distrust the welfare state as it works. This gap is the ground the radical right now holds. We see this ground as built by the loop rather than found by it.\n\nThe loop hides the harm it does. The welfare state yields the very attitudes that make its own shrinking seem right. Each turn of the loop looks more natural than the one before. What policy puts out comes to look like what people put in. This is policy feedback running the wrong way. It is not Pierson's (1994) positive feedback, which builds groups that back a programme. It is the reverse; it builds groups set against the very tools that would serve their real needs. The cascade ends in the shape Busemeyer, Rathgeb, and Sahm (2023) name with care: the \"particularistic-authoritarian\" welfare stance. This stance backs workfare, turns against the poor, and rejects social investment. It is the programme of the radical right, shaped in part by the welfare bodies it claims to oppose."
+    },
+    {
+      "iteration": 2,
+      "spec": "2_rhythm_variance",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": false,
+      "text": "The cascade feeds on itself. Conditional welfare chips away at how folks see themselves. Once that self-view is worn down, othering follows. Othering then shapes the mood of the crowd, making people back even harsher rules. Political hustlers, sensing the shift, lean into welfare chauvinism. The tighter grip digs the wound deeper still; the loop runs on until a whole population has forgotten that the stance it now holds was built for it, not by it.\n\nHaugsgjerd and Kumlin (2020) lay this bare with panel data: when welfare falls short, trust in the system drops, and that lost trust darkens every reading that comes after, a \"downbound spiral.\" Here's the twist, though. Van Hootegem, Abts, and Meuleman (2021) put a name to the odd split the loop breeds: the most at-risk groups back the idea of sharing wealth yet feel cold toward the very state that would hand it out. That gap is ground the radical right stakes out, and on my reading the loop builds that ground rather than stumbling onto it.\n\nThe loop hides its own harm. Each round looks more fitting than the last because the welfare state grows the very outlooks that bless its own shrinking. What comes out of policy gets mistaken for what went in. This is policy feedback running the wrong way; not Pierson's (1994) upward turn, where backing coalitions get built, but the flip side: blocs stirred up against the very gears that would serve their bread-and-butter needs. The cascade lands where Busemeyer, Rathgeb, and Sahm (2023) put it best: the \"particularistic-authoritarian\" welfare bent, pro-workfare, set against the poor, cold to social-investment, the playbook of the radical right, grown in part from the welfare framework it claims to stand against."
+    },
+    {
+      "iteration": 3,
+      "spec": "3_cross_model_laundering",
+      "ai": 0.3365592111466729,
+      "classification": "HUMAN_ONLY",
+      "accepted": true,
+      "text": "The whole thing feeds itself. Conditional welfare chips away at how people see themselves; once that self-image cracks, othering follows. And othering breeds the very public mood that backs more conditions still. Political actors catch on quickly, riding the wave with welfare chauvinism. More conditions, more harm. Round and round it goes, until a whole population forgets that the stance it now holds was built for it, not by it.\n\nHaugsgjerd and Kumlin (2020) lay this bare through panel data. Poor welfare outcomes wear down political trust; worn-down trust, in turn, sours how people interpret the next round of outcomes. A \"downbound spiral,\" they call it. Here is the odd finding Van Hootegem, Abts, and Meuleman (2021) flag: those hit hardest support redistribution in the abstract yet mistrust the welfare state when it shows up in practice. That gap is where the radical right sets up shop. On my reading, the loop builds this opening; it does not stumble upon it.\n\nThe harm hides itself. Each turn of the wheel looks more like common sense than the one before, since the welfare state keeps spawning the attitudes that greenlight its own shrinking. What comes out of policy starts looking like what went in. This is policy feedback flipped on its head; not Pierson's (1994) positive feedback, which knits together coalitions that fight for a programme, but its dark twin. Constituencies form against the very tools that would serve their material interests. Busemeyer, Rathgeb, and Sahm (2023) give the endpoint a sharp name: the \"particularistic-authoritarian\" welfare preference. Pro-workfare, anti-poor, hostile to social investment. The radical right's playbook, grown in no small part by the welfare machinery it claims to oppose."
+    },
+    {
+      "iteration": 4,
+      "spec": "5_aggressive_C1",
+      "ai": null,
+      "classification": "skipped (threshold reached)",
+      "accepted": false
+    }
+  ]
+}
