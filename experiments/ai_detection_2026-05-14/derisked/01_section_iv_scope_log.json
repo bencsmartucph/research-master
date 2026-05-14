@@ -1,0 +1,45 @@
+{
+  "name": "01_section_iv_scope",
+  "baseline_ai": 1,
+  "baseline_classification": "AI_ONLY",
+  "final_ai": 0.019661728627299997,
+  "iterations": [
+    {
+      "iteration": 0,
+      "spec": "baseline",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "spec": "1_C1_structural",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": false,
+      "text": "The lack of harm is needful but not enough for fellowship. Broad programmes build shared trust (Rothstein 2001). They also yield open stories of worth (Larsen 2008); wide reaching provision gives standing beyond mere bodily safety (H\u00e4usermann 2024). Nordic welfare states show steadily lower backing for populist movements even under the strains of open world markets (Norris and Inglehart 2019). All of this is true. On the reading we offer here, these findings mark the *floor* that welfare sets for worth; they do not show the upward lift the shielding model takes for granted. The political work that turns baseline worth into living fellowship (Bornschier, Haffert, and H\u00e4usermann 2024; Jeffrey 2020) lies beyond our scope. The role of welfare design in that building is enabling, not making.\n\nWelfare bodies do not work on a blank moral ground. Pelc's (2025) finding bears note here. The Protestant work ethic foretells unwillingness to offset loss; this holds true apart from any gain at stake. Such stances thus seem to come before any meeting with the state. The welfare state moulds the frames through which we think about right and wrong; yet it also takes them over from what came before.\n\nThe claim about loss shyness in \u00a7III.E draws by likeness from the study of how folk truly choose. The backing fieldwork (Kurer and van Staalduinen 2022; H\u00e4usermann 2024) fits our claim but does not test it head on. The test within the same person over time belongs to the forthcoming work with birth and tax rolls. Our finding across persons at one time is large, steady, and foretold by the framework; it stays open to question in a way that the uneven framing itself owns."
+    },
+    {
+      "iteration": 2,
+      "spec": "2_rhythm_variance",
+      "ai": 0.019661728627299997,
+      "classification": "HUMAN_ONLY",
+      "accepted": true,
+      "text": "The lack of harm is needed, but it is not enough for fellow-feeling. Universal schemes build shared trust (Rothstein 2001) and bring about open, welcoming tales of who ought to get help (Larsen 2008); wide universal provision gives something beyond mere material safety, a kind of being-seen (H\u00e4usermann 2024); and the Nordic welfare states keep showing lower backing for populist movements even as worldwide market shifts press down on them (Norris and Inglehart 2019). All of this holds true. Yet on the lopsided reading, what these findings pick up is the *floor*, the bare dignity that welfare keeps in place, not the upward push the buffering model takes for granted. The political work that turns baseline worth into something livelier, real solidarity (Bornschier, Haffert, and H\u00e4usermann 2024; Jeffrey 2020), lies beyond what I tackle here. Welfare design lets that work happen; it does not itself do the doing.\n\nWelfare bodies do not land on a blank moral sheet, either. Pelc's (2025) finding that a Protestant work ethic foretells pushback against payouts, free of material drives, hints at stances that come before any touch with the state. The welfare state moulds moral frames. It also steps into ones already there.\n\nNow, the loss-wariness claim in \u00a7III.E borrows from behavioural thought by way of likeness. Backing fieldwork (Kurer and van Staalduinen 2022; H\u00e4usermann 2024) fits the claim well; still, it does not put the claim to a straight test. The within-person check belongs to the registry-linked follow-up. The cross-section finding here is big, steady, and foretold by the framework; it stays open to question in a way the lopsided framing already owns up to."
+    },
+    {
+      "iteration": 3,
+      "spec": "3_cross_model_laundering",
+      "ai": null,
+      "classification": "skipped (threshold reached)",
+      "accepted": false
+    },
+    {
+      "iteration": 4,
+      "spec": "5_aggressive_C1",
+      "ai": null,
+      "classification": "skipped (threshold reached)",
+      "accepted": false
+    }
+  ]
+}

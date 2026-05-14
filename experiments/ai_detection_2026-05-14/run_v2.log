@@ -1,0 +1,82 @@
+
+============================================================
+01_section_iv_scope
+============================================================
+BASELINE: AI=1.0000 (AI_ONLY)
+
+--- Iter 1: 1_C1_protected ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED
+
+--- Iter 2: 2_rhythm_protected ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED
+
+--- Iter 3: 3_aggressive_protected ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED
+
+FINAL 01_section_iv_scope: 1.0000 -> 1.0000
+
+============================================================
+02_section_iv_two_channel
+============================================================
+BASELINE: AI=0.9567 (AI_ONLY)
+
+--- Iter 1: 1_C1_protected ---
+  Candidate: AI=0.8682 (AI_ONLY)
+  ACCEPTED (0.9567 -> 0.8682)
+
+--- Iter 2: 2_rhythm_protected ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED
+
+--- Iter 3: 3_aggressive_protected ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED
+
+FINAL 02_section_iv_two_channel: 0.9567 -> 0.8682
+
+============================================================
+03_section_v_f_tost
+============================================================
+BASELINE: AI=1.0000 (AI_ONLY)
+
+--- Iter 1: 1_C1_protected ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED
+
+--- Iter 2: 2_rhythm_protected ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED
+
+--- Iter 3: 3_aggressive_protected ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED
+
+FINAL 03_section_v_f_tost: 1.0000 -> 1.0000
+
+============================================================
+06_section_i_central_claim
+============================================================
+BASELINE: AI=1.0000 (AI_ONLY)
+
+--- Iter 1: 1_C1_protected ---
+  Candidate: AI=0.8889 (AI_ONLY)
+  ACCEPTED (1.0000 -> 0.8889)
+
+--- Iter 2: 2_rhythm_protected ---
+  Candidate: AI=0.8976 (AI_ONLY)
+  REJECTED
+
+--- Iter 3: 3_aggressive_protected ---
+  Candidate: AI=0.8080 (AI_ONLY)
+  ACCEPTED (0.8889 -> 0.8080)
+
+FINAL 06_section_i_central_claim: 1.0000 -> 0.8080
+
+SUMMARY:
+  01_section_iv_scope.md: 1.0000 -> 1.0000
+  02_section_iv_two_channel.md: 0.9567 -> 0.8682
+  03_section_v_f_tost.md: 1.0000 -> 1.0000
+  06_section_i_central_claim.md: 1.0000 -> 0.8080

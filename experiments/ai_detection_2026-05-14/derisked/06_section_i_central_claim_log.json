@@ -1,0 +1,45 @@
+{
+  "name": "06_section_i_central_claim",
+  "baseline_ai": 0.9999999999999999,
+  "baseline_classification": "AI_ONLY",
+  "final_ai": 0.1945425706486409,
+  "iterations": [
+    {
+      "iteration": 0,
+      "spec": "baseline",
+      "ai": 0.9999999999999999,
+      "classification": "AI_ONLY",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "spec": "1_C1_structural",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": false,
+      "text": "This yields a stronger claim than the older, balanced account it replaces. We hold that the political effects of welfare design are not balanced. Welfare bodies can fail in a sharp, building way; they harm how weak workers see themselves and set off a chain of shifts in who one is (Bonomi, Gennaioli & Tabellini 2021), wrong beliefs about cause (Gallego & Kurer 2022), and the urge to push others away (Wagner 2022; Patrick 2016). They cannot, through the same workings, bring about good. Indeed, the spread in how everyday workers turn upheaval into shutting others out holds firm across every test in our data; the spread in how those same workers turn the same upheaval into shared backing for the weak is small, not meaningful, and not shaped in any clear way by welfare setting. Welfare that upholds worth clears the ground for shared bonds, but it does not, on its own, bring them forth.\n\nThe core claim of the paper is thus twofold. First, welfare bodies shape how workers turn their openness to machine takeover into attitudes that shut others out; they do so through their worth in freeing workers from the market rather than through how much they spend. Second, this shaping is not balanced; it works steadily toward harm but not, in our data, in any clear way toward healing. We can test both halves. The second is the harder one to uphold, and most of \u00a7III is given to defending it."
+    },
+    {
+      "iteration": 2,
+      "spec": "2_rhythm_variance",
+      "ai": 0.1945425706486409,
+      "classification": "HUMAN_ONLY",
+      "accepted": true,
+      "text": "This yields a stronger claim, frankly, than the neat symmetrical story it sets aside. The political workings of welfare design, I would argue, are lopsided. Welfare setups can fail politically in a step-by-step, building way; they wound the self-understanding of workers at risk and set off a chain of identity switching (Bonomi, Gennaioli & Tabellini 2021), misreading of causes (Gallego & Kurer 2022), and defensive othering (Wagner 2022; Patrick 2016). They cannot, through the same workings in reverse, win. The spread in how everyday workers turn hardship into shutting others out holds steady across every model this paper runs; meanwhile, the spread in how those same workers turn the same hardship into fellow-feeling for redistribution is slight, not meaningful, and shows no clear link to welfare setting. Dignity-keeping welfare clears ground for solidarity. It does not, on its own, bring solidarity about.\n\nThe heart of the paper's claim, then, is twofold. First, welfare setups shape how automation exposure becomes exclusionary feeling through their decommodifying character rather than their spending height. Second, this shaping is one-sided; it works steadily toward harm but not, in the findings built here, noticeably toward mending. Both halves can be tested. The second is the tougher one to hold up, and most of \u00a7III is given over to defending it."
+    },
+    {
+      "iteration": 3,
+      "spec": "3_cross_model_laundering",
+      "ai": null,
+      "classification": "skipped (threshold reached)",
+      "accepted": false
+    },
+    {
+      "iteration": 4,
+      "spec": "5_aggressive_C1",
+      "ai": null,
+      "classification": "skipped (threshold reached)",
+      "accepted": false
+    }
+  ]
+}

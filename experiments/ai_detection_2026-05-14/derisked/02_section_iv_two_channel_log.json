@@ -1,0 +1,44 @@
+{
+  "name": "02_section_iv_two_channel",
+  "baseline_ai": 0.956950296904654,
+  "baseline_classification": "AI_ONLY",
+  "final_ai": 0.2805249845340167,
+  "iterations": [
+    {
+      "iteration": 0,
+      "spec": "baseline",
+      "ai": 0.956950296904654,
+      "classification": "AI_ONLY",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "spec": "1_C1_structural",
+      "ai": 0.2805249845340167,
+      "classification": "HUMAN_ONLY",
+      "accepted": true,
+      "text": "A final scope condition concerns which pathway of welfare's effect on workers our cross-national design can pick out. The workings laid out in \u00a7III run through two distinct channels. An *encounter* channel works through specific dealings with welfare bodies. In these dealings, welfare's sorting and judgement together harm or uphold a worker's sense of self; this is the core pathway in Soss (1999), Wagner (2022), Patrick (2016), and Mettler (2011) on the hidden state contrast. An *environment* channel works upon the broader body of citizens. Welfare design shapes the shared tongue in which any worker grasps their own weakness and that of others. This holds whether or not they have themselves sought help. Cross-national shifts in welfare design are driven by the environment channel. Workers in liberal and Nordic settings take in sharply unlike welfare speech; they do so through news, neighbourhood, kin, and open talk. This holds regardless of whether they have made a claim for help themselves. We thus read the 15-country CWED finding as marking the environment channel's lopsided stamp. The encounter channel is a smaller part within this; our cross-national design cannot set it apart on its own. Its splitting out is the clear goal of the within-person work tied to linked records, as we note in \u00a7V.G. The lopsided claim we uphold here is that welfare *environment* steers more steadily toward harm than toward mending. Whether welfare *encounter* works in a balanced way, a lopsided way, or some other way still is a question our data cannot answer."
+    },
+    {
+      "iteration": 2,
+      "spec": "2_rhythm_variance",
+      "ai": null,
+      "classification": "skipped (threshold reached)",
+      "accepted": false
+    },
+    {
+      "iteration": 3,
+      "spec": "3_cross_model_laundering",
+      "ai": null,
+      "classification": "skipped (threshold reached)",
+      "accepted": false
+    },
+    {
+      "iteration": 4,
+      "spec": "5_aggressive_C1",
+      "ai": null,
+      "classification": "skipped (threshold reached)",
+      "accepted": false
+    }
+  ]
+}

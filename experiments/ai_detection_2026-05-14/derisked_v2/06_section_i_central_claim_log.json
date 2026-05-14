@@ -1,0 +1,39 @@
+{
+  "name": "06_section_i_central_claim",
+  "baseline_ai": 1,
+  "baseline_classification": "AI_ONLY",
+  "final_ai": 0.8080255918337086,
+  "iterations": [
+    {
+      "iteration": 0,
+      "spec": "baseline",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "spec": "1_C1_protected",
+      "ai": 0.8888526432901219,
+      "classification": "AI_ONLY",
+      "accepted": true,
+      "text": "This yields a theoretical claim more forceful than the symmetric compensatory account it supersedes. We argue that the political effects of welfare design are asymmetric. Welfare institutions can fail politically through a specific, cumulative process. They damage the self-concept of vulnerable workers. This triggers a cascade of identity switching (Bonomi, Gennaioli & Tabellini 2021), misattribution (Gallego & Kurer 2022), and defensive othering (Wagner 2022; Patrick 2016). They cannot succeed through symmetric operation. Variation in how routine workers convert disruption into exclusion proves robust across every specification in our data; variation in how those same workers convert identical disruption into redistributive solidarity remains small, non-significant, and not detectably moderated by welfare context. Dignity-preserving welfare clears ground for solidarity. It does not, by itself, produce solidarity.\n\nThe paper's central claim is twofold. First, welfare institutions moderate the conversion of automation exposure into exclusionary attitudes through their decommodifying quality; spending level does not drive this moderation. Second, this moderation is asymmetric. It operates reliably toward damage. It does not, on the data we develop here, operate detectably toward repair. Both halves permit testing. The second proves harder to sustain. Most of \u00a7III is devoted to defending it."
+    },
+    {
+      "iteration": 2,
+      "spec": "2_rhythm_protected",
+      "ai": 0.8976028431022265,
+      "classification": "AI_ONLY",
+      "accepted": false,
+      "text": "This yields a theoretical claim more forceful than the symmetric compensatory account it supersedes. The political effects of welfare design are asymmetric; we argue this directly. Welfare institutions can fail politically through a specific, cumulative process. They damage the self-concept of vulnerable workers. This damage triggers a cascade of identity switching (Bonomi, Gennaioli & Tabellini 2021), misattribution (Gallego & Kurer 2022), and defensive othering (Wagner 2022; Patrick 2016). Yet they cannot succeed through symmetric operation. Variation in how routine workers convert disruption into exclusion proves robust across every specification in our data. Variation in how those same workers convert identical disruption into redistributive solidarity remains small, non-significant, and not detectably moderated by welfare context. Dignity-preserving welfare clears ground for solidarity. It does not, by itself, produce solidarity.\n\nThe paper's central claim is twofold. First, welfare institutions moderate the conversion of automation exposure into exclusionary attitudes through their decommodifying quality; spending level does not drive this moderation. Second, and this matters considerably, this moderation is asymmetric. It operates reliably toward damage. On the data we develop here, it does not operate detectably toward repair. Both halves permit testing. The second proves harder to sustain; indeed, most of \u00a7III is devoted to defending it."
+    },
+    {
+      "iteration": 3,
+      "spec": "3_aggressive_protected",
+      "ai": 0.8080255918337086,
+      "classification": "AI_ONLY",
+      "accepted": true,
+      "text": "This produces a theoretical claim sharper than the symmetric compensatory account it replaces. More forceful; less forgiving. We argue that the political effects of welfare design are asymmetric. Welfare institutions can fail politically. They do so through a specific, cumulative process. They damage the self-concept of vulnerable workers; this triggers a damage cascade of identity switching (Bonomi, Gennaioli & Tabellini 2021), misattribution (Gallego & Kurer 2022), and defensive othering (Wagner 2022; Patrick 2016). They cannot succeed through symmetric operation. Not even close. Variation in how routine workers convert disruption into exclusion proves robust across every specification in our data. Variation in how those same workers convert identical disruption into redistributive solidarity? Small. Non-significant. Not detectably moderated by welfare context. Dignity-preserving welfare clears ground for solidarity; it does not, by itself, produce solidarity.\n\nOur central claim is twofold. First: welfare institutions moderate the conversion of automation exposure into exclusionary attitudes through their decommodifying quality; spending level does not drive this moderation. Second: this moderation is asymmetric. It operates reliably toward damage. Toward repair? On the data we develop here, not detectably. Both halves permit testing. We can evaluate each. The second proves harder to sustain; most of \u00a7III is devoted to defending it."
+    }
+  ]
+}

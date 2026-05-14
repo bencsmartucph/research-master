@@ -1,0 +1,39 @@
+{
+  "name": "02_section_iv_two_channel",
+  "baseline_ai": 0.9567206797879406,
+  "baseline_classification": "AI_ONLY",
+  "final_ai": 0.8682059747151517,
+  "iterations": [
+    {
+      "iteration": 0,
+      "spec": "baseline",
+      "ai": 0.9567206797879406,
+      "classification": "AI_ONLY",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "spec": "1_C1_protected",
+      "ai": 0.8682059747151517,
+      "classification": "AI_ONLY",
+      "accepted": true,
+      "text": "A final scope condition involves which channel of welfare-institutional effect our cross-national design can detect. The mechanism from \u00a7III operates through two distinct pathways. An encounter channel runs through specific institutional interactions. Welfare's allocation and judgement together damage or preserve a worker's self-concept; this is the canonical mechanism in Soss (1999), Wagner (2022), Patrick (2016), and Mettler (2011) on the submerged state contrast. An environment channel operates on the broader polity. Welfare design shapes the political vocabulary in which any worker understands their own vulnerability. This holds whether or not they have encounter experience. It also shapes how they perceive the vulnerability of others. Cross-national variation in welfare design is dominated by the environment channel. Liberal regime and Nordic regime workers absorb sharply different welfare vocabularies. These come through media, neighbourhood, family, and public discourse. Personal benefit claims are not required for this absorption. We therefore read the 15-country CWED finding as identifying the environment channel's asymmetric signature. The encounter channel is a sub-component our cross-national design cannot separately identify. Its separation is the explicit object of the within-individual register-linked thesis follow-up indicated in \u00a7V.G. The asymmetric claim we sustain here is that welfare environment runs more reliably toward damage than toward repair. Whether welfare encounter operates symmetrically, asymmetrically, or differently still remains open; the present data cannot answer this question."
+    },
+    {
+      "iteration": 2,
+      "spec": "2_rhythm_protected",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": false,
+      "text": "A final scope condition concerns which channel of welfare-institutional effect our cross-national design can actually detect. The mechanism from \u00a7III operates through two distinct pathways. An encounter channel runs through specific institutional interactions. Welfare's allocation and judgement together damage or preserve a worker's self-concept; this is the canonical mechanism in Soss (1999), Wagner (2022), Patrick (2016), and Mettler (2011) on the submerged state contrast. Then there is an environment channel, which operates on the broader polity. Welfare design shapes the political vocabulary in which any worker understands their own vulnerability. This holds whether or not they have encounter experience. It shapes how they perceive the vulnerability of others, too. Cross-national variation in welfare design is dominated by the environment channel. Consider: Liberal regime and Nordic regime workers absorb sharply different welfare vocabularies, and these filter through media, neighbourhood, family, and public discourse rather than requiring personal benefit claims for absorption. We read the 15-country CWED finding as identifying the environment channel's asymmetric signature. The encounter channel is a sub-component our cross-national design cannot separately identify. Its separation forms the explicit object of the within-individual register-linked thesis follow-up indicated in \u00a7V.G. The asymmetric claim we sustain here is narrow; welfare environment runs more reliably toward damage than toward repair. Whether welfare encounter operates symmetrically, asymmetrically, or differently still remains open. The present data cannot answer this question."
+    },
+    {
+      "iteration": 3,
+      "spec": "3_aggressive_protected",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": false,
+      "text": "A final scope condition concerns which channel of welfare-institutional effect our cross-national design can actually detect. The mechanism from \u00a7III operates through two distinct pathways; we must separate them clearly.\n\nAn encounter channel runs through specific institutional interactions. Brief encounters. Judgements rendered. Welfare's allocation and judgement together damage or preserve a worker's self-concept; this is the canonical mechanism in Soss (1999), Wagner (2022), Patrick (2016), and Mettler (2011) on the submerged state contrast. Then there is an environment channel. It operates on the broader polity. Welfare design shapes the political vocabulary in which any worker understands their own vulnerability; this holds whether or not they have encounter experience. It also shapes how they perceive the vulnerability of others.\n\nCross-national variation in welfare design is dominated by the environment channel. Liberal regime and Nordic regime workers absorb sharply different welfare vocabularies. Media. Neighbourhood. Family. Public discourse. These transmit the signal; personal benefit claims are not required for this absorption. We therefore read the 15-country CWED finding as identifying the environment channel's asymmetric signature. The encounter channel is a sub-component our cross-national design cannot separately identify.\n\nIts separation is the explicit object of the within-individual register-linked thesis follow-up indicated in \u00a7V.G.\n\nThe asymmetric claim we sustain here is that welfare environment runs more reliably toward damage than toward repair. Whether welfare encounter operates symmetrically, asymmetrically, or differently still; this remains open. The present data cannot answer this question. We acknowledge the boundary."
+    }
+  ]
+}

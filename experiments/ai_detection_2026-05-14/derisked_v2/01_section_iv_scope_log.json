@@ -1,0 +1,39 @@
+{
+  "name": "01_section_iv_scope",
+  "baseline_ai": 1,
+  "baseline_classification": "AI_ONLY",
+  "final_ai": 1,
+  "iterations": [
+    {
+      "iteration": 0,
+      "spec": "baseline",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "spec": "1_C1_protected",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": false,
+      "text": "The absence of damage is necessary yet not sufficient for solidarity. Universal programmes build social trust (Rothstein 2001); they also produce inclusive deservingness narratives (Larsen 2008). Extensive universal provision conveys recognition beyond material security (H\u00e4usermann 2024). Nordic welfare states show consistently lower populist support despite globalisation pressures (Norris and Inglehart 2019). These findings are real. On the asymmetric reading, they record the *baseline* dignity that welfare preserves. They do not record the active *uplift* the buffering model assumes. The political work converting baseline dignity into active solidarity (Bornschier, Haffert, and H\u00e4usermann 2024; Jeffrey 2020) lies outside our scope here. Welfare design's role in that construction is permissive, not productive.\n\nWelfare institutions also do not operate on a blank moral slate. Pelc's (2025) finding is instructive. Protestant work ethic predicts compensation resistance independently of material incentives. This suggests some attitudes exist prior to institutional contact. The welfare state shapes moral frameworks; it also inherits them.\n\nThe loss aversion claim in \u00a7III.E borrows from behavioural economics by analogy. Supporting empirical work (Kurer and van Staalduinen 2022; H\u00e4usermann 2024) is consistent with the claim. It does not test the claim directly. The within-individual test belongs to the registry-based follow-up we propose. Our cross-sectional finding here is large, robust, and predicted by the theory. It remains provisional in a way the asymmetric framing itself acknowledges."
+    },
+    {
+      "iteration": 2,
+      "spec": "2_rhythm_protected",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": false,
+      "text": "The absence of damage is necessary but not sufficient for solidarity. This point matters. Universal programmes build social trust (Rothstein 2001) and produce inclusive deservingness narratives (Larsen 2008). Extensive universal provision conveys recognition beyond material security (H\u00e4usermann 2024). Nordic welfare states show consistently lower populist support despite globalisation pressures (Norris and Inglehart 2019). All real. On the asymmetric reading, what these findings record is the *baseline* dignity that welfare preserves; they do not capture the active *uplift* the buffering model assumes. The political work converting baseline dignity into active solidarity (Bornschier, Haffert, and H\u00e4usermann 2024; Jeffrey 2020) lies outside this paper's scope. Welfare design's role in that construction is permissive, not productive.\n\nWelfare institutions also do not operate on a blank moral slate. They arrive late. Pelc's (2025) finding that Protestant work ethic predicts compensation resistance independently of material incentives suggests some attitudes exist prior to institutional contact; citizens carry moral commitments into the welfare encounter, not only away from it. The welfare state shapes moral frameworks, but it also inherits them.\n\nThe loss aversion claim in \u00a7III.E borrows from behavioural economics by analogy. This borrowing has limits. Supporting empirical work (Kurer and van Staalduinen 2022; H\u00e4usermann 2024) is consistent with the claim but does not test it directly. The within-individual test belongs to the registry-based follow-up, where register-linked data permit cleaner causal identification. The cross-sectional finding here is large, robust, and predicted by the theory. It remains provisional in a way the asymmetric framing itself acknowledges."
+    },
+    {
+      "iteration": 3,
+      "spec": "3_aggressive_protected",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": false,
+      "text": "Absence of damage is necessary; but it is not sufficient for solidarity. Universal programmes build social trust (Rothstein 2001). They produce inclusive deservingness narratives (Larsen 2008). Extensive universal provision conveys recognition beyond material security (H\u00e4usermann 2024); Nordic regime welfare states show consistently lower populist support despite globalisation pressures (Norris and Inglehart 2019). All real. Yet on the asymmetric reading, what these findings record is the baseline. The dignity-preserving floor. Not the active uplift the buffering model assumes. We must distinguish here. The political work that converts baseline dignity into active solidarity (Bornschier, Haffert, and H\u00e4usermann 2024; Jeffrey 2020) falls outside our scope; welfare design's role in that construction is permissive, not productive.\n\nWe should note something else. Welfare institutions do not operate on a blank moral slate. Pelc's (2025) finding that Protestant work ethic predicts compensation resistance independently of material incentives suggests certain attitudes exist prior to institutional contact. Some attitudes predate the welfare encounter entirely. The welfare state shapes moral frameworks; it also inherits them. We cannot ignore this temporal layering.\n\nOne further caveat. The loss aversion claim in \u00a7III.E borrows from behavioural economics by analogy. Suggestive, not definitive. Supporting empirical work (Kurer and van Staalduinen 2022; H\u00e4usermann 2024) is consistent with our claim but does not test it directly. The within-individual test belongs to the register-linked follow-up we propose. Our cross-sectional finding here is large; it is robust; it aligns with theoretical prediction. Still, it remains provisional. The asymmetric framing itself acknowledges this limitation."
+    }
+  ]
+}

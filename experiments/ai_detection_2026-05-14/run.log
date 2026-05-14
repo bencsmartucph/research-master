@@ -1,0 +1,119 @@
+[WARN] google.generativeai not installed; cross-model iteration will fall back to second Opus pass
+
+============================================================
+01_section_iv_scope
+============================================================
+BASELINE: AI=1.0000 (AI_ONLY)
+
+--- Iter 1: 1_C1_structural ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED (no improvement)
+
+--- Iter 2: 2_rhythm_variance ---
+  Candidate: AI=0.0197 (HUMAN_ONLY)
+  ACCEPTED (improvement 1.0000 -> 0.0197)
+Iter 3 3_cross_model_laundering: skipped (already below threshold)
+Iter 4 5_aggressive_C1: skipped (already below threshold)
+
+FINAL 01_section_iv_scope: baseline 1.0000 -> best 0.0197
+
+============================================================
+02_section_iv_two_channel
+============================================================
+BASELINE: AI=0.9570 (AI_ONLY)
+
+--- Iter 1: 1_C1_structural ---
+  Candidate: AI=0.2805 (HUMAN_ONLY)
+  ACCEPTED (improvement 0.9570 -> 0.2805)
+Iter 2 2_rhythm_variance: skipped (already below threshold)
+Iter 3 3_cross_model_laundering: skipped (already below threshold)
+Iter 4 5_aggressive_C1: skipped (already below threshold)
+
+FINAL 02_section_iv_two_channel: baseline 0.9570 -> best 0.2805
+
+============================================================
+03_section_v_f_tost
+============================================================
+BASELINE: AI=1.0000 (AI_ONLY)
+
+--- Iter 1: 1_C1_structural ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED (no improvement)
+
+--- Iter 2: 2_rhythm_variance ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED (no improvement)
+
+--- Iter 3: 3_cross_model_laundering ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED (no improvement)
+
+--- Iter 4: 5_aggressive_C1 ---
+  Candidate: AI=0.1982 (HUMAN_ONLY)
+  ACCEPTED (improvement 1.0000 -> 0.1982)
+
+FINAL 03_section_v_f_tost: baseline 1.0000 -> best 0.1982
+
+============================================================
+04_section_iii_d_recursive
+============================================================
+BASELINE: AI=0.9327 (AI_ONLY)
+
+--- Iter 1: 1_C1_structural ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED (no improvement)
+
+--- Iter 2: 2_rhythm_variance ---
+  Candidate: AI=0.7118 (AI_ONLY)
+  ACCEPTED (improvement 0.9327 -> 0.7118)
+
+--- Iter 3: 3_cross_model_laundering ---
+  Candidate: AI=0.0866 (HUMAN_ONLY)
+  ACCEPTED (improvement 0.7118 -> 0.0866)
+Iter 4 5_aggressive_C1: skipped (already below threshold)
+
+FINAL 04_section_iii_d_recursive: baseline 0.9327 -> best 0.0866
+
+============================================================
+05_section_v_d_multiverse_perm
+============================================================
+BASELINE: AI=1.0000 (AI_ONLY)
+
+--- Iter 1: 1_C1_structural ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED (no improvement)
+
+--- Iter 2: 2_rhythm_variance ---
+  Candidate: AI=0.4986 (HUMAN_ONLY)
+  ACCEPTED (improvement 1.0000 -> 0.4986)
+Iter 3 3_cross_model_laundering: skipped (already below threshold)
+Iter 4 5_aggressive_C1: skipped (already below threshold)
+
+FINAL 05_section_v_d_multiverse_perm: baseline 1.0000 -> best 0.4986
+
+============================================================
+06_section_i_central_claim
+============================================================
+BASELINE: AI=1.0000 (AI_ONLY)
+
+--- Iter 1: 1_C1_structural ---
+  Candidate: AI=1.0000 (AI_ONLY)
+  REJECTED (no improvement)
+
+--- Iter 2: 2_rhythm_variance ---
+  Candidate: AI=0.1945 (HUMAN_ONLY)
+  ACCEPTED (improvement 1.0000 -> 0.1945)
+Iter 3 3_cross_model_laundering: skipped (already below threshold)
+Iter 4 5_aggressive_C1: skipped (already below threshold)
+
+FINAL 06_section_i_central_claim: baseline 1.0000 -> best 0.1945
+
+============================================================
+SUMMARY
+============================================================
+  01_section_iv_scope.md: 1.0000 -> 0.0197 (delta -0.9803)
+  02_section_iv_two_channel.md: 0.9570 -> 0.2805 (delta -0.6764)
+  03_section_v_f_tost.md: 1.0000 -> 0.1982 (delta -0.8018)
+  04_section_iii_d_recursive.md: 0.9327 -> 0.0866 (delta -0.8462)
+  05_section_v_d_multiverse_perm.md: 1.0000 -> 0.4986 (delta -0.5014)
+  06_section_i_central_claim.md: 1.0000 -> 0.1945 (delta -0.8055)

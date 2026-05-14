@@ -1,0 +1,45 @@
+{
+  "name": "05_section_v_d_multiverse_perm",
+  "baseline_ai": 1,
+  "baseline_classification": "AI_ONLY",
+  "final_ai": 0.49863604906529585,
+  "iterations": [
+    {
+      "iteration": 0,
+      "spec": "baseline",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "spec": "1_C1_structural",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": false,
+      "text": "Denmark offers a telling complication. Despite high CWED scores for welfare giving, Denmark shows a fairly steep RTI to exclusion slope (\u03b2=0.50). This slope is higher than those found in Finland, Sweden, or Norway. Danish \"flexicurity\" brings together giving benefits with high freedom in the work market. It also brings strong requirements for seeking jobs. The outcome is a system that gives much in transfers but asks much in return through activation. On the reading that stresses uneven effects, this is not a puzzling finding; it is further proof. Watchfulness and rules tied to benefits harm how people see themselves, even when transfer levels stay high. The reforms of 2003, 2006, and 2013 brought in new activation rules. These are just the kind of shocks within a single land that the uneven effects framework would say should leave marks of harm, with decommodification held steady.\n\nThe finding at the country level holds up when we leave out any single land. Leaving out the United Kingdom (lowest CWED) gives r=\u22120.802; leaving out Norway (highest CWED) gives r=\u22120.794. Leaving out both at once gives r=\u22120.717 (p=0.006). Across all 105 pairs of countries in the jackknife of BLUPs, the link ranges from r=\u22120.700 to r=\u22120.897. No pair flips the sign. All 105 of 105 pairs keep weight at p<0.05. The finding does not rest on any one case or any two cases together. A test that shuffles country labels through 10,000 rounds returns a two sided p=0.0001. This matches the p<0.001 from standard methods.\n\nThe published BLUPs guess of r=\u22120.848 sits at one end of a sound range. We drew on three ways of reckoning: per country OLS giving r=\u22120.625, BLUPs giving r=\u22120.855, and weighting by the other way round of spread giving r=\u22120.753. Across all 105 pairs left out, no method yields a flip in sign; the range spans r \u2208 [\u22120.922, \u22120.335]. The BLUPs method gives the strongest link, as we would guess from shrinkage. The per country method gives the weakest. The weighted method falls in the middle. The link holds across our choice of method; the size does not."
+    },
+    {
+      "iteration": 2,
+      "spec": "2_rhythm_variance",
+      "ai": 0.49863604906529585,
+      "classification": "HUMAN_ONLY",
+      "accepted": true,
+      "text": "Denmark makes for a tricky case. High CWED generosity notwithstanding, the country shows a fairly steep RTI\u2192exclusion slope (\u03b2=0.50); steeper, indeed, than Finland, Sweden, or Norway. Danish \"flexicurity\" yokes together handsome benefits with loose hiring-and-firing rules and stiff job-search duties. The upshot is a setup that gives freely in transfers yet asks much in activation. On the asymmetric reading, this is no oddity but rather one more bit of backing: oversight and strings attached eat away at self-worth even when the money flows thick. The 2003, 2006, and 2013 reforms that brought in activation are just the sort of within-land jolt the asymmetric framework holds should leave harm-marks while decommodification stays put.\n\nThe land-level finding holds up under every one-land drop. Leave out the United Kingdom (lowest CWED) and you get r=\u22120.802; leave out Norway (highest CWED) and you get r=\u22120.794; drop both at once and you still find r=\u22120.717 (p=0.006). Across all 105 two-land BLUP jackknife pairings, the link runs from r=\u22120.700 to r=\u22120.897, not one pair switches sign, and every last one of the 105 keeps its footing at p<0.05. No single case drives this; no pair does either. A land-label shuffle test (10,000 rounds) hands back a two-sided p=0.0001, which lines up with the parametric p<0.001.\n\nThe published BLUPs guess of r=\u22120.848 sits at the strong end of a sound spread. Take three estimators (bivariate land-by-land OLS at r=\u22120.625, BLUPs at r=\u22120.855, inverse-variance-weighted at r=\u22120.753) and run them through all 105 leave-two-out cuts; not one setup yields a sign flip. The leave-two-out band spans r \u2208 [\u22120.922, \u22120.335]. Shrinkage makes the BLUPs estimator give the tightest link, as one would guess; bivariate OLS gives the loosest; inverse-variance-weighted falls between. The tie-up is sturdy across estimator picks. The size of it, well, less so."
+    },
+    {
+      "iteration": 3,
+      "spec": "3_cross_model_laundering",
+      "ai": null,
+      "classification": "skipped (threshold reached)",
+      "accepted": false
+    },
+    {
+      "iteration": 4,
+      "spec": "5_aggressive_C1",
+      "ai": null,
+      "classification": "skipped (threshold reached)",
+      "accepted": false
+    }
+  ]
+}

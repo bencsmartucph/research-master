@@ -1,0 +1,38 @@
+[
+  {
+    "name": "01_section_iv_scope.md",
+    "baseline": 1,
+    "final": 0.019661728627299997,
+    "delta": 0.9803382713727
+  },
+  {
+    "name": "02_section_iv_two_channel.md",
+    "baseline": 0.956950296904654,
+    "final": 0.2805249845340167,
+    "delta": 0.6764253123706374
+  },
+  {
+    "name": "03_section_v_f_tost.md",
+    "baseline": 1,
+    "final": 0.1982197105772222,
+    "delta": 0.8017802894227778
+  },
+  {
+    "name": "04_section_iii_d_recursive.md",
+    "baseline": 0.9327444658887658,
+    "final": 0.08658889629439535,
+    "delta": 0.8461555695943704
+  },
+  {
+    "name": "05_section_v_d_multiverse_perm.md",
+    "baseline": 1,
+    "final": 0.49863604906529585,
+    "delta": 0.5013639509347041
+  },
+  {
+    "name": "06_section_i_central_claim.md",
+    "baseline": 0.9999999999999999,
+    "final": 0.1945425706486409,
+    "delta": 0.805457429351359
+  }
+]

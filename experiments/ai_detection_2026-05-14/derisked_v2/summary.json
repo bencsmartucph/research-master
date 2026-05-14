@@ -1,0 +1,22 @@
+[
+  {
+    "name": "01_section_iv_scope.md",
+    "baseline": 1,
+    "final": 1
+  },
+  {
+    "name": "02_section_iv_two_channel.md",
+    "baseline": 0.9567206797879406,
+    "final": 0.8682059747151517
+  },
+  {
+    "name": "03_section_v_f_tost.md",
+    "baseline": 1,
+    "final": 1
+  },
+  {
+    "name": "06_section_i_central_claim.md",
+    "baseline": 1,
+    "final": 0.8080255918337086
+  }
+]

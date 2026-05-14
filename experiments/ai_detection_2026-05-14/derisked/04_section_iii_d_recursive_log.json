@@ -1,0 +1,46 @@
+{
+  "name": "04_section_iii_d_recursive",
+  "baseline_ai": 0.9327444658887658,
+  "baseline_classification": "AI_ONLY",
+  "final_ai": 0.08658889629439535,
+  "iterations": [
+    {
+      "iteration": 0,
+      "spec": "baseline",
+      "ai": 0.9327444658887658,
+      "classification": "AI_ONLY",
+      "accepted": true
+    },
+    {
+      "iteration": 1,
+      "spec": "1_C1_structural",
+      "ai": 1,
+      "classification": "AI_ONLY",
+      "accepted": false,
+      "text": "The loop feeds itself. Welfare that sets terms harms how people see themselves. This harmed sense of self breeds othering. Othering then shapes shared beliefs that call for yet more terms. Political actors answer with welfare chauvinism; stricter terms deepen the harm. The loop runs on until people forget that the stance they now hold was built for them.\n\nHaugsgjerd and Kumlin (2020) show this pattern with panel data. Poor welfare outcomes lower trust in the state. Lowered trust then darkens later judgments of welfare. They call this a \"downbound spiral.\" Van Hootegem, Abts, and Meuleman (2021) give a name to the clash in outlook that the loop yields. Those most at risk back sharing of wealth in the abstract. Yet they mistrust the welfare state in deed. We find here a gap; this gap is the ground the radical right now stands on. On our reading, the loop builds this ground rather than merely finding it.\n\nThe loop hides the harm it does. The welfare state breeds the very beliefs that make its own shrinking seem right. Each turn of the loop looks more fated than the last. What policy puts out comes to look like what people truly want. This is policy feedback running the wrong way. It is not Pierson's (1994) kind, where good feedback builds groups that back the system. It is the reverse: groups turned against the very workings that would meet their worldly needs. The loop ends where Busemeyer, Rathgeb, and Sahm (2023) say it does. They name the shape with care: the \"particularistic-authoritarian\" welfare stance. This stance backs workfare; it stands against the poor and against putting wealth into social growth. It is the programme of the radical right, brought forth in part by the welfare bodies it claims to fight."
+    },
+    {
+      "iteration": 2,
+      "spec": "2_rhythm_variance",
+      "ai": 0.711767685766957,
+      "classification": "AI_ONLY",
+      "accepted": true,
+      "text": "The cascade feeds itself. Conditional welfare harms how people see themselves. Harmed self-views breed othering. Othering, in turn, shapes public moods that call for still more hoops to jump through; political entrepreneurs answer with welfare chauvinism, and the tightened rules deepen the harm all over again. The loop, oddly enough, runs headlong into a citizenry that has forgotten the very stance it now holds was built for it.\n\nHaugsgjerd and Kumlin (2020) lay out this pattern with panel data: weak welfare outcomes eat away at political trust, and that worn trust makes later readings bleaker still, a \"downbound spiral.\" Van Hootegem, Abts, and Meuleman (2021) give a name to the mindset clash the loop throws up; those hit hardest back the idea of sharing wealth yet mistrust the welfare state that would do the sharing. Here lies the gap the radical right fills. On my reading, this opening is wrought by the loop, not stumbled upon.\n\nThe loop hides its own handiwork. Because the welfare state spawns the outlooks that underwrite its own hollowing out, each go-round feels more given than the last. Choices that flow from policy look like they came before it. This is policy feedback running the wrong way; not Pierson's (1994) positive feedback building up friendly blocs, but its mirror image, blocs turned against the very tools that would meet their everyday needs. The cascade lands, fittingly, in the spot Busemeyer, Rathgeb, and Sahm (2023) name with care: the \"particularistic-authoritarian\" welfare stance, pro-workfare, set against the poor, cold toward social betterment, the manifesto of the radical right, shaped in part by the welfare bodies it claims to stand against."
+    },
+    {
+      "iteration": 3,
+      "spec": "3_cross_model_laundering",
+      "ai": 0.08658889629439535,
+      "classification": "HUMAN_ONLY",
+      "accepted": true,
+      "text": "The cascade feeds itself, and it does so with a kind of grim steadiness. Conditional welfare erodes how individuals perceive themselves. These diminished self-perceptions breed othering; othering, in turn, shapes the public sentiments that demand yet more conditions to satisfy. Political entrepreneurs respond readily with welfare chauvinism. The tightened rules then deepen the harm all over again, round and round. Paradoxically, the loop culminates in a citizenry that has forgotten the very stance it now holds was constructed for it by the mechanisms it claims to reject.\n\nHaugsgjerd and Kumlin (2020) lay bare this pattern through panel data. Weak welfare outcomes erode political trust; that diminished trust renders later assessments bleaker still, what they term a \"downbound spiral.\" Van Hootegem, Abts, and Meuleman (2021) provide a name for the attitudinal contradiction the loop produces. Those most adversely affected endorse the principle of redistributing wealth, yet they distrust the welfare state that would enact such redistribution. Here, precisely here, lies the gap the radical right fills. On my reading, this opening is wrought by the loop itself; it is not encountered by happy chance.\n\nThe loop conceals its own handiwork, which is perhaps its most effective trick. Because the welfare state generates the attitudes that underwrite its own erosion, each iteration feels more natural than the last. Choices that flow from policy appear to have preceded it. This is policy feedback operating in reverse. It is not Pierson's (1994) positive feedback building supportive coalitions, but its mirror image; coalitions turned against the very instruments that would address their everyday needs. The cascade lands, fittingly, in the space Busemeyer, Rathgeb, and Sahm (2023) name with precision: the \"particularistic-authoritarian\" welfare stance, pro-workfare, set against the poor, indifferent toward social advancement, the manifesto of the radical right, shaped in part by the welfare institutions it claims to oppose."
+    },
+    {
+      "iteration": 4,
+      "spec": "5_aggressive_C1",
+      "ai": null,
+      "classification": "skipped (threshold reached)",
+      "accepted": false
+    }
+  ]
+}
