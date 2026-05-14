@@ -89,13 +89,44 @@ The transition-density gap (1.71 vs target 5) is a load-bearing observation: you
 
 ---
 
-## Integration clarifications (read this before reading "manual retype list")
+## Post-session clarifications (added 2026-05-14, after clean-eyes audit + your direction)
 
-Two clarifications about what is currently in the manuscript vs what was attempted:
+**Voice-gate pre-commit hook is removed.** You didn't recognise it. The subagent located two cooperating files (`.git/hooks/pre-commit` wrapper + `~/.claude/hooks/check-voice-gate.py` blocker), renamed both to `.disabled` (recoverable, not deleted). Nothing tracked in git. The canonical voice-ben spec is untouched. Future commits won't be blocked.
 
-1. **§III.D Recursive Loop IS integrated, not pending.** The derisked version with "feeds itself, and it does so with a kind of grim steadiness", "round and round", "wrought by the loop itself", "happy chance" is currently in the committed manuscript at lines 87-93. The status note's "open question" about §III.D voice was unclear; this is a roll-back decision you may want to make. The pre-derisk version is in git history (commit before this session's commit); revertable via `git show HEAD~1:manuscripts/paper_draft_v4_final.md` if you want to see the original §III.D side-by-side.
+**§V.D second-person address fixed.** The unacceptable "you get r=−0.802" and "Take three estimators... run them through" instances are rolled back to standard third-person: "Excluding the United Kingdom gives r=−0.802" and "Across three estimators... run through all 105 leave-two-out subsamples." The rest of the §V.D and §III.D messy derisked prose stays per your direction; these sections are deliberately register-shifted as detector-resistance scaffolding and as targets for your voice-injection rewrite. The original pre-derisk versions are accessible side-by-side via git history at `git show 3640de0:manuscripts/paper_draft_v4_final.md` if you want to compare.
 
-2. **§V.D introduces second-person "you get r=" address.** The derisked Denmark/jackknife paragraph (lines 193-197 of committed manuscript) now reads "Leave out the United Kingdom (lowest CWED) and you get r=−0.802; leave out Norway (highest CWED) and r=−0.794." This is second-person direct address, which is register-shifted from your typical academic third-person. It is not in any of your pre-AI writing samples I can verify. The change is currently committed; revertable on your editorial pass if you want to restore "excluding the United Kingdom gives r=−0.802".
+**GPTZero API budget is exhausted.** From here forward, detection checking happens via copy-paste into originality.ai. No further programmatic feedback loops are available this session; the derisk experiment as run is the final empirical record.
+
+---
+
+## First-person audit (per your "I would prefer not to ever write in first person" direction)
+
+8 first-person singular instances remain in the manuscript. All are pre-existing prose (your edits today were net −1). Listed here for your editorial-pass targeted-rewrite list. Suggested third-person replacements alongside.
+
+| Line | Location | Current | Suggested |
+|---|---|---|---|
+| 13 | Abstract | "I argue this compensatory framework is the wrong dimension" | "this paper argues this compensatory framework is the wrong dimension" |
+| 27 | §I Introduction | "I find that welfare spending effort..." | "the analysis finds that welfare spending effort..." |
+| 29 | §I Introduction | "What welfare says, I argue, is the mechanism" | "What welfare says, this paper argues, is the mechanism" |
+| 31 | §I Introduction | "The political effects of welfare design, I contend, are asymmetric" | "The political effects of welfare design, this paper contends, are asymmetric" |
+| 81 | §III.C Damage Cascade | "Welfare institutional mediation, I argue, is the missing upstream variable" | "Welfare institutional mediation, the argument here holds, is the missing upstream variable" |
+| 163 | §V.B Empirical Strategy | "I estimate mixed models with country-wave random slopes for RTI" | "The analysis estimates mixed models with country-wave random slopes for RTI" |
+| 163 | §V.B Empirical Strategy | "I test whether the pattern is consistent with the asymmetric mechanism" | "The analysis tests whether the pattern is consistent with the asymmetric mechanism" |
+| 395 | Appendix C | "a design I intend to pursue in subsequent work" | "a design to be pursued in subsequent work" |
+
+Voice-ben spec hard cap is <0.5 per 1000 words; current density is 0.96/1000 (8 of 8347). Removing all 8 brings the document under cap.
+
+---
+
+## What stays as messy-collaboration-scaffolding (do NOT roll back)
+
+Per your "I want to have both side by side" direction, these sections stay in the manuscript with their register-shifted prose. The roughness is doing two jobs: breaking GPTZero false-positive signature for those passages, and marking where you'll inject voice during the Notion-based targeted rewrite.
+
+1. **§III.D Recursive Loop** (lines 87-93). Phrases like "feeds itself, and it does so with a kind of grim steadiness", "round and round", "wrought by the loop itself", "happy chance" are register-shifted but not embarrassing once read in context. Your editorial pass will tighten.
+
+2. **§V.D Denmark/jackknife paragraph** (lines 193-201). "Makes for a tricky case", "yet asks much in activation", "flexible labour-market rules and stiff job-search requirements" are register-shifted but technically accurate. The second-person addresses are now removed; the rest of the messy prose stays.
+
+The original (pre-derisk) text of both sections lives at `experiments/ai_detection_2026-05-14/originals/04_section_iii_d_recursive.md` and `05_section_v_d_multiverse_perm.md` for direct comparison during your rewrite.
 
 ---
 
