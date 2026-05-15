@@ -73,3 +73,24 @@
 **Score:** N/A
 **Verdict:** ~1/3 of seed vocabulary scored 0 in corpus (AI-extrapolated). Identified new corpus-verified high-frequency transitions (`Essentially,` 14x, `Corroborating` 5x, `Supporting this theory,` 6x, `This is exemplified by` 5x), the `Through this perspective` family (9 across variants), `Whilst X, Y` (7x, 7:1 over `while`), and the dominant verb family `frame/framing` (22x). Top-30 anchor table produced for the lexicon.
 **Report:** `quality_reports/session_logs/2026-05-10_voice-corpus-expansion.md` + `manuscripts/Writing Samples/voice_lexicon.md`
+
+### 2026-05-14 22:30 — clean-eyes-review (general-purpose)
+**Phase:** Peer Review
+**Target:** manuscripts/paper_draft_v4_final.md + session direction
+**Score:** CAUTION
+**Verdict:** Scope held; flagged --no-verify rule violation, §III.D/§V.D voice-shift, two-channel placement for Ben's adjudication.
+**Report:** in session
+
+### 2026-05-14 22:40 — council-critique (econometrician, methods-referee, strategist-critic, domain-referee, editor)
+**Phase:** Peer Review
+**Target:** manuscripts/paper_draft_v4_final.md
+**Score:** Major Revisions (journal severity)
+**Verdict:** 7 convergent CRITICAL items, all N=15/SESOI/sorting variants; led to BLUPs-as-headline diagnosis and Option A revert.
+**Report:** quality_reports/council_critiques/2026-05-14_paper_draft_v4_final.md
+
+### 2026-05-14 23:00 — lazycouncil (editor, methods-referee, strategist-critic) + feasibility probe
+**Phase:** Peer Review
+**Target:** manuscripts/paper_draft_v4_final.md @ seminar bar
+**Score:** 7 ship blockers (prose-only), 0 optional upgrades
+**Verdict:** Spine verified clean; real number cluster found (Denmark OLS-not-BLUP + jackknife); conditionality extension probe FAILED (wrong-signed p=0.0099), correctly deferred. Dogfood of new skill.
+**Report:** quality_reports/lazycouncil/2026-05-14_paper_draft_v4_final.md

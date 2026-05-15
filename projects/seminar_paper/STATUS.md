@@ -123,3 +123,23 @@ The full five-year arc (thesis = Y1, PhD years = Y2-5) is sketched in the counci
 ---
 
 *Updated 2026-05-10 — high-fidelity sync to reflect §III restructure (A–F), council reviews, voice audit, timeline correction, Project Context heuristic. Previous April 2026 entry superseded.*
+
+## 2026-05-14 session
+
+**What was done**
+- Brief executed (6 integration steps); then clean-eyes-review + council-critique surfaced BLUPs-as-headline as the root exposure
+- Option A: reverted TOST/multiverse/permutation; §III.D + §V.D Denmark restored to Ben voice (git 17675e2). M5 reconciliation, em-dash sweep, two-channel §IV, care-without-connection §III.E retained. Paper now classic-shape.
+- Built + dogfooded /lazycouncil (seminar bar). Spine verified clean vs rs_results.csv. Workstream A factual fixes applied: §V.D Denmark β=0.50→0.24 (was OLS not BLUP), jackknife −0.808/−0.700(p=0.008)/range−0.922, §V.G 7→8 of 12. Mechanical B: §I roadmap deleted, §V.A bridge added.
+- Commits: a5308c2, c01db7e, ecc1a02, f40db42, fe62b14
+
+**Decisions**
+- Classic-paper shape over statistical armour (touchstone literature uses cross-level interactions, not BLUP-extract-then-correlate)
+- Achen 2005 / Lewis-Linzer 2005 are the correct two-step-hierarchical defence (verify pagination before bibliography)
+- Conditionality-channel extension FAILED feasibility probe (model3c −0.018, p=0.0099, wrong sign) — journal-stage vulnerability, logged deferred
+
+**Open questions**
+- Ben prose pass: B1 abstract→~200w, B4 §V.D reorder, B5 §V.G trim, 8 first-person instances, word-count to 10pp+appendix
+- Final on-page title (leaning keep "Dignity Is a Baseline…")
+- Notion page reference for rewrite incorporation
+- Touchstone INDEX + CLAUDE.md pointer system (orphaned docs/theory + docs/literature) — needs Ben nod
+- Full pipeline replication: low marginal value (spine already verified); see session reflection

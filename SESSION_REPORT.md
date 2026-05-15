@@ -101,3 +101,61 @@
 **Status:**
 - Done: corpus extraction, lexicon, YAML refactor, hook fix, two commits + push
 - Pending: re-run `/voice-audit` on `paper_draft_v4_final.md` after the 4 em-dash apposition stackings are fixed; quarterly cadence (lexicon refresh / MEMORY prune / `/recall` corpus check) tracked in `docs/post_handover_followups.md`
+
+## 2026-05-10 17:25 — /done extension, SessionEnd hook, scripts/README
+
+**Project:** General (cross-cutting infrastructure)
+**Topics:** infrastructure
+
+**Operations:**
+- Created `scripts/README.md` cataloguing 11 build scripts with run commands
+- Extended `/done` skill: Step 1.5 git/STATUS/pending checks + heuristic auto-classification of dirty files
+- New `.claude/hooks/session-end-wip.ps1` + SessionEnd hook entry in `.claude/settings.json`
+- `/recall` skill updated to de-prioritise `_auto/` checkpoints
+- `CLAUDE.md`: added Environment, Voice gate, bypass-permissions guard, scripts/README pointer
+- Smoke-tested SessionEnd hook (produced valid `_auto/` checkpoint)
+
+**Decisions:**
+- Heuristic auto-classification over four-way menu — reduces friction, /done used more often
+- Hook writes breadcrumbs only, never mutates git — safe under bypass-permissions
+- PowerShell over Python for hook — Windows-native, no python3 PATH dependency
+- Bundle pre-existing dirt (heavy-reads, voice-ben, retrospective, post_handover_followups) into one infra commit — auditable in commit message
+
+**Results:**
+- Commit `40df268` (10 files, 535 insertions, 19 deletions)
+- SessionEnd hook verified working (`_auto/2026-05-10_1720_session-end.md`)
+- Em-dash density warning on README + tracker (infra docs, not prose)
+
+**Status:**
+- Done: scripts/README, /done extension, SessionEnd hook + settings, recall scoping, CLAUDE.md guards, commit
+- Pending: verify hook fires on hard-close (laptop shut), confirm em-dash voice gate scope for infra docs, test heuristic under split-commit case
+
+## 2026-05-14 23:00 — lazycouncil build + classic-paper revert
+
+**Project:** seminar_paper
+**Topics:** paper-draft, infrastructure, council-skills, robustness
+
+**Operations:**
+- Brief execution (6 integration steps) + em-dash sweep + derisk runs → commits a5308c2, c01db7e
+- /clean-eyes-review (CAUTION) → voice-gate hook disabled; §V.D second-person fixed
+- /council-critique (5 personas) → BLUPs-rabbit-hole diagnosis via Ben's touchstone notes
+- Option A revert (TOST/multiverse/permutation removed; §III.D/§V.D restored to Ben voice) → ecc1a02
+- Built /lazycouncil skill → f40db42; dogfooded at seminar bar
+- Workstream A factual fixes + mechanical B → fe62b14
+- experiments/post_submission_extensions/ parking folder created
+- Stale scan: docs/theory + docs/literature orphaned since 2026-03-14
+
+**Decisions:**
+- Revert armour, ship classic-paper shape — touchstone literature uses cross-level interactions, not BLUP-extract-then-correlate
+- /lazycouncil with feasibility gate — fixes implied-reader/actual-reader catastrophizing structurally
+- Conditionality extension dropped (probe FAIL, wrong-signed p=0.0099) — logged deferred
+
+**Results:**
+- Paper classic-shape, spine verified clean vs rs_results.csv (M1–M5 full-precision match)
+- §V.D Denmark β=0.50→0.24 (was OLS not BLUP), jackknife numbers corrected, §V.G 7→8 of 12
+- Achen 2005 / Lewis-Linzer 2005 surfaced as the correct two-step defence
+- /lazycouncil: 0 optional upgrades (gate worked), report at quality_reports/lazycouncil/2026-05-14_paper_draft_v4_final.md
+
+**Status:**
+- Done: paper submittable pending Ben's prose pass; lazycouncil built+validated
+- Pending: Ben prose pass (B1/B4/B5 + first-person + word-count to 10pp); title; Notion; touchstone INDEX system; replication advice
