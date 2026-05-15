@@ -164,3 +164,34 @@ API cost estimate: ~$6 total (24 Opus 4.5 calls across the two runs).
 - Then submit.
 
 You have 20 days until the 2026-06-03 deadline.
+
+---
+
+## 2026-05-14 PM update — Option A executed (council critique → classic-paper revert)
+
+**Decision (Ben):** Council critique confirmed the BLUPs-as-headline created the inferential exposure the council then asked to patch. Ben: ship a classic-shape submittable paper, not a v5. Defer fun robustness/extension work to post-submission overnight blocks.
+
+**Executed (Option A, refined):**
+
+1. **§V.F:** TOST paragraph reverted to the pre-session two-sentence closing ("A measurement-problem reading... cannot be ruled out conclusively here. The substantive reading... runs more reliably toward damage than toward repair."). De-first-personed ("I am not in a position" → "it cannot be ruled out conclusively here") consistent with the no-first-person rule.
+2. **§V.D:** Permutation sentence removed; multiverse paragraph removed entirely; Denmark/jackknife paragraph restored to pre-session Ben voice (git 17675e2 verbatim, single paragraph, no em-dashes, no first-person).
+3. **§III.D:** Restored to pre-session Ben voice (git 17675e2). Two deviations from git-verbatim, both flagged: em-dash→semicolon ×2 (consistency with sweep); "on my reading" removed ×1 (no-first-person rule).
+
+**Retained (improvements, not armour):** M5 reconciliation (β=0.041; RTI×Liberal β=0.013, SE=0.019, p=0.488 — canonical `rs_results.csv`); em-dash sweep (0 em-dashes); two-channel §IV scope paragraph; care-without-connection §III.E sentence.
+
+**Number verification (submittable = correct):** Model 1/2/3/5 cross-checked against `outputs/tables/rs_results.csv` — all match. r=−0.848 internally consistent (abstract / §I / §V.D / §V.G). One minor unverified secondary coefficient: M3 CWED main-effect (−0.069, p=0.281) is not in the interaction-focused CSV; 30-second check against M3 full output recommended before submission; not load-bearing (the −0.059/p=0.015 interaction is the claim).
+
+**BLUP defensibility — citations for Ben to verify then add:** The paper's design is two-step hierarchical estimation (estimate country slopes as BLUPs, then relate to a country-level covariate). Canonical defences:
+- Achen, C. (2005). "Two-Step Hierarchical Estimation: Beyond Regression Analysis." *Political Analysis* 13(4):447–456. — defends exactly this design; the "inspired by" cite for an econ referee.
+- Lewis, J. & Linzer, D. (2005). "Estimating Regression Models in Which the Dependent Variable Is Based on Estimates." *Political Analysis* 13(4):345–364. — same 2005 PA symposium; prescribes inverse-sampling-variance weighting for the second stage (this is the principled answer to the council's N=15 worry; the overnight multiverse's IVW r=−0.753 was already this estimator, mislabelled as a robustness check).
+- Robinson, G.K. (1991). "That BLUP is a Good Thing." *Statistical Science* 6(1):15–32. — statistical foundation.
+- Gelman & Hill (2007); Raudenbush & Bryk (2002) — applied canon.
+**Confidence:** Achen 2005 + Lewis-Linzer 2005 are real and well-known in political methodology; substance as described; verify exact pagination on Scholar before bibliography entry. The 2005 *Political Analysis* two-step symposium is the citable anchor.
+
+**Optional vetted-then-insert upgrade (NOT yet in paper):** one cited sentence for §V.D after the Denmark paragraph:
+> "The two-step structure here, with country-specific RTI slopes estimated as BLUPs and then related to welfare decommodification, follows the hierarchical-estimation tradition (Achen 2005). The no-pooling and full-pooling brackets give r=−0.63 and r=−0.85 respectively; the inverse-sampling-variance-weighted estimate appropriate to two-step designs (Lewis and Linzer 2005) is r=−0.75 (N=15)."
+Do NOT insert until citations verified. This single sentence is stronger than the deleted multiverse+permutation+TOST combined.
+
+**State:** Paper is classic-shape and submittable now (modulo the optional citation upgrade and a voice-audit pass). The §III.D / §V.D Denmark prose is now Ben-voice (NOT derisked); the derisked copies remain in `experiments/ai_detection_2026-05-14/originals/` for post-submission Notion play.
+
+**Open for Ben:** (1) confirm final title; (2) verify Achen/Lewis-Linzer pagination then approve the optional §V.D sentence; (3) /lazycouncil skill design (proposed separately).
