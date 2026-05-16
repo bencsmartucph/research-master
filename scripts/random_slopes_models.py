@@ -235,11 +235,17 @@ try:
 except Exception as e:
     print(f"  RI vs RS comparison failed: {e}")
 
-# ── Per-country OLS slopes + correlation jackknife (§V.D statistic) ──────────
-# The published r=-0.848 / r=-0.802 (excl UK) / r=-0.794 (excl NO) / r=-0.717
-# (excl UK+NO) numbers come from per-country OLS slopes correlated with CWED,
-# not from the mixed model. This block reproduces those numbers and extends to
-# the full two-country jackknife (105 pairs), which was previously ad-hoc.
+# ── Per-country OLS slopes + correlation jackknife (§V.D comparator) ─────────
+# CORRECTED 2026-05-16 (was empirically false; verified via the master
+# pedagogical notebook). This block computes the BIVARIATE PER-COUNTRY OLS
+# comparator: r=-0.625, the value the paper reports as the "weaker comparator".
+# The published HEADLINE r=-0.848 is NOT from this block; it comes from BLUPs
+# of a random-slopes mixed model with individual controls (the BLUPs block
+# later in this script / analysis/_diagnose_cwed_correlation.py). Verified
+# jackknife numbers (BLUPs, matching the manuscript): excl-UK r=-0.808,
+# excl-NO r=-0.794, excl UK+NO r=-0.700 (p=0.008), two-country range
+# -0.700 to -0.922, 105/105 retain p<0.05, 0 sign flips. This OLS block
+# reproduces the comparator and extends to the full two-country jackknife.
 print("\nPer-country OLS slopes + correlation jackknife (§V.D)...")
 import itertools
 from scipy import stats as _stats
