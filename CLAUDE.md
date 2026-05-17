@@ -33,11 +33,17 @@ Before committing prose Ben will sign (papers, abstracts, blog posts, applicatio
 
 ---
 
+## Verification before building
+
+When verifying methodology or statistics (e.g., which model spec produced a published coefficient), always reproduce/verify against ground-truth source data before building outputs on the number. Flag discrepancies explicitly rather than proceeding. Do not trust secondary-source claims about formatting, parameters, or results when the primary source is accessible.
+
+---
+
 ## Project Context — primary heuristic for this sprint (added 2026-05-10)
 
 **Primary heuristic: accelerated completion of the seminar paper.** Every recommendation, edit, and follow-up should balance *maximum possible quality* against the *practical constraints of current data and timeline*. Concrete operational implications:
 
-- **Defer, do not ignore, the council critique on the empirical walkthrough.** Its CRITICAL items (Oster δ bounding of N=15 confounding, BLUPs specification curve, effective-N reframing, TOST + SUR equivalence testing, AJPS-grade scoop positioning) are valid for journal-version rewrite. They are out of scope for the seminar paper per Amalie's "no more analysis, hone argument" instruction. Filed at `quality_reports/journal_version_targets/`.
+- **Defer, do not ignore, the council critique on the empirical walkthrough.** Its CRITICAL items (Oster δ bounding of N=15 confounding, BLUPs specification curve, effective-N reframing, TOST + SUR equivalence testing, AJPS-grade scoop positioning) are valid for journal-version rewrite or if time permits. They likely are out of scope for the seminar paper per Amalie's "no more analysis, hone argument" instruction. Filed at `quality_reports/journal_version_targets/`.
 - **Ship the asymmetric framing as committed.** The v3/v4 hedge into symmetric "sorting" language was diagnosed as self-protection (see Part 6 of `docs/A Mind in Formation with part 6.md`). The asymmetric reframe is final; further theoretical excavation does not improve the paper at seminar stage.
 - **Monday-morning retype pass is the last substantive editing block before submission.** §III.D, §I sign-post, §III.A forward-reference, §III.E para 3, §V.D BLUPs sentence — retype from evidence base in own keystrokes for detector-resistance. Don't expand scope past that.
 - **Any "another analytical pass" recommendation must be explicitly justified against this heuristic.** Default disposition: defer to journal stage or MSc thesis (autumn 2026 → spring 2027) follow-up.
@@ -57,23 +63,23 @@ Before committing prose Ben will sign (papers, abstracts, blog posts, applicatio
 
 ## Pointers (load on demand)
 
-| What | Where |
-|------|-------|
-| Paper status + decisions | `projects/seminar_paper/STATUS.md` |
-| Thesis designs | `projects/msc_thesis/STATUS.md` |
-| Theory module quick-ref | `docs/theory/README.md` |
-| Literature index (greppable) | `docs/literature/INDEX.md` |
-| Theory → data mapping | `metadata/theory_data_bridge.md` |
-| Literature → theory mapping | `metadata/literature_map.md` |
-| Data dictionary | `metadata/data_dictionary.md` |
-| Persistent corrections | `MEMORY.md` |
-| **Working relationship & calibration** | **`docs/working_with_ben.md`** |
-| **Intellectual portrait** | **`docs/A Mind in Formation with part 6.md`** |
-| Strategic memo (current, 2026-05-10) | `docs/strategic_memo_2026-05-10.md` |
-| Strategic memo (six-week sprint, prior) | `docs/strategic_memo_2026-04-25.md` |
-| **Council critiques + ideations + voice audits** | **`quality_reports/council_critiques/`, `council_ideations/`, `voice_audits/`** |
-| **Journal-version deferral folder** | **`quality_reports/journal_version_targets/`** |
-| **Build commands (docx, slides, figures, analysis)** | **`scripts/README.md`** |
+| What                                                 | Where                                                                           |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Paper status + decisions                             | `projects/seminar_paper/STATUS.md`                                              |
+| Thesis designs                                       | `projects/msc_thesis/STATUS.md`                                                 |
+| Theory module quick-ref                              | `docs/theory/README.md`                                                         |
+| Literature index (greppable)                         | `docs/literature/INDEX.md`                                                      |
+| Theory → data mapping                                | `metadata/theory_data_bridge.md`                                                |
+| Literature → theory mapping                          | `metadata/literature_map.md`                                                    |
+| Data dictionary                                      | `metadata/data_dictionary.md`                                                   |
+| Persistent corrections                               | `MEMORY.md`                                                                     |
+| **Working relationship & calibration**               | **`docs/working_with_ben.md`**                                                  |
+| **Intellectual portrait**                            | **`docs/A Mind in Formation with part 6.md`**                                   |
+| Strategic memo (current, 2026-05-10)                 | `docs/strategic_memo_2026-05-10.md`                                             |
+| Strategic memo (six-week sprint, prior)              | `docs/strategic_memo_2026-04-25.md`                                             |
+| **Council critiques + ideations + voice audits**     | **`quality_reports/council_critiques/`, `council_ideations/`, `voice_audits/`** |
+| **Journal-version deferral folder**                  | **`quality_reports/journal_version_targets/`**                                  |
+| **Build commands (docx, slides, figures, analysis)** | **`scripts/README.md`**                                                         |
 
 **Convention:** Never read `.pdf` or files >2000 lines in main context. `.docx` is fine after `pandoc` conversion to `.md` (if under 2000 lines). Files 500–2000 lines may be read directly when calibration / analytical fidelity matters. Subagents doing analytical work must return raw counts + method, not just summary stats. See `.claude/rules/heavy-reads.md` for the full contract.
 
@@ -135,6 +141,7 @@ Research_Master/
 ## Key Data Relationships
 
 ### ESS → occupation task scores (automation exposure)
+
 ```python
 import pyreadstat, pandas as pd
 df, _ = pyreadstat.read_dta('data/raw/gugushvili_2025/ESS1e06_7 (1)/ESS1e06_7.dta')
@@ -145,12 +152,14 @@ df = df.merge(tasks, on='isco08_3d', how='left')
 ```
 
 ### ESS → populist party classification
+
 ```python
 crosswalk = pd.read_csv('data/raw/langenkamp_2022/ess_populist_crosswalk.csv', sep=';')
 # CRITICAL: semicolon-delimited — see MEMORY.md
 ```
 
 ### ESS → CWED welfare generosity (paper's key moderator)
+
 ```python
 # CWED merged at country level as time-invariant (mean 2005-2011)
 # 15 Western European countries (58% of obs). Variable: cwed_generosity
@@ -161,19 +170,19 @@ crosswalk = pd.read_csv('data/raw/langenkamp_2022/ess_populist_crosswalk.csv', s
 
 ## Variable Quick Reference
 
-| Concept | Variable | Dataset | Notes |
-|---------|----------|---------|-------|
-| Country (ISO-2) | `cntry` | All ESS | |
-| ESS round | `essround` | All ESS | |
-| ISCO-08 occupation | `isco08` | ESS waves 6–9 | 4-digit; truncate to 3-digit before task merge |
-| Routine task intensity | `task` | isco08_3d-task3.csv | **NOT** `rtask`/`nrtask` |
-| RTI standardised | `task_z` | Constructed | Mean 0, SD 1 |
-| Anti-immigration index | `anti_immig_index` | Constructed | 3-item composite, α=0.864 |
-| Redistribution support | `redist_support` | Constructed | `gincdif` reverse-coded, 1–5 |
-| CWED generosity | `cwed_generosity` | CWED | Mean 2005–2011, 15 countries |
-| Welfare regime | `welfare_regime` | Constructed | Nordic/Continental/Liberal/Southern/Eastern |
-| Radical right vote | `radical_right_vote` | Constructed | Langenkamp crosswalk |
-| Household income | `hinctnta` | ESS | 21-30% missing in Liberal/Southern |
+| Concept                | Variable             | Dataset             | Notes                                          |
+| ---------------------- | -------------------- | ------------------- | ---------------------------------------------- |
+| Country (ISO-2)        | `cntry`              | All ESS             |                                                |
+| ESS round              | `essround`           | All ESS             |                                                |
+| ISCO-08 occupation     | `isco08`             | ESS waves 6–9       | 4-digit; truncate to 3-digit before task merge |
+| Routine task intensity | `task`               | isco08_3d-task3.csv | **NOT** `rtask`/`nrtask`                       |
+| RTI standardised       | `task_z`             | Constructed         | Mean 0, SD 1                                   |
+| Anti-immigration index | `anti_immig_index`   | Constructed         | 3-item composite, α=0.864                      |
+| Redistribution support | `redist_support`     | Constructed         | `gincdif` reverse-coded, 1–5                   |
+| CWED generosity        | `cwed_generosity`    | CWED                | Mean 2005–2011, 15 countries                   |
+| Welfare regime         | `welfare_regime`     | Constructed         | Nordic/Continental/Liberal/Southern/Eastern    |
+| Radical right vote     | `radical_right_vote` | Constructed         | Langenkamp crosswalk                           |
+| Household income       | `hinctnta`           | ESS                 | 21-30% missing in Liberal/Southern             |
 
 ---
 

@@ -71,6 +71,8 @@ Produce a structured report with EXACTLY these four headings:
 (One paragraph: how sure are you of your top issues? What would change your mind?)
 
 Do NOT praise. Start with problems. Stay in your persona's framing — leave the synthesis to the orchestrator.
+
+VERIFICATION RULE: For any statistic, coefficient, or empirical claim you report, cite the exact source line (file + line number or table cell). If you cannot locate the primary source for a number, flag it as UNVERIFIED rather than proceeding. Do not build critique on unverified secondary claims.
 ```
 
 **Failure handling:** if any of the five returns an error or empty output, note the failure in the synthesis ("`<persona>` failed; not included") and continue. Do not block on individual failures.
